@@ -148,7 +148,7 @@ FAMILY_RULES = [
     ("FRANKLIN BSP", "Franklin BSP"), ("HPS ", "HPS"), ("KAYNE", "Kayne Anderson"), ("MONROE", "Monroe"),
     ("MAIN STREET", "Main Street"), ("MSC INCOME", "Main Street"), ("PROSPECT", "Prospect"), ("STELLUS", "Stellus"),
     ("STONE POINT", "Stone Point"), ("TCW ", "TCW"), ("TRIPLEPOINT", "TriplePoint"), ("TWIN BROOK", "AG Twin Brook"),
-    ("COMVEST", "Comvest"), ("CCS IX", "Crescent"), ("SIXTH STREET", "Sixth Street"), ("ONEX", "Onex"), ("LORD ABBETT", "Lord Abbett"),
+    ("COMVEST", "Comvest"), ("CCS IX", "Crescent"), ("JEFFERIES", "Jefferies"), ("SENIOR CREDIT INVESTMENTS", "Jefferies"), ("LGAM PRIVATE CREDIT", "Morgan Stanley"), ("COMMONWEALTH CREDIT PARTNERS", "Comvest"), ("SIXTH STREET", "Sixth Street"), ("ONEX", "Onex"), ("LORD ABBETT", "Lord Abbett"),
     ("MUZINICH", "Muzinich"), ("GLADSTONE", "Gladstone"), ("BC PARTNERS", "BC Partners"), ("BCP INVESTMENT", "BC Partners"),
     ("PORTMAN RIDGE", "BC Partners"), ("LOGAN RIDGE", "BC Partners"), ("FIRST EAGLE", "First Eagle"),
     ("VENTURE LENDING", "WTI"), ("WTI FUND", "WTI"), ("STEPSTONE", "StepStone"), ("CION", "CION"),
@@ -296,6 +296,8 @@ def learn_prefixes(pieces_by_row, min_continuations=5, min_share=0.01):
             w = text.lower().split()
             n += 1
             for k in range(1, min(len(w), 12)):
+                if re.fullmatch(r"\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten", w[k]):
+                    continue          # footnote numbers after a name are not different continuations
                 cont[tuple(w[:k])].add(w[k])
                 count[tuple(w[:k])] += 1
     return {p for p, s in cont.items() if len(s) >= min_continuations and count[p] >= max(10, min_share * n)}
@@ -391,6 +393,7 @@ def pick_borrower(pieces, prefixes, boiler, vocab=frozenset()):
         for t in _sub_pieces(strip_vocab(strip_prefix(text, prefixes), vocab), vocab):
             if t.lower() not in boiler:
                 cands.append(t)
+    cands = [t for t in cands if re.search(r"[A-Za-z]{3,}", t)]   # a name needs a real word, not '6' or '5.000'
     for t in cands:
         if re.search(r"\b" + _LEGAL_RE + r"\b", t):
             return t
@@ -511,7 +514,7 @@ class HoldingsIndex:
 
     def key_tokens(self, key):
         """Distinctive words of a borrower name; if the name has none, all its words."""
-        kt = [t for t in tokens(key) if t not in LEGAL_WORDS]
+        kt = [t for t in tokens(key) if t not in LEGAL_WORDS and len(t) > 2]   # 'by', 'of', 'it' carry no identity
         dist = [t for t in kt if t not in self.common]
         return dist if dist else kt
 
@@ -536,7 +539,7 @@ def instrument_type(s):
     t = str(s).lower()
     if re.search(r"revolv|\brc\b|\brcf\b|line of credit|\bloc\b", t):
         return "revolver"
-    if re.search(r"delayed[- ]?draw|delayed term|\bddtl\b|\bdd tl\b|\bdd term|\bdelayed\b", t):
+    if re.search(r"delay(?:ed)?[- ]?draw|delayed term|\bddtl\b|\bdd tl\b|\bdd term|\bdelayed\b", t):
         return "delayed_draw"
     if re.search(r"term loan|\btl\b|term debt|unitranche|one stop|senior secured loan|first[- ]lien loan|"
                  r"secured loan|first lien debt|1st lien|first lien|senior loan|bank debt|senior secured", t):

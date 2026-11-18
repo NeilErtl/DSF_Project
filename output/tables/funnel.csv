@@ -1,14 +1,15 @@
 step,all_bdc,core
-1 candidate loans (borrower x BDC x quarter),216611.0,56139
-2 BDC has a complete previous-quarter filing,200596.0,52979
-3 not held by the family before,15744.0,4452
-4 no acquisition date before the quarter,15640.0,4409
-5 one row per borrower x family x quarter,10843.0,3435
-6 spread between 1 and 15 pp,10798.0,3426
-6b spread is not the all-in rate,10626.0,3418
-7 tenor between 4 and 8 years (all-BDC: or unknown),9769.0,2893
-8 base rate SOFR stated (core) / SOFR or unknown (all-BDC),9547.0,2671
-9 not a secondary-buyer family,9547.0,2671
-9b not an existing loan of an unaffiliated lender,8801.0,2189
-10 quarter from 2023Q2,8578.0,2158
-"11 core: industry-reporting BDC, industry and maturity known",,1991
+1 candidate loans (borrower x BDC x quarter),215137.0,55205
+2 BDC has a complete previous-quarter filing,199186.0,52077
+3 not held by the family before,14443.0,4217
+4 no acquisition date before the quarter,14353.0,4181
+5 one row per borrower x family x quarter,9771.0,3170
+6 spread between 1 and 15 pp,9741.0,3160
+6b spread is not the all-in rate,9567.0,3152
+6c no PIK component,9212.0,3083
+7 tenor between 4 and 8 years (all-BDC: or unknown),8499.0,2646
+8 base rate SOFR stated (core) / SOFR or unknown (all-BDC),8320.0,2467
+9 not a secondary-buyer family,8320.0,2467
+9b not an existing loan of an unaffiliated lender,7633.0,2010
+10 quarter from 2023Q2,7427.0,1981
+"11 core: industry-reporting BDC, industry and maturity known",,1826

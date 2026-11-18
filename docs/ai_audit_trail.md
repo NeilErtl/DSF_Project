@@ -37,5 +37,20 @@ evidence are in `docs/decisions.md`; results in `docs/data_report.md`.
   families need the weighted matching).
 - ICE BofA high-yield spread as a feature: FRED now only provides it from November 2023.
 - The 16-BDC universe of the feasibility study: with the stricter new-loan rule it yields only about 680 loans; the
-  rule-based industry-reporting universe gives about 2,400 (consequential decision D3, for team review).
+  rule-based industry-reporting universe gives 1,826 (consequential decision D3, for team review).
 - Inferring currency or instrument type where the filer writes nothing: such loans stay in the all-BDC file only.
+
+**Adversarial review** (fresh AI agent, no access to the author's reasoning; prompt as in the work order). Nine
+findings; what was done with each:
+
+| # | Finding | Response |
+|---|---|---|
+| 1 | PennantPark's tagged JV schedule ("Related Party PSSL/PSLF") entered as loans; "By ..." names re-flagged as new | Fixed: JV lines excluded from candidate loans (kept as holdings evidence); words of 1-2 letters ignored in matching; exact-name second check |
+| 2 | Jefferies Credit Partners and Senior Credit Investments are one manager (60 duplicated deals across train/test) | Fixed: family rule, plus an automatic guard (no two families may share more than half of their new loans). The guard found two more: LGAM Private Credit (Morgan Stanley) and Commonwealth Credit Partners (Comvest) |
+| 3 | Numeric "borrowers" (footnote numbers) in the all-BDC file, new every quarter | Fixed: footnote numbers no longer count when learning category prefixes; names need a real word |
+| 4 | Unfunded commitments chosen as the loan line (principal up to USD 270m, fair value 0) | Fixed: lines with fair value and cost both zero excluded |
+| 5 | Principal in thousands for some filers | Fixed: ratio to fair value of about 1,000 or 1/1,000 rescaled; other ratios outside 0.5 to 2 use fair value as size |
+| 6 | Interest rate converted with the spread's unit, so the fixed-rate check failed for some filers | Fixed: unit detected per filing and per column |
+| 7 | Broadly syndicated loans mixed with direct lending; their share rises towards the test period | Not filtered (no reliable marker: club deals of 3+ direct lenders look the same); documented as open risk and decision D25 for the team; sensitivity analysis recommended for notebook 02 |
+| 8 | Hand-check result optimistic and partly circular (filter designed on the same 50 loans; CI below 80%) | Accepted: reported as such; two contradictory evidence entries corrected (confidence lowered); target wording changed to the conservative version (D23) |
+| 9 | "Delay Draw" not caught; spreads with and without PIK mixed; t-2 newness and industry universe use later filings; one-quarter origination lag | Fixed: regex, PIK loans excluded. Accepted as limitations: later filings are used only to decide newness and the universe (sample construction), never as feature values |
