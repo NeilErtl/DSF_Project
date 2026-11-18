@@ -148,7 +148,7 @@ FAMILY_RULES = [
     ("FRANKLIN BSP", "Franklin BSP"), ("HPS ", "HPS"), ("KAYNE", "Kayne Anderson"), ("MONROE", "Monroe"),
     ("MAIN STREET", "Main Street"), ("MSC INCOME", "Main Street"), ("PROSPECT", "Prospect"), ("STELLUS", "Stellus"),
     ("STONE POINT", "Stone Point"), ("TCW ", "TCW"), ("TRIPLEPOINT", "TriplePoint"), ("TWIN BROOK", "AG Twin Brook"),
-    ("COMVEST", "Comvest"), ("SIXTH STREET", "Sixth Street"), ("ONEX", "Onex"), ("LORD ABBETT", "Lord Abbett"),
+    ("COMVEST", "Comvest"), ("CCS IX", "Crescent"), ("SIXTH STREET", "Sixth Street"), ("ONEX", "Onex"), ("LORD ABBETT", "Lord Abbett"),
     ("MUZINICH", "Muzinich"), ("GLADSTONE", "Gladstone"), ("BC PARTNERS", "BC Partners"), ("BCP INVESTMENT", "BC Partners"),
     ("PORTMAN RIDGE", "BC Partners"), ("LOGAN RIDGE", "BC Partners"), ("FIRST EAGLE", "First Eagle"),
     ("VENTURE LENDING", "WTI"), ("WTI FUND", "WTI"), ("STEPSTONE", "StepStone"), ("CION", "CION"),
@@ -776,13 +776,14 @@ def filing_snippets(url, name, user_agent, width=700, max_hits=3):
     Used for the hand check of loans against the original 10-Q / 10-K (results in docs/hand_check.csv).
     """
     import html as _html
+    url = url.replace("/ix?doc=", "")          # the inline-XBRL viewer link -> the document itself
     r = requests.get(url, headers={"User-Agent": user_agent}, timeout=120)
     r.raise_for_status()
     text = re.sub(r"<[^>]+>", " ", r.text)
     text = _html.unescape(text).replace("\xa0", " ")
     text = re.sub(r"\s+", " ", text)
     words = [w for w in re.findall(r"[A-Za-z0-9&'.-]+", name) if w.lower() not in LEGAL_WORDS][:2]
-    pat = re.compile(r"\s+".join(re.escape(w) for w in words), re.I)
+    pat = re.compile(r"\W+".join(re.escape(w) for w in words), re.I)
     out = [text[max(0, m.start() - 100): m.start() + width] for m in pat.finditer(text)]
     time.sleep(0.3)
     return out[:max_hits], len(out)

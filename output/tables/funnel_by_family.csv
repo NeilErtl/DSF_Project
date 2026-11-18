@@ -1,40 +1,39 @@
 family,1_candidates,2_complete_prev_q,3_not_held_before,4_acq_rule,5_final_core
-Apollo,7393,7139,705,705,424
-Goldman Sachs,7653,7431,636,636,289
-BlackRock,4074,3878,302,302,173
-Antares,3766,3489,265,265,163
-First Eagle,1156,1130,194,191,148
-Bain Capital,2658,2555,235,235,98
-AllianceBernstein,981,908,160,160,96
-PennantPark,3734,3341,227,221,84
-Jefferies Credit Partners Bdc Inc.,669,648,92,92,78
-Comvest,565,550,87,87,78
-Palmer Square Capital Bdc Inc.,1445,1257,94,94,75
-"Senior Credit Investments, Llc",653,632,85,85,72
-Silver Point,1151,1042,93,87,69
-Msd Investment Corp.,878,853,92,92,63
-"Whitehorse Finance, Inc.",1310,1258,76,76,56
-Stellus,1856,1824,137,137,56
-Varagon,1267,1215,74,70,55
-Brightwood Capital Corp I,597,579,54,54,45
-Manulife Private Credit Fund,542,507,51,51,39
-Diameter Credit Co,367,325,42,41,38
-Onex,565,537,74,66,37
-Overland Advantage,412,366,38,38,32
-Crescent,1958,1858,80,80,32
-TCW,846,778,80,71,32
-"Andalusian Credit Company, Llc",126,126,33,33,28
-SLR,1350,1208,83,79,21
-Redwood Enhanced Income Corp.,342,327,36,36,19
+Apollo,7393,7139,676,676,380
+Goldman Sachs,7653,7431,635,635,207
+BlackRock,4074,3878,301,301,135
+Antares,3766,3489,264,264,126
+First Eagle,1156,1130,194,191,98
+PennantPark,3734,3341,222,216,79
+Bain Capital,2658,2555,221,221,78
+Jefferies Credit Partners Bdc Inc.,669,648,91,91,68
+Comvest,565,550,87,87,62
+"Senior Credit Investments, Llc",653,632,84,84,62
+AllianceBernstein,981,908,160,160,61
+Msd Investment Corp.,878,853,91,91,58
+Palmer Square Capital Bdc Inc.,1445,1257,91,91,56
+Stellus,1856,1824,136,136,54
+Silver Point,1151,1042,93,87,54
+"Whitehorse Finance, Inc.",1310,1258,75,75,51
+Varagon,1267,1215,73,69,47
+Manulife Private Credit Fund,542,507,51,51,38
+Crescent,2003,1900,88,88,37
+Brightwood Capital Corp I,597,579,50,50,35
+Diameter Credit Co,367,325,42,41,31
+Overland Advantage,412,366,38,38,27
+TCW,846,778,76,67,27
+Onex,565,537,74,66,26
+SLR,1350,1208,76,74,20
+"Andalusian Credit Company, Llc",126,126,33,33,18
+Redwood Enhanced Income Corp.,342,327,33,33,17
 BC Partners,865,826,26,24,15
-Great Elm,220,220,19,19,12
-"Ccs Ix Portfolio Holdings, Llc",45,42,12,12,11
-Investcorp,415,381,28,26,9
-Kayne Anderson,347,347,12,12,7
+Great Elm,220,220,19,19,8
 Agl Private Credit Income Fund,36,22,6,6,6
+Kayne Anderson,347,347,11,11,5
+Investcorp,415,381,28,26,5
 5C Lending Partners Corp.,13,10,0,0,0
-Carlyle,4604,4288,262,262,0
+Carlyle,4604,4288,256,256,0
 Cifc Direct Lending Evergreen Fund,104,0,0,0,0
-Prospect,1158,1082,53,53,0
+Prospect,1158,1082,51,51,0
 Third Point Private Capital Partners,18,0,0,0,0
-TOTAL,56139,52979,4543,4498,2460
+TOTAL,56139,52979,4452,4409,1991

@@ -1,5 +1,5 @@
 column,meaning,unit,known_at_cutoff,role
-loan_id,Row identifier,,,id
+loan_id,"Stable row identifier (hash of family, quarter, borrower key)",,,id
 quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,id / time
 quarter_start_date,Start of that quarter = cutoff,date,yes,time
 q_index,"Quarter number, 0 = 2023Q2",integer,yes,time
@@ -30,6 +30,7 @@ mkt_spread_t2_core,"Same, core sample only (missing if fewer than 20 loans)",pp,
 mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive
 hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive (incomplete history)
 seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature"
+same_loan_at_other_family_before,Always False after the filters (check column),bool,,check
 n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,"flag, not a feature"
 held_by_family_prev_q,Always False after the new-loan rule (check column),bool,,check
 acq_date,Earliest acquisition date written on any line of the borrower (some managers only),date,,check / descriptive
