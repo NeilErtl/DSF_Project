@@ -1,0 +1,7 @@
+course_ref/
+data/raw/
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+sec_user_agent.txt
+data/interim/
