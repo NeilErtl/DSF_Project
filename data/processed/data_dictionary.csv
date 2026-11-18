@@ -1,0 +1,51 @@
+column,meaning,unit,known_at_cutoff,role
+loan_id,Row identifier,,,id
+quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,id / time
+quarter_start_date,Start of that quarter = cutoff,date,yes,time
+q_index,"Quarter number, 0 = 2023Q2",integer,yes,time
+split,train (to 2025Q2) or test (2025Q3 to 2026Q2),,,split
+spread_pp,Spread over SOFR of the loan line (largest funded term line of the lead BDC),pp,no,TARGET
+borrower,Borrower name as parsed from the identifier,,yes,id
+borrower_key,Normalized borrower name,,yes,id
+family,Manager family of the lender,,yes,feature
+bdc_name,Lead BDC (largest held principal in the family),,yes,descriptive
+cik,SEC identifier of the lead BDC,,yes,id
+n_family_bdcs,Number of BDCs of the family holding the loan in that quarter,count,yes (allocation),feature (optional)
+principal_family,"Held principal summed over the family's BDCs at the reporting date: approximation of the lender's hold size, not the facility size",USD,yes (approximation),descriptive
+log_principal,Natural log of principal_family,log USD,yes (approximation),feature
+principal,Held principal of the lead BDC's line,USD,yes (approximation),descriptive
+tenor_years,Maturity date minus quarter_start,years,yes,feature
+maturity_date,Contractual maturity date,date,yes,descriptive
+industry,Raw industry label from the filing,,yes,descriptive
+sector,GICS-style sector mapped from industry (sector_mapping.csv),,yes,feature
+lien,"first_lien, first_lien_last_out, second_lien_or_junior, unknown",,yes,feature
+instrument,"term_loan or unknown (instrument not written, e.g. Goldman Sachs)",,yes,feature
+has_revolver,Borrower also has a revolver line at the lead BDC,bool,yes,feature (optional)
+has_delayed_draw,Borrower also has a delayed-draw line at the lead BDC,bool,yes,feature (optional)
+baa_spread_prev,"Moody's Baa corporate yield minus 10y Treasury, last value before cutoff (FRED BAA10Y)",pp,yes,feature
+sofr_prev,"SOFR, last value before cutoff (FRED SOFR)",%,yes,feature
+mkt_spread_t2_all,"Median spread of new loans of all BDCs first seen in quarter t-2, filed before cutoff",pp,yes,feature
+mkt_n_t2_all,Number of loans behind mkt_spread_t2_all,count,yes,descriptive
+mkt_spread_t2_core,"Same, core sample only (missing if fewer than 20 loans)",pp,yes,feature (alternative)
+mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive
+hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive (incomplete history)
+seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature"
+n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,"flag, not a feature"
+held_by_family_prev_q,Always False after the new-loan rule (check column),bool,,check
+acq_date,Earliest acquisition date written on any line of the borrower (some managers only),date,,check / descriptive
+spread_min_family,Lowest spread across the family's BDCs for this loan,pp,no,check
+spread_max_family,Highest spread across the family's BDCs for this loan,pp,no,check
+interest_rate_pp,All-in interest rate (contains SOFR + spread),%,no,NEVER a feature
+floor_pp,SOFR floor (negotiated with the spread),pp,yes,NEVER a feature
+pik_flag,Loan has a payment-in-kind component,bool,yes,NEVER a feature (filter/description)
+pik_rate_pp,PIK rate,pp,yes,NEVER a feature
+fair_value,Fair value at the reporting date,USD,no,NEVER a feature
+cost,Amortized cost at the reporting date,USD,no,NEVER a feature
+industry_reporting_bdc,Lead BDC states industries (core universe),bool,yes,id
+base_rate,SOFR or UNKNOWN (all-BDC file only),,yes,descriptive
+base_rate_stated,SOFR written in the identifier or tagged,bool,yes,descriptive
+adsh,SEC accession number of the filing,,,id
+form,10-Q or 10-K,,,id
+filed_date,Date the filing was submitted to the SEC,date,,check
+inlineurl,Link to the filing on EDGAR,,,id
+identifier,Original free-text identifier of the line,,,id
