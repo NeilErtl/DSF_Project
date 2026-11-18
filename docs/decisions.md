@@ -12,7 +12,7 @@ in session 1 (18 Nov 2026) under the CLAUDE.md rules; items marked **consequenti
 |---|----------|--------|--------|
 | D1 | Data source: SEC BDC Data Sets, `soi.tsv`, quarter-ends Sep 2022 to Jun 2026 (16 quarters). | taken | Official, free, public domain, already structured. Verified: 2022Q3 to 2026Q2 complete; 2026Q3 has only 4 filers (dropped). Loans from 2023Q2 (D14). |
 | D2 | One filing per BDC and quarter: if a quarter has several filings (amendments), keep the latest. | taken | 12 BDC-quarters affected. |
-| D3 | BDC universe of the main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines), instead of the 16 BDCs. All-BDC file for the robustness check. | taken (AI), **consequential** | See D3 below. 67 BDCs, 34 families; 1,991 loans instead of about 680. |
+| D3 | BDC universe of the main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines), instead of the 16 BDCs. All-BDC file for the robustness check. | taken (AI), **consequential** | See D3 below. 67 industry-reporting BDCs; final core sample 1,991 loans from 49 BDCs in 32 families. |
 | D4 | New loan = no BDC of the same family held the borrower in any earlier quarter (current holdings and prior-period comparatives), the BDC filed a complete previous quarter, no acquisition date before the quarter; family dedupe. | taken (team rule, AI implementation), **consequential** | Binding commitment (1). Implementation details in D4, D13, D21. |
 | D5 | Funded floating-rate USD term loans over SOFR; drop revolvers, delayed-draw lines, non-USD, Prime, LIBOR, structured products. | taken | Goldman Sachs writes no instrument type: largest line per borrower is used (D15). |
 | D6 | One row per borrower x manager family x quarter; different managers stay separate. | taken | 27.8% of new loans are held by more than one BDC of the family. |
@@ -44,14 +44,15 @@ in session 1 (18 Nov 2026) under the CLAUDE.md rules; items marked **consequenti
 - **Options.** (1) Keep the 16 BDCs. (2) Main model on all BDCs without industry. (3) Widen "industry-reporting" to
   every BDC whose filings state the industry in a form we can read (label "Industry X", tagged XBRL industry field,
   or a standard Moody's/GICS industry name in the identifier), with the same 80% threshold.
-- **Pros and cons.** (1) matches the project description but is small and concentrated (Goldman Sachs about 40%).
-  (2) is large (8,578 loans) but loses industry and, for many large managers, maturity and the base rate (only 20%
-  of other BDCs' loans have a known tenor). (3) keeps industry and tenor for every loan, gives 1,991 loans from 34
-  families, and answers the lecturers' concern that 16 BDCs are not representative. Risk: industry found by
+- **Pros and cons.** (1) matches the project description but is small and concentrated in 7 managers.
+  (2) is large (8,578 loans) but loses industry and, for many large managers, maturity and the base rate (only 38%
+  of all-BDC loans have a known tenor and 39% a stated base rate). (3) keeps industry and tenor for every loan,
+  gives 1,991 loans from 32 families, and answers the lecturers' concern that 16 BDCs are not representative. Risk: industry found by
   vocabulary matching can be wrong for some lines (checked: 48 of 50 hand-checked industries match the filing, the
   other 2 come from the tagged XBRL field and are not printed).
 - **Evidence.** Core size 678 (16-BDC rule) versus 1,991 (rule 3); median spread, size and tenor of core loans and
-  of all other BDCs are almost identical (4.75 pp, USD 8.0m, 6.1 years; `output/tables/core_vs_other_bdcs.csv`).
+  of all other BDCs are close (median spread 5.00 vs 4.75 pp, hold USD 9.8m vs 8.4m, tenor 6.2 vs 6.2 years;
+  `output/tables/core_vs_other_bdcs.csv`).
 - **Choice.** (3). The all-BDC file remains for the committed robustness check.
 - **Reversible?** Yes: `industry_reporting_bdc` and `family` columns allow restricting to the original 7 families.
 
@@ -61,7 +62,7 @@ in session 1 (18 Nov 2026) under the CLAUDE.md rules; items marked **consequenti
   be complete (at least half as many holdings as in t), because several 2022Q4 schedules in the SEC data are partial
   (first version: 91% of dated 2023Q1 "new" loans were acquired earlier); the earliest acquisition date on **any**
   line of the borrower is used.
-- **Evidence.** Precision against acquisition dates (dated loans after all filters): 93.7% for industry-reporting
+- **Evidence.** Precision against acquisition dates (dated loans after all filters): 93.9% for industry-reporting
   BDCs (95% CI 90.6 to 96.1%, n = 297), 90.1% for all BDCs; hand check in D23.
 
 ### D7. Spread units and validity (AI)
