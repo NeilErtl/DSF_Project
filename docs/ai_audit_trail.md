@@ -54,3 +54,33 @@ findings; what was done with each:
 | 7 | Broadly syndicated loans mixed with direct lending; their share rises towards the test period | Not filtered (no reliable marker: club deals of 3+ direct lenders look the same); documented as open risk and decision D25 for the team; sensitivity analysis recommended for notebook 02 |
 | 8 | Hand-check result optimistic and partly circular (filter designed on the same 50 loans; CI below 80%) | Accepted: reported as such; two contradictory evidence entries corrected (confidence lowered); target wording changed to the conservative version (D23) |
 | 9 | "Delay Draw" not caught; spreads with and without PIK mixed; t-2 newness and industry universe use later filings; one-quarter origination lag | Fixed: regex, PIK loans excluded. Accepted as limitations: later filings are used only to decide newness and the universe (sample construction), never as feature values |
+
+**Human verification (19 Nov 2026).** Mathis re-checked the 50 hand-check loans against the EDGAR filings himself; all values and classifications in `docs/hand_check.csv` were confirmed, with two corrections handled in session 2 (count of checked loans in the final sample; principal printed for all 50).
+
+## Session 2, 19 Nov 2026: corrections after the team's re-check, Claude Opus 5.5 in Claude Code
+
+**Task.** The team's re-check of the hand check reported (1) only 39 of the 50 checked loans in `loans.csv`
+(report: 41) and principal printed for all 50 (report: 47), and (2) borrower names with a prefix glued to the name.
+
+**What the AI did**
+- Verified (1) before changing anything: matching by `loan_id` gives 39 and by borrower and quarter 41; the
+  difference is two Jefferies loans that are in the sample under new ids (the id hashes the family). Fetched the
+  three disputed filings: the principal is printed in the schedule table for all three, so 50/50 is right.
+- Verified (2): the prefixes come from the XBRL member names (Apollo/MidCap display names, a stray capital letter)
+  and from the parser cutting an industry label in two. Counted 140 + 7 + 9 affected core names. Fixed the parser
+  (D28), reran the notebook top to bottom twice (identical files), compared the sample before and after
+  (`docs/data_report.md`, section 5).
+- Replaced the hand-check matching by a rule that uses quarter, family, a distinctive name word and the loan terms
+  (D29), so the shares are computed by the notebook from the current files: 39 loans, (a) 33, (b) 5, (c) 1.
+
+**What was checked**
+- The 4 loans that entered and a sample of the 32 that left the core sample; all 50 hand-check pairs between
+  `docs/hand_check.csv` and `loans.csv` by eye.
+
+**What was rejected**
+- Hard-coding the re-check's shares (32 / 6 / 1 of 39): they describe the files before the name fix counted by
+  `loan_id`; the notebook now reports what the current files give.
+- A "same maturity and spread held earlier" rule for renamed borrowers: most matches were different borrowers.
+- A broad "known shorter name" rule: it cut generic names ("Comoto Holdings LLC" -> "Holdings LLC").
+- First versions of the new hand-check matching (name only with 3-letter words; legal words such as "Inc"
+  counted): they paired checked loans with other loans of the same quarter.

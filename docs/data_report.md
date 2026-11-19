@@ -29,7 +29,8 @@ Notebook: `code/01_preprocess.ipynb` (runs top to bottom). Decisions with eviden
    quarters 2022Q3 to 2026Q2 (204 registrants, mapped to manager families by explicit rules).
 2. **Borrowers.** The borrower is written inside a free-text identifier whose format differs by manager. A parser
    learns each BDC's format (category headers, industry labels, delimiters, footnotes) and extracts the name
-   (1.9% empty; median quarter-to-quarter persistence 0.91).
+   (1.9% empty; median quarter-to-quarter persistence 0.91). A second pass removes display names glued in front of
+   the legal name (repeated names, a stray capital letter from the XBRL member, Apollo/MidCap display names).
 3. **New loans.** New = no BDC of the same family held the borrower in any earlier quarter. "Held" is checked on
    current holdings **and** the prior-period comparatives of every filing, with a rewording-robust rule (distinctive
    words of the name weighted by rarity) plus an exact-name check. The BDC must have filed a complete previous
@@ -46,31 +47,31 @@ Notebook: `code/01_preprocess.ipynb` (runs top to bottom). Decisions with eviden
 ## 2. Funnel (all BDCs / core sample)
 | Step | All BDCs | Core |
 |---|---:|---:|
-| Candidate loans (borrower x BDC x quarter, eligible funded line) | 215,137 | 55,205 |
-| BDC filed a complete previous quarter | 199,186 | 52,077 |
-| Not held by the family before | 14,443 | 4,217 |
-| No acquisition date before the quarter | 14,353 | 4,181 |
-| One row per borrower x family x quarter | 9,771 | 3,170 |
-| Spread 1 to 15 pp, not the all-in rate, no PIK | 9,212 | 3,083 |
-| Tenor 4 to 8 years (all-BDC: or unknown) | 8,499 | 2,646 |
-| SOFR stated (core) | 8,320 | 2,467 |
-| Not an existing loan of an unaffiliated lender | 7,633 | 2,010 |
-| Quarters from 2023Q2 | 7,427 | 1,981 |
-| Core: industry and maturity known | | **1,826** |
+| Candidate loans (borrower x BDC x quarter, eligible funded line) | 215,157 | 55,200 |
+| BDC filed a complete previous quarter | 199,203 | 52,072 |
+| Not held by the family before | 14,399 | 4,178 |
+| No acquisition date before the quarter | 14,310 | 4,142 |
+| One row per borrower x family x quarter | 9,729 | 3,131 |
+| Spread 1 to 15 pp, not the all-in rate, no PIK | 9,170 | 3,045 |
+| Tenor 4 to 8 years (all-BDC: or unknown) | 8,464 | 2,614 |
+| SOFR stated (core) | 8,285 | 2,435 |
+| Not an existing loan of an unaffiliated lender | 7,591 | 1,972 |
+| Quarters from 2023Q2 | 7,385 | 1,943 |
+| Core: industry and maturity known | | **1,798** |
 
 By manager: `output/tables/funnel_by_family.csv`. The new-loan rule is the big cut: portfolios turn over slowly,
 so only about 7% of borrower x BDC x quarter lines are new relationships.
 
 ## 3. Final sample (`data/processed/loans.csv`)
-- **1,826 loans**, 2023Q2 to 2026Q2, 47 BDCs in 31 manager families. Train 1,197 (2023Q2 to 2025Q2), test 629
-  (2025Q3 181, 2025Q4 163, 2026Q1 152, 2026Q2 133).
-- Largest families: Apollo 21%, Goldman Sachs 11%, BlackRock 7%, Antares 7%, First Eagle 5%.
+- **1,798 loans**, 2023Q2 to 2026Q2, 46 BDCs in 31 manager families. Train 1,177 (2023Q2 to 2025Q2), test 621
+  (2025Q3 177, 2025Q4 161, 2026Q1 152, 2026Q2 131).
+- Largest families: Apollo 20%, Goldman Sachs 11%, BlackRock 8%, Antares 7%, First Eagle 5%.
 - **Spread** median 5.00 pp (10th to 90th percentile 3.00 to 6.25). Median by year: 2023 6.25, 2024 5.00,
   2025 4.75, 2026 4.50 pp; the t-2 market median falls from 6.50 (2023Q2) to 4.50 (2026Q2).
 - Hold size median USD 10.0m; tenor median 6.2 years; 94% first lien (5% unknown lien).
-- 35% of loans are held by three or more other managers in the same quarter (syndicated or club loans):
+- 37% of loans are held by three or more other managers in the same quarter (syndicated or club loans):
   flag `n_other_families_same_q`, not a feature.
-- Industry-reporting versus all other BDCs (`loans_all_bdc.csv`, 7,427 loans in total): median spread 5.00 vs
+- Industry-reporting versus all other BDCs (`loans_all_bdc.csv`, 7,385 loans in total): median spread 5.00 vs
   4.75 pp, hold USD 10.0m vs 9.7m, tenor 6.2 vs 6.2 years; for other BDCs the tenor is known for only 17% of loans.
 
 ## 4. Validation
@@ -78,13 +79,14 @@ so only about 7% of borrower x BDC x quarter lines are new relationships.
   appearance for industry-reporting BDCs (95% CI 90.8 to 96.3%, n = 289), 91.2% for all BDCs; 88% to 100% in the
   four test quarters (26 to 35 dated loans each). Caveat: a date inside the quarter does not prove origination
   (secondary purchases have one too), so this is an upper bound.
-- **Hand check of 50 loans** against the EDGAR filings (`docs/hand_check.csv`), stratified by manager: borrower
-  found 50/50, spread 50/50, maturity 49/50, principal 47/50, industry 48/50 (the rest are tagged values not
-  printed next to the name). Classification: (a) originated in the quarter 35, (b) originated earlier and acquired
-  14, (c) transferred from an affiliate 1. The (b) cases led to the existing-loan filter. **Loans of the check that
-  remain in the final sample (41): (a) 83% (95% CI 69 to 92%), (b) 15%, (c) 2%.** This is optimistic: the filter
-  was designed on the same loans, and about half of the (a) verdicts rest on tenor and the absence of earlier
-  holders rather than a printed date.
+- **Hand check of 50 loans** against the EDGAR filings (`docs/hand_check.csv`), stratified by manager, prepared with the AI and re-checked by hand by Mathis on 19 Nov 2026: borrower
+  found 50/50, spread 50/50, maturity 49/50, principal 50/50 (the re-check found the principal printed in the
+  schedule table for all 50), industry 48/50 (the other two are tagged XBRL values not printed next to the name).
+  Classification: (a) originated in the quarter 35, (b) originated earlier and acquired 14, (c) transferred from an
+  affiliate 1. The (b) cases led to the existing-loan filter. **Checked loans that remain in the final sample (39):
+  (a) 33 = 85% (95% CI 70 to 93%), (b) 5 = 13%, (c) 1 = 3%**, computed by the notebook from the current files
+  (step 15e). This is optimistic: the filter was designed on the same loans, and about half of the (a) verdicts
+  rest on tenor and the absence of earlier holders rather than a printed date.
 - **Adversarial review** by a fresh AI agent: 9 findings (duplicated manager families, joint-venture lines,
   unfunded commitments, principal and rate units, numeric "borrowers", PIK, syndicated mix, hand-check optimism).
   All fixed except the syndicated mix (D25) and the limits of the hand check, which are documented. A guard now
@@ -97,27 +99,52 @@ so only about 7% of borrower x BDC x quarter lines are new relationships.
 - **Keys and reproducibility:** one row per family x quarter x borrower, no borrower repeated within a family
   (asserted); stable `loan_id`; two consecutive Restart-Run-All runs give identical output files.
 
-## 5. Consequential decisions for team review (details in `docs/decisions.md`)
-- **D3** main universe widened from 16 BDCs to all industry-reporting BDCs (about 680 -> 1,826 loans).
+## 5. Changes of 19 Nov 2026 (re-check of the hand check, borrower-name fix)
+- **Hand-check counting.** Matching checked loans to `loans.csv` by `loan_id` missed two loans whose id changed when
+  Senior Credit Investments was mapped to Jefferies (the id hashes the family): Solis Mammography and AB Centers
+  are in the sample under new ids. The notebook now matches by quarter, family, a distinctive name word and the same
+  maturity or spread, so the count no longer depends on ids or name spelling. Principal corrected to 50/50.
+- **Borrower names.** Before the fix, 140 core names carried a repeated display name ("Regis Regis Corporation"),
+  7 a stray capital letter ("VWhite Cap Buyer LLC") and 9 an industry fragment ("Services ...", "Equipment and
+  Supplies ..."); after the fix 0, 1 and 0. Causes: Apollo/MidCap write a display name before the legal name
+  ("Sterling Pharm Saffron Bidco Ltd", "Parexel Pheoenix Newco"), the XBRL member names of some Goldman Sachs and
+  AllianceBernstein filings start with a stray letter, and a learned category prefix could cut an industry label in
+  two. The printed tables of the filings show the correct names (e.g. "White Cap Buyer LLC", "Parexel Phoenix
+  Newco, Inc."). Fix: industry labels removed before and after category prefixes ("and" = "&"), plus a second
+  naming pass (D28).
+- **Effect on the sample.** Core 1,826 -> 1,798 loans (train 1,197 -> 1,177, test 629 -> 621): 32 loans left,
+  4 entered, and 253 kept their terms but got a corrected name. The 32 that left are mostly Apollo loans whose clean
+  legal name now matches an earlier holding, either of the family itself (e.g. Garda World, held by Apollo since
+  2023Q1; Saffron Bidco, held since 2024Q3) or of another lender with the same maturity (existing-loan filter). The
+  4 that entered are BlackRock loans whose industry was glued to the name before, so no industry was found. The
+  new-loan checks therefore became stricter: two hand-checked (a) loans (GardaWorld, Saffron) turned out not to be
+  new for their family, and one (b) loan (White Cap) is now removed. Medians are unchanged (spread 5.00 pp, tenor
+  6.2 years) and so is the precision against acquisition dates (94.1%).
+
+## 6. Consequential decisions for team review (details in `docs/decisions.md`)
+- **D3** main universe widened from 16 BDCs to all industry-reporting BDCs (about 680 -> 1,798 loans).
 - **D8** tenor 4 to 8 years; **D14** sample from 2023Q2; **D22** existing loans of other lenders excluded;
   **D27** PIK loans excluded.
-- **D23** target wording: the hand check gives 83% originations with a confidence interval reaching below 80%, so,
+- **D23** target wording: the hand check gives 85% originations with a confidence interval reaching below 80%, so,
   following our commitment, we describe the target as **"the spread of loans newly added to a BDC portfolio
   (mostly new originations)"**.
 - **D25** broadly syndicated loans are kept; their share rises over time (spread at most 3.5 pp: 2% of 2023 loans,
   26% of 2026 loans), so train and test differ in composition.
 
-## 6. Open risks
-- About one in six loans is probably not a fresh origination (secondary purchase, or transfer from an affiliated
+## 7. Open risks
+- About one in seven loans is probably not a fresh origination (secondary purchase, or transfer from an affiliated
   private fund, which BDC filings cannot reveal).
 - Syndicated versus direct-lending mix (D25); the manager family and the flag capture part of it.
 - Hold size is measured at the reporting date and is the lender's hold, not the facility size.
-- Borrower names come from a parser; rare parse errors can split or merge borrowers.
+- Borrower names come from a parser; rare parse errors can split or merge borrowers. A borrower renamed after a
+  merger (e.g. BlackRock's "Flow Control Group", 2026Q1, and "FCG Acquisitions", 2026Q2, same maturity and spread)
+  is counted twice; a rule "same maturity and spread held earlier" was tested and rejected (it mostly matched
+  different borrowers).
 - Newness of a loan (and so the t-2 market median) is decided partly with later filings' comparative columns, and
   the set of industry-reporting BDCs is chosen on all quarters. Both affect sample construction only.
 - First appearance can trail the signing by up to a quarter (late settlement), so the cutoff can be slightly late.
 
-## 7. Recommendations for notebook 02
+## 8. Recommendations for notebook 02
 - Split: `split` column; inside train expanding windows by `q_index` with a one-quarter gap (train up to t-2,
   validate on t).
 - Baselines: (1) `mkt_spread_t2_all` (t-2 median, filed before the cutoff); (2) median by `sector` and size class

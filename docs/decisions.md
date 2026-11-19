@@ -13,7 +13,7 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 |---|----------|--------|--------|
 | D1 | Data source: SEC BDC Data Sets, `soi.tsv`, quarter-ends Sep 2022 to Jun 2026 (16 quarters). | taken | Verified: 2022Q3 to 2026Q2 complete; 2026Q3 has only 4 filers (dropped). Loans from 2023Q2 (D14). |
 | D2 | One filing per BDC and quarter: if a quarter has several filings (amendments), keep the latest. | taken | 12 BDC-quarters affected. |
-| D3 | Main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines) instead of the 16 BDCs; all-BDC file for the robustness check. | taken (AI), **consequential** | 67 industry-reporting BDCs; final core sample 1,826 loans from 47 BDCs in 31 families (16-BDC rule: about 680). |
+| D3 | Main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines) instead of the 16 BDCs; all-BDC file for the robustness check. | taken (AI), **consequential** | 67 industry-reporting BDCs; final core sample 1,798 loans from 46 BDCs in 31 families (16-BDC rule: about 680). |
 | D4 | New loan = no BDC of the same family held the borrower in any earlier quarter (current holdings, prior-period comparatives, exact name); complete previous-quarter filing; no acquisition date before the quarter; family dedupe. | taken (team rule, AI implementation), **consequential** | Binding commitment (1). Details in D4, D13, D21. |
 | D5 | Funded floating-rate USD term loans over SOFR; drop revolvers, delayed-draw lines, unfunded commitments, non-USD, Prime, LIBOR, structured products, joint-venture lines. | taken | See D15, D16, D26. |
 | D6 | One row per borrower x manager family x quarter; different managers stay separate. | taken | 28.6% of new loans are held by more than one BDC of the family. |
@@ -38,6 +38,8 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 | D25 | Broadly syndicated loans kept in the sample, flagged. | taken (AI), **consequential** | See D25. |
 | D26 | Principal checked against fair value; unfunded lines and joint-venture lines excluded. | taken (AI) | See D26. |
 | D27 | Exclude loans with a PIK component. | taken (AI), **consequential** | See D27. |
+| D28 | Second naming pass: remove display names, stray letters and industry fragments glued to borrower names. | taken (AI, after team re-check), **consequential** (sample) | See D28. Core 1,826 -> 1,798. |
+| D29 | Hand-check loans are matched to the final sample by quarter, family, name word and loan terms, not by `loan_id`; principal 50/50. | taken (after team re-check) | See D29. |
 
 ---
 
@@ -48,8 +50,8 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   every BDC whose filings state the industry in a readable form ("Industry X" label, tagged XBRL industry field, or
   a standard Moody's/GICS industry name in the identifier), with the same 80% threshold.
 - **Pros and cons.** (1) matches the project description but is small and concentrated in 7 managers. (2) is large
-  (7,427 loans) but only 39% have a known tenor and 40% a stated base rate. (3) keeps industry and tenor for every
-  loan, gives 1,826 loans from 31 families, and answers the lecturers' concern that 16 BDCs are not representative.
+  (7,385 loans) but only 38% have a known tenor and 40% a stated base rate. (3) keeps industry and tenor for every
+  loan, gives 1,798 loans from 31 families, and answers the lecturers' concern that 16 BDCs are not representative.
   Risk: industry found by vocabulary matching can be wrong for some lines (hand check: 48 of 50 match the filing,
   the other 2 come from the tagged XBRL field).
 - **Evidence.** Medians core vs other BDCs: spread 5.00 vs 4.75 pp, hold USD 10.0m vs 9.7m, tenor 6.2 vs 6.2 years
@@ -89,7 +91,8 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 - **Choice.** Names parsed per BDC (delimiters, labels, learned category prefixes, industry vocabulary; footnote
   numbers ignored). Held before = distinctive words of the name (in at most 0.1% of identifiers, at least 3 letters),
   weighted by inverse document frequency, 80% covered by an earlier identifier of the family; plus an exact match of
-  the normalized name (339 extra cases with names made of short words, e.g. "GS XX Corporation").
+  the normalized name (340 extra cases with names made of short words, e.g. "GS XX Corporation"). Names are
+  cleaned in a second pass (D28).
 - **Evidence.** 1.9% empty names; median name persistence 0.91; a name is found in its own identifier in 99.5% of
   cases; no borrower repeats within a family in either output file.
 
@@ -129,9 +132,9 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   Caveat: designed on the same sample, so its effect is measured optimistically.
 
 ### D23. Target wording (consequential; rule by the team)
-- Hand check (50 loans, drawn before D22): (a) 35, (b) 14, (c) 1. In the 41 loans that remain in the final sample:
-  (a) 34 = 83% (95% CI 69 to 92%), (b) 6, (c) 1. Optimistic (D22 designed on these loans; about half of the (a)
-  verdicts rest on tenor and absence of earlier holders).
+- Hand check (50 loans, drawn before D22): (a) 35, (b) 14, (c) 1. In the 39 checked loans that remain in the final
+  sample (after D28; counted as in D29): (a) 33 = 85% (95% CI 70 to 93%), (b) 5 = 13%, (c) 1 = 3%. Optimistic (D22
+  designed on these loans; about half of the (a) verdicts rest on tenor and absence of earlier holders).
 - The commitment says: below about 80%, the target becomes "spread of loans newly added to a BDC portfolio". The
   point estimate is just above 80%, the interval is not. **Choice:** use the conservative wording "spread of loans
   newly added to a BDC portfolio (mostly new originations)" in report and slides. The data are unchanged.
@@ -153,3 +156,42 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 ### D27. Exclude PIK loans (consequential, AI)
 - Some filers include the PIK part in the tagged spread and others do not, so the target is not comparable; PIK
   loans are mostly restructured or stressed credits. 355 family loans removed (all BDCs); PIK stays descriptive only.
+
+### D28. Second naming pass (consequential for the sample; AI, after the team's re-check of 19 Nov 2026)
+- **Why.** The team's re-check of the hand check found borrower names with a prefix glued to the legal name
+  ("VWhite Cap Buyer LLC", "Services Regis Regis Corporation", "Parexel Pheoenix Newco Inc.", "Sterling Pharm Saffron
+  Bidco Ltd"). Counted in the core sample before the fix: 140 names with a repeated display name, 7 with a stray
+  capital letter, 9 with an industry fragment. The filings' printed tables show the right names; the prefixes come
+  from the XBRL member names (Apollo/MidCap write "display name + legal name"; some Goldman Sachs and
+  AllianceBernstein members start with a stray letter) and from our parser (a learned category prefix could cut an
+  industry label in two: "Consumer | Services Regis ...").
+- **Options.** (1) Leave names as they are (cosmetic within a family, but the cross-family checks fail).
+  (2) Hand-made corrections for the affected names. (3) General rules, applied to all holdings.
+- **Choice.** (3): industry labels are stripped before and after learned category prefixes ("and" = "&"); then a
+  second pass over all BDCs drops an immediately repeated first part, a stray capital letter when the remainder is a
+  name used by another BDC, and, for BDCs where at least 10% of names repeat (display-name formats), leading words
+  when the remaining legal name is used by another BDC and contains a distinctive word (used in at most 20 names);
+  no cut next to "of", "and", "the". After the fix: 0 repeated, 1 stray letter ("GTreasury G Treasury SS LLC"),
+  0 industry fragments in the core sample.
+- **Effect.** Core 1,826 -> 1,798 (train 1,197 -> 1,177, test 629 -> 621); 32 loans left (mostly Apollo loans now
+  recognized as held earlier by the family or as existing loans of other lenders), 4 entered (BlackRock loans whose
+  industry is now found), 253 renamed. Precision against acquisition dates unchanged (94.1%), medians unchanged.
+- **Rejected along the way.** (a) Taking any shorter suffix that another BDC uses as a name: cut "Comoto Holdings
+  LLC" to "Holdings LLC". (b) A "same maturity and spread held earlier by the family" rule for renamed borrowers
+  ("Flow Control Group" -> "FCG Acquisitions"): of 25 sampled matches, most were different borrowers with
+  coincident terms; rejected, the rare renamed loan remains a documented limitation.
+- **Reversible?** Yes: `refine_borrowers` in `utils_preprocess.py`; the raw parse is kept as `borrower_raw` in the
+  notebook.
+
+### D29. Counting the hand check against the final sample (after the team's re-check of 19 Nov 2026)
+- **Why.** The re-check counted 39 checked loans in `loans.csv` (matching by `loan_id`) where the report said 41
+  (matching by borrower and quarter). Both were imperfect: `loan_id` hashes the family, so the two Jefferies loans
+  (Solis Mammography, AB Centers; Senior Credit Investments was re-mapped to Jefferies) got new ids although they are
+  in the sample; and the name changes of D28 break matching by name.
+- **Choice.** A checked loan is in the final sample if `loans.csv` has a loan of the same quarter and family with a
+  common distinctive name word and the same maturity (within 7 days) or the same spread; computed in step 15e from
+  the current files. Result after D28: 39 loans, (a) 33, (b) 5, (c) 1. The re-check's figures (32 / 6 / 1 of 39)
+  refer to the files before D28 counted by `loan_id`; after D28, GardaWorld and Saffron (a) are no longer new for
+  their family, White Cap (b) is removed, and the two Jefferies loans (a) are counted.
+- The re-check also found the principal printed in the filings for all 50 loans (three were recorded as "tagged
+  only"); `docs/hand_check.csv` corrected.

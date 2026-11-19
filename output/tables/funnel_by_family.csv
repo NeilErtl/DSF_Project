@@ -1,15 +1,15 @@
 family,1_candidates,2_complete_prev_q,3_not_held_before,4_acq_rule,5_final_core
-Apollo,7393,7139,677,677,379
-Goldman Sachs,7588,7366,571,571,196
-BlackRock,4073,3877,294,294,133
+Apollo,7390,7136,647,647,353
+Goldman Sachs,7588,7366,567,567,193
+BlackRock,4073,3877,291,291,136
 Antares,3765,3488,253,253,121
 First Eagle,1156,1130,192,189,96
 Bain Capital,2658,2555,219,219,78
 Jefferies,1322,1280,168,168,62
-AllianceBernstein,981,908,154,154,59
+AllianceBernstein,981,908,153,153,58
 PennantPark,2913,2550,155,151,55
 Msd Investment Corp.,878,853,91,91,55
-Palmer Square Capital Bdc Inc.,1445,1257,91,91,54
+Palmer Square Capital Bdc Inc.,1443,1255,90,90,54
 Stellus,1853,1821,134,134,53
 Silver Point,1151,1042,90,85,52
 "Whitehorse Finance, Inc.",1310,1258,74,74,47
@@ -21,7 +21,7 @@ Crescent,2003,1900,87,87,35
 Diameter Credit Co,367,325,40,40,28
 Onex,565,537,75,66,25
 Overland Advantage,408,363,36,36,24
-TCW,847,779,71,66,23
+TCW,847,779,71,66,22
 SLR,1329,1188,54,52,19
 "Andalusian Credit Company, Llc",126,126,33,33,18
 Redwood Enhanced Income Corp.,342,327,33,33,16
@@ -35,4 +35,4 @@ Carlyle,4604,4288,253,253,0
 Cifc Direct Lending Evergreen Fund,104,0,0,0,0
 Prospect,1142,1065,26,26,0
 Third Point Private Capital Partners,17,0,0,0,0
-TOTAL,55205,52077,4217,4181,1826
+TOTAL,55200,52072,4178,4142,1798

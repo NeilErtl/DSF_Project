@@ -321,11 +321,17 @@ def _cut_instrument(t):
     return t.strip(" ,-:/")
 
 
+def _vocab_word(x):
+    """Word form used to compare text with industry labels: lowercase letters, '&' and ':'; 'and' counts as '&'."""
+    x = re.sub(r"[^a-z0-9&:]", "", x.lower())
+    return "&" if x == "and" else x
+
+
 def strip_vocab(text, vocab, max_words=7):
     """Remove leading industry labels (from a vocabulary of known labels), up to two times."""
     for _ in range(2):
         w = text.split()
-        low = [re.sub(r"[^a-z0-9&:]", "", x.lower()) for x in w]
+        low = [_vocab_word(x) for x in w]
         best = 0
         for k in range(1, min(len(w), max_words + 1)):
             if " ".join(low[:k]) in vocab and k < len(w):
@@ -339,7 +345,7 @@ def strip_vocab(text, vocab, max_words=7):
 def strip_vocab_tail(text, vocab, max_words=7):
     """Remove a trailing industry label (e.g. 'Acuity Specialty Products, Inc. Chemicals')."""
     w = text.split()
-    low = [re.sub(r"[^a-z0-9&:]", "", x.lower()) for x in w]
+    low = [_vocab_word(x) for x in w]
     best = 0
     for k in range(1, min(len(w), max_words + 1)):
         if " ".join(low[-k:]) in vocab and k < len(w):
@@ -390,7 +396,9 @@ def pick_borrower(pieces, prefixes, boiler, vocab=frozenset()):
             pass
         if last is not None:                       # drop a category header in front of the name
             text = text[last.end():].strip(" :,-")
-        for t in _sub_pieces(strip_vocab(strip_prefix(text, prefixes), vocab), vocab):
+        # industry labels are removed before and after the learned category prefixes, so that a prefix cannot cut
+        # an industry label in two ('Consumer | Services Regis ...')
+        for t in _sub_pieces(strip_vocab(strip_prefix(strip_vocab(text, vocab), prefixes), vocab), vocab):
             if t.lower() not in boiler:
                 cands.append(t)
     cands = [t for t in cands if re.search(r"[A-Za-z]{3,}", t)]   # a name needs a real word, not '6' or '5.000'
@@ -403,12 +411,82 @@ def pick_borrower(pieces, prefixes, boiler, vocab=frozenset()):
     return cands[0] if cands else ""
 
 
+GENERIC_NAME_WORDS = {"holdings", "holding", "holdco", "parent", "buyer", "group", "brands", "intermediate",
+                      "acquisition", "acquisitions", "purchaser", "borrower", "midco", "topco", "bidco", "newco",
+                      "services", "partners", "company", "companies", "capital", "finance", "financing", "lux"}
+
+
+def refine_borrowers(names, ciks, min_dup_share=0.10):
+    """Second pass over parsed names (all BDCs together), removing display names glued in front of a name.
+
+    1. An immediately repeated first part is dropped ('Gaia Gaia Purchaser Inc' -> 'Gaia Purchaser Inc').
+    2. A single capital letter glued to the first word is dropped when the rest is a name another BDC uses
+       ('VWhite Cap Buyer LLC' -> 'White Cap Buyer LLC'; the letter comes from the XBRL member name).
+    3. For BDCs that write 'display name + legal name' (at least `min_dup_share` of their names show rule 1),
+       leading words are dropped when the remaining legal name is used by another BDC and contains a distinctive
+       word, i.e. one used in at most 20 different borrower names ('Sterling Pharm Saffron Bidco Ltd' ->
+       'Saffron Bidco Ltd', but not 'Carbon6 Technologies Inc.' -> 'Technologies Inc.'). No cut next to 'of', 'and'.
+    Returns (refined names, rule applied per name: '', 'repeat', 'glued_letter' or 'display_name').
+    """
+    names = list(names)
+    ciks = list(ciks)
+    known = defaultdict(set)
+    for n, c in zip(names, ciks):
+        k = name_key(n)
+        if k:
+            known[k].add(c)
+
+    def repeat_cut(n):
+        w = n.split()
+        for m in range(1, len(w) // 2 + 1):
+            if [x.lower() for x in w[:m]] == [x.lower() for x in w[m:2 * m]]:
+                return " ".join(w[m:])
+        return None
+
+    def used_elsewhere(k, c):
+        return bool(k) and len(known.get(k, set()) - {c}) > 0
+
+    # a word used in more than 20 different borrower names ('technologies', 'health') is not distinctive
+    word_use = Counter(t for k in known for t in set(k.split()))
+    generic = GENERIC_NAME_WORDS | {t for t, c in word_use.items() if c > 20}
+    rep = [repeat_cut(n) is not None for n in names]
+    dup_share = pd.Series(rep).groupby(pd.Series(ciks)).mean()
+    display_bdcs = set(dup_share[dup_share >= min_dup_share].index)
+    out, how = [], []
+    for n, c in zip(names, ciks):
+        r = repeat_cut(n)
+        if r:
+            out.append(r)
+            how.append("repeat")
+            continue
+        if re.match(r"^[A-Z](?=[A-Z][a-z]{2,})", n) and used_elsewhere(name_key(n[1:]), c) \
+                and not used_elsewhere(name_key(n), c):
+            out.append(n[1:])
+            how.append("glued_letter")
+            continue
+        new = n
+        if c in display_bdcs and not used_elsewhere(name_key(n), c):
+            w = n.split()
+            for k in range(1, len(w)):
+                cand = " ".join(w[k:])
+                ck = name_key(cand)
+                distinctive = [t for t in ck.split() if len(t) >= 3 and t not in generic]
+                if {w[k].lower(), w[k - 1].lower()} & {"of", "and", "&", "the", "for", "de", "la", "/"}:
+                    continue                       # never cut inside a name ('TravelCenters of America')
+                if distinctive and used_elsewhere(ck, c):
+                    new = cand
+                    break
+        out.append(new)
+        how.append("display_name" if new != n else "")
+    return out, how
+
+
 def industry_vocabulary(identifiers, min_count=3):
     """Set of industry labels written as 'Industry X' anywhere in the data (lowercase, letters only).
 
     Used to strip industry words that some managers write directly in front of the borrower name.
     """
-    norm = lambda x: " ".join(re.sub(r"[^a-z0-9&:]", "", w.lower()) for w in x.split())  # noqa: E731
+    norm = lambda x: " ".join(_vocab_word(w) for w in x.split())  # noqa: E731
     lab = identifiers.dropna().map(industry_from_label).dropna().map(norm)
     vc = lab.value_counts()
     std = []
