@@ -17,7 +17,10 @@ environment variable `SEC_USER_AGENT`.
 1. Python 3.12: `python -m pip install -r requirements.txt`
 2. Create `sec_user_agent.txt` (see above).
 3. Open `code/main.ipynb` and run *Restart, Run All* (it runs `01_preprocess.ipynb`; about 25 minutes, longer on the
-   first run because of the downloads). Notebooks 02 and 03 will be added to `main.ipynb`.
+   first run because of the downloads). Notebooks 02 and 03 will be added to `main.ipynb`. From the command line
+   (in `code/`): `jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 main.ipynb`
+   (`-1` switches off the per-cell time limit: notebook 01 runs inside one `%run` cell and can take over an hour on a
+   laptop with little free memory).
 
 ## The working dataset (numbers from `output/tables/headline_numbers.csv`)
 - `data/processed/loans.csv`: **1,747 new loans**, 2023Q2 to 2026Q2, 31 manager families; the lead BDC of each loan
