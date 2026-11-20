@@ -885,3 +885,84 @@ def filing_snippets(url, name, user_agent, width=700, max_hits=3):
     out = [text[max(0, m.start() - 100): m.start() + width] for m in pat.finditer(text)]
     time.sleep(0.3)
     return out[:max_hits], len(out)
+
+
+# ---------------------------------------------------------------------------
+# Display names (work order 5): cosmetic clean-up of the `borrower` column only
+# ---------------------------------------------------------------------------
+_TRAILING_JUNK = re.compile(r"\s+(?:(?:Ma\w{0,3}rity|Maturity|Acquisitions?|Acquisition Date)\s+\d{1,2}/\d{1,2}/\d{2,4}"
+                            r"|Rate and Spread|Reference Rate|Amendment No\.?\s*\d|Cov-Lite\b).*$", re.I)
+_LINE_END = re.compile(r"\s*(?:,\s*)?(?:First Lien|1st Lien|Second Lien|2nd Lien|Senior Secured|Senior Loan|"
+                       r"Term Loan|Unitranche)\b", re.I)
+
+
+def _norm_token(t):
+    return re.sub(r"[^a-z0-9]", "", t.lower())
+
+
+def _similar(a, b):
+    from difflib import SequenceMatcher
+    return a == b or (min(len(a), len(b)) >= 6 and SequenceMatcher(None, a, b).ratio() >= 0.85)
+
+
+def display_name(name, identifier="", known_names=()):
+    """Readable borrower name for the `borrower` column. Never used for matching (that uses `borrower_key`).
+
+    Rules, in order: (1) the name written twice without a space ("F&M Buyer LLCF&M Buyer LLC"); (2) trailing maturity,
+    acquisition-date, rate, amendment or "Cov-Lite" text ("CFP Holdings LLC Matrity 09/13/2030"), and a glued
+    fragment ("enior Senior Support ..."); (3) a display name in front of the legal name, recognised because the first
+    word comes back within the next five words ("SEER GS SEER Group Borrower LLC", "GTreasury G Treasury SS LLC"; not
+    for names joining two entities with "and", "&" or "/"); (4) a leading code whose remainder is another borrower's name ("G2CI Evergreen IX
+    Borrower 2023 LLC"); (5) a name cut at "&" or an HTML "amp;", completed from the identifier.
+    """
+    s = str(name).strip()
+    ident = str(identifier).replace("amp;", "&")
+    compact = s.replace(" ", "")
+    half = len(compact) // 2
+    if len(compact) % 2 == 0 and half >= 6 and compact[:half] == compact[half:]:
+        cut, n = 0, 0                                  # rule 1: keep the first copy with its spaces
+        while n < half:
+            n += s[cut] != " "
+            cut += 1
+        s = s[:cut].strip()
+    s = _TRAILING_JUNK.sub("", s).strip(" ,")                                          # rule 2
+    m = re.match(r"([a-z]{3,})([A-Z][a-z]+)\b", s)                 # glued fragment: "eniorSenior" -> "Senior"
+    if m and m.group(2).lower().endswith(m.group(1)):
+        s = s[len(m.group(1)):]
+    toks = s.split()
+    if len(toks) >= 2 and len(toks[0]) >= 4 and toks[0].islower() and toks[1].lower().endswith(toks[0]):
+        s = " ".join(toks[1:])                                     # "enior Senior Support" -> "Senior Support"
+    toks = s.split()
+    two_entities = "/" in s or re.search(r"\s(?:and|&)\s", s)       # "A and B": two legal names, keep both
+    if not two_entities and len(toks) >= 3 and toks[0].lower() not in GENERIC_NAME_WORDS:  # rule 3
+        first = _norm_token(toks[0])
+        for k in range(1, min(6, len(toks) - 1)):
+            cand = [_norm_token(toks[k]), _norm_token(toks[k]) + _norm_token(toks[k + 1])]
+            if first and any(_similar(first, c) for c in cand):
+                start = k - 1 if toks[k - 1].lower() == "the" else k
+                s = " ".join(toks[start:])
+                break
+    toks = s.split()
+    if (len(toks) >= 3 and re.fullmatch(r"[A-Z0-9]*\d[A-Z0-9]*", toks[0]) and re.search(r"[A-Z]", toks[0])
+            and " ".join(toks[1:]) in known_names):                                    # rule 4
+        s = " ".join(toks[1:])
+    if s.endswith("&") or s.lower() == "amp" or "amp;" in str(identifier):            # rule 5
+        stem = s.rstrip("& ").strip()
+        stem = "" if stem.lower() == "amp" else stem
+        pos = ident.find(stem) if stem else 0
+        if pos < 0 or (pos < 20 and not re.search(r"[,|]| - ", ident[:pos])):
+            pos = 0                                   # the name starts the identifier ("Name, First Lien ...")
+        if pos >= 0:
+            rest = ident[pos:]
+            m = _LINE_END.search(rest)
+            full = (rest[:m.start()] if m else rest).strip(" ,")
+            if full.count(",") >= 3:                          # comma-separated list: the first field only
+                full = full.split(",")[0].strip()
+            fields = [f.strip() for f in ident.split(",")]
+            if full in fields and fields.index(full) + 1 < len(fields):
+                nxt = fields[fields.index(full) + 1]
+                if not re.match(r"(?i)region|reference|interest|maturity|acquisition", nxt):
+                    full = nxt                                  # "industry, name, ..." layout (First Eagle)
+            if full:
+                s = full
+    return s

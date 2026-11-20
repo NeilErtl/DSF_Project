@@ -1,57 +1,57 @@
-column,meaning,unit,known_at_cutoff,role
-loan_id,"Stable row identifier (hash of family, quarter, borrower key)",,,id
-quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,id / time
-quarter_start_date,Start of that quarter = cutoff,date,yes,time
-q_index,"Quarter number, 0 = 2023Q2",integer,yes,time
-split,train (to 2025Q2) or test (2025Q3 to 2026Q2),,,split
-spread_pp,TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). The hand check finds about 86% true originations (95% CI 72 to 94%); the remaining loans are newly added to a BDC portfolio through purchases or transfers,pp,no,TARGET
-borrower,Borrower name as parsed from the identifier,,yes,id
-borrower_key,Normalized borrower name,,yes,id
-family,Manager family of the lender,,yes,feature
-bdc_name,Lead BDC (largest held principal in the family),,yes,descriptive
-cik,SEC identifier of the lead BDC,,yes,id
-n_family_bdcs,Number of BDCs of the family holding the loan in that quarter,count,"yes for the lender (its own allocation), not for a sponsor",feature (optional)
-principal_family,"Held principal of the loan (all its tranches with the same maturity) summed over the family's BDCs at the reporting date: approximation of the lender's hold size, not the facility size",USD,yes (approximation),descriptive
-log_principal,Natural log of principal_family,log USD,yes (approximation),feature
-principal,Held principal of the lead BDC's line,USD,yes (approximation),descriptive
-tenor_years,Maturity date minus quarter_start,years,yes,feature
-maturity_date,Contractual maturity date,date,yes,descriptive
-industry,Raw industry label from the filing,,yes,descriptive
-sector,GICS-style sector mapped from industry (sector_mapping.csv),,yes,feature
-lien,"first_lien, first_lien_last_out, second_lien_or_junior, unknown",,yes,feature
-instrument,term_loan or unknown (no instrument word in the line; 9 core loans): almost constant,,yes,feature (optional)
-has_revolver,Borrower also has a revolver line at the lead BDC,bool,yes,feature (optional)
-has_delayed_draw,Borrower also has a delayed-draw line at the lead BDC,bool,yes,feature (optional)
-baa_spread_prev,"Moody's Baa corporate yield minus 10y Treasury, last value before cutoff (FRED BAA10Y)",pp,yes,feature
-sofr_prev,"SOFR, last value before cutoff (FRED SOFR)",%,yes,feature
-mkt_spread_t2_all,"Median spread of new loans of all BDCs first seen in quarter t-2, filed before cutoff",pp,yes,feature
-mkt_n_t2_all,Number of loans behind mkt_spread_t2_all,count,yes,descriptive
-mkt_spread_t2_core,"Same, core sample only (missing if fewer than 20 loans)",pp,yes,feature (alternative)
-mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive
-hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive (incomplete history)
-seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature (also a sample filter, step 9)"
-same_loan_at_other_family_before,Always False after the filters (check column),bool,,check
-committed_not_funded,All lines of the borrower at the lead BDC were committed but not yet funded at the reporting date; size = commitment (derived from fair value and cost),bool,yes,"flag, not a feature"
-no_rate_tagged,"No interest rate tagged on the line (filer never tags rates, or a Goldman Sachs purchase not settled at the reporting date)",bool,,"flag, not a feature"
-near_match,Always False in the main sample after the near-match filter (check column),bool,,check
-n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,"flag, not a feature"
-held_by_family_prev_q,Always False after the new-loan rule (check column),bool,,check
-acq_date,Earliest acquisition date written on any line of the borrower (some managers only),date,,check / descriptive
-spread_min_family,Lowest spread across the family's BDCs for this loan,pp,no,check
-spread_max_family,Highest spread across the family's BDCs for this loan,pp,no,check
-interest_rate_pp,All-in interest rate (contains SOFR + spread),%,no,NEVER a feature
-floor_pp,SOFR floor (negotiated with the spread),pp,yes,NEVER a feature
-pik_flag,Loan has a payment-in-kind component,bool,yes,NEVER a feature (filter/description)
-pik_rate_pp,PIK rate,pp,yes,NEVER a feature
-fair_value,Fair value at the reporting date,USD,no,NEVER a feature
-cost,Amortized cost at the reporting date,USD,no,NEVER a feature
-industry_reporting_bdc,Lead BDC states industries (core universe),bool,yes,id
-base_rate,SOFR or UNKNOWN (all-BDC file only),,yes,descriptive
-base_rate_stated,SOFR written in the identifier or tagged,bool,yes,descriptive
-adsh,SEC accession number of the filing,,,id
-form,10-Q or 10-K,,,id
-filed_date,Date the filing was submitted to the SEC,date,,check
-inlineurl,Link to the filing on EDGAR,,,id
-identifier,Original free-text identifier of the line,,,id
-refi_of_existing_borrower,"loans_incl_refi.csv only: the family held the borrower before (refinancing, add-on)",bool,yes,flag / sample definition
-tenor_3_to_4,loans_incl_refi.csv only: tenor between 3 and 4 years,bool,yes,flag / sample definition
+column,meaning,unit,known_at_cutoff,role,note
+loan_id,"Stable row identifier (hash of family, quarter, borrower key)",,,id,
+quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,time,
+quarter_start_date,Start of that quarter = cutoff,date,yes,time,
+q_index,"Quarter number, 0 = 2023Q2",integer,yes,time,
+split,train (to 2025Q2) or test (2025Q3 to 2026Q2),,,split,
+spread_pp,"TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). True originations: our hand check 32/37, Patrick's 26/27, out-of-sample check 24/30, all distinct checked loans 87% (95% CI 79 to 93%); the rest are purchases or transfers newly priced into a BDC portfolio",pp,no,target,
+borrower,"Borrower name for display (parsed from the identifier, cleaned; matching uses borrower_key)",,yes,id,
+borrower_key,Normalized borrower name,,yes,id,
+family,Manager family of the lender,,yes,feature,
+bdc_name,Lead BDC (largest held principal in the family),,yes,descriptive,
+cik,SEC identifier of the lead BDC,,yes,id,
+n_family_bdcs,Number of BDCs of the family holding the loan in that quarter,count,"yes for the lender (its own allocation), not for a sponsor",feature_optional,
+principal_family,"Held principal of the loan (all its tranches with the same maturity) summed over the family's BDCs at the reporting date: approximation of the lender's hold size, not the facility size",USD,yes (approximation),descriptive,
+log_principal,Natural log of principal_family,log USD,yes (approximation),feature,
+principal,Held principal of the lead BDC's line,USD,yes (approximation),descriptive,
+tenor_years,Maturity date minus quarter_start,years,yes,feature,
+maturity_date,Contractual maturity date,date,yes,descriptive,
+industry,Raw industry label from the filing,,yes,descriptive,
+sector,GICS-style sector mapped from industry (sector_mapping.csv),,yes,feature,
+lien,"first_lien, first_lien_last_out, second_lien_or_junior, unknown",,yes,feature,
+instrument,term_loan or unknown (no instrument word in the line; 9 core loans): almost constant,,yes,feature_optional,
+has_revolver,Borrower also has a revolver line at the lead BDC,bool,yes,feature_optional,
+has_delayed_draw,Borrower also has a delayed-draw line at the lead BDC,bool,yes,feature_optional,
+baa_spread_prev,"Moody's Baa corporate yield minus 10y Treasury, last value before cutoff (FRED BAA10Y)",pp,yes,feature,
+sofr_prev,"SOFR, last value before cutoff (FRED SOFR)",%,yes,feature,
+mkt_spread_t2_all,"Median spread of new loans of all BDCs first seen in quarter t-2, filed before cutoff",pp,yes,feature,
+mkt_n_t2_all,Number of loans behind mkt_spread_t2_all,count,yes,descriptive,
+mkt_spread_t2_core,"Same, core sample only (missing if fewer than 20 loans)",pp,yes,feature_optional,alternative to mkt_spread_t2_all
+mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive,
+hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive,incomplete history
+seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),flag,"also a sample filter, step 9"
+same_loan_at_other_family_before,Always False after the filters (check column),bool,,check,
+committed_not_funded,All lines of the borrower at the lead BDC were committed but not yet funded at the reporting date; size = commitment (derived from fair value and cost),bool,yes,flag,
+no_rate_tagged,"No interest rate tagged on the line (filer never tags rates, or a Goldman Sachs purchase not settled at the reporting date)",bool,,flag,
+near_match,Always False in the main sample after the near-match filter (check column),bool,,check,
+n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,flag,
+held_by_family_prev_q,Always False after the new-loan rule (check column),bool,,check,
+acq_date,Earliest acquisition date written on any line of the borrower (some managers only),date,,check,also descriptive
+spread_min_family,Lowest spread across the family's BDCs for this loan,pp,no,check,
+spread_max_family,Highest spread across the family's BDCs for this loan,pp,no,check,
+interest_rate_pp,All-in interest rate (contains SOFR + spread),%,no,never_feature,
+floor_pp,SOFR floor (negotiated with the spread),pp,yes,never_feature,
+pik_flag,Loan has a payment-in-kind component,bool,yes,never_feature,filter/description
+pik_rate_pp,PIK rate,pp,yes,never_feature,
+fair_value,Fair value at the reporting date,USD,no,never_feature,
+cost,Amortized cost at the reporting date,USD,no,never_feature,
+industry_reporting_bdc,Lead BDC states industries (core universe),bool,yes,descriptive,defines the main universe (True for every row of loans.csv)
+base_rate,SOFR or UNKNOWN (all-BDC file only),,yes,descriptive,
+base_rate_stated,SOFR written in the identifier or tagged,bool,yes,descriptive,
+adsh,SEC accession number of the filing,,,id,
+form,10-Q or 10-K,,,id,
+filed_date,Date the filing was submitted to the SEC,date,,check,
+inlineurl,Link to the filing on EDGAR,,,id,
+identifier,Original free-text identifier of the line,,,id,
+refi_of_existing_borrower,"loans_incl_refi.csv only: the family held the borrower before (refinancing, add-on)",bool,yes,flag,sample definition
+tenor_3_to_4,loans_incl_refi.csv only: tenor between 3 and 4 years,bool,yes,flag,sample definition

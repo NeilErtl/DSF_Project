@@ -25,7 +25,9 @@ family share: First Eagle,0.054,,,,
 "precision on dated loans (acquired in the quarter), industry-reporting BDCs",0.946,0.912,0.967,276.0,
 share (a) originated in the quarter: our hand check,0.865,0.72,0.941,37.0,32 class (a)
 share (a) originated in the quarter: Patrick's hand check,0.963,0.817,0.993,27.0,26 class (a)
-"share (a) originated in the quarter: both hand checks, each loan once",0.906,0.81,0.956,64.0,58 class (a)
+share (a) originated in the quarter: out-of-sample verification (30 loans),0.8,0.627,0.905,30.0,24 class (a)
+"share (a) originated in the quarter: out-of-sample verification, loans still in the sample",0.793,0.616,0.902,29.0,23 class (a)
+"share (a) originated in the quarter: all three checks, distinct loans in the sample",0.871,0.788,0.925,93.0,81 class (a)
 loans_all_bdc.csv rows,7303,,,,
 loans_incl_refi.csv rows,2185,,,,
 loans_incl_refi.csv: refinancings / add-ons,390,,,,
