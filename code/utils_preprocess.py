@@ -464,6 +464,11 @@ def refine_borrowers(names, ciks, min_dup_share=0.10):
             out.append(n[1:])
             how.append("glued_letter")
             continue
+        if re.match(r"^[B-Z] (?=[A-Z])", n) and used_elsewhere(name_key(n[2:]), c) \
+                and not used_elsewhere(name_key(n), c):
+            out.append(n[2:])                       # stray letter followed by a space ('I AQ Sunshine, Inc.')
+            how.append("glued_letter")
+            continue
         new = n
         if c in display_bdcs and not used_elsewhere(name_key(n), c):
             w = n.split()
