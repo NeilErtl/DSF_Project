@@ -11,7 +11,7 @@ family,Manager family of the lender,,yes,feature
 bdc_name,Lead BDC (largest held principal in the family),,yes,descriptive
 cik,SEC identifier of the lead BDC,,yes,id
 n_family_bdcs,Number of BDCs of the family holding the loan in that quarter,count,yes (allocation),feature (optional)
-principal_family,"Held principal summed over the family's BDCs at the reporting date: approximation of the lender's hold size, not the facility size",USD,yes (approximation),descriptive
+principal_family,"Held principal of the loan (all its tranches with the same maturity) summed over the family's BDCs at the reporting date: approximation of the lender's hold size, not the facility size",USD,yes (approximation),descriptive
 log_principal,Natural log of principal_family,log USD,yes (approximation),feature
 principal,Held principal of the lead BDC's line,USD,yes (approximation),descriptive
 tenor_years,Maturity date minus quarter_start,years,yes,feature
@@ -31,6 +31,8 @@ mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive
 hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive (incomplete history)
 seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature"
 same_loan_at_other_family_before,Always False after the filters (check column),bool,,check
+no_rate_tagged,"No interest rate tagged on the line (filer never tags rates, or a Goldman Sachs purchase not settled at the reporting date)",bool,,"flag, not a feature"
+near_match,Always False in the main sample after the near-match filter (check column),bool,,check
 n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,"flag, not a feature"
 held_by_family_prev_q,Always False after the new-loan rule (check column),bool,,check
 acq_date,Earliest acquisition date written on any line of the borrower (some managers only),date,,check / descriptive
@@ -50,3 +52,5 @@ form,10-Q or 10-K,,,id
 filed_date,Date the filing was submitted to the SEC,date,,check
 inlineurl,Link to the filing on EDGAR,,,id
 identifier,Original free-text identifier of the line,,,id
+refi_of_existing_borrower,"loans_incl_refi.csv only: the family held the borrower before (refinancing, add-on)",bool,yes,flag / sample definition
+tenor_3_to_4,loans_incl_refi.csv only: tenor between 3 and 4 years,bool,yes,flag / sample definition
