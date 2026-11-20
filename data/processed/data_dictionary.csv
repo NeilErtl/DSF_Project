@@ -4,13 +4,13 @@ quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,i
 quarter_start_date,Start of that quarter = cutoff,date,yes,time
 q_index,"Quarter number, 0 = 2023Q2",integer,yes,time
 split,train (to 2025Q2) or test (2025Q3 to 2026Q2),,,split
-spread_pp,Spread over SOFR of the loan line (largest funded term line of the lead BDC),pp,no,TARGET
+spread_pp,TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). The hand check finds about 86% true originations (95% CI 72 to 94%); the remaining loans are newly added to a BDC portfolio through purchases or transfers,pp,no,TARGET
 borrower,Borrower name as parsed from the identifier,,yes,id
 borrower_key,Normalized borrower name,,yes,id
 family,Manager family of the lender,,yes,feature
 bdc_name,Lead BDC (largest held principal in the family),,yes,descriptive
 cik,SEC identifier of the lead BDC,,yes,id
-n_family_bdcs,Number of BDCs of the family holding the loan in that quarter,count,yes (allocation),feature (optional)
+n_family_bdcs,Number of BDCs of the family holding the loan in that quarter,count,"yes for the lender (its own allocation), not for a sponsor",feature (optional)
 principal_family,"Held principal of the loan (all its tranches with the same maturity) summed over the family's BDCs at the reporting date: approximation of the lender's hold size, not the facility size",USD,yes (approximation),descriptive
 log_principal,Natural log of principal_family,log USD,yes (approximation),feature
 principal,Held principal of the lead BDC's line,USD,yes (approximation),descriptive
@@ -19,7 +19,7 @@ maturity_date,Contractual maturity date,date,yes,descriptive
 industry,Raw industry label from the filing,,yes,descriptive
 sector,GICS-style sector mapped from industry (sector_mapping.csv),,yes,feature
 lien,"first_lien, first_lien_last_out, second_lien_or_junior, unknown",,yes,feature
-instrument,"term_loan or unknown (instrument not written, e.g. Goldman Sachs)",,yes,feature
+instrument,term_loan or unknown (no instrument word in the line; 9 core loans): almost constant,,yes,feature (optional)
 has_revolver,Borrower also has a revolver line at the lead BDC,bool,yes,feature (optional)
 has_delayed_draw,Borrower also has a delayed-draw line at the lead BDC,bool,yes,feature (optional)
 baa_spread_prev,"Moody's Baa corporate yield minus 10y Treasury, last value before cutoff (FRED BAA10Y)",pp,yes,feature
@@ -29,9 +29,9 @@ mkt_n_t2_all,Number of loans behind mkt_spread_t2_all,count,yes,descriptive
 mkt_spread_t2_core,"Same, core sample only (missing if fewer than 20 loans)",pp,yes,feature (alternative)
 mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive
 hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive (incomplete history)
-seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature"
+seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature (also a sample filter, step 9)"
 same_loan_at_other_family_before,Always False after the filters (check column),bool,,check
-committed_not_funded,All lines of the borrower at the lead BDC were committed but not yet funded at the reporting date; size = commitment,bool,yes,flag
+committed_not_funded,All lines of the borrower at the lead BDC were committed but not yet funded at the reporting date; size = commitment (derived from fair value and cost),bool,yes,"flag, not a feature"
 no_rate_tagged,"No interest rate tagged on the line (filer never tags rates, or a Goldman Sachs purchase not settled at the reporting date)",bool,,"flag, not a feature"
 near_match,Always False in the main sample after the near-match filter (check column),bool,,check
 n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,"flag, not a feature"
