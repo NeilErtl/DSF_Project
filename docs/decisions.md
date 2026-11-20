@@ -14,11 +14,11 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | Id | Definition (one line) | Status |
 |---|---|---|
 | D1, D2 | SEC BDC Data Sets `soi.tsv`, one filing per BDC and quarter (latest filed) | taken |
-| D3 | Main universe: BDCs that state borrower industries (67 BDCs; 45 lead BDCs in the sample, 31 families) | recommended, to be confirmed by team |
-| D4 | New loan: no BDC of the same family held the borrower before; no acquisition date before the quarter | taken (team rule) |
+| D3 | Main universe: BDCs that state borrower industries (67 BDCs; 45 lead BDCs in the sample, 31 families; 1,725 loans) | recommended, to be confirmed by team |
+| D4, D43 | New loan: no BDC of the same family held the borrower (or a spelling variant) before; no acquisition date before the quarter at any BDC of the family | taken (team rule) |
 | D5, D15, D32, D34 | One funded SOFR term line per borrower; hold size sums the loan's tranches; unfunded lines excluded | taken |
 | D6 | Unit: one borrower x one manager family x one quarter of first appearance | taken (team rule) |
-| D7, D27, D33 | Spread 1 to 15 pp, not the all-in rate; no PIK; hold at least USD 100,000 | taken |
+| D7, D27, D33, D43 | Spread 1 to 15 pp (unit per filing and per line), not the all-in rate; no PIK; hold at least USD 100,000 | taken |
 | D8 | Tenor 4 to 8 years (3 to 4 years only in `loans_incl_refi.csv`) | recommended, to be confirmed by team |
 | D10 | Market features: Baa spread and SOFR before the cutoff, t-2 new-loan median filed before the cutoff | taken |
 | D11, D38 | Split by time, test 2025Q3 to 2026Q2; one-quarter gap; training rows filed before the cutoff | taken |
@@ -30,7 +30,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D25 | Syndicated loans kept, flag `n_other_families_same_q`, sensitivity check | recommended, to be confirmed by team |
 | D26, D40 | Joint-venture schedule lines excluded (PennantPark, WhiteHorse, Monroe) | taken |
 | D28, D42 | Borrower names: parser with second naming pass; display names cleaned (matching unaffected) | taken |
-| D30, D31 | Tranches with one spread; no near match at the family | taken |
+| D30, D31, D43 | One spread across the loan's tranches and the family's BDCs; no near match at the family | taken |
 | D35 | Refinancings and add-ons only in `loans_incl_refi.csv` | recommended, to be confirmed by team |
 | D37 | Hold size never takes the fair value | taken |
 | D39, D42 | Headline numbers from the notebook; rounding of processed files; fixed role vocabulary in the dictionary | taken |
@@ -81,6 +81,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D40 | Lines of WhiteHorse's and Monroe's joint-venture schedules excluded (no net-assets percentage tagged); verification findings documented. | taken (AI, work order 3, out-of-sample verification), **consequential** (sample) | See D40. |
 | D41 | Target wording with all three origination checks; main test protocol one model per test quarter; the five sample definitions kept. | taken (preprocessing owner, work order 5), to be confirmed by team, **consequential** | See D41. |
 | D42 | Release polish: rounding of processed files, cleaned display names, fixed role vocabulary in the data dictionary. | taken (AI, work order 5) | See D42. |
+| D43 | Release checker fixes: spelling variants count as held before; acquisition date and spread checked across the family; per-line spread unit; industry labels are not names; "InvestmentType" and "amp;" parsed. | taken (AI, work order 5), **consequential** (sample) | See D43. |
 
 ---
 
@@ -92,7 +93,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   a standard Moody's/GICS industry name in the identifier), with the same 80% threshold.
 - **Pros and cons.** (1) matches the project description but is small and concentrated in 7 managers. (2) is large
   (7,385 loans) but only 38% have a known tenor and 40% a stated base rate. (3) keeps industry and tenor for every
-  loan, gave 1,798 loans from 31 families (1,747 after work order 3), and answers the lecturers' concern that 16 BDCs are not representative.
+  loan, gave 1,798 loans from 31 families (1,747 after work order 3, 1,725 after work order 5), and answers the lecturers' concern that 16 BDCs are not representative.
   Risk: industry found by vocabulary matching can be wrong for some lines (hand check: 48 of 50 match the filing,
   the other 2 come from the tagged XBRL field).
 - **Evidence.** Medians core vs other BDCs: spread 5.00 vs 4.75 pp, hold USD 10.0m vs 9.7m (now 10.5m vs 9.9m), tenor 6.2 vs 6.2 years
@@ -135,7 +136,8 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   the normalized name (340 extra cases with names made of short words, e.g. "GS XX Corporation"). Names are
   cleaned in a second pass (D28).
 - **Evidence.** 1.9% empty names; median name persistence 0.91; a name is found in its own identifier in 99.5% of
-  cases; no borrower repeats within a family in either output file.
+  cases; no borrower key repeats within a family in either output file (spelling variants of one borrower were
+  still possible until D43).
 
 ### D14. Sample start 2023Q2 (consequential, AI)
 - New loans can be identified from 2022Q4, but the first quarters have short history and partial filings, and the
@@ -420,8 +422,8 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 ### D41. Target wording, test protocol, sample definitions (preprocessing owner, work order 5; to be confirmed by team)
 - **Target wording.** Keep "the spread over SOFR of newly originated loans". The commitment reinterprets the target
   only if fewer than about 80% of checked loans are originations; the combined evidence is above 80%: our hand check
-  32 of 37, Patrick's 26 of 27, the out-of-sample check 24 of 30 (80%, the cleanest estimate: no filter was designed on
-  it), all distinct checked loans in the sample 81 of 93 = 87% (95% CI 79 to 93%; notebook step 15e,
+  32 of 36, Patrick's 25 of 26, the out-of-sample check 24 of 30 (80%, the cleanest estimate: no filter was designed on
+  it), all distinct checked loans in the sample 80 of 91 = 88% (95% CI 80 to 93%; after D43; notebook step 15e,
   `headline_numbers.csv`). Wherever the target is described the three checks are shown, with the sentence "About one
   loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
   priced into a BDC portfolio."
@@ -446,3 +448,35 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   Storage & Transportation"); their display name shows that text.
 - **Roles.** `data_dictionary.csv` uses the roles target, feature, feature_optional, never_feature, flag, id, time,
   split, descriptive, check (detail in `note`); the notebook asserts that "feature" equals `NUM + CAT` of the helpers.
+
+### D43. Fixes after the release checker (consequential for the sample; AI, work order 5)
+- **Why.** The release checker (fresh agent) recomputed the newness of every loan against the family's earlier
+  holdings with its own name-variant search and found loans that are not new, plus three implementation errors.
+  These are bugs in the implementation of existing rules (D4, D7, D30), not new definitions.
+- **Fixes and evidence.**
+  1. Spelling variants of a borrower the family held before ("Bar Tender"/"BarTender", "2X LLC"/"2xLLC",
+     "Indera"/"Idera", "Escalen"/"Escalent", "Clear Capital"/"ClearCapital", "Proneri"/"Froneri International") now
+     count as held before (`utils_preprocess.held_as_variant`: same compact name; near-identical name with a maturity
+     within 60 days; long near-identical name whatever the maturity). 172 candidates flagged. Crescent's 2025 format
+     glued "InvestmentType" to the name (`flow service partners ... investmenttype`); the label is now a field label.
+  2. Rule 3 (acquisition date before the quarter) is applied to every BDC of the family after de-duplication, not only
+     to the BDC that leads the loan (TCW "RPM Purchaser", SLR "AMF Levered II" were acquired earlier at a sister BDC).
+  3. Spread unit: in a filing tagged in decimals, a line tagged in percent (5.25) had become 525 and was dropped by the
+     1 to 15 pp filter (Crescent 2023 to 2024, Apollo 2025Q4 to 2026Q1). A value of 1 or more is now kept as percent.
+  4. The tranche rule (D30) now also requires one spread across the family's BDCs (12 loans had different spreads at
+     two BDCs of the family, 4 of them from the unit error).
+  5. A parsed "name" that is only an industry label ("Hotels", "Aerospace &", "Electronic Equipment") is not a name:
+     the key is emptied, so the line is no candidate (447 candidate lines; a name with a legal word such as "Staples
+     Inc." is kept). "amp;" written as text is decoded before parsing. The empty-name sanity limit of step 5 rises
+     from 3% to 4% because these lines now count as empty.
+- **Effect.** Core sample 1,747 to 1,725 loans (33 left, 11 entered: 8 Crescent and 2 Apollo loans recovered by the
+  unit fix, 1 WhiteHorse loan whose name is now parsed); train 1,131, test 594; all-BDC file 7,174; variant 2,171.
+  Precision on dated core loans 94.8% (n = 271). Hand checks in the sample: ours 32 of 36, Patrick's 25 of 26; all
+  three checks 80 of 91 = 88%. Refinancing precision in the variant (D35): 43% (9 of 21) against 95% for new borrowers.
+- **Remaining, documented, not changed.** Truncated or odd names whose newness rests on the rare-word matching only
+  (Goldman "Superior" = Superior Environmental Solutions, Palmer Square "Goose Inc" = Canada Goose, Varagon "Acquis" =
+  FS Squared Holding Corp.); AllianceBernstein lines naming "BLACKSTONE INC" and "ONEX CORP" (that is how the filing
+  names the issuer); Crescent "Affordable Care" (a rename after a restructuring, D40); 12 loans whose fair value is
+  below half of the principal (hold size kept, D37); two loans with a 0.00% tagged coupon. The first-pass names of
+  447 lines with an industry label are lost rather than recovered (a parser improvement for later).
+- **Reversible:** each fix is one switch or function in steps 5, 6, 8 and 9.
