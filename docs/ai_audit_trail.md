@@ -158,3 +158,29 @@ request. Report: `docs/history/finalization_report.md`.
   Patrick's hand check (one (b) case is not a pattern).
 - Final review findings handled as documentation only: test-period descriptives remain in notebook step 15c
   (labelled, no rule set on them); the combined hand-check interval is a secondary figure.
+
+## Session 5, 20 to 21 Nov 2026: final polish, release checks (work order 5), Claude Opus 5.5 in Claude Code
+
+**Task.** Work order `course_ref/5_For_the_repo/PROMPT_FINAL_RELEASE.md`: freeze PR #3 as a draft, take the open
+wording and protocol decisions, polish the processed files, run exhaustive checks by a dedicated checker agent, and
+release only if every check passes. Report: `docs/history/release_report.md`.
+
+**What the AI did**
+- Converted PR #3 to draft with a comment. Logged D41 (target wording with all three origination checks, main test
+  protocol one model per test quarter, five sample definitions "recommended, to be confirmed") and D42 (rounding of
+  processed files, cleaned display names, fixed role vocabulary in the dictionary, definitions table in decisions).
+- Launched the checker agent with the verbatim instructions. Its newness audit failed: loans that were spelling
+  variants of borrowers the family held, acquisition dates at sister BDCs, spreads lost to a unit error, spread
+  differences across a family's BDCs, industry labels parsed as names. All fixed in the pipeline (D43): 1,747 to
+  1,725 loans. The checker's EDGAR spot check of 10 more loans is in `docs/verification_sample_10_release.csv`.
+- A first `main.ipynb` run failed on nbconvert's per-cell time limit (notebook 01 runs in one `%run` cell while the
+  checker used memory); runs now use `--ExecutePreprocessor.timeout=-1` (documented in README).
+
+**What was checked**
+- Two `main.ipynb` runs and a fresh-clone run (new venv from `requirements.txt`) with byte-identical outputs; row
+  rules, cutoff dates, every headline number and every number quoted in the docs; hygiene (no e-mail, path or token).
+
+**What was rejected**
+- A general fuzzy-name rule without a maturity condition for short names (too many false matches); re-parsing the 447
+  candidate lines whose parsed name is an industry label (left for a parser improvement; the lines are excluded).
+- Hand-made exclusions of single loans: residual odd names are documented in D43 instead.
