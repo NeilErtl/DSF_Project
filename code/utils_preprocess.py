@@ -464,9 +464,9 @@ def refine_borrowers(names, ciks, min_dup_share=0.10):
             out.append(n[1:])
             how.append("glued_letter")
             continue
-        if re.match(r"^[B-Z] (?=[A-Z])", n) and used_elsewhere(name_key(n[2:]), c) \
+        if re.match(r"^I (?=[A-Z])", n) and used_elsewhere(name_key(n[2:]), c) \
                 and not used_elsewhere(name_key(n), c):
-            out.append(n[2:])                       # stray letter followed by a space ('I AQ Sunshine, Inc.')
+            out.append(n[2:])                       # Goldman's stray 'I ' marker ('I AQ Sunshine, Inc.')
             how.append("glued_letter")
             continue
         new = n
@@ -561,6 +561,13 @@ def parse_borrowers(df, id_col="identifier", bdc_col="cik", vocab=None):
 _TOKEN_RE = re.compile(r"[a-z][a-z0-9]+|\d+[a-z][a-z0-9]*")
 
 
+def ordered_tokens(text):
+    """Word tokens in the order they appear (for rules that need the first word of a name)."""
+    if not isinstance(text, str):
+        return []
+    return _TOKEN_RE.findall(text.lower().replace("&", " "))
+
+
 def tokens(text):
     """Set of lowercase word tokens (letters, or digits followed by letters); pure numbers are dropped."""
     if not isinstance(text, str):
@@ -596,8 +603,12 @@ class HoldingsIndex:
         self.common = {t for t, c in df_.items() if c > common_share * n}   # words in > 0.1% of identifiers
 
     def key_tokens(self, key):
-        """Distinctive words of a borrower name; if the name has none, all its words."""
-        kt = [t for t in tokens(key) if t not in LEGAL_WORDS and len(t) > 2]   # 'by', 'of', 'it' carry no identity
+        """Distinctive words of a borrower name; if the name has none, all its words.
+
+        Words of one or two letters ('by', 'of') are ignored unless the name has nothing else ('2U Inc.').
+        """
+        all_kt = [t for t in tokens(key) if t not in LEGAL_WORDS]
+        kt = [t for t in all_kt if len(t) > 2] or all_kt
         dist = [t for t in kt if t not in self.common]
         return dist if dist else kt
 

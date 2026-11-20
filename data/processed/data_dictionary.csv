@@ -31,6 +31,7 @@ mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive
 hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive (incomplete history)
 seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),"flag, not a feature"
 same_loan_at_other_family_before,Always False after the filters (check column),bool,,check
+committed_not_funded,All lines of the borrower at the lead BDC were committed but not yet funded at the reporting date; size = commitment,bool,yes,flag
 no_rate_tagged,"No interest rate tagged on the line (filer never tags rates, or a Goldman Sachs purchase not settled at the reporting date)",bool,,"flag, not a feature"
 near_match,Always False in the main sample after the near-match filter (check column),bool,,check
 n_other_families_same_q,Number of unaffiliated families holding the borrower in the same quarter (many = syndicated or club loan),count,no,"flag, not a feature"

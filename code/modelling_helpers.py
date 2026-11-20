@@ -40,7 +40,8 @@ def make_preprocessor(min_frequency=5):
     """Numeric features: median imputation and z-scores; categorical: one-hot with a dropped reference category.
 
     Categories with fewer than `min_frequency` training loans are pooled as "infrequent" (small families, rare
-    sectors), and unseen categories in validation or test data are mapped to the infrequent group.
+    sectors). A category not seen in the training fold is mapped to the infrequent group if one exists, otherwise to
+    all zeros, i.e. to the dropped reference category; check this for families that enter late.
     """
     num = Pipeline([("impute", SimpleImputer(strategy="median")), ("scale", StandardScaler())])
     cat = OneHotEncoder(handle_unknown="infrequent_if_exist", drop="first", min_frequency=min_frequency)
@@ -68,6 +69,8 @@ def final_train_test(df, respect_gap=True):
 
     respect_gap=True: train only on quarters up to 2025Q1, because 2025Q2 filings were not public at the start of
     2025Q3 (same one-quarter gap as in validation). respect_gap=False: all training quarters (report as a limitation).
+    Note: one model is trained once, so the later test quarters (2025Q4 to 2026Q2) are predicted with a gap of 2 to
+    4 quarters: conservative (no leakage), and a reason to report the MAE by test quarter.
     """
     train = df[df["split"] == "train"]
     if respect_gap:

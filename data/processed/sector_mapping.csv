@@ -2,7 +2,7 @@ industry,n_loans,sector
 Media,19,Communication Services
 Entertainment,12,Communication Services
 Wireless Telecommunication Services,9,Communication Services
-Diversified Telecommunication Services,7,Communication Services
+Diversified Telecommunication Services,8,Communication Services
 Interactive Media & Services,6,Communication Services
 Advertising Printing And Publishing Media,3,Communication Services
 Communications Equipment,3,Communication Services
@@ -16,13 +16,13 @@ Interactive Media And Services,1,Communication Services
 Marketing Services,1,Communication Services
 Media & Entertainment,1,Communication Services
 "Media: Advertising, Printing & Publishing",1,Communication Services
-Diversified Consumer Services,25,Consumer Discretionary
-Consumer Services,23,Consumer Discretionary
-"Hotels, Restaurants & Leisure",23,Consumer Discretionary
+Diversified Consumer Services,28,Consumer Discretionary
+Consumer Services,26,Consumer Discretionary
+"Hotels, Restaurants & Leisure",25,Consumer Discretionary
 Hotels,21,Consumer Discretionary
-Distributors,16,Consumer Discretionary
-Specialty Retail,15,Consumer Discretionary
-Trading Companies & Distributors,12,Consumer Discretionary
+Distributors,17,Consumer Discretionary
+Specialty Retail,16,Consumer Discretionary
+Trading Companies & Distributors,13,Consumer Discretionary
 Automobile Components,11,Consumer Discretionary
 Services: Consumer,8,Consumer Discretionary
 Household Durables,7,Consumer Discretionary
@@ -55,8 +55,8 @@ Restaurants,1,Consumer Discretionary
 Retail,1,Consumer Discretionary
 Specialty retail,1,Consumer Discretionary
 Transportation: Consumer,1,Consumer Discretionary
-Food Products,18,Consumer Staples
-Consumer Staples Distribution & Retail,12,Consumer Staples
+Food Products,19,Consumer Staples
+Consumer Staples Distribution & Retail,13,Consumer Staples
 Beverages,9,Consumer Staples
 Personal Care Products,9,Consumer Staples
 "Beverage, Food & Tobacco",6,Consumer Staples
@@ -86,7 +86,7 @@ Oil And Gas Storage And Transportation,2,Energy
 Oilfield Services,2,Energy
 Energy: Oil & Gas,1,Energy
 Financial Services,68,Financials
-Insurance,34,Financials
+Insurance,35,Financials
 Capital Markets,17,Financials
 Diversified Financial Services,12,Financials
 Consumer Finance,3,Financials
@@ -97,53 +97,55 @@ Insurance & Insurance Services,1,Financials
 Sovereign & Public Finance,1,Financials
 Specialized Finance,1,Financials
 Transaction Payment Processing Services,1,Financials
-Health Care Providers & Services,60,Health Care
-Health Care Technology,38,Health Care
-Healthcare & Pharmaceuticals,31,Health Care
+Health Care Providers & Services,64,Health Care
+Health Care Technology,41,Health Care
+Healthcare & Pharmaceuticals,32,Health Care
+Pharmaceuticals,22,Health Care
 Healthcare,21,Health Care
-Pharmaceuticals,20,Health Care
-Healthcare Providers and Services,19,Health Care
-Health Care Equipment & Supplies,18,Health Care
-Health Care,8,Health Care
+Health Care Equipment & Supplies,20,Health Care
+Healthcare Providers and Services,18,Health Care
+Health Care,9,Health Care
+Life Sciences Tools & Services,9,Health Care
 Health care,8,Health Care
-Life Sciences Tools & Services,8,Health Care
-Health Care Equipment & Services,4,Health Care
+Health Care Equipment & Services,6,Health Care
 Healthcare Pharmaceuticals,4,Health Care
 Healthcare Technology,4,Health Care
 Biotechnology,2,Health Care
+Health Care & Services,2,Health Care
 Health Care Supplies,2,Health Care
 Healthcare Equipment and Services,2,Health Care
-Health Care & Services,1,Health Care
+Healthcare Providers & Services,2,Health Care
 Health Care Facilities,1,Health Care
 Health care providers & services,1,Health Care
 Healthcare Equipment & Supplies,1,Health Care
 Pharmaceuticals & Life Sciences,1,Health Care
-Professional Services,78,Industrials
-Commercial Services & Supplies,67,Industrials
-Business Services,53,Industrials
+Professional Services,81,Industrials
+Commercial Services & Supplies,71,Industrials
+Business Services,55,Industrials
 Machinery,44,Industrials
-Aerospace & Defense,38,Industrials
+Aerospace & Defense,40,Industrials
 Building Products,26,Industrials
-Services: Business,24,Industrials
-Construction & Engineering,21,Industrials
+Services: Business,25,Industrials
+Construction & Engineering,22,Industrials
 Electrical Equipment,17,Industrials
 Capital Equipment,13,Industrials
+Construction & Building,12,Industrials
 Aerospace and Defense,10,Industrials
-Construction & Building,10,Industrials
 Transportation,8,Industrials
 Capital Goods,7,Industrials
 Ground Transportation,7,Industrials
 Industrial Conglomerates,6,Industrials
 Wholesale,6,Industrials
+Air Freight & Logistics,5,Industrials
 Construction,5,Industrials
 Construction And Engineering,5,Industrials
+Environmental Industries,4,Industrials
 Industrial Products & Services,4,Industrials
-Air Freight & Logistics,3,Industrials
+Professional services,4,Industrials
 Commercial and Professional Services,3,Industrials
 Construction and Engineering,3,Industrials
-Environmental Industries,3,Industrials
-Professional services,3,Industrials
 Transportation Infrastructure,3,Industrials
+Transportation: Cargo,3,Industrials
 Aerospace And Defense,2,Industrials
 Air Freight And Logistics,2,Industrials
 Capital Equipment Industry,2,Industrials
@@ -151,7 +153,6 @@ Commercial & Professional Services,2,Industrials
 Environmental And Facilities Services,2,Industrials
 Industrial Machinery,2,Industrials
 Marine Transportation,2,Industrials
-Transportation: Cargo,2,Industrials
 distribution,2,Industrials
 Aerospace,1,Industrials
 Aerospace & defense,1,Industrials
@@ -172,11 +173,11 @@ Research And Consulting Services,1,Industrials
 Road and Rail,1,Industrials
 Services Business,1,Industrials
 Trading Companies & Distributor,1,Industrials
-Software,144,Information Technology
-High Tech Industries,32,Information Technology
+Software,156,Information Technology
+High Tech Industries,36,Information Technology
 IT Services,28,Information Technology
-Software & Services,22,Information Technology
-Technology,13,Information Technology
+Software & Services,23,Information Technology
+Technology,14,Information Technology
 Electronic Equipment,3,Information Technology
 "Technology Hardware, Storage & Peripherals",3,Information Technology
 Electronic Equipment And Instruments,2,Information Technology
@@ -187,13 +188,13 @@ Data Processing And Outsourced Services,1,Information Technology
 ITConsulting And Other Services,1,Information Technology
 Software and Services,1,Information Technology
 Systems Software,1,Information Technology
-Chemicals,28,Materials
-Containers & Packaging,12,Materials
+Chemicals,31,Materials
+Containers & Packaging,13,Materials
+Construction Materials,6,Materials
 Metals & Mining,6,Materials
-Construction Materials,5,Materials
+Specialty Chemicals,4,Materials
 "Chemicals, Plastics & Rubber",3,Materials
 "Containers, Packaging & Glass",3,Materials
-Specialty Chemicals,3,Materials
 Chemicals Plastics And Rubber,2,Materials
 Commodity Chemicals,1,Materials
 Containers & packaging,1,Materials
@@ -201,8 +202,9 @@ Containers and Packaging,1,Materials
 Metal And Mining Industries,1,Materials
 Metals and Mining,1,Materials
 Paper & Forest Products,1,Materials
-"Banking, Finance, Insurance & Real Estate",4,Real Estate
-Real Estate Management & Development,3,Real Estate
+Paper & Packaging,1,Materials
+"Banking, Finance, Insurance & Real Estate",5,Real Estate
+Real Estate Management & Development,4,Real Estate
 Fire Real Estate,1,Real Estate
 Real Estate Development,1,Real Estate
 Electric Utilities,8,Utilities
