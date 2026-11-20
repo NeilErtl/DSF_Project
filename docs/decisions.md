@@ -27,7 +27,7 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 | D14 | Loan sample starts 2023Q2. | taken (AI), **consequential** | See D14. |
 | D15 | Per borrower x BDC x quarter: the funded term line with the largest held principal. | taken (AI) | See D15. |
 | D16 | Exclude structured products (CLO tranches, asset-backed notes). | taken (AI) | Not loans to operating companies. |
-| D17 | Exclude families that mainly buy in the secondary market. | taken (AI) | Currently excludes none (see D17). |
+| D17 | Exclude families that mainly buy in the secondary market (rule extended in revision 2). | taken (AI), **consequential** | Excludes none; Palmer Square kept (see D17). |
 | D18 | Manager families from explicit name rules, with an automatic overlap guard. | taken (AI) | See D18. |
 | D19 | Hold size = family's total held principal at the reporting date; feature `log_principal`. | taken (AI) | See D19. |
 | D20 | Flags kept as columns, never features: `seen_at_other_family_before`, `n_other_families_same_q`. | taken (AI) | Same-quarter holdings of others are not known at the cutoff. |
@@ -40,6 +40,13 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 | D27 | Exclude loans with a PIK component. | taken (AI), **consequential** | See D27. |
 | D28 | Second naming pass: remove display names, stray letters and industry fragments glued to borrower names. | taken (AI, after team re-check), **consequential** (sample) | See D28. Core 1,826 -> 1,798. |
 | D29 | Hand-check loans are matched to the final sample by quarter, family, name word and loan terms, not by `loan_id`; principal 50/50. | taken (after team re-check) | See D29. |
+| D30 | Tranches of one loan (same maturity) with different spreads are dropped (Patrick's rule). | taken (AI, revision 2; judgment call) | See D30. 14 core loans. |
+| D31 | Near-match rule: same first distinctive name word and maturity within 60 days at the family = not new (Patrick's rule). | taken (AI, revision 2), **consequential** | See D31. 19 core loans. |
+| D32 | Unfunded lines: no positive fair value and no positive cost; a borrower with only committed lines is kept in its pricing quarter; rate-less lines kept and flagged. | taken (AI, revision 2), **consequential** | See D32 (EDGAR check of 14 loans). |
+| D33 | Principal units: filing-level thousands rule and a USD 100,000 floor (Patrick's rules). | taken (AI, revision 2) | See D33. |
+| D34 | Hold size sums all tranches of the loan (same maturity); base rate counts as SOFR if any family fund states it. | taken (AI, revision 2) | See D34. |
+| D35 | Main sample stays "new borrower"; variant `loans_incl_refi.csv` with refinancings/add-ons and tenor 3 to 4 years, flagged. | taken (AI, revision 2), **consequential** | See D35. |
+| D36 | `code/modelling_helpers.py` for notebook 02, adapted from Patrick's `preprocessing.py`. | taken (AI, revision 2) | See D36. |
 
 ---
 
@@ -104,9 +111,24 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 - The funded term line with the largest held principal. Goldman Sachs labels no instruments; its largest line is in
   practice the term loan. Spread range across a family's funds above 0.25 pp: 61 of 9,771 family loans.
 
-### D17. Secondary-buyer families (AI)
-- Rule: more than half of a family's dated new loans acquired earlier (at least 5 dated). After excluding structured
-  products it excludes no family; kept as a guard.
+### D17. Secondary-market buyers (consequential; AI, revised in revision 2)
+- **Why it came up again.** Patrick excluded Palmer Square (54 loans in our sample); an early diagnostic in session 1
+  showed most of its dated "new" loans bought earlier, but those were CLO tranches, now excluded (D16).
+- **Measures per family** (`output/tables/family_diagnostics.csv`): precision against acquisition dates (only where
+  dates exist), share of spreads at most 3.5 pp, share of borrowers held by 3+ other managers in the same quarter,
+  and, new, the share of the family's candidate new loans that are existing loans of other lenders (same maturity
+  held earlier, or held earlier and tenor below 5 years), which needs no acquisition dates.
+- **Evidence.** Palmer Square: no dated loans; existing-loan share 22% (Goldman 24%, First Eagle 34%, highest
+  Investcorp 50% on 18 candidates); share held by 3+ others 57% (BlackRock 57%, Antares 61%, Jefferies 73%); spreads
+  at most 3.5 pp 22% (Apollo and Goldman 22%, AllianceBernstein 58%). Palmer Square is not an outlier on any measure.
+- **Options.** (1) Exclude by judgement. (2) Rule on the spread level (selects on the target: rejected). (3) Rule on
+  syndication share (would also exclude Jefferies, Antares, BlackRock, i.e. club lenders). (4) General rule on
+  behaviour: a family is a secondary-market buyer if more than half of its dated new loans were acquired earlier (at
+  least 5 dated) or more than half of its candidate new loans are existing loans of other lenders (at least 20).
+- **Choice.** (4). It excludes no family today, so Palmer Square stays; the syndicated share stays a flag (D25) and
+  a sensitivity check for notebook 02 (163 core loans have a spread of at most 3.5 pp and 3+ other holders).
+  Limitation noted by the second review: the existing-loan share counts loans that step 9b removes anyway, so the
+  rule only bites for a family whose new loans are mostly such loans. **Reversible:** one line in step 9.
 
 ### D18. Manager families (AI)
 - Keyword rules in `FAMILY_RULES`; a renamed BDC keeps the family of its first matching name. Mappings found with
@@ -133,7 +155,8 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 
 ### D23. Target wording (consequential; rule by the team)
 - Hand check (50 loans, drawn before D22): (a) 35, (b) 14, (c) 1. In the 39 checked loans that remain in the final
-  sample (after D28; counted as in D29): (a) 33 = 85% (95% CI 70 to 93%), (b) 5 = 13%, (c) 1 = 3%. Optimistic (D22
+  sample (after D28; counted as in D29): (a) 33 = 85% (95% CI 70 to 93%), (b) 5 = 13%, (c) 1 = 3%. After revision 2
+  (D30 to D35): 37 checked loans remain, (a) 32 = 86% (95% CI 72 to 94%), (b) 4 = 11%, (c) 1 = 3%. Optimistic (D22
   designed on these loans; about half of the (a) verdicts rest on tenor and absence of earlier holders).
 - The commitment says: below about 80%, the target becomes "spread of loans newly added to a BDC portfolio". The
   point estimate is just above 80%, the interval is not. **Choice:** use the conservative wording "spread of loans
@@ -195,3 +218,82 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   their family, White Cap (b) is removed, and the two Jefferies loans (a) are counted.
 - The re-check also found the principal printed in the filings for all 50 loans (three were recorded as "tagged
   only"); `docs/hand_check.csv` corrected.
+
+### D30. Tranches with different spreads (AI, revision 2; rule from Patrick's version)
+- **Why.** Patrick drops loans whose tranches (same borrower, fund, quarter and maturity) carry different spreads;
+  we kept the largest line. **Evidence.** 17 core candidates flagged (only 1 with an acquisition date, so precision
+  cannot judge); spreads outside 1 to 15 pp are ignored when comparing tranches (the second review found unit
+  glitches such as a tagged 0.05). **Choice.** Adopt as a judgment call, not on evidence: a loan with two prices has
+  no unambiguous target; cost 14 core loans.
+
+### D31. Near-match rule (consequential; AI, revision 2; rule from Patrick's version)
+- **Rule.** A candidate is not new if an earlier holding of the same family contains the first distinctive word of
+  the borrower name and has a maturity within 60 days (same loan written differently, e.g. "GS Fullsteam Operation"
+  vs "Fullsteam Operations").
+- **Correction after the second review.** The first version took the "first word" from an unordered set, so the
+  word (and the removed loans) changed from run to run, and it was often "and" or "amendment". Now the words are taken
+  in reading order and must be rare (in at most 0.1% of identifiers); two clean runs give identical files.
+- **Evidence (fixed version).** Among dated candidates after all other filters, 2 of 4 flagged loans were acquired
+  before the quarter vs 8.4% of the others (n = 450): the direction supports the rule, the evidence is weak.
+  Removes 19 core loans (46 flagged in all BDCs before other filters).
+- **Choice.** Adopt (low cost, consistent with Patrick's validation). **Reversible:** switch `APPLY_NEAR_MATCH`.
+
+### D32. Undrawn lines (consequential; AI, revision 2)
+- **Why.** Patrick treats a line without a tagged interest rate as undrawn; about 49 of our loans (mostly Goldman Sachs)
+  were in our sample but undrawn for him; a few had a principal far above his.
+- **Evidence (14 loans checked in the EDGAR filings).** Two different cases:
+  (a) Goldman Sachs Private Credit Corp. lines without rate but with principal, cost and fair value printed (AL GCX,
+  Vizient, Syncapay, Kohler Energy, Zelis, Albaugh): the footnote says "position or portion thereof unsettled as of
+  [date]; interest rate ... not known prior to the settlement date". These are owned positions with a known spread,
+  not undrawn: Patrick's rule is wrong for them. (b) Lines whose cost and fair value are printed as "-" (Recochem,
+  Crewline, Northstar, Kryptona, Buffalo Merger Sub, ASM Buyer): unfunded commitments, partly in CAD or NOK; our old
+  rule missed them because a missing value was not treated as zero. Patrick is right for them. Two of his undrawn
+  cases are funded in the filing (MGT Merger Target 6,263 at 11.94%, Arrow Buyer 2,942 at 11.74%). WhiteHorse
+  "Camarillo Fitness" is a restructured 13.32% PIK loan not tagged as PIK (kept; noted as residual).
+- **Choice.** A line is unfunded when it has no positive fair value and no positive cost; a missing value counts as
+  "no" only in filings that tag a fair value for most of their lines. Lines without a rate stay, with the flag
+  `no_rate_tagged` (38% of core loans: Apollo, First Eagle and others never tag rates; at Goldman Sachs the flag marks
+  unsettled purchases). The 17,000 newly flagged term lines are mostly lines with zero principal that were never
+  candidates.
+- **Correction after the second review.** A borrower whose lines at a fund are all committed but not yet funded (a
+  loan signed shortly before the reporting date, e.g. Crewline Buyer 2023Q3, Kryptona Bidco 2024Q3) would otherwise
+  never enter: next quarter it counts as held before. Such a borrower is now a candidate in that quarter, its pricing
+  quarter, with the commitment as size and the flag `committed_not_funded` (399 lines; 31 core loans, 30 Goldman).
+
+### D33. Principal units and floor (AI, revision 2; rules from Patrick's version)
+- A filing whose median position is below USD 50,000 and at least 200 times smaller than the BDC's usual median is in
+  thousands: rows below 500,000 (and their cost and fair value) are multiplied by 1,000 (7 filings, 1,174 rows; e.g.
+  Varagon 2023-2024, principal 72,000 with fair value 70,000). Positions of the family below USD 100,000 are dropped as
+  implausible for a new term loan (18 core loans; e.g. BlackRock positions of USD 30,000 to 70,000).
+- The mirror case (second review): a filing whose median position is at least 200 times the BDC's usual median is
+  tagged 1,000 times too large (TCW 2023; "Mark Andy" USD 7.0bn); its rows above USD 500m are divided by 1,000.
+  The notebook asserts a hold below USD 1bn.
+
+### D34. Hold size and base rate across a loan's lines (AI, revision 2)
+- Hold size now sums all funded term lines of the loan with the same maturity at each fund (Patrick's definition; a
+  loan is often split into rows), then over the family's funds. Principal agreement with Patrick within 5%: 74.5% ->
+  76%; the rest is mostly funds he counts that are not candidates in ours (e.g. a fund's first filing).
+- The base rate counts as SOFR stated when any family fund states SOFR for the loan (sample check: Stellus "Morgan
+  Electrical" was dropped because the lead fund wrote no rate). +8 core loans.
+
+### D35. Refinancings and add-ons of existing borrowers (consequential; AI, revision 2)
+- **Why.** Patrick counts a new borrower x maturity as new; 260 of his loans are refinancings or add-ons that our
+  borrower-level rule excludes. This is the largest single difference between the versions.
+- **Evidence.** Variant `data/processed/loans_incl_refi.csv` (same filters; a candidate is new when the family did not
+  hold the same loan before, i.e. the borrower with a maturity within 60 days or a holding without maturity, by name
+  match or exact name; acquisition date of the chosen line; each loan once, at first appearance): 2,205 loans, of
+  which 390 refinancings/add-ons and 58 with tenor 3 to 4 years. Dated refinancings/add-ons were acquired in their
+  quarter in only 47% of cases (9 of 19; CI 27 to 68%) against 95% for new borrowers (261 dated); their median spread
+  is 4.31 vs 5.00 pp. Many are add-ons under an existing credit agreement, priced at or near its terms.
+- **Choice.** Keep the borrower-level rule for the main sample; offer the variant for robustness. Limitation of the
+  variant: one line per borrower, fund and quarter, so a second loan of the same borrower in the same quarter is not
+  represented (41 of Patrick's refinancings).
+
+### D36. Modelling helpers (AI, revision 2; design from Patrick's version)
+- `code/modelling_helpers.py`: `load_data`, `make_preprocessor` (median imputation and z-scores, one-hot with a
+  dropped reference and pooled infrequent categories, all inside a sklearn pipeline), `time_cv_splits` (expanding
+  window by quarter, one-quarter gap), `final_train_test` (train up to 2025Q1 by default). Adapted from Patrick
+  Eppler's `preprocessing.py`; features log_principal, tenor_years, mkt_spread_t2_all, baa_spread_prev, sofr_prev,
+  sector, lien, family. Dry run in step 15f: 4 folds (validate 2024Q3 to 2025Q2), final train 1,016 / test 607
+  loans. Documented after review: one final model means a gap of 2 to 4 quarters for later test quarters, and a
+  category unseen in training maps to the reference category.

@@ -84,3 +84,42 @@ findings; what was done with each:
 - A broad "known shorter name" rule: it cut generic names ("Comoto Holdings LLC" -> "Holdings LLC").
 - First versions of the new hand-check matching (name only with 3-letter words; legal words such as "Inc"
   counted): they paired checked loans with other loans of the same quarter.
+
+## Session 3, 19 to 20 Nov 2026: revision after comparison with Patrick's version, Claude Opus 5.5 in Claude Code
+
+**Task.** Work order `course_ref/5_For_the_repo/PROMPT_REVISION_2.md`: test our dataset against Patrick's independent
+version (`course_ref/patrick_version/`), revise where the evidence says so, report in `docs/revision_report_2.md`.
+
+**What the AI did**
+- Matched our loans to Patrick's candidates and dataset (family, quarter, distinctive name word, maturity) so that
+  every difference has a cause (`output/tables/comparison_with_patrick.csv`).
+- Undrawn lines: checked 14 loans in the EDGAR filings. Two cases: unsettled Goldman Sachs purchases (funded, no rate
+  tagged: Patrick's rule wrong) and commitments with cost and fair value "-" (our rule wrong). Revised the rule (D32).
+- Adopted from Patrick, with credit: filing-level thousands rule and USD 100,000 floor (D33), hold size summed over
+  tranches (D34), tranche-consistency rule (D30), near-match rule (D31), the design of `modelling_helpers.py` (D36).
+- Built the refinancing variant `loans_incl_refi.csv` (D35), per-family secondary-buyer diagnostics (D17), a sample
+  of 15 differences (fixed: base rate when the lead fund writes none; Goldman's "I " name marker).
+- Reduced the notebook's memory use (the full extract is freed after step 3): one run had timed out on a laptop with
+  little free memory.
+
+**What was checked**
+- Precision against acquisition dates for every candidate rule and per family; hand-check counts from the current files;
+  two clean runs with identical outputs; adversarial review of this session's changes by a fresh agent.
+
+**Adversarial review (second reviewer, changes of this session only).** Eight findings:
+
+| # | Finding | Response |
+|---|---|---|
+| 1 | Near-match rule not reproducible: the "first word" came from an unordered set (changed with Python's hash seed) and was often "and" or "amendment" | Fixed: words in reading order, must be rare; rule re-tested (D31); two clean runs now identical |
+| 2 | New unfunded rule lost Goldman's largest new loans for good (committed in quarter t, "held before" in t+1) | Fixed: a borrower with only committed lines at a fund is a candidate in its pricing quarter, flag `committed_not_funded` |
+| 3 | Variant file repeated loans across quarters (short names never matched) and its refinancings are mostly not new | Fixed: short names keep their words, exact-name check added, each loan once at first appearance; low precision of refinancings reported (D35) |
+| 4 | Filings tagged 1,000 times too large (TCW 2023; "Mark Andy" USD 7bn) | Fixed: thousands rule made symmetric; assert hold below USD 1bn |
+| 5 | Syndicated loans in a "private credit" sample | Not filtered (no clean marker; club deals look alike); reported with counts, decision for the team (D25) |
+| 6 | Tranche rule adopted without evidence; unit glitches create false tranche differences | Fixed: only spreads within 1 to 15 pp compared; logged as a judgment call (D30) |
+| 7 | Stray-letter fix mangled "L V F Holdings" | Fixed: restricted to Goldman's "I " marker |
+| 8 | Final train/test gap is 2 to 4 quarters for later test quarters; unseen categories map to the reference | Documented in `modelling_helpers.py` |
+
+**What was rejected**
+- Patrick's "no interest rate = undrawn" rule as such (wrong for unsettled purchases, EDGAR evidence).
+- Excluding Palmer Square by judgement, or any family by the spread level (selection on the target).
+- Refinancings/add-ons in the main sample (dated precision about 40% against about 94% for new borrowers).

@@ -35,62 +35,70 @@ Notebook: `code/01_preprocess.ipynb` (runs top to bottom). Decisions with eviden
    current holdings **and** the prior-period comparatives of every filing, with a rewording-robust rule (distinctive
    words of the name weighted by rarity) plus an exact-name check. The BDC must have filed a complete previous
    quarter; loans with an acquisition date before the quarter are dropped; one row per borrower x family x quarter.
-4. **Loan line.** Per borrower the funded SOFR term line with the largest held principal. Excluded: revolvers,
-   delayed-draw lines, unfunded commitments, non-USD, Prime/LIBOR, structured products, lines of a tagged joint
-   venture. Principal is checked against fair value (unit errors rescaled).
-5. **Filters.** Spread 1 to 15 pp and not equal to the all-in rate; no PIK; tenor 4 to 8 years; not an existing
-   loan of an unaffiliated lender (same maturity held earlier, or held earlier with tenor below 5 years);
-   quarters from 2023Q2.
+4. **Loan line.** Per borrower the funded SOFR term line with the largest held principal; a borrower with only
+   committed (not yet funded) lines enters in its pricing quarter, flagged. Excluded: revolvers, delayed-draw lines,
+   other unfunded lines, non-USD, Prime/LIBOR, structured products, lines of a tagged joint venture. Hold size sums
+   the tranches of the loan; units checked per filing and against fair value.
+5. **Filters.** Spread 1 to 15 pp and not equal to the all-in rate; no PIK; hold at least USD 100,000; tenor 4 to
+   8 years; not an existing loan of an unaffiliated lender; tranches of the loan with one spread; no near match at the
+   family (same first rare name word, maturity within 60 days); quarters from 2023Q2.
+   Revision 2 (comparison with Patrick's version) is summarised in `docs/revision_report_2.md`.
 6. **Features** (all known at the start of the quarter): log hold size, tenor, sector (11), lien, manager family,
    Baa spread and SOFR before the cutoff, median new-loan spread of quarter t-2 (filings filed before the cutoff).
 
 ## 2. Funnel (all BDCs / core sample)
 | Step | All BDCs | Core |
 |---|---:|---:|
-| Candidate loans (borrower x BDC x quarter, eligible funded line) | 215,157 | 55,200 |
-| BDC filed a complete previous quarter | 199,203 | 52,072 |
-| Not held by the family before | 14,399 | 4,178 |
-| No acquisition date before the quarter | 14,310 | 4,142 |
+| Candidate loans (borrower x BDC x quarter, eligible line) | 215,214 | 55,239 |
+| BDC filed a complete previous quarter | 199,255 | 52,111 |
+| Not held by the family before | 14,427 | 4,205 |
+| No acquisition date before the quarter | 14,338 | 4,169 |
 | One row per borrower x family x quarter | 9,729 | 3,131 |
-| Spread 1 to 15 pp, not the all-in rate, no PIK | 9,170 | 3,045 |
-| Tenor 4 to 8 years (all-BDC: or unknown) | 8,464 | 2,614 |
-| SOFR stated (core) | 8,285 | 2,435 |
-| Not an existing loan of an unaffiliated lender | 7,591 | 1,972 |
-| Quarters from 2023Q2 | 7,385 | 1,943 |
-| Core: industry and maturity known | | **1,798** |
+| Spread 1 to 15 pp, not the all-in rate, no PIK | 9,169 | 3,044 |
+| Hold at least USD 100,000 | 9,136 | 3,026 |
+| Tenor 4 to 8 years (all-BDC: or unknown) | 8,437 | 2,602 |
+| SOFR stated (core) | 8,268 | 2,433 |
+| Not an existing loan of an unaffiliated lender | 7,578 | 1,972 |
+| Tranches with one spread | 7,562 | 1,958 |
+| No near match at the family | 7,527 | 1,939 |
+| Quarters from 2023Q2 | 7,320 | 1,909 |
+| Core: industry and maturity known | | **1,766** |
 
 By manager: `output/tables/funnel_by_family.csv`. The new-loan rule is the big cut: portfolios turn over slowly,
 so only about 7% of borrower x BDC x quarter lines are new relationships.
 
 ## 3. Final sample (`data/processed/loans.csv`)
-- **1,798 loans**, 2023Q2 to 2026Q2, 46 BDCs in 31 manager families. Train 1,177 (2023Q2 to 2025Q2), test 621
-  (2025Q3 177, 2025Q4 161, 2026Q1 152, 2026Q2 131).
-- Largest families: Apollo 20%, Goldman Sachs 11%, BlackRock 8%, Antares 7%, First Eagle 5%.
+- **1,766 loans**, 2023Q2 to 2026Q2, 45 BDCs in 31 manager families. Train 1,159 (2023Q2 to 2025Q2), test 607
+  (2025Q3 174, 2025Q4 155, 2026Q1 151, 2026Q2 127).
+- Largest families: Apollo 19%, Goldman Sachs 11%, BlackRock 7%, Antares 7%, First Eagle 5%.
+- Variant with refinancings and add-ons of existing borrowers and tenors of 3 to 4 years (`loans_incl_refi.csv`):
+  2,205 loans, of which 390 refinancings/add-ons (D35).
 - **Spread** median 5.00 pp (10th to 90th percentile 3.00 to 6.25). Median by year: 2023 6.25, 2024 5.00,
   2025 4.75, 2026 4.50 pp; the t-2 market median falls from 6.50 (2023Q2) to 4.50 (2026Q2).
-- Hold size median USD 10.0m; tenor median 6.2 years; 94% first lien (5% unknown lien).
-- 37% of loans are held by three or more other managers in the same quarter (syndicated or club loans):
+- Hold size median USD 10.1m; tenor median 6.2 years; 93% first lien (6% unknown lien).
+- 38% of loans are held by three or more other managers in the same quarter (syndicated or club loans):
   flag `n_other_families_same_q`, not a feature.
-- Industry-reporting versus all other BDCs (`loans_all_bdc.csv`, 7,385 loans in total): median spread 5.00 vs
-  4.75 pp, hold USD 10.0m vs 9.7m, tenor 6.2 vs 6.2 years; for other BDCs the tenor is known for only 17% of loans.
+- Industry-reporting versus all other BDCs (`loans_all_bdc.csv`, 7,320 loans in total): median spread 5.00 vs
+  4.75 pp, hold USD 10.1m vs 9.8m, tenor 6.2 vs 6.2 years; for other BDCs the tenor is known for only 16% of loans.
 
 ## 4. Validation
-- **Precision against acquisition dates** (dated loans after all filters): 94.1% acquired in the quarter of first
-  appearance for industry-reporting BDCs (95% CI 90.8 to 96.3%, n = 289), 91.2% for all BDCs; 88% to 100% in the
-  four test quarters (26 to 35 dated loans each). Caveat: a date inside the quarter does not prove origination
+- **Precision against acquisition dates** (dated loans after all filters): 94.6% acquired in the quarter of first
+  appearance for industry-reporting BDCs (95% CI 91.2 to 96.7%, n = 276), 91.5% for all BDCs; 88% to 100% in the
+  four test quarters (23 to 34 dated loans each). Caveat: a date inside the quarter does not prove origination
   (secondary purchases have one too), so this is an upper bound.
 - **Hand check of 50 loans** against the EDGAR filings (`docs/hand_check.csv`), stratified by manager, prepared with the AI and re-checked by hand by Mathis on 19 Nov 2026: borrower
   found 50/50, spread 50/50, maturity 49/50, principal 50/50 (the re-check found the principal printed in the
   schedule table for all 50), industry 48/50 (the other two are tagged XBRL values not printed next to the name).
   Classification: (a) originated in the quarter 35, (b) originated earlier and acquired 14, (c) transferred from an
-  affiliate 1. The (b) cases led to the existing-loan filter. **Checked loans that remain in the final sample (39):
-  (a) 33 = 85% (95% CI 70 to 93%), (b) 5 = 13%, (c) 1 = 3%**, computed by the notebook from the current files
-  (step 15e). This is optimistic: the filter was designed on the same loans, and about half of the (a) verdicts
+  affiliate 1. The (b) cases led to the existing-loan filter. **Checked loans that remain in the final sample (37):
+  (a) 32 = 86% (95% CI 72 to 94%), (b) 4 = 11%, (c) 1 = 3%**, computed by the notebook from the current files
+  (step 15e; before revision 2: 33 of 39 = 85%). This is optimistic: the filter was designed on the same loans, and about half of the (a) verdicts
   rest on tenor and the absence of earlier holders rather than a printed date.
 - **Adversarial review** by a fresh AI agent: 9 findings (duplicated manager families, joint-venture lines,
   unfunded commitments, principal and rate units, numeric "borrowers", PIK, syndicated mix, hand-check optimism).
   All fixed except the syndicated mix (D25) and the limits of the hand check, which are documented. A guard now
   checks that no two families share more than half of their new loans (largest overlap after the fix: 19%).
+  A second review of revision 2 found 8 issues, 6 fixed (`docs/ai_audit_trail.md`, session 3).
 - **Units:** tagged spread equals the spread written in the text for about 99% of loans (rest: text typos); rates
   converted per filing and per column; principal/fair value ratio between 0.5 and 2 for every core loan.
 - **Cutoff:** FRED values strictly before the quarter start and t-2 loans filed before the quarter start
@@ -122,7 +130,9 @@ so only about 7% of borrower x BDC x quarter lines are new relationships.
   6.2 years) and so is the precision against acquisition dates (94.1%).
 
 ## 6. Consequential decisions for team review (details in `docs/decisions.md`)
-- **D3** main universe widened from 16 BDCs to all industry-reporting BDCs (about 680 -> 1,798 loans).
+- **D3** main universe widened from 16 BDCs to all industry-reporting BDCs (about 680 -> 1,766 loans).
+- Revision 2: **D17** no secondary-buyer family excluded (Palmer Square kept), **D31** near-match rule, **D32**
+  unfunded and committed lines, **D35** refinancings only in the variant file.
 - **D8** tenor 4 to 8 years; **D14** sample from 2023Q2; **D22** existing loans of other lenders excluded;
   **D27** PIK loans excluded.
 - **D23** target wording: the hand check gives 85% originations with a confidence interval reaching below 80%, so,
@@ -151,5 +161,7 @@ so only about 7% of borrower x BDC x quarter lines are new relationships.
   over the previous four available quarters, with the same t-2 rule inside each fold.
 - Features: `log_principal`, `tenor_years`, `sector`, `lien`, `family`, `baa_spread_prev`, `sofr_prev`,
   `mkt_spread_t2_all`; optional `has_revolver`, `has_delayed_draw`, `n_family_bdcs`. Encoding and scaling inside
-  the pipeline. Report MAE by test quarter and by family; sensitivity without syndicated loans
-  (`n_other_families_same_q >= 3`); robustness on `loans_all_bdc.csv` without industry.
+  the pipeline (`code/modelling_helpers.py`: load_data, make_preprocessor, time_cv_splits, final_train_test, adapted
+  from Patrick's design). Report MAE by test quarter and by family; sensitivity without syndicated loans
+  (`n_other_families_same_q >= 3`) and with `loans_incl_refi.csv`; robustness on `loans_all_bdc.csv` without
+  industry.
