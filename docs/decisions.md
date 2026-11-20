@@ -7,7 +7,35 @@ For every new or changed decision, add below the table: why it came up, options,
 **Who decided.** D1 to D12 were proposed by the team (feasibility study). The binding commitments in
 `docs/lecturer_feedback_and_commitments.md` are team decisions. Everything marked "AI" below was decided by the AI
 in session 1 (18 Nov 2026) under the CLAUDE.md rules; items marked **consequential** need team review.
-All numbers refer to the final run of `code/01_preprocess.ipynb`.
+Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an entry gives an older number
+"at the time" (history).
+
+## Current definitions in force
+| Id | Definition (one line) | Status |
+|---|---|---|
+| D1, D2 | SEC BDC Data Sets `soi.tsv`, one filing per BDC and quarter (latest filed) | taken |
+| D3 | Main universe: BDCs that state borrower industries (67 BDCs; 45 lead BDCs in the sample, 31 families) | recommended, to be confirmed by team |
+| D4 | New loan: no BDC of the same family held the borrower before; no acquisition date before the quarter | taken (team rule) |
+| D5, D15, D32, D34 | One funded SOFR term line per borrower; hold size sums the loan's tranches; unfunded lines excluded | taken |
+| D6 | Unit: one borrower x one manager family x one quarter of first appearance | taken (team rule) |
+| D7, D27, D33 | Spread 1 to 15 pp, not the all-in rate; no PIK; hold at least USD 100,000 | taken |
+| D8 | Tenor 4 to 8 years (3 to 4 years only in `loans_incl_refi.csv`) | recommended, to be confirmed by team |
+| D10 | Market features: Baa spread and SOFR before the cutoff, t-2 new-loan median filed before the cutoff | taken |
+| D11, D38 | Split by time, test 2025Q3 to 2026Q2; one-quarter gap; training rows filed before the cutoff | taken |
+| D12, D41 | Baselines and metrics as committed; main test protocol: one model per test quarter | taken, to be confirmed by team |
+| D14 | Loans from 2023Q2 | taken |
+| D17 | No secondary-buyer family excluded (rule excludes none) | taken |
+| D22 | Existing loans of unaffiliated lenders dropped | recommended, to be confirmed by team |
+| D23, D41 | Target: spread over SOFR of newly originated loans, with the three origination checks | taken, to be confirmed by team |
+| D25 | Syndicated loans kept, flag `n_other_families_same_q`, sensitivity check | recommended, to be confirmed by team |
+| D26, D40 | Joint-venture schedule lines excluded (PennantPark, WhiteHorse, Monroe) | taken |
+| D28, D42 | Borrower names: parser with second naming pass; display names cleaned (matching unaffected) | taken |
+| D30, D31 | Tranches with one spread; no near match at the family | taken |
+| D35 | Refinancings and add-ons only in `loans_incl_refi.csv` | recommended, to be confirmed by team |
+| D37 | Hold size never takes the fair value | taken |
+| D39, D42 | Headline numbers from the notebook; rounding of processed files; fixed role vocabulary in the dictionary | taken |
+
+## Decision log (history and evidence)
 
 | # | Decision | Status | Reason |
 |---|----------|--------|--------|
@@ -51,6 +79,8 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 | D38 | Time splits also require the filing date before the cutoff; per-test-quarter evaluation and the committed metrics added to `modelling_helpers.py`. | taken (AI, work order 3) | See D38. |
 | D39 | Headline numbers written by the notebook (`output/tables/headline_numbers.csv`); "BDCs" means lead BDCs (distinct `cik`). | taken (AI, work order 3) | See D39. |
 | D40 | Lines of WhiteHorse's and Monroe's joint-venture schedules excluded (no net-assets percentage tagged); verification findings documented. | taken (AI, work order 3, out-of-sample verification), **consequential** (sample) | See D40. |
+| D41 | Target wording with all three origination checks; main test protocol one model per test quarter; the five sample definitions kept. | taken (preprocessing owner, work order 5), to be confirmed by team, **consequential** | See D41. |
+| D42 | Release polish: rounding of processed files, cleaned display names, fixed role vocabulary in the data dictionary. | taken (AI, work order 5) | See D42. |
 
 ---
 
@@ -386,3 +416,33 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   30 = 80% (95% CI 63 to 90%), 23 of 29 = 79% on the loans still in the sample, (b) 5, not new 1. 15 of the 29 are
   test-quarter loans; D40 was triggered by a 2023Q4 loan and set no threshold on test-row outcomes. Lower than the hand checks (86% and 96%), within their intervals; it supports
   the caveat that the target includes loans newly added through purchases.
+
+### D41. Target wording, test protocol, sample definitions (preprocessing owner, work order 5; to be confirmed by team)
+- **Target wording.** Keep "the spread over SOFR of newly originated loans". The commitment reinterprets the target
+  only if fewer than about 80% of checked loans are originations; the combined evidence is above 80%: our hand check
+  32 of 37, Patrick's 26 of 27, the out-of-sample check 24 of 30 (80%, the cleanest estimate: no filter was designed on
+  it), all distinct checked loans in the sample 81 of 93 = 87% (95% CI 79 to 93%; notebook step 15e,
+  `headline_numbers.csv`). Wherever the target is described the three checks are shown, with the sentence "About one
+  loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
+  priced into a BDC portfolio."
+- **Final evaluation protocol.** Main: one model per test quarter, trained on all loans up to t-2
+  (`evaluate_per_test_quarter`): the test gap equals the validation gap, each test loan is predicted exactly once by a
+  model that never saw it, and model choice happens only on validation folds. Secondary view: one model trained up to
+  2025Q1 (`final_train_test`). Options considered: only the single model (simpler, but gaps of 1 to 4 quarters make
+  later test quarters harder than validation).
+- **Sample definitions** (D35 refinancings out, D22 existing loans of other managers dropped, D3 industry-reporting
+  universe, D8 tenor 4 to 8 years, D25 syndicated loans kept): unchanged, status "recommended by the preprocessing
+  team, to be confirmed", each with its reason and robustness file or flag in the README.
+- **Reversible:** wording and protocol choice only; no data change.
+
+### D42. Release polish (AI, work order 5; no sample definition or filter changed)
+- **Rounding.** Processed files write pp and % columns with 4 decimals and USD amounts in whole dollars (float
+  artefacts such as 1.7500000000000002 removed). All computations in the notebook use the unrounded values.
+- **Display names.** `borrower` is a cleaned display name (`utils_preprocess.display_name`): trailing maturity,
+  acquisition, rate, amendment or "Cov-Lite" text, a display name in front of the legal name, a glued code, names cut
+  at "&" or by an HTML "amp;"; 41 names changed in loans.csv, 43 in loans_all_bdc.csv, 42 in
+  loans_incl_refi.csv (e.g. "CFP Holdings LLC Matrity 09/13/2030", "GTreasury G Treasury SS LLC"). `borrower_key`, matching and `loan_id` are unchanged; the hand-check matching
+  uses both the display name and the parsed name. Two WhiteHorse lines name no borrower at all (only "Oil & Gas
+  Storage & Transportation"); their display name shows that text.
+- **Roles.** `data_dictionary.csv` uses the roles target, feature, feature_optional, never_feature, flag, id, time,
+  split, descriptive, check (detail in `note`); the notebook asserts that "feature" equals `NUM + CAT` of the helpers.

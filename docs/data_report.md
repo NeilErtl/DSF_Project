@@ -10,10 +10,11 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
 - **Unit.** One new loan = one borrower x one manager family x one quarter of first appearance. New = no BDC of the
   same family held the borrower before; loans with an acquisition date before that quarter are dropped; borrowers
   seen earlier at unaffiliated BDCs are flagged.
-- **Target.** Spread over SOFR of newly originated loans, in percentage points (errors in basis points). The hand
-  check finds about 86% true originations (95% CI 72 to 94%); the remaining loans are newly added to a BDC portfolio
-  through purchases or transfers. An out-of-sample verification of 30 further loans by a fresh AI agent finds 80% (95% CI 63 to 90%; 79% on the
-29 still in the sample), so the share is close to the 80% threshold of the commitment.
+- **Target.** Spread over SOFR of newly originated loans, in percentage points (errors in basis points). Three origination checks: our hand check 32 of 37 (86%), Patrick's
+  hand check 26 of 27 (96%), and an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%; the cleanest estimate, since
+  no filter was designed on it); over all 93 distinct checked loans in the sample 87% (95% CI 79 to 93%). About one
+  loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
+  priced into a BDC portfolio.
 - **Cutoff.** Start of the quarter of first appearance. Market-level spread from quarter t-2 filings (checked with
   the filing date); external market data: last value before the cutoff. Never features: interest rate, fair value,
   cost, PIK, floor.

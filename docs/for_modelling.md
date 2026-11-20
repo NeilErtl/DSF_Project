@@ -5,17 +5,20 @@
 
 **Unit and target.** Cross-section with a date (each loan once). One row = one new loan: one borrower x one manager family x the quarter in which the family
 first holds it (1,747 loans, 2023Q2 to 2026Q2, 31 families, lead BDC = 45 distinct `cik`). Target `spread_pp` = spread
-over SOFR of newly originated loans, in percentage points; report errors in basis points (x 100). The hand check
-finds about 86% true originations (95% CI 72 to 94%); the remaining loans are newly added to a BDC portfolio through
-purchases or transfers (an out-of-sample check of 30 loans: 80%). Use this name for the target in the report and slides (team decision D23).
+over SOFR of newly originated loans, in percentage points; report errors in basis points (x 100). Three origination checks: our hand check 32 of 37 (86%), Patrick's
+hand check 26 of 27 (96%), and an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%; the cleanest estimate, since
+no filter was designed on it); over all 93 distinct checked loans in the sample 87% (95% CI 79 to 93%). About one
+loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
+priced into a BDC portfolio. Use this name for the target in report and slides (D41).
 
 **Features (allowed).** `mh.NUM` = `log_principal` (log of the family's held principal at the reporting date: an
 approximation of the hold size, not the facility size), `tenor_years` (maturity minus quarter start),
 `mkt_spread_t2_all` (median spread of new loans first seen in quarter t-2, filed before the cutoff), `baa_spread_prev`,
 `sofr_prev` (FRED, last value before the cutoff). `mh.CAT` = `sector`, `lien`, `family`. Optional: `instrument`,
-`has_revolver`, `has_delayed_draw`, `n_family_bdcs`. Pass other lists with
+`has_revolver`, `has_delayed_draw`, `n_family_bdcs`, `mkt_spread_t2_core` (instead of `mkt_spread_t2_all`). Pass other lists with
 `mh.make_preprocessor(num=..., cat=...)` and the same columns to the model. In `data_dictionary.csv`, `role`
-"feature" = in NUM or CAT, "feature (optional)" or "(alternative)" = may be added; everything else is not a feature.
+`feature` = in NUM or CAT, `feature_optional` = may be added, `never_feature` = leakage; every other role is not a
+feature (`note` gives details).
 
 **Never features.** `interest_rate_pp`, `fair_value`, `cost`, `pik_flag`, `pik_rate_pp`, `floor_pp` (leakage, fixed by
 the commitments); also not: `spread_min_family`, `spread_max_family` (other lines of the same loan),
@@ -27,10 +30,10 @@ look at test rows until the final evaluation; never choose a model on them. To p
 up to t-2 (one-quarter gap: t-1 filings are not public at the start of t); the helpers also drop training rows filed
 after the cutoff (late amendments).
 - Validation: `mh.time_cv_splits(train)` gives 4 expanding-window folds (validate 2024Q3 to 2025Q2).
-- Final evaluation (proposed, team to confirm before notebook 03): `mh.evaluate_per_test_quarter(make_model, df)`,
-  one model per test quarter trained on all loans up to t-2 (including earlier test quarters, which are public by
-  then), so every test quarter has the same gap as validation. Report `mh.final_train_test(df)` (one model trained up
-  to 2025Q1, 1,000 loans, gap of 1 to 4 quarters) as a second view.
+- Final evaluation, main protocol (D41): `mh.evaluate_per_test_quarter(make_model, df)` fits one model per test
+  quarter t on all loans up to t-2, so the test gap equals the validation gap. Each test loan is predicted exactly
+  once, by a model that never saw it; model choice happens only on the validation folds. Secondary view:
+  `mh.final_train_test(df)`, one model trained up to 2025Q1 (1,000 loans, gap of 1 to 4 quarters).
 - The helpers drop training rows filed after the cutoff: in the last validation fold 2 loans (842 instead of 844).
 - Put all learned preprocessing in a pipeline: `make_pipeline(mh.make_preprocessor(), Ridge())`.
 
