@@ -1,5 +1,8 @@
+# Python 3.12.10. Versions used to build the data (pip freeze, filtered to the packages the code imports and the
+# tools that run the notebooks). Install with: python -m pip install -r requirements.txt
 pandas==3.1.1
 numpy==2.5.5
+scipy==1.18.1
 scikit-learn==1.9.1
 matplotlib==3.11.2
 requests==2.34.2

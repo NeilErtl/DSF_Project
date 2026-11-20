@@ -104,6 +104,7 @@ SOI_COLS = {
     "fair_value2_raw": "Initial fair value of Investment",
     "cost_raw": "Investment Owned, Cost",
     "cost2_raw": "Adjusted cost basis",
+    "net_assets_pct_raw": "Investment Owned, Net Assets, Percentage",
 }
 
 
