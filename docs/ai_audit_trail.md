@@ -88,7 +88,7 @@ findings; what was done with each:
 ## Session 3, 19 to 20 Nov 2026: revision after comparison with Patrick's version, Claude Opus 5.5 in Claude Code
 
 **Task.** Work order `course_ref/5_For_the_repo/PROMPT_REVISION_2.md`: test our dataset against Patrick's independent
-version (`course_ref/patrick_version/`), revise where the evidence says so, report in `docs/revision_report_2.md`.
+version (`course_ref/patrick_version/`), revise where the evidence says so, report in `docs/history/revision_report_2.md`.
 
 **What the AI did**
 - Matched our loans to Patrick's candidates and dataset (family, quarter, distinctive name word, maturity) so that
@@ -123,3 +123,38 @@ version (`course_ref/patrick_version/`), revise where the evidence says so, repo
 - Patrick's "no interest rate = undrawn" rule as such (wrong for unsettled purchases, EDGAR evidence).
 - Excluding Palmer Square by judgement, or any family by the spread level (selection on the target).
 - Refinancings/add-ons in the main sample (dated precision about 40% against about 94% for new borrowers).
+
+## Session 4, 20 Nov 2026: finalization (work order 3), Claude Opus 5.5 in Claude Code
+
+**Task.** Work order `course_ref/5_For_the_repo/PROMPT_FINALIZE.md`: corrections, three independent checks by fresh
+agents, repository structure, documentation for the modelling notebooks, push of `data-preprocessing` and a pull
+request. Report: `docs/history/finalization_report.md`.
+
+**What the AI did**
+- Target wording back to "spread over SOFR of newly originated loans" with the hand-check caveat (D23, team
+  instruction); headline numbers written by the notebook (D39; "BDCs" = 45 lead BDCs).
+- Mapped Patrick's 50 hand-checked loans to the final sample (27 in it, (a) 26) and combined both checks without
+  double counting ((a) 58 of 64 = 91%), with credit to Patrick.
+- Drew a 30-loan verification sample (seed 2026, by family, excluding both hand checks) and had a fresh agent verify
+  it in EDGAR; had a second fresh agent audit leakage and the cutoff; a third read only the README, `for_modelling.md`,
+  the data dictionary and the helpers and reported what confused it; a fourth reviewed all changes adversarially.
+- Fixes from these checks: fair value no longer enters the hold size (D37); filing date checked in the splits (D38);
+  WhiteHorse and Monroe joint-venture schedules excluded (D40, 18 loans); cutoff asserts for every quarter; both
+  baselines, error frames and a per-test-quarter evaluation in `modelling_helpers.py`; docs corrected.
+- Repository: `code/main.ipynb`, Purpose / Input / Output header, pinned `requirements.txt`, `.gitignore`,
+  `docs/for_modelling.md`, short README, reports moved to `docs/history/`; removed two pandas warnings that printed a
+  local path into notebook outputs.
+
+**What was checked**
+- Verification: borrower, spread, maturity and principal correct for 30 of 30; (a) 24 of 30 = 80% (79% on the 29 still
+  in the sample). Leakage audit: FRED values and t-2 medians recomputed exactly for all quarters. Fresh reader: every
+  number in the docs matched what it printed. Final review: every headline number recomputed and correct.
+- The helpers were tested on validation folds only; a test-set smoke test was refused by the permission classifier
+  and replaced by a pseudo-test on training quarters (CLAUDE.md: never touch the test set).
+
+**What was rejected**
+- A general "no net-assets percentage = joint venture" rule (at Antares, Golub and others the untagged lines are own
+  holdings); a rename rule for restructured borrowers (one case, no reliable signal); changing filters after
+  Patrick's hand check (one (b) case is not a pattern).
+- Final review findings handled as documentation only: test-period descriptives remain in notebook step 15c
+  (labelled, no rule set on them); the combined hand-check interval is a secondary figure.

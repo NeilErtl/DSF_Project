@@ -13,7 +13,7 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 |---|----------|--------|--------|
 | D1 | Data source: SEC BDC Data Sets, `soi.tsv`, quarter-ends Sep 2022 to Jun 2026 (16 quarters). | taken | Verified: 2022Q3 to 2026Q2 complete; 2026Q3 has only 4 filers (dropped). Loans from 2023Q2 (D14). |
 | D2 | One filing per BDC and quarter: if a quarter has several filings (amendments), keep the latest. | taken | 12 BDC-quarters affected. |
-| D3 | Main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines) instead of the 16 BDCs; all-BDC file for the robustness check. | taken (AI), **consequential** | 67 industry-reporting BDCs; final core sample 1,798 loans from 46 BDCs in 31 families (16-BDC rule: about 680). |
+| D3 | Main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines) instead of the 16 BDCs; all-BDC file for the robustness check. | taken (AI), **consequential** | 67 industry-reporting BDCs; final core sample 1,747 loans, lead BDCs 45 in 31 families (D39; 16-BDC rule: about 680). |
 | D4 | New loan = no BDC of the same family held the borrower in any earlier quarter (current holdings, prior-period comparatives, exact name); complete previous-quarter filing; no acquisition date before the quarter; family dedupe. | taken (team rule, AI implementation), **consequential** | Binding commitment (1). Details in D4, D13, D21. |
 | D5 | Funded floating-rate USD term loans over SOFR; drop revolvers, delayed-draw lines, unfunded commitments, non-USD, Prime, LIBOR, structured products, joint-venture lines. | taken | See D15, D16, D26. |
 | D6 | One row per borrower x manager family x quarter; different managers stay separate. | taken | 28.6% of new loans are held by more than one BDC of the family. |
@@ -33,12 +33,12 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 | D20 | Flags kept as columns, never features: `seen_at_other_family_before`, `n_other_families_same_q`. | taken (AI) | Same-quarter holdings of others are not known at the cutoff. |
 | D21 | Prior-period comparatives of each filing used as evidence of earlier holdings. | taken (AI) | See D21. |
 | D22 | Exclude existing loans of unaffiliated lenders. | taken (AI), **consequential** | See D22. |
-| D23 | Target wording: "spread of loans newly added to a BDC portfolio (mostly new originations)". | taken (AI, rule by team), **consequential** | See D23. |
+| D23 | Target wording: "spread over SOFR of newly originated loans", with the hand-check caveat wherever the target is described (changed in work order 3). | taken (team, work order 3), **consequential** | See D23. |
 | D24 | Environment: Python 3.12 venv, pandas, scikit-learn, matplotlib, requests (`requirements.txt`). | taken (AI) | Course stack, no other libraries. |
 | D25 | Broadly syndicated loans kept in the sample, flagged. | taken (AI), **consequential** | See D25. |
 | D26 | Principal checked against fair value; unfunded lines and joint-venture lines excluded. | taken (AI) | See D26. |
 | D27 | Exclude loans with a PIK component. | taken (AI), **consequential** | See D27. |
-| D28 | Second naming pass: remove display names, stray letters and industry fragments glued to borrower names. | taken (AI, after team re-check), **consequential** (sample) | See D28. Core 1,826 -> 1,798. |
+| D28 | Second naming pass: remove display names, stray letters and industry fragments glued to borrower names. | taken (AI, after team re-check), **consequential** (sample) | See D28. Core 1,826 -> 1,798 (at that time). |
 | D29 | Hand-check loans are matched to the final sample by quarter, family, name word and loan terms, not by `loan_id`; principal 50/50. | taken (after team re-check) | See D29. |
 | D30 | Tranches of one loan (same maturity) with different spreads are dropped (Patrick's rule). | taken (AI, revision 2; judgment call) | See D30. 14 core loans. |
 | D31 | Near-match rule: same first distinctive name word and maturity within 60 days at the family = not new (Patrick's rule). | taken (AI, revision 2), **consequential** | See D31. 19 core loans. |
@@ -47,6 +47,10 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
 | D34 | Hold size sums all tranches of the loan (same maturity); base rate counts as SOFR if any family fund states it. | taken (AI, revision 2) | See D34. |
 | D35 | Main sample stays "new borrower"; variant `loans_incl_refi.csv` with refinancings/add-ons and tenor 3 to 4 years, flagged. | taken (AI, revision 2), **consequential** | See D35. |
 | D36 | `code/modelling_helpers.py` for notebook 02, adapted from Patrick's `preprocessing.py`. | taken (AI, revision 2) | See D36. |
+| D37 | Hold size never takes the fair value: a line whose principal is off fair value (ratio outside 0.5 to 2, not a unit error) keeps its tagged principal, flagged. | taken (AI, work order 3, leakage audit), **consequential** (feature) | See D37. |
+| D38 | Time splits also require the filing date before the cutoff; per-test-quarter evaluation and the committed metrics added to `modelling_helpers.py`. | taken (AI, work order 3) | See D38. |
+| D39 | Headline numbers written by the notebook (`output/tables/headline_numbers.csv`); "BDCs" means lead BDCs (distinct `cik`). | taken (AI, work order 3) | See D39. |
+| D40 | Lines of WhiteHorse's and Monroe's joint-venture schedules excluded (no net-assets percentage tagged); verification findings documented. | taken (AI, work order 3, out-of-sample verification), **consequential** (sample) | See D40. |
 
 ---
 
@@ -58,10 +62,10 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   a standard Moody's/GICS industry name in the identifier), with the same 80% threshold.
 - **Pros and cons.** (1) matches the project description but is small and concentrated in 7 managers. (2) is large
   (7,385 loans) but only 38% have a known tenor and 40% a stated base rate. (3) keeps industry and tenor for every
-  loan, gives 1,798 loans from 31 families, and answers the lecturers' concern that 16 BDCs are not representative.
+  loan, gave 1,798 loans from 31 families (1,747 after work order 3), and answers the lecturers' concern that 16 BDCs are not representative.
   Risk: industry found by vocabulary matching can be wrong for some lines (hand check: 48 of 50 match the filing,
   the other 2 come from the tagged XBRL field).
-- **Evidence.** Medians core vs other BDCs: spread 5.00 vs 4.75 pp, hold USD 10.0m vs 9.7m, tenor 6.2 vs 6.2 years
+- **Evidence.** Medians core vs other BDCs: spread 5.00 vs 4.75 pp, hold USD 10.0m vs 9.7m (now 10.5m vs 9.9m), tenor 6.2 vs 6.2 years
   (`output/tables/core_vs_other_bdcs.csv`).
 - **Choice.** (3). **Reversible:** yes, via `family` and `industry_reporting_bdc`.
 
@@ -159,21 +163,42 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   (D30 to D35): 37 checked loans remain, (a) 32 = 86% (95% CI 72 to 94%), (b) 4 = 11%, (c) 1 = 3%. Optimistic (D22
   designed on these loans; about half of the (a) verdicts rest on tenor and absence of earlier holders).
 - The commitment says: below about 80%, the target becomes "spread of loans newly added to a BDC portfolio". The
-  point estimate is just above 80%, the interval is not. **Choice:** use the conservative wording "spread of loans
-  newly added to a BDC portfolio (mostly new originations)" in report and slides. The data are unchanged.
+  point estimate is just above 80%, the interval is not. Revision 2 chose the conservative wording "spread of loans
+  newly added to a BDC portfolio (mostly new originations)".
+- **Change in work order 3 (team instruction).** The point estimate is above the 80% threshold, so the wording
+  follows the commitment: the target stays **"the spread over SOFR of newly originated loans"**, and wherever the
+  target is described (notebook header, data dictionary, README, `docs/for_modelling.md`, data report) it carries the
+  caveat: "The hand check finds about 86% true originations (95% CI 72 to 94%); the remaining loans are newly added
+  to a BDC portfolio through purchases or transfers." The data are unchanged. Easy to reverse (wording only).
+- **Second hand check (credit: Patrick Eppler).** Patrick classified 50 loans of his own version (8 managers, (a) or
+  (b); `docs/hand_check_patrick.csv`). With the matching rule of D29, 27 are in our final sample: (a) 26, (b) 1
+  (Oxbow Carbon, Goldman Sachs 2023Q3); no loan was checked by both of us. Of his 9 (b) loans our filters remove 8
+  (4 existing loans of other managers, 3 refinancings, 1 tenor 3 to 4 years), of his 41 (a) loans 15 (9
+  refinancings and add-ons of existing borrowers, which our main sample excludes by definition, D35). Combined over
+  both checks, each loan once: (a) 58 of 64 = 91% (95% CI 81 to 96%), (b) 5, (c) 1. Patrick's classes rest on his
+  own evidence standard (no class (c)), so the combined figure is reported next to ours, not instead of it; the
+  caveat keeps our own 86%. No filter was changed: the single (b) case is not a pattern. The 6 other removed (a)
+  loans: tenor 3 to 4 years 2, existing loan of another manager 1, held by the family before 1, previous-quarter
+  filing incomplete 1, not a candidate 1. The combined interval treats two differently designed samples (Patrick's:
+  8 managers, 21 of 50 loans Goldman Sachs) as one random sample, so it is a secondary figure. In
+  `docs/hand_check_patrick.csv` the column `source_url` is Patrick's evidence link (often the previous quarter's
+  filing or another BDC's filing), not necessarily the loan's own filing.
+- **Out-of-sample verification (D40).** 30 further loans checked by a fresh AI agent: (a) 24 of 30 = 80% (95% CI
+  63 to 90%); 23 of the 29 still in the sample after D40 = 79%. Close to the 80% threshold. The work order fixed
+  the caveat text; the docs for the team add this figure next to it, and the team may revisit the wording.
 
 ### D25. Broadly syndicated loans (consequential, AI; open for the team)
 - **Why.** Reviewer: the sample mixes direct-lending and broadly syndicated loans; the share of loans with a spread
   of at most 3.5 pp rises from 2% (2023) to 14% (2024), 16% (2025) and 26% (2026).
-- **Options.** Filter by `n_other_families_same_q >= 3` (35% of loans), by a spread floor (selection on the target:
+- **Options.** Filter by `n_other_families_same_q >= 3` (35% of loans at the time; now 667 loans = 38%), by a spread floor (selection on the target:
   rejected), or keep and flag.
 - **Choice.** Keep and flag: club deals of three or more direct lenders look the same in the data, so the filter
   would also remove genuine private credit loans. Notebook 02 should report results with and without these loans.
 
 ### D26. Principal, unfunded lines and joint-venture lines (AI; reviewer findings)
 - Lines with fair value and cost both zero are unfunded commitments (excluded). Principal/fair value near 1,000 or
-  1/1,000 is a unit error (rescaled: 932 lines); other ratios outside 0.5 to 2 use fair value as size (partly drawn
-  or distressed). PennantPark tags its joint venture's schedule ("Related Party PSSL/PSLF"): these lines are the JV's
+  1/1,000 is a unit error (rescaled: 932 lines at the time); other ratios outside 0.5 to 2 used fair value as size
+  (partly drawn or distressed). **Superseded by D37** (the tagged principal is kept). PennantPark tags its joint venture's schedule ("Related Party PSSL/PSLF"): these lines are the JV's
   loans, excluded as candidates but kept as holdings evidence.
 
 ### D27. Exclude PIK loans (consequential, AI)
@@ -294,6 +319,70 @@ All numbers refer to the final run of `code/01_preprocess.ipynb`.
   dropped reference and pooled infrequent categories, all inside a sklearn pipeline), `time_cv_splits` (expanding
   window by quarter, one-quarter gap), `final_train_test` (train up to 2025Q1 by default). Adapted from Patrick
   Eppler's `preprocessing.py`; features log_principal, tenor_years, mkt_spread_t2_all, baa_spread_prev, sofr_prev,
-  sector, lien, family. Dry run in step 15f: 4 folds (validate 2024Q3 to 2025Q2), final train 1,016 / test 607
+  sector, lien, family. Dry run in step 15f: 4 folds (validate 2024Q3 to 2025Q2), final train 1,016 / test 607 (now 1,000 / 604)
   loans. Documented after review: one final model means a gap of 2 to 4 quarters for later test quarters, and a
   category unseen in training maps to the reference category.
+
+### D37. Fair value out of the hold size (consequential for a feature; AI, work order 3, leakage audit)
+- **Why.** The leakage audit (fresh agent) found that step 6 set a line's principal to its fair value when the ratio
+  principal / fair value was outside 0.5 to 2 and not a unit error (partly drawn or distressed lines). Fair value is a
+  never-feature (priced together with the spread), and it then entered `log_principal`: a real, small leak of a
+  never-feature into a feature. Effect: 34 core loans change their hold size (Goldman Sachs
+  19, Apollo 13, WhiteHorse 2; median change of `log_principal` +0.2); one Goldman Sachs loan (Pearl Acquisition,
+  2025Q4) leaves because its largest line, now the lead line, carries a mis-tagged maturity (2099).
+- **Options.** (1) Keep: few loans, small effect; violates the commitment. (2) Set the size to missing (imputed in the
+  pipeline): loses information. (3) Keep the tagged principal and flag the line (`principal_fix`).
+- **Choice.** (3); the flag is in the interim data of step 6 (`principal_fix`), not in the output files. Fair value
+  is still used in two binary ways: to detect a unit error (a ratio near 1,000, which fixes the scale, not the
+  value) and, with cost, to tell funded from unfunded lines (D32), which decides which tranches are summed. **Reversible:** one line in step 6.
+
+### D38. Filing date in the splits, per-test-quarter evaluation (AI, work order 3)
+- **Why.** The audit found 4 loans of 2024Q4 (a WhiteHorse 10-K/A filed 10 June 2025) inside the training fold that
+  validates 2025Q2 (cutoff 1 April 2025): by D2 we keep the latest amendment and its filing date. The work order also
+  asked for a per-test-quarter evaluation.
+- **Choice.** `time_cv_splits`, `final_train_test` and `test_quarter_splits` keep only training rows whose
+  `filed_date` is before the cutoff (`known_before`); `time_cv_splits` asserts contiguous quarters. New:
+  `test_quarter_splits` / `evaluate_per_test_quarter` (one model per test quarter t, trained on all loans up to t-2,
+  including earlier test quarters, hyperparameters fixed before) and `summarize_errors` (MAE in bps, share within
+  plus or minus 50 bps, by quarter or family), `error_frame`, and both committed baselines as code: `baseline_t2`
+  (`mkt_spread_t2_all`) and `baseline_sector_size` (window exactly t-5 to t-2, terciles cut on the window, fallback
+  to the sector median and then to baseline 1 below 5 loans; specified after the fresh-reader test). Proposed main
+  test protocol: one model per test quarter (team to confirm). Effect: the last validation fold trains on 842 instead of 844 loans
+  (2 WhiteHorse loans of 2024Q4 remain after D40; 4 before); no test split changes. The original 10-K was probably public in time, so this is conservative. **Reversible.**
+- **Also documented, not changed (audit findings 3 to 6).** Name rarity, the industry vocabulary, the comparatives
+  used for "held before", and the choice of industry-reporting BDCs use all quarters, so sample construction (not
+  feature values) uses information from after the cutoff; FRED "before the cutoff" refers to the observation date
+  (the last SOFR of a quarter is published on the morning of the cutoff day); descriptives of spreads by year and
+  the syndicated share include test quarters and were shown in reviews, but no filter threshold was set on them.
+  Notebook 02 must not use the test-period trend to choose a model.
+
+### D39. Headline numbers and the BDC count (AI, work order 3)
+- **Why.** Docs quoted 45 and 46 BDCs. 46 was the count before revision 2; the notebook now writes every quoted
+  number to `output/tables/headline_numbers.csv`.
+- **Definition.** "Lead BDCs" = distinct `cik` in `loans.csv` (the family's BDC with the largest position). `bdc_name`
+  has more distinct values because some BDCs were renamed. "BDCs holding the loans" adds the other BDCs of the family
+  that hold a loan in its first quarter.
+
+### D40. Joint-venture schedules at WhiteHorse and Monroe; out-of-sample verification (AI, work order 3)
+- **Why.** The out-of-sample verification (fresh agent, 30 loans, `docs/verification_sample_30.csv`) found that
+  WhiteHorse's "Pirtek Holdco" (2023Q4) is a line of the unconsolidated STRS joint venture, whose schedule WhiteHorse
+  tags in its own filing; WhiteHorse's own schedule does not list the borrower.
+- **Evidence.** In WhiteHorse's filings the JV lines are the only loan lines without a tagged net-assets percentage
+  (10-K for 2023: 68 of 175 lines with principal). A scan of all filings for lines without that tag, in filings where
+  most lines have it, shows the same pattern for Monroe Capital Corp (its Senior Loan Fund, about 80 lines per
+  filing); at other BDCs the untagged lines are own holdings (tranches, revolvers), so the rule is not general.
+  Carlyle's "Credit Fund" JV lines never reached the sample. Effect: 1,676 WhiteHorse and 785 Monroe lines
+  excluded; 18 WhiteHorse core loans leave (46 to 28); Monroe Capital Corp had no loans in the files. The t-2 market
+  median of 2024Q1 moves from 5.375 to 5.25 pp. Core sample 1,766 to 1,747 loans (with D37).
+- **Choice.** Exclude, like PennantPark's PSSL lines (D26): the JV is not the BDC and its loans are often bought from
+  the BDC. **Reversible:** `JV_SCHEDULE_BDCS` in step 7.
+- **Other verification findings, documented, not changed.** (1) Crescent's "Affordable Care Inc." (2026Q2) is a
+  restructuring of a borrower Crescent held as "ACI Group Holdings": a name change defeats the family-history check;
+  no general rule can catch renames, so this stays a known limitation (one loan). (2) Stellus, TCW and Onex print the
+  lien only as a table header, so `lien` is "unknown" for almost all their loans; with `family` in the model this
+  acts like a family effect. (3) One acquisition date differs by 6 days from the printed one (descriptive column).
+- **Verification result.** The sample was drawn from `loans.csv` before D37 and D40 (1,766 loans); 29 of the 30 are
+  still in the sample (Pirtek left). Borrower, spread, maturity and principal correct for 30 of 30; class (a) 24 of
+  30 = 80% (95% CI 63 to 90%), 23 of 29 = 79% on the loans still in the sample, (b) 5, not new 1. 15 of the 29 are
+  test-quarter loans; D40 was triggered by a 2023Q4 loan and set no threshold on test-row outcomes. Lower than the hand checks (86% and 96%), within their intervals; it supports
+  the caveat that the target includes loans newly added through purchases.
