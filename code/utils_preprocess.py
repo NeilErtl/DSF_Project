@@ -200,7 +200,7 @@ COUNTRIES = ["united states of america", "united states", "canada", "united king
 
 # Labels that start a non-name field inside an identifier.
 _FIELD_LABELS = [
-    r"Industry", r"Instrument", r"Investment Type", r"Asset Type", r"Type of Investment", r"Facility Type",
+    r"Industry", r"Instrument", r"Investment Type", r"InvestmentType", r"Asset Type", r"Type of Investment", r"Facility Type",
     r"Security", r"Interest Rate", r"InterestRate", r"Interest Term", r"Reference Rate", r"ReferenceRate",
     r"Spread Above Index", r"Spread above Index", r"Basis Point Spread", r"Current Coupon", r"All In Rate",
     r"Total Coupon", r"Maturity", r"Due \d", r"Initial Acquisition", r"Original Acquisition", r"Acquisition Date",
@@ -966,3 +966,80 @@ def display_name(name, identifier="", known_names=()):
             if full:
                 s = full
     return s
+
+
+# ---------------------------------------------------------------------------
+# Spelling variants of a borrower within a family (release checker, work order 5)
+# ---------------------------------------------------------------------------
+def compact_key(key, keep_generic=False):
+    """Borrower key without legal (and, by default, generic) words and without spaces ("bar tender llc" ->
+    "bartender"); a legal word glued to the last word is removed too ("2xllc" -> "2x")."""
+    words = [w for w in str(key).split() if w not in LEGAL_WORDS]
+    if words:
+        words[-1] = re.sub(r"(?<=\w)(llc|ltd|corp)$", "", words[-1]) or words[-1]     # not "inc": "zinc"
+    core = words if keep_generic else ([w for w in words if w not in GENERIC_NAME_WORDS] or words)
+    return "".join(core)
+
+
+def held_as_variant(cand, hold, ratio=0.85, days=60, strong=0.9):
+    """True for candidates whose family held a spelling variant of the borrower in an earlier quarter.
+
+    Nets on top of the rarity-weighted matching: (1) the same compact key (spaces, legal and generic words removed:
+    "Bar Tender" = "BarTender", "2X LLC" = "2xLLC"; or with generic words kept: "Clear Capital" = "ClearCapital"),
+    whatever the maturity; (2) a near-identical compact key (similarity at least `ratio`, same first letter, length
+    within 2: "Escalen"/"Escalent", "Indera"/"Idera") with a maturity within `days` days, i.e. the same loan under a
+    misspelled name; (3) a long compact key (10 letters or more) with similarity at least `strong`, whatever the
+    maturity ("Proneri International"/"Froneri International", "GS Fullsteam Operation"/"Fullsteam Operations").
+    cand: rows with family, q_int, borrower_key, maturity; hold: rows with family, q_int, borrower_key, maturity.
+    """
+    from difflib import SequenceMatcher
+    h = hold[hold.borrower_key != ""].assign(ck=hold.borrower_key.map(compact_key),
+                                             ckg=hold.borrower_key.map(lambda k: compact_key(k, keep_generic=True)))
+    h = h[h.ck.str.len() >= 2]
+    first_q = h.groupby(["family", "ck"]).q_int.min()
+    first_q_g = h.groupby(["family", "ckg"]).q_int.min()       # same, keeping generic words ("Clear Capital")
+    by_fam = {f: g for f, g in h.groupby("family")[["ck", "q_int", "maturity"]]}
+    grams_by_fam = {}                       # 5-letter pieces of long compact keys, to find near-identical names fast
+    for f, k in h.loc[h.ck.str.len() >= 10, ["family", "ck"]].drop_duplicates().itertuples(index=False):
+        d = grams_by_fam.setdefault(f, {})
+        for i in range(len(k) - 4):
+            d.setdefault(k[i:i + 5], set()).add(k)
+    out = []
+    for f, q, k, m in zip(cand.family, cand.q_int, cand.borrower_key, cand.maturity):
+        ck, ckg = compact_key(k), compact_key(k, keep_generic=True)
+        if len(ck) < 2:
+            out.append(False)
+            continue
+        if first_q.get((f, ck), 10**9) < q or first_q_g.get((f, ckg), 10**9) < q:
+            out.append(True)
+            continue
+        g = by_fam.get(f)
+        hit = False
+        if g is not None and pd.notna(m):
+            g = g[(g.q_int < q) & (g.ck.str[0] == ck[0]) & ((g.ck.str.len() - len(ck)).abs() <= 2) & (g.ck != ck)]
+            g = g[(g.maturity - m).abs() <= pd.Timedelta(days=days)]
+            for other in g.ck.unique():
+                sm = SequenceMatcher(None, ck, other)
+                if sm.quick_ratio() >= ratio and sm.ratio() >= ratio:
+                    hit = True
+                    break
+        if not hit and len(ck) >= 10 and f in grams_by_fam:       # (3) long, near-identical name, any maturity
+            idx5 = grams_by_fam[f]
+            pool = set().union(*(idx5.get(ck[i:i + 5], ()) for i in range(len(ck) - 4)))
+            for other in pool:
+                if (other != ck and first_q.get((f, other), 10**9) < q and abs(len(other) - len(ck)) <= 3
+                        and SequenceMatcher(None, ck, other).ratio() >= strong):
+                    hit = True
+                    break
+        out.append(hit)
+    return pd.Series(out, index=cand.index)
+
+
+def is_industry_label(key, vocab):
+    """True when a borrower key is only an industry or country label ("hotels", "aerospace and"), not a name."""
+    norm = lambda x: " ".join(w for w in str(x).replace("&", " ").split() if w != "and")  # noqa: E731
+    k = norm(key)
+    if not k:
+        return False
+    labels = {norm(v) for v in vocab}
+    return any(lab == k or lab.startswith(k + " ") for lab in labels)

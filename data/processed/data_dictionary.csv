@@ -4,7 +4,7 @@ quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,t
 quarter_start_date,Start of that quarter = cutoff,date,yes,time,
 q_index,"Quarter number, 0 = 2023Q2",integer,yes,time,
 split,train (to 2025Q2) or test (2025Q3 to 2026Q2),,,split,
-spread_pp,"TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). True originations: our hand check 32/37, Patrick's 26/27, out-of-sample check 24/30, all distinct checked loans 87% (95% CI 79 to 93%); the rest are purchases or transfers newly priced into a BDC portfolio",pp,no,target,
+spread_pp,"TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). True originations: our hand check 32/36, Patrick's 25/26, out-of-sample check 24/30, all distinct checked loans 88% (95% CI 80 to 93%); the rest are purchases or transfers newly priced into a BDC portfolio",pp,no,target,
 borrower,"Borrower name for display (parsed from the identifier, cleaned; matching uses borrower_key)",,yes,id,
 borrower_key,Normalized borrower name,,yes,id,
 family,Manager family of the lender,,yes,feature,
@@ -29,7 +29,7 @@ mkt_n_t2_all,Number of loans behind mkt_spread_t2_all,count,yes,descriptive,
 mkt_spread_t2_core,"Same, core sample only (missing if fewer than 20 loans)",pp,yes,feature_optional,alternative to mkt_spread_t2_all
 mkt_n_t2_core,Number of loans behind mkt_spread_t2_core,count,yes,descriptive,
 hy_oas_prev,ICE BofA US high-yield OAS before cutoff; FRED history starts Nov 2023,pp,yes,descriptive,incomplete history
-seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),flag,"also a sample filter, step 9"
+seen_at_other_family_before,Borrower appeared at an unaffiliated BDC in an earlier quarter (likely club deal or secondary purchase),bool,partly (t-1 filings may be later),flag,step 9 drops a loan only when this is true and the tenor is below 5 years
 same_loan_at_other_family_before,Always False after the filters (check column),bool,,check,
 committed_not_funded,All lines of the borrower at the lead BDC were committed but not yet funded at the reporting date; size = commitment (derived from fair value and cost),bool,yes,flag,
 no_rate_tagged,"No interest rate tagged on the line (filer never tags rates, or a Goldman Sachs purchase not settled at the reporting date)",bool,,flag,

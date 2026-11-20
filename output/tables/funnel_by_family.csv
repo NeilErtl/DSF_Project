@@ -1,38 +1,38 @@
-family,1_candidates,2_complete_prev_q,3_not_held_before,4_acq_rule,5_final_core
-Apollo,7390,7136,646,646,338
-Goldman Sachs,7626,7404,596,596,193
-BlackRock,4073,3877,291,291,130
-Antares,3766,3489,253,253,120
-First Eagle,1156,1130,192,189,94
-Bain Capital,2658,2555,219,219,76
-Jefferies,1322,1280,168,168,62
-AllianceBernstein,981,908,153,153,57
-PennantPark,2913,2550,155,151,55
-Stellus,1853,1821,134,134,54
-Msd Investment Corp.,878,853,91,91,54
-Palmer Square Capital Bdc Inc.,1443,1255,90,90,54
-Silver Point,1151,1042,90,85,52
-Varagon,1267,1215,69,65,43
-Comvest,565,550,86,86,43
-Manulife Private Credit Fund,542,507,50,50,37
-Crescent,2003,1900,87,87,36
+family,1_candidates,2_complete_prev_q,3_not_held_before,4_new_rule,5_final_core
+Apollo,7360,7108,638,638,334
+Goldman Sachs,7626,7404,589,589,190
+BlackRock,4046,3851,288,288,128
+Antares,3755,3480,250,250,119
+First Eagle,1123,1099,184,184,92
+Bain Capital,2582,2483,215,215,76
+Jefferies,1306,1264,168,168,61
+AllianceBernstein,981,908,152,152,57
+Palmer Square Capital Bdc Inc.,1441,1253,90,90,54
+Msd Investment Corp.,873,848,88,88,53
+Stellus,1853,1821,133,133,53
+PennantPark,2913,2550,152,152,52
+Silver Point,1150,1042,90,90,52
+Varagon,1267,1215,69,69,43
+Comvest,565,550,85,85,43
+Crescent,1971,1871,79,79,37
+Manulife Private Credit Fund,542,507,47,47,36
 Brightwood Capital Corp I,596,578,50,50,35
-"Whitehorse Finance, Inc.",814,789,52,52,28
-Diameter Credit Co,367,325,40,40,28
-Onex,565,537,75,66,25
+Diameter Credit Co,364,322,39,39,28
+"Whitehorse Finance, Inc.",815,790,51,51,27
+Onex,565,537,73,73,25
 Overland Advantage,408,363,36,36,24
-TCW,847,779,71,66,22
-SLR,1329,1188,54,52,19
+TCW,846,778,70,70,21
 "Andalusian Credit Company, Llc",126,126,33,33,18
+SLR,1329,1188,52,52,18
 Redwood Enhanced Income Corp.,342,327,33,33,16
-BC Partners,865,826,25,23,14
+BC Partners,865,826,25,25,13
 Great Elm,221,221,20,20,6
 Kayne Anderson,345,345,11,11,5
 Agl Private Credit Income Fund,36,22,6,6,5
-Investcorp,415,381,28,26,4
+Investcorp,408,374,27,27,4
 5C Lending Partners Corp.,13,10,0,0,0
-Carlyle,4604,4288,253,253,0
-Cifc Direct Lending Evergreen Fund,104,0,0,0,0
+Carlyle,4604,4288,248,248,0
+Cifc Direct Lending Evergreen Fund,102,0,0,0,0
 Prospect,1142,1065,26,26,0
 Third Point Private Capital Partners,17,0,0,0,0
-TOTAL,54743,51642,4183,4147,1747
+TOTAL,54498,51414,4117,4117,1725
