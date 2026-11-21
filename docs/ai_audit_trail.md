@@ -173,14 +173,23 @@ release only if every check passes. Report: `docs/history/release_report.md`.
   variants of borrowers the family held, acquisition dates at sister BDCs, spreads lost to a unit error, spread
   differences across a family's BDCs, industry labels parsed as names. All fixed in the pipeline (D43): 1,747 to
   1,725 loans. The checker's EDGAR spot check of 10 more loans is in `docs/verification_sample_10_release.csv`.
+- A second fresh checker re-ran all checks after D43. It passed rows, cutoff, numbers, the EDGAR batch, the
+  fresh clone, the teammate test and hygiene, but found 8 loans that were not new (brand-prefixed or doubled names)
+  and one loan priced over SARON. Fixed (D44): matching key from the cleaned name, a suffix rule in the variant
+  check, implied base rate at least 2.5 pp, three more energy industry labels: 1,725 to 1,705 loans. The same checker
+  then re-ran newness, row rules, numbers and the fresh clone on the final commit.
+- The checker hit the API rate limit once and was resumed; a scheduled restart was set at the user's request.
 - A first `main.ipynb` run failed on nbconvert's per-cell time limit (notebook 01 runs in one `%run` cell while the
   checker used memory); runs now use `--ExecutePreprocessor.timeout=-1` (documented in README).
 
 **What was checked**
-- Two `main.ipynb` runs and a fresh-clone run (new venv from `requirements.txt`) with byte-identical outputs; row
+- Two `main.ipynb` runs after D44 and a fresh-clone run (new venv from `requirements.txt`) with byte-identical
+  output files (the notebook file itself differs only in execution timestamps and how the kernel split printed
+  output into chunks; its content is identical); row
   rules, cutoff dates, every headline number and every number quoted in the docs; hygiene (no e-mail, path or token).
 
 **What was rejected**
 - A general fuzzy-name rule without a maturity condition for short names (too many false matches); re-parsing the 447
   candidate lines whose parsed name is an industry label (left for a parser improvement; the lines are excluded).
-- Hand-made exclusions of single loans: residual odd names are documented in D43 instead.
+- Hand-made exclusions of single loans: residual odd names are documented in D43 and D44 instead (e.g. "Project
+  Titan Tyber Medical", very likely not new, but no name rule links it to its earlier holding).
