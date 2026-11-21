@@ -85,6 +85,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D44 | Second release check: matching key from the cleaned name; brand-prefixed names count as held before; implied base rate must be a SOFR level. | taken (AI, work order 5), **consequential** (sample) | See D44. |
 | D45 | Working rules for notebooks 02/03: split of tasks as in the course template, model choice on pooled validation MAE, small tuning grids, one optional-feature variant, package versions from `requirements.txt`. | taken (team: Neil, notebook 02 owner), **consequential** (main model choice rule) | See D45. |
 | D46 | Notebook 02 steps 2 to 6: reference mean added; tuning grids; random-forest feature share; neural-net early stopping; unknown-category warning silenced and counted; diagnostics 6b and 6c. | taken (AI, small; reviewed by notebook owner) | See D46. |
+| D47 | Second race round with the residual target (spread minus market median t-2) for all models; default setting competes in tuning. | taken (team: Neil, E9; AI implementation), **consequential** (model specification) | See D47. |
 
 ---
 
@@ -560,4 +561,26 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   overfitting); yardsticks that use the validation outcomes (true quarter median 74 to 83 bps; lasso fitted on the
   quarter itself 55 to 59 bps) show the information limit of the features. 10% of loans with errors above 150 bps
   carry 31% of the lasso error; spreads above 7 pp are predicted at 5.4 pp on average.
-- **Not yet decided (owner):** E9, residual target (spread minus market median) for all models.
+- **E9 decided:** see D47.
+- **Wording fixed (D47):** yardstick (b) of 6c is the limit of a *linear* model with these features, not of all models.
+
+### D47. Residual target as a second round for all models; default setting competes in tuning (team, E9; 21 Nov 2026)
+- **Why it came up.** Steps 6b and 6c: the market level of every validation quarter lies outside the training range,
+  so trees and the neural net cannot follow the falling market; most of the error is between loans within a quarter.
+- **Options (E9).** (A) keep the spread as the only training target; (B) a second round for all models trained on
+  the deviation from the market median, `spread_pp - mkt_spread_t2_all`, prediction = deviation + median; (C) the
+  second round only for trees and the net. Chosen by the notebook owner: **B** (same folds, grids and metric for
+  all; C would make the race unfair). The scored target stays the spread; features unchanged; baseline 1 is the
+  special case "deviation = 0". The market median is a feature known at the cutoff (t-2 rule), so no leakage.
+- **Evidence.** Deviation of training loans by year (median 0.00 / -0.25 / 0.00 pp, IQR about 1 pp) is stable.
+  Validation MAE, spread target -> residual target: boosting 86.7 -> **58.3**, random forest 85.4 -> 59.3, neural net
+  126.6 -> 60.8, ridge 72.1 -> 64.7, lasso 68.5 -> 66.4, tree 89.0 -> 68.6, linear regression 74.9 -> 74.9
+  (identical by construction: the market median is a feature, so OLS only shifts its coefficient by one). All
+  residual models beat baseline 1 (78.6) in all four folds; fold spread 6 to 8 bps for the best five.
+- **Tuning fix (AI, small).** The default setting now competes with the grid (tuned = best of default and grid), so
+  tuning can never end worse than the default. Before, the residual neural net was reported as "tuned" 66.0 against
+  a default of 60.8 because the default (100 units) was not in the grid. "Default" means the scikit-learn default
+  plus the fixed settings of the notebook (lasso max_iter, forest 300 trees, boosting subsample 0.8, net early
+  stopping and max_iter). No other number changed.
+- **Next (owner):** choice of the main model in step 8 among the candidates within the fold spread of the best.
+- **Reversible:** yes (the first round stays in the notebook and in `predictions_validation.csv`).

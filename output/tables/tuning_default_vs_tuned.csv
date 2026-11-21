@@ -1,8 +1,15 @@
 model,default_mae_bps,tuned_mae_bps,tuned_params,n_settings,seconds,gain_bps,fold_spread_bps,gain_larger_than_fold_spread
 Linear regression,74.9,74.9,none,1,,0.0,26.6,False
-Ridge,72.3,72.1,{'alpha': 3},8,0.6,0.20000000000000284,18.2,False
-Lasso,96.0,68.5,{'alpha': 0.01},7,0.5,27.5,4.9,True
-Tree,108.5,89.0,"{'max_depth': 3, 'min_samples_leaf': 5}",10,0.8,19.5,30.0,False
-Random forest,87.9,85.4,"{'max_features': 0.5, 'min_samples_leaf': 1}",9,14.5,2.5,19.5,False
-Boosting,90.4,86.7,"{'learning_rate': 0.1, 'n_estimators': 100, 'max_depth': 2}",8,4.6,3.700000000000003,17.2,False
-Neural network,149.9,126.6,"{'hidden_layer_sizes': (32,), 'alpha': 0.0001}",6,10.9,23.30000000000001,151.0,False
+Ridge,72.3,72.1,{'alpha': 3},9,0.6,0.20000000000000284,18.2,False
+Lasso,96.0,68.5,{'alpha': 0.01},8,0.5,27.5,4.9,True
+Tree,108.5,89.0,"{'max_depth': 3, 'min_samples_leaf': 5}",11,0.7,19.5,30.0,False
+Random forest,87.9,85.4,"{'max_features': 0.5, 'min_samples_leaf': 1}",10,15.1,2.5,19.5,False
+Boosting,90.4,86.7,"{'learning_rate': 0.1, 'n_estimators': 100, 'max_depth': 2}",9,4.4,3.700000000000003,17.2,False
+Neural network,149.9,126.6,"{'hidden_layer_sizes': (32,), 'alpha': 0.0001}",7,11.3,23.30000000000001,151.0,False
+Linear regression (residual),74.9,74.9,none,1,,0.0,26.6,False
+Ridge (residual),72.0,64.7,{'alpha': 100},9,0.7,7.299999999999997,6.5,True
+Lasso (residual),86.8,66.4,{'alpha': 0.03},8,0.5,20.39999999999999,7.3,True
+Tree (residual),78.7,68.6,"{'max_depth': 4, 'min_samples_leaf': 5}",11,0.7,10.100000000000009,14.4,False
+Random forest (residual),61.4,59.3,"{'max_features': 0.33, 'min_samples_leaf': 1}",10,12.9,2.1000000000000014,6.8,False
+Boosting (residual),58.3,58.3,"{'learning_rate': 0.1, 'n_estimators': 100, 'max_depth': 3}",9,4.4,0.0,6.4,False
+Neural network (residual),60.8,60.8,"{'hidden_layer_sizes': (100,), 'alpha': 0.0001}",7,4.3,0.0,7.9,False
