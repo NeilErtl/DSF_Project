@@ -84,6 +84,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D43 | Release checker fixes: spelling variants count as held before; acquisition date and spread checked across the family; per-line spread unit; industry labels are not names; "InvestmentType" and "amp;" parsed. | taken (AI, work order 5), **consequential** (sample) | See D43. |
 | D44 | Second release check: matching key from the cleaned name; brand-prefixed names count as held before; implied base rate must be a SOFR level. | taken (AI, work order 5), **consequential** (sample) | See D44. |
 | D45 | Working rules for notebooks 02/03: split of tasks as in the course template, model choice on pooled validation MAE, small tuning grids, one optional-feature variant, package versions from `requirements.txt`. | taken (team: Neil, notebook 02 owner), **consequential** (main model choice rule) | See D45. |
+| D46 | Notebook 02 steps 2 to 6: reference mean added; tuning grids; random-forest feature share; neural-net early stopping; unknown-category warning silenced and counted; diagnostics 6b and 6c. | taken (AI, small; reviewed by notebook owner) | See D46. |
 
 ---
 
@@ -537,3 +538,26 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   (`loans_all_bdc.csv` without sector, `loans_incl_refi.csv`), with the same test protocol; the syndicated-loan
   sensitivity is a subset of the main predictions and is computed in 03.
 - **Reversible:** all of them; no data change.
+
+### D46. Choices in notebook 02, steps 2 to 6 (AI, small choices under D45; 21 Nov 2026)
+- **Reference "training mean"** shown next to the two committed baselines (deck 16's mean baseline). Not a committed
+  baseline and not a candidate. Evidence: 96.0 bps against 78.6 for baseline 1, i.e. ignoring the falling market
+  costs about 17 bps. Reversible.
+- **Tuning grids** (E4): ridge alpha 0.1 to 1000 (8 values), lasso alpha 0.0003 to 1 (7), tree depth 2 to 8 x
+  min leaf 5/20, forest max_features sqrt/0.33/0.5 x min leaf 1/5/10 with 300 trees, boosting learning rate
+  0.03/0.1 x 100/300 trees x depth 2/3 with subsample 0.8, MLP layers (16)/(32)/(32,16) x alpha 1e-4/1e-2 with early
+  stopping. Best ridge and lasso alpha inside the grid (3 and 0.01). Options considered: RandomizedSearchCV (notebook
+  210) instead of full grids: not needed, the full grids run in 40 seconds. Reversible.
+- **Random forest max_features below 1** (deck 17: the scikit-learn default for regression is bagging).
+- **Neural net early stopping** on 10% of the training fold, drawn at random (not the latest quarter): a small
+  look-ahead inside the training fold, never into the validation quarter. Option: time-ordered holdout (not available
+  in MLPRegressor). Effect is irrelevant for the choice: the net is last by 40 bps.
+- **Warning silenced:** scikit-learn warns when a validation loan has a manager family not seen in the training fold;
+  the encoder maps it to the pooled infrequent group as designed (`mh.make_preprocessor`). The number is printed
+  instead: 61 of 675 validation loans.
+- **Diagnostics (6b, 6c):** market features of every validation quarter lie outside the training range (trees cannot
+  extrapolate); 97% of spreads on a 25 bps grid; lasso training MAE 63 to 69 bps, validation 65 to 70 bps (no
+  overfitting); yardsticks that use the validation outcomes (true quarter median 74 to 83 bps; lasso fitted on the
+  quarter itself 55 to 59 bps) show the information limit of the features. 10% of loans with errors above 150 bps
+  carry 31% of the lasso error; spreads above 7 pp are predicted at 5.4 pp on average.
+- **Not yet decided (owner):** E9, residual target (spread minus market median) for all models.
