@@ -224,6 +224,10 @@ before they are taken; the AI logs small ones). Entry updated at the end of the 
   (rule added to CLAUDE.md); `n_family_bdcs` is known at the cutoff for the lender but not for a sponsor or CFO,
   although both are named users: the main model without it reaches 54.9 instead of 54.6 bps. The owner chose the
   version without it (E11, D51); steps 7b, 8, 9 and 10 rerun (the test quarters had not been evaluated).
+- Hand-over: notebook 02 added to `main.ipynb` (with a check of its outputs) and to the README section "How to run";
+  tested with a copy of `main.ipynb` without step 1. A full run including notebook 01 was not repeated here: the raw
+  data and `sec_user_agent.txt` are not in this workspace (notebook 01 was verified byte-identical in a fresh clone in
+  session 5).
 
 **What was rejected**
 - `instrument` and `mkt_spread_t2_core` as optional features (D48); RandomizedSearchCV (full grids run in seconds);

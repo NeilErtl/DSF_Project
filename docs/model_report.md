@@ -130,7 +130,7 @@ Fold construction (gap, filing dates) asserted; no never-feature among the featu
 candidate predicts every validation loan once; baseline 2 recomputed by separate code for all 675 loans; predictions
 within 1 to 15 pp; best ridge and lasso alpha inside their grids; tuning never ends below the default; the recorded
 main-model specification reproduces its validation MAE; a full rerun of the notebook reproduces all 13,500
-validation predictions; two full runs give byte-identical output files (D50); every test training set ends at t-2
+validation predictions; two full runs give byte-identical output files (D50); `main.ipynb` runs notebook 02 and checks its outputs; every test training set ends at t-2
 and was filed before t; every candidate predicts every test and robustness loan exactly once; no test error is
 printed in 02; every main-model feature is marked as known at the cutoff for every named user in `data_dictionary.csv` (D51).
 

@@ -16,8 +16,10 @@ environment variable `SEC_USER_AGENT`.
 ## How to run
 1. Python 3.12: `python -m pip install -r requirements.txt`
 2. Create `sec_user_agent.txt` (see above).
-3. Open `code/main.ipynb` and run *Restart, Run All* (it runs `01_preprocess.ipynb`; about 25 minutes, longer on the
-   first run because of the downloads). Notebooks 02 and 03 will be added to `main.ipynb`. From the command line
+3. Open `code/main.ipynb` and run *Restart, Run All*. It runs `01_preprocess.ipynb` (about 25 minutes, longer on the
+   first run because of the downloads) and `02_estimate.ipynb` (about 2 minutes); `03_evaluate.ipynb` will be added.
+   To rebuild only the models, run `code/02_estimate.ipynb` alone: it reads `data/processed/` (in Git) and needs no
+   download or `sec_user_agent.txt`. Two runs give byte-identical output files. From the command line
    (in `code/`): `jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 main.ipynb`
    (`-1` switches off the per-cell time limit: notebook 01 runs inside one `%run` cell and can take over an hour on a
    laptop with little free memory).
