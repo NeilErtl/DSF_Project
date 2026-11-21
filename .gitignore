@@ -1,0 +1,10 @@
+# raw downloads (rebuilt by code/01_preprocess.ipynb) and intermediate caches
+data/raw/
+data/interim/
+# course material and private files, never committed
+course_ref/
+sec_user_agent.txt
+# environment and editor artefacts
+.venv/
+.ipynb_checkpoints/
+__pycache__/

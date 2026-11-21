@@ -1,0 +1,51 @@
+patrick_loan_id,manager,bdc_name,quarter_str,borrower,spread_pp,maturity_date,class_abc,strictly_new,note,source_url
+L0010,Goldman Sachs,GOLDMAN SACHS MIDDLE MARKET LENDING CORP. II,2023Q2,"Singlewire Software, LLC",6.25,2029-05-10,a,yes,,https://www.sec.gov/Archives/edgar/data/1865174/000095017023019645/ck0001865174-20230331.htm
+L0042,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2023Q3,"Cornerstone Building Brands, Inc.",3.25,2028-04-12,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017023039857/ck0001920145-20230630.htm
+L0066,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2023Q3,Oxbow Carbon LLC,4.0,2030-05-10,b,yes,,https://www.sec.gov/Archives/edgar/data/1817825/000121390023066114/f10q0623_steelecreek.htm
+L0108,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2023Q4,"EIP Consolidated, LLC (dba Everest Infrastructure)",6.25,2028-12-07,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017023060350/ck0001920145-20230930.htm
+L0186,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q1,"Alliant Holdings Intermediate, LLC Inc.",3.5,2030-11-06,b,no,,https://www.sec.gov/Archives/edgar/data/1902649/000095017024024153/ck0001902649-20231231.htm
+L0275,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q2,BEP Intermediate Holdco LLC (dba Buyers Edge),3.75,2031-04-25,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017024056854/ck0001920145-20240331.htm
+L0310,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q2,Traverse Midstream Partners LLC,3.5,2028-02-16,b,yes,,https://www.sec.gov/Archives/edgar/data/1817825/000121390023039541/f10q0323_steelecreek.htm
+L0362,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q3,Chromalloy Corporation,3.75,2031-03-27,b,yes,,https://www.sec.gov/Archives/edgar/data/1633858/000141057824000805/tmb-20240331x10q.htm
+L0392,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q3,NEXUS Buyer LLC,4.0,2031-07-31,a,no,,https://www.sec.gov/Archives/edgar/data/1920145/000095017024096416/ck0001920145-20240630.htm
+L0420,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q3,White Cap Buyer LLC,3.25,2029-10-19,b,yes,,https://www.sec.gov/Archives/edgar/data/1902649/000095017024094751/ck0001902649-20240630.htm
+L0536,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q4,INEOS Quattro Holdings UK Ltd,4.25,2031-10-07,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017024126294/ck0001920145-20240930.htm
+L0559,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2024Q4,Veritiv Corporation,4.5,2030-11-30,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017024126294/ck0001920145-20240930.htm
+L0636,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q1,"KPA Parent Holdings, Inc.",4.75,2032-03-12,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017025032199/ck0001920145-20241231.htm
+L0700,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q2,Accommodations Plus Technologies LLC,4.5,2032-05-28,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000095017025070289/ck0001920145-20250331.htm
+L0727,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q2,Madison IAQ LLC,3.25,2032-05-06,b,no,,https://www.sec.gov/Archives/edgar/data/1976336/000095017025071352/ck0001976336-20250331.htm
+L0783,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q3,Alterra Mountain Company,2.5,2030-05-31,b,no,,https://www.sec.gov/Archives/edgar/data/1817825/000121390024041767/ea0204587-10q_steelecreek.htm
+L0814,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q3,"PDDS Holdco, Inc. (dba Planet DDS)",6.0,2031-09-30,a,no,,https://www.sec.gov/Archives/edgar/data/1920145/000095017025107338/ck0001920145-20250630.htm
+L0875,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q4,"Computer Services, Inc.",4.5,2031-11-17,a,no,,https://www.sec.gov/Archives/edgar/data/1920145/000119312525277550/ck0001920145-20250930.htm
+L0898,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2025Q4,"Pro Mach Group, Inc.",2.75,2032-10-15,a,no,,https://www.sec.gov/Archives/edgar/data/1920145/000119312525277550/ck0001920145-20250930.htm
+L0964,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2026Q1,"Dayforce Bidco, LLC (dba Dayforce)",3.0,2033-02-04,a,no,,https://www.sec.gov/Archives/edgar/data/1920145/000119312526088668/ck0001920145-20251231.htm
+L0984,Goldman Sachs,GOLDMAN SACHS PRIVATE CREDIT CORP.,2026Q1,Victory Buyer LLC,3.0,2033-02-14,a,yes,,https://www.sec.gov/Archives/edgar/data/1920145/000119312526088668/ck0001920145-20251231.htm
+L0333,Varagon,VARAGON CAPITAL CORP,2024Q2,"BPCP NSA Intermedco, Inc.",5.0,2030-05-17,a,yes,,https://www.sec.gov/Archives/edgar/data/1784700/000095017024058847/ck0001784700-20240331.htm
+L0461,Varagon,VARAGON CAPITAL CORP,2024Q3,"Comar Holding Company, LLC",2.0,2030-06-03,a,no,,https://www.sec.gov/Archives/edgar/data/1784700/000095017024094111/ck0001784700-20240630.htm
+L0479,Varagon,VARAGON CAPITAL CORP,2024Q3,Liquid Environmental Solutions Corporation,4.75,2029-07-17,a,no,,https://www.sec.gov/Archives/edgar/data/1784700/000095017024094111/ck0001784700-20240630.htm
+L0496,Varagon,VARAGON CAPITAL CORP,2024Q3,"Race Winning Brands, Inc.",5.5,2028-07-15,a,no,,https://www.sec.gov/Archives/edgar/data/1784700/000095017024094111/ck0001784700-20240630.htm
+L0594,Varagon,VARAGON CAPITAL CORP,2024Q4,FS Squared Holding Corp.,4.75,2030-12-23,a,yes,,https://www.sec.gov/Archives/edgar/data/1784700/000095017024125262/ck0001784700-20240930.htm
+L0859,Varagon,VARAGON CAPITAL CORP,2025Q3,VTC Buyer Corp.,5.25,2031-07-15,a,yes,,https://www.sec.gov/Archives/edgar/data/1784700/000095017025106434/ck0001784700-20250630.htm
+L1047,Varagon,VARAGON CAPITAL CORP,2026Q2,"Le Sueur, Incorporated",6.0,2031-05-20,a,yes,,https://www.sec.gov/Archives/edgar/data/1784700/000119312526219643/ck0001784700-20260331.htm
+L0134,PennantPark,PENNANTPARK FLOATING RATE CAPITAL LTD.,2023Q4,"Medina Health, LLC",6.25,2028-10-20,a,yes,,https://www.sec.gov/Archives/edgar/data/1504619/000095017023068908/pflt-20230930.htm
+L0240,PennantPark,PENNANTPARK FLOATING RATE CAPITAL LTD.,2024Q1,"Keel Platform, LLC",5.25,2031-01-19,a,yes,,https://www.sec.gov/Archives/edgar/data/1504619/000095017024012187/pflt-20231231.htm
+L0427,PennantPark,PENNANTPARK INVESTMENT CORP,2024Q3,"C5MI Acquisition, LLC",6.0,2030-07-31,a,yes,,https://www.sec.gov/Archives/edgar/data/1383414/000095017024092751/pnnt-20240630.htm
+L0566,PennantPark,PENNANTPARK FLOATING RATE CAPITAL LTD.,2024Q4,"Events Buyer, LLC",5.75,2029-12-17,a,no,,https://www.sec.gov/Archives/edgar/data/1504619/000095017024130666/pflt-20240930.htm
+L0744,PennantPark,PENNANTPARK FLOATING RATE CAPITAL LTD.,2025Q2,"Cornerstone Advisors of Arizona, LLC",4.75,2032-05-13,a,yes,,https://www.sec.gov/Archives/edgar/data/1504619/000095017025069167/pflt-20250331.htm
+L0845,PennantPark,PENNANTPARK INVESTMENT CORP,2025Q3,"Rosco Parent, LLC",4.75,2031-09-12,a,yes,,https://www.sec.gov/Archives/edgar/data/1383414/000095017025106538/pnnt-20250630.htm
+L1029,PennantPark,PENNANTPARK PRIVATE INCOME FUND,2026Q2,"Elektrik App, Inc",5.5,2032-05-29,a,yes,,https://www.sec.gov/Archives/edgar/data/2089126/000119312526214838/ck0002089126-20260331.htm
+L0249,Silver Point,SILVER POINT SPECIALTY LENDING FUND,2024Q1,GHX Ultimate Parent Corp,4.0,2027-08-23,a,yes,,https://www.sec.gov/Archives/edgar/data/1646614/000095017024034390/ck0001646614-20231231.htm
+L0576,Silver Point,SILVER POINT SPECIALTY LENDING FUND,2024Q4,Rayonier AM Products Inc,7.0,2029-10-29,a,yes,,https://www.sec.gov/Archives/edgar/data/1646614/000095017024124813/ck0001646614-20240930.htm
+L0759,Silver Point,SILVER POINT SPECIALTY LENDING FUND,2025Q2,TransDigm Inc,2.75,2030-03-22,b,yes,,https://www.sec.gov/Archives/edgar/data/1976336/000095017025041127/ck0001976336-20241231.htm
+L1033,Silver Point,SILVER POINT SPECIALTY LENDING FUND,2026Q2,ChemCat AcquisitionCo LLC (Ketjen),4.75,2033-03-02,a,yes,,https://www.sec.gov/Archives/edgar/data/1646614/000119312526218912/ck0001646614-20260331.htm
+L0326,Stellus,STELLUS PRIVATE CREDIT BDC,2024Q2,"FairWave Holdings, LLC",6.5,2029-04-01,a,yes,,https://www.sec.gov/Archives/edgar/data/1901037/000155837024007800/tmb-20240331x10q.htm
+L0681,Stellus,STELLUS CAPITAL INVESTMENT CORP,2025Q1,"Identity Theft Guard Solutions, Inc.",5.5,2030-02-28,a,yes,,https://www.sec.gov/Archives/edgar/data/1551901/000155837025002182/scm-20241231x10k.htm
+L0999,Stellus,STELLUS CAPITAL INVESTMENT CORP,2026Q1,Silver Corporate Holdings LLC,5.5,2031-01-09,a,yes,,https://www.sec.gov/Archives/edgar/data/1551901/000110465926026432/scm-20251231x10k.htm
+L0020,Brightwood,BRIGHTWOOD CAPITAL CORP I,2023Q3,"Elevator Intermediate Holdings, Inc",6.5,2028-08-25,a,yes,,https://www.sec.gov/Archives/edgar/data/1895316/000141057823001783/tmb-20230630x10q.htm
+L0181,Brightwood,BRIGHTWOOD CAPITAL CORP I,2024Q1,"Synamedia Americas Holdings, Inc.",7.75,2028-12-05,b,yes,,https://www.sec.gov/Archives/edgar/data/1571329/000095017024036400/lrfc-20231231.htm
+L0774,Brightwood,BRIGHTWOOD CAPITAL CORP I,2025Q3,"12 Interactive, LLC",5.75,2030-09-05,a,yes,,https://www.sec.gov/Archives/edgar/data/1895316/000141057825001636/tmb-20250630x10q.htm
+L0019,WhiteHorse,"WHITEHORSE FINANCE, INC.",2023Q2,"Transervice Holdings, Inc. (d/b/a Transervice Logistics, Inc.)",7.5,2028-06-29,a,yes,,https://www.sec.gov/Archives/edgar/data/1552198/000155837023008897/whf-20230331x10q.htm
+L0339,WhiteHorse,"WHITEHORSE FINANCE, INC.",2024Q2,"PANOS Brands, LLC",5.75,2029-05-14,a,yes,,https://www.sec.gov/Archives/edgar/data/1552198/000155837024007193/whf-20240331x10q.htm
+L0694,WhiteHorse,"WHITEHORSE FINANCE, INC.",2025Q1,Infotree Holdco LLC,5.75,2030-02-19,a,yes,,https://www.sec.gov/Archives/edgar/data/1552198/000155837025002455/whf-20241231x10k.htm
+L0743,Great Elm,GREAT ELM CAPITAL CORP.,2025Q2,"Walor North America, Inc",5.75,2028-06-17,a,yes,,https://www.sec.gov/Archives/edgar/data/1675033/000095017025063636/gecc-20250331.htm
+L0920,Great Elm,GREAT ELM CAPITAL CORP.,2025Q4,"Ryan, LLC",3.5,2032-11-05,a,yes,,https://www.sec.gov/Archives/edgar/data/1675033/000119312525264873/gecc-20250930.htm

@@ -1,0 +1,933 @@
+side,family,quarter,borrower,spread_patrick,spread_ours,maturity_patrick,maturity_ours,principal_patrick,principal_ours,cause
+both,Brightwood Capital Corp I,2023Q2,"Athlete Buyer, LLC",6.0,6.0,2029-04-26,2029-04-26,8084000.0,7000000.0,
+patrick_only,Brightwood Capital Corp I,2023Q2,YWNA Finco LLC-Senior Secured,6.25,,2027-08-18,,9812000.0,,our rule: borrower held by the family before (name match)
+both,Brightwood Capital Corp I,2023Q2,"Zavation Medical Products, LLC",6.5,6.5,2028-06-30,2028-06-30,10000000.0,10000000.0,
+patrick_only,Goldman Sachs,2023Q2,3SI,6.5,,2026-12-16,,17301000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2023Q2,"Arrow Buyer, Inc. (dba Archer Technologies)",6.5,6.5,2030-06-28,2030-06-28,11767000.0,4300000.0,
+both,Goldman Sachs,2023Q2,"Highfive Dental Holdco, LLC",6.75,6.75,2028-06-13,2028-06-13,15793000.0,12406000.0,
+both,Goldman Sachs,2023Q2,"Singlewire Software, LLC",6.25,6.25,2029-05-10,2029-05-10,31090000.0,10696000.0,
+patrick_only,Goldman Sachs,2023Q2,Superior Environmental Solutions,5.5,,2028-07-03,,481000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,PennantPark,2023Q2,"HPA SPQ Merger Sub, Inc.",6.25,,2029-06-15,,3758000.0,,in our all-BDC file but not core (industry or maturity missing)
+both,Stellus,2023Q2,Craftable Intermediate II Inc,6.5,6.5,2028-06-30,2028-06-30,14819268.0,14819268.0,
+both,Stellus,2023Q2,"Equine Network, LLC",6.5,6.5,2028-05-22,2028-05-22,2261138.0,7269357.0,
+both,Stellus,2023Q2,Impact Home Services LLC,6.5,6.5,2028-04-28,2028-04-28,9113504.0,9009018.0,
+both,Stellus,2023Q2,"RIA Advisory Borrower, LLC",6.5,6.5,2027-08-02,2027-08-02,10321738.0,10148519.0,
+both,"Whitehorse Finance, Inc.",2023Q2,"M&M OpCo. LLC (d/b/a Escalent, Inc.)",8.0,8.0,2029-04-09,2029-04-09,4750000.0,4750000.0,
+both,"Whitehorse Finance, Inc.",2023Q2,"Transervice Holdings, Inc. (d/b/a Transervice Logistics, Inc.)",7.5,7.5,2028-06-29,2028-06-29,9000000.0,9000000.0,
+both,Brightwood Capital Corp I,2023Q3,"Elevator Intermediate Holdings, Inc",6.5,6.5,2028-08-25,2028-08-25,22000000.0,22000000.0,
+both,Brightwood Capital Corp I,2023Q3,"Sandlot Buyer, LLC",6.0,6.0,2028-09-19,2028-09-19,25000000.0,25000000.0,
+patrick_only,Goldman Sachs,2023Q3,"AQ Helios Buyer, Inc. (dba SurePoint)",8.0,,2028-08-07,,12500000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2023Q3,"Acuity Specialty Products, Inc. (dba Zep Inc.)",4.0,4.0,2028-10-02,2028-10-02,68459000.0,103337000.0,
+patrick_only,Goldman Sachs,2023Q3,"Ahead DB Holdings, LLC",3.75,,2027-10-18,,3267000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2023Q3,Allied Universal Holdco LLC,3.75,,2028-05-12,,2145000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,Amentum Government Services Holdings LLC,4.0,,2027-01-29,,1072000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2023Q3,Arsenal AIC Parent LLC,4.5,4.5,2030-08-18,2030-08-18,1325000.0,1325000.0,
+patrick_only,Goldman Sachs,2023Q3,Asurion LLC,4.25,,2028-08-19,,474000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,BBB Industries LLC,5.25,,2029-07-25,,1072000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2023Q3,Bamboo US BidCo LLC (aka Baxter),6.0,6.0,2030-09-30,2030-09-30,38094000.0,23483000.0,
+patrick_only,Goldman Sachs,2023Q3,"Barracuda Networks, Inc.",4.5,,2029-08-15,,2145000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2023Q3,"Broadway Technology, LLC",6.0,,2028-01-25,,962000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2023Q3,CMG Media Corporation,3.5,,2026-12-17,,474000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2023Q3,Chamberlain Group Inc.,3.25,3.25,2028-11-03,2028-11-03,2145000.0,2145000.0,
+both,Goldman Sachs,2023Q3,"Circustrix Holdings, LLC (dba SkyZone)",6.75,6.75,2028-07-18,2028-07-18,34926000.0,34926000.0,
+patrick_only,Goldman Sachs,2023Q3,Citadel Securities LP,2.5,,2030-07-29,,3863000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2023Q3,"Cornerstone Building Brands, Inc.",3.25,,2028-04-12,,1845000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2023Q3,"Covetrus, Inc.",5.0,,2029-10-13,,474000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,Da Vinci Purchaser Corp.,4.0,,2027-01-08,,948000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2023Q3,DexKo Global Inc.,3.75,3.75,2028-10-04,2028-10-04,1845000.0,1845000.0,
+patrick_only,Goldman Sachs,2023Q3,"Edelman Financial Center, LLC",3.5,,2028-04-07,,2145000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2023Q3,Flexera Software LLC,3.75,,2028-03-03,,673000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,GHX Ultimate Parent Corporation,4.75,,2027-06-30,,848000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Goldman Sachs,2023Q3,Gainwell,4.0,,2027-10-01,,2144000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,HUB International Limited,4.0,,2029-11-10,,2145000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,"Highline Aftermarket Acquisition, LLC",4.5,,2027-11-09,,673000.0,,our rule: existing loan of another manager
+both,Goldman Sachs,2023Q3,"Hyland Software, Inc.",6.0,6.0,2030-09-19,2030-09-19,95475000.0,95475000.0,
+both,Goldman Sachs,2023Q3,ITT Holdings LLC,2.75,2.75,2028-07-10,2028-07-10,1696000.0,1696000.0,
+patrick_only,Goldman Sachs,2023Q3,"LABL, Inc.",5.0,,2028-10-29,,374000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2023Q3,"McAfee, LLC",3.75,,2029-03-01,,898000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,Mediaocean LLC,3.5,,2028-12-15,,948000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,NFP Corp.,3.25,,2027-02-16,,474000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2023Q3,"Ortholite, LLC",6.25,6.25,2027-09-29,2027-09-29,56721000.0,56721000.0,
+both,Goldman Sachs,2023Q3,Oxbow Carbon LLC,4.0,4.0,2030-05-10,2030-05-10,1072000.0,1072000.0,
+patrick_only,Goldman Sachs,2023Q3,Physician Partners LLC,4.0,,2028-12-23,,2145000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,"Pro Mach Group, Inc.",4.0,,2028-08-31,,474000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2023Q3,Recorded Books Inc. (dba RBMedia),6.25,6.25,2030-09-03,2030-09-03,96077000.0,96077000.0,
+patrick_only,Goldman Sachs,2023Q3,Recorded Books Inc. (dba RBMedia),6.25,,2028-08-31,,7776000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,Goldman Sachs,2023Q3,Renaissance Holding Corp.,4.75,,2030-04-05,,22500000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2023Q3,"Rubrik,Inc.",7.0,,2028-08-17,,154056000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2023Q3,"Rubrik,Inc.",6.13,,2027-08-31,,4027000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2023Q3,Superior Environmental Solutions,6.5,,2029-08-01,,21184000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2023Q3,Thor FinanceCo LLC (dba Harmoni Towers),7.0,7.000000000000001,2028-08-24,2028-08-24,56000000.0,56000000.0,
+both,Goldman Sachs,2023Q3,"Towerco IV Holdings, LLC",4.0,4.0,2028-08-31,2028-08-31,30668000.0,14004000.0,
+patrick_only,Goldman Sachs,2023Q3,"VASA Fitness Buyer, Inc.",7.5,,2028-08-14,,26740000.0,,"our rule: spread range, PIK or fixed rate"
+patrick_only,PennantPark,2023Q3,Arcfield,6.25,,2029-08-03,,14616000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2023Q3,"ECL Entertainment, LLC,",4.75,,2030-08-31,,5000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2023Q3,Integrated Data Services - Term Loan,6.5,6.5,2029-08-01,2029-08-01,15467000.0,15467000.0,
+patrick_only,PennantPark,2023Q3,"Integrity Marketing Acquisition, LLC",6.15,,2026-08-27,,25546000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2023Q3,"NORA Acquisition, LLC",6.35,6.35,2029-08-31,2029-08-31,61989000.0,61989000.0,
+both,Stellus,2023Q3,"Morgan Electrical Group Intermediate Holdings, Inc",6.25,6.25,2029-08-03,2029-08-03,6461697.0,6461697.0,
+both,Stellus,2023Q3,"The Hardenbergh Group, Inc",6.25,6.25,2028-08-07,2028-08-07,4783836.0,4783836.0,
+patrick_only,Varagon,2023Q3,"Zavation Medical Products, LLC",6.0,,2028-06-30,,4924000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,"Whitehorse Finance, Inc.",2023Q3,Buckeye Acquiror LLC,6.5,6.5,2029-08-01,2029-08-01,6180000.0,6000000.0,
+both,"Whitehorse Finance, Inc.",2023Q3,Medical Device Inc,6.5,6.5,2029-07-11,2029-07-11,2666000.0,2666000.0,
+patrick_only,Brightwood Capital Corp I,2023Q4,"AHF Parent Holding, Inc.",6.51,,2028-02-01,,10000000.0,,our rule: existing loan of another manager
+both,Brightwood Capital Corp I,2023Q4,"Catridge Technologies, LLC",7.0,7.000000000000001,2028-10-06,2028-10-06,24500000.0,24500000.0,
+both,Brightwood Capital Corp I,2023Q4,"Central Moloney, LLC",6.75,6.75,2028-10-20,2028-10-20,25000000.0,25000000.0,
+patrick_only,Brightwood Capital Corp I,2023Q4,"Contract Datascan, LP",7.6,,2028-11-03,,24000000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+both,Brightwood Capital Corp I,2023Q4,"Everest AcquisitionCo, LLC",6.25,6.25,2028-12-13,2028-12-13,5000000.0,5000000.0,
+both,Brightwood Capital Corp I,2023Q4,"Great Kitchens Food Company, Inc.",4.1,4.1000000000000005,2028-10-19,2028-10-19,4000000.0,4000000.0,
+both,Brightwood Capital Corp I,2023Q4,"TouchFuse, LLC",6.6,6.6000000000000005,2028-11-22,2028-11-22,21606000.0,21446000.0,
+patrick_only,Goldman Sachs,2023Q4,"AQ Sunshine, Inc. (dba Relation Insurance)",6.25,,2027-04-15,,54771000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2023Q4,"Amspec Parent, LLC",5.75,5.75,2030-12-05,2030-12-05,52857000.0,53873000.0,
+both,Goldman Sachs,2023Q4,Blast Bidco Inc. (dba Bazooka Candy Brands),6.0,6.0,2030-10-04,2030-10-04,76567000.0,76567000.0,
+patrick_only,Goldman Sachs,2023Q4,"Buckeye Partners, L.P.",2.5,,2030-11-22,,617000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2023Q4,"Crewline Buyer, Inc. (dba New Relic)",6.75,,2030-11-08,,73811000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2023Q4,"EIP Consolidated, LLC (dba Everest Infrastructure)",6.25,6.25,2028-12-07,2028-12-07,59426000.0,59426000.0,
+both,Goldman Sachs,2023Q4,Formulations Parent Corporation (dba Chase Corp),5.75,5.75,2030-11-15,2030-11-15,69883000.0,69883000.0,
+patrick_only,Goldman Sachs,2023Q4,Fullsteam Operations LLC,8.25,,2029-11-27,,110971000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2023Q4,"GPS Phoenix Buyer, Inc. (dba Guidepoint)",6.0,6.0,2029-10-02,2029-10-02,42534000.0,42534000.0,
+both,Goldman Sachs,2023Q4,"Harrington Industrial Plastics, LLC",5.75,5.75,2030-10-07,2030-10-07,140756000.0,140756000.0,
+patrick_only,Goldman Sachs,2023Q4,"K2 Towers III, LLC",6.55,,2028-12-06,,88000000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2023Q4,"LS Clinical Services Holdings, Inc (dba CATO)",7.25,,2027-06-16,,4232000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2023Q4,"LifePoint Health, Inc.",5.5,5.5,2028-11-16,2028-11-16,324000.0,324000.0,
+patrick_only,Goldman Sachs,2023Q4,MRI Software LLC,5.5,,2027-02-10,,39271000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2023Q4,"NAVEX TopCo, Inc.",5.75,5.75,2030-11-09,2030-11-09,64330000.0,64330000.0,
+both,Goldman Sachs,2023Q4,"Ncontracts, LLC",6.5,6.5,2029-12-11,2029-12-11,84799000.0,84799000.0,
+patrick_only,Goldman Sachs,2023Q4,"Onyx CenterSource, Inc.",6.75,,2028-12-15,,44456000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2023Q4,Proampac PG Borrower LLC,4.5,,2028-09-15,,174000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2023Q4,Skyway Towers Intermediate LLC,6.37,6.370000000000001,2028-12-22,2028-12-22,23702000.0,23702000.0,
+patrick_only,Goldman Sachs,2023Q4,Whitewater Holding Company LLC,5.75,,2027-02-21,,2100000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2023Q4,iSolved Inc,4.0,4.0,2030-10-14,2030-10-14,482000.0,482000.0,
+both,PennantPark,2023Q4,"ACP Avenu Buyer, LLC",6.25,6.25,2029-10-02,2029-10-02,16813000.0,16813000.0,
+both,PennantPark,2023Q4,"ACP Carisk Buyer, Inc.",5.75,5.75,2029-12-01,2029-12-01,5500000.0,5500000.0,
+patrick_only,PennantPark,2023Q4,AFC Dell Holding Corp.,6.4,,2027-04-09,,6159000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,PennantPark,2023Q4,"Aeronix, Inc.",5.5,5.5,2028-12-18,2028-12-18,49000000.0,69000000.0,
+both,PennantPark,2023Q4,"Aeronix, Inc.",5.5,5.5,2028-12-12,2028-12-18,20000000.0,69000000.0,
+patrick_only,PennantPark,2023Q4,"Broder Bros., Co.",5.75,,2029-12-01,,5500000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2023Q4,"Medina Health, LLC",6.25,,2028-10-20,,18732000.0,,our rule: borrower held by the family before (name match)
+both,PennantPark,2023Q4,"OSP Embedded Purchaser, LLC",5.85,5.85,2029-12-15,2029-12-15,6500000.0,6500000.0,
+both,PennantPark,2023Q4,"Omnia Exterior Solutions, LLC",5.5,5.5,2029-12-29,2029-12-29,10000000.0,10000000.0,
+patrick_only,PennantPark,2023Q4,"Pacific Purchaser, LLC",6.25,,2028-09-30,,18000000.0,,our rule: existing loan of another manager
+patrick_only,PennantPark,2023Q4,"Sigma Defense Systems, LLC",7.15,,2027-12-18,,49519000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2023Q4,The Plimpton & Hills Corporation,6.0,6.0,2029-11-07,2029-11-07,17026000.0,31426000.0,
+both,PennantPark,2023Q4,The Plimpton & Hills Corporation,6.0,6.0,2029-11-08,2029-11-07,14400000.0,31426000.0,
+patrick_only,PennantPark,2023Q4,"The Vertex Companies, LLC",6.0,,2028-12-29,,25000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2023Q4,"TransGo, LLC",6.0,6.0,2028-12-29,2028-12-29,40000000.0,40000000.0,
+patrick_only,PennantPark,2023Q4,"Watchtower Intermediate, LLC",6.0,,2029-12-01,,41020000.0,,in our all-BDC file but not core (industry or maturity missing)
+patrick_only,PennantPark,2023Q4,"Wildcat Buyerco, Inc",5.75,,2027-02-27,,4620000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Silver Point,2023Q4,"1440 Foods Topco, LLC",6.0,6.0,2029-12-20,2029-12-20,7849139.0,7849139.0,
+both,Silver Point,2023Q4,Aspire Bakeries Holdings,4.25,4.25,2030-12-23,2030-12-23,6200000.0,6200000.0,
+both,Silver Point,2023Q4,"Contractual Buyer, LLC (dba Kodiak Solutions)",6.0,6.0,2030-10-10,2030-10-10,3512473.0,3512473.0,
+patrick_only,Silver Point,2023Q4,Covanta Holding Corp,2.5,,2028-11-30,,3990566.0,,our rule: existing loan of another manager
+both,Silver Point,2023Q4,Crewline Buyer Inc,6.75,6.75,2030-11-08,2030-11-08,10491206.0,9501470.0,
+both,Silver Point,2023Q4,GOJO Industries Inc,9.5,9.5,2028-10-26,2028-10-26,18530264.0,18530264.0,
+both,Silver Point,2023Q4,KORE Wireless Group Inc,6.5,6.5,2028-11-09,2028-11-09,5263540.0,4636928.0,
+both,Silver Point,2023Q4,"MIS Acquisition, LLC",6.75,6.75,2028-11-17,2028-11-17,14865844.0,13874788.0,
+patrick_only,Silver Point,2023Q4,Medline Borrower LP,3.11,,2028-10-21,,5984772.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Stellus,2023Q4,2xLLC,6.5,6.5,2028-06-05,2028-06-05,1444767.0,1444767.0,
+both,Stellus,2023Q4,"Michelli, LLC",5.75,5.75,2028-12-21,2028-12-21,6571757.0,6342685.0,
+both,Stellus,2023Q4,"evolv Consulting, LLC",6.75,6.75,2028-12-07,2028-12-07,15156250.0,15156250.0,
+both,Varagon,2023Q4,Advantage HCS LLC,6.25,6.25,2029-11-08,2029-11-08,12500000.0,12500000.0,
+both,Varagon,2023Q4,"Concord III, L.L.C.",6.25,6.25,2028-12-20,2028-12-20,3734000.0,3734000.0,
+patrick_only,Varagon,2023Q4,"HLSG Intermediate, LLC",6.5,,2028-03-31,,6785000.0,,our rule: existing loan of another manager
+patrick_only,Varagon,2023Q4,"KNPC Holdco, LLC",5.5,,2029-10-22,,8082000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2023Q4,"MBS Holdings, Inc.",6.25,,2027-04-16,,315000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Varagon,2023Q4,"POY Holdings, LLC",5.5,,2027-11-16,,5086000.0,,our rule: existing loan of another manager
+patrick_only,Varagon,2023Q4,USSC Acquisition Corp.,6.25,,2027-09-28,,7434000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2023Q4,"Wildcat Buyerco, Inc.",5.75,,2027-02-26,,726000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,"Whitehorse Finance, Inc.",2023Q4,"Arteriocyte Medical Systems, Inc.",6.25,6.25,2028-10-18,2028-10-18,5022000.0,5022000.0,
+both,"Whitehorse Finance, Inc.",2023Q4,"Banner Acquisition Holdings, LLC",6.0,6.0,2029-01-02,2029-01-02,4827000.0,3091000.0,
+both,"Whitehorse Finance, Inc.",2023Q4,"Barrett Purchaser LLC (d/b/a SIB Development and Consulting, Inc.)",6.0,6.0,2029-11-21,2029-11-21,3654000.0,3654000.0,
+both,"Whitehorse Finance, Inc.",2023Q4,"Branford Filtration, LLC (d/b/a Clean Solutions Group)",6.5,6.5,2028-11-17,2028-11-17,11613000.0,11613000.0,
+both,"Whitehorse Finance, Inc.",2023Q4,KORE Wireless Group Inc.,6.5,6.5,2028-11-09,2028-11-09,6418000.0,6418000.0,
+both,"Whitehorse Finance, Inc.",2023Q4,"Midwest Texas Tea CA, LLC (d/b/a US Petroleum Partners, LLC)",7.25,7.249999999999999,2028-12-22,2028-12-22,9490000.0,9490000.0,
+both,"Whitehorse Finance, Inc.",2023Q4,"Pirtek Holdco, LLC",5.75,5.75,2028-10-26,2028-10-26,7500000.0,7500000.0,
+both,Brightwood Capital Corp I,2024Q1,"Adswerve, Inc.",4.5,4.5,2028-12-04,2028-12-04,4906000.0,4906000.0,
+both,Brightwood Capital Corp I,2024Q1,"BP Loenbro Holdings, Inc.",6.25,6.25,2029-02-01,2029-02-01,16330000.0,16330000.0,
+patrick_only,Brightwood Capital Corp I,2024Q1,"Bad Boy Mowers JV Acquisition, LLC",6.0,,2029-11-09,,12469000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Brightwood Capital Corp I,2024Q1,"Cartridge Technologies, LLC",7.0,,2028-10-06,,24347000.0,,our rule: borrower held by the family before (name match)
+both,Brightwood Capital Corp I,2024Q1,Legacy Restoration LLC,6.25,6.25,2029-01-05,2029-01-05,2614000.0,2494000.0,
+patrick_only,Brightwood Capital Corp I,2024Q1,Max US Bidco Inc.,5.0,,2030-10-02,,7500000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Brightwood Capital Corp I,2024Q1,"Prisma Graphic, LLC",6.5,,2027-07-29,,19038000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Brightwood Capital Corp I,2024Q1,"Proficium Purchaser, LLC",6.25,6.25,2029-03-27,2029-03-27,12000000.0,12000000.0,
+both,Brightwood Capital Corp I,2024Q1,"Subsea Global Solutions, LLC",7.0,7.000000000000001,2029-03-29,2029-03-29,21654000.0,21404000.0,
+patrick_only,Brightwood Capital Corp I,2024Q1,"Synamedia Americas Holdings, Inc.",7.75,,2028-12-05,,9838000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Brightwood Capital Corp I,2024Q1,Transnetwork LLC,5.5,5.5,2030-12-29,2030-12-29,4988000.0,4988000.0,
+both,Brightwood Capital Corp I,2024Q1,Trulite Holding Corp.,6.0,6.0,2030-03-01,2030-03-01,5000000.0,5000000.0,
+patrick_only,Goldman Sachs,2024Q1,"Alliant Holdings Intermediate, LLC Inc.",3.5,,2030-11-06,,811000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q1,"Aptean, Inc.",5.25,5.25,2031-01-30,2031-01-30,78811000.0,67275000.0,
+patrick_only,Goldman Sachs,2024Q1,Crosby US,4.0,,2029-08-16,,1322000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q1,Eisner Advisory Group LLC,4.0,4.0,2031-02-28,2031-02-28,1325000.0,1325000.0,
+patrick_only,Goldman Sachs,2024Q1,Fleet Midco I Limited,3.25,,2031-02-21,,1325000.0,,our rule: borrower held by the family before (name match)
+both,Goldman Sachs,2024Q1,GIP Pilot,3.0,3.0,2030-10-04,2030-10-04,3950000.0,3950000.0,
+patrick_only,Goldman Sachs,2024Q1,"GS AcquisitionCo, Inc. (dba Insightsoftware)",5.0,,2028-05-25,,46812000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q1,HUB International Limited,3.25,,2030-06-20,,3950000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q1,HowlCO LLC (dba Lone Wolf),10.0,,2027-10-22,,43010000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q1,"Kene Acquisition, Inc. (dba Entrust)",5.25,5.25,2031-02-07,2031-02-07,57769000.0,57769000.0,
+both,Goldman Sachs,2024Q1,"Project Accelerate Parent, LLC (dba ABC Fitness)",5.25,5.25,2031-02-24,2031-02-24,56875000.0,56875000.0,
+patrick_only,Goldman Sachs,2024Q1,Savage Enterprises LLC,3.25,,2028-09-15,,1850000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2024Q1,Sweep Purchaser LLC,5.75,,2027-06-30,,56608000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q1,Tarpon Towers II LLC,6.83,6.83,2029-02-01,2029-02-01,60002000.0,38088000.0,
+patrick_only,Goldman Sachs,2024Q1,"Wellness AcquisitionCo, Inc.",5.5,,2029-06-25,,1103000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q1,"Zeus Company, Inc.",5.5,5.5,2031-02-28,2031-02-28,105919000.0,105919000.0,
+patrick_only,PennantPark,2024Q1,"Atlas Purchaser, Inc. - Third Out",7.0,,2028-05-06,,13600000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2024Q1,"Big Top Holdings, LLC",6.25,6.25,2030-02-28,2030-02-28,46529000.0,53529000.0,
+patrick_only,PennantPark,2024Q1,"Big Top Holdings, LLC",6.25,,2030-02-07,,7000000.0,,our rule: BDC not industry-reporting
+both,PennantPark,2024Q1,"Carnegie Dartlet, LLC",5.5,5.5,2030-02-07,2030-02-07,70069000.0,68320000.0,
+both,PennantPark,2024Q1,"Eisner Advisory Group, LLC",4.0,4.0,2031-02-23,2031-02-23,7000000.0,7000000.0,
+both,PennantPark,2024Q1,"Keel Platform, LLC",5.25,5.25,2031-01-19,2031-01-19,10842000.0,10842000.0,
+patrick_only,PennantPark,2024Q1,"LSF9 Atlantis Holdings, LLC",6.5,,2029-06-30,,5550000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,PennantPark,2024Q1,"MOREGroup Holdings, Inc",5.9,5.9,2030-01-16,2030-01-16,32000000.0,57000000.0,
+both,PennantPark,2024Q1,"PCS Midco, Inc",5.75,5.75,2030-03-01,2030-03-01,11451000.0,22672000.0,
+patrick_only,PennantPark,2024Q1,"Smartronix, LLC",6.35,,2028-11-23,,24182000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,PennantPark,2024Q1,"TCG 3.0 Jogger Acquisitionco, Inc.",6.5,6.5,2029-01-26,2029-01-26,35725000.0,35725000.0,
+patrick_only,PennantPark,2024Q1,"Wrench Group, LLC",4.26,,2028-10-30,,3500000.0,,our rule: existing loan of another manager
+both,Silver Point,2024Q1,Azurite Intermediate Holdings Inc,6.5,6.5,2031-03-19,2031-03-19,7707309.0,2119510.0,
+both,Silver Point,2024Q1,FR Vision Holdings Inc (CHA Consulting),5.5,5.5,2031-01-20,2031-01-20,3046251.0,2303263.0,
+patrick_only,Silver Point,2024Q1,GHX Ultimate Parent Corp,4.0,,2027-08-23,,1582924.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Silver Point,2024Q1,Gibson Brands Inc,5.26,,2028-08-11,,2876663.0,,our rule: existing loan of another manager
+patrick_only,Silver Point,2024Q1,Instructure Holdings Inc,2.75,,2028-10-30,,4987277.0,,our rule: existing loan of another manager
+both,Silver Point,2024Q1,TETRA Technologies Inc,5.85,5.8500000000000005,2030-01-11,2030-01-11,21146166.0,15161402.0,
+both,Silver Point,2024Q1,Titan Purchaser Inc (Waupaca Foundry),6.0,6.0,2030-03-01,2030-03-01,17923079.0,17923079.0,
+both,Stellus,2024Q1,FiscalNote Boards LLC,6.0,6.0,2029-03-12,2029-03-12,6057870.0,6057870.0,
+patrick_only,Stellus,2024Q1,"MedLearning Group, LLC",6.5,,2027-12-30,,12589511.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Stellus,2024Q1,Titan Meter Bidco Corp,6.5,6.5,2029-03-12,2029-03-12,17725890.0,17725890.0,
+patrick_only,Varagon,2024Q1,"Chartis Group, LLC, The",5.75,,2027-11-01,,14325000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Varagon,2024Q1,"HTI Intermediate, LLC",5.0,5.0,2030-03-01,2030-03-01,1286000.0,1286000.0,
+patrick_only,Varagon,2024Q1,"KeyImpact Holdings, Inc.",6.5,,2029-01-31,,14214000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q1,"Magnolia Wash Holdings (Express Wash Acquisition Company, LLC)",6.5,,2028-07-14,,6539000.0,,our rule: existing loan of another manager
+patrick_only,"Whitehorse Finance, Inc.",2024Q1,"Event Services America, Inc. (d/b/a Contemporary Services Corporation)",7.25,,2029-01-31,,7000000.0,,our rule: borrower held by the family before (name match)
+both,"Whitehorse Finance, Inc.",2024Q1,"Monarch Collective Holdings, LLC",6.75,6.75,2029-01-10,2029-01-10,10107000.0,9377000.0,
+patrick_only,"Whitehorse Finance, Inc.",2024Q1,"PLTFRM Companies, LLC",9.0,,2029-01-29,,8571000.0,,"our rule: spread range, PIK or fixed rate"
+both,"Whitehorse Finance, Inc.",2024Q1,"Zephyr Buyer, L.P. (d/b/a The Weather Company, LLC)",6.75,6.75,2030-01-31,2030-01-31,14194000.0,14194000.0,
+both,Brightwood Capital Corp I,2024Q2,"Obra Capital, Inc",7.5,7.5,2029-06-21,2029-06-21,10000000.0,10000000.0,
+both,Brightwood Capital Corp I,2024Q2,"The Smilist DSO, LLC",6.0,6.0,2029-04-04,2029-04-04,6614000.0,6614000.0,
+patrick_only,Brightwood Capital Corp I,2024Q2,"Virtual Technologies Group, LLC",7.5,,2029-04-23,,4347000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,Goldman Sachs,2024Q2,"Ahead DB Holdings, LLC",3.75,,2031-02-01,,1828000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q2,BEP Intermediate Holdco LLC (dba Buyers Edge),3.75,3.75,2031-04-25,2031-04-25,46525000.0,46525000.0,
+patrick_only,Goldman Sachs,2024Q2,"Bullhorn, Inc. Professional Services",5.0,,2029-10-01,,49631000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q2,CD&R Hydra Buyer Inc.,4.0,4.0,2031-03-25,2031-03-25,1446000.0,1446000.0,
+patrick_only,Goldman Sachs,2024Q2,"Charger Debt Merger Sub, LLC (dba Classic Collision)",5.0,,2031-06-02,,203263000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q2,"DRW Holdings, LLC",3.5,,2031-06-17,,14989000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q2,Diligent Corporation Professional Services,5.0,,2030-08-02,,130236000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q2,"Drake Software, LLC",4.25,4.25,2031-06-26,2031-06-26,2450000.0,2450000.0,
+both,Goldman Sachs,2024Q2,"Epic Y-Grade Services, LP",5.75,5.75,2029-06-29,2029-06-29,3500000.0,3500000.0,
+patrick_only,Goldman Sachs,2024Q2,"Franklin Square Holdings, L.P.",2.25,,2031-04-25,,2000000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q2,"Harbor Freight Tools USA, Inc.",2.5,,2031-06-05,,1750000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q2,"LifePoint Health, Inc.",4.0,,2031-05-17,,3725000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q2,"MI Windows and Doors, LLC",3.5,4.0,2031-03-28,2031-03-25,2200000.0,1446000.0,
+both,Goldman Sachs,2024Q2,"NCWS Intermediate, Inc. (dba National Carwash Solutions)",5.25,5.25,2029-12-31,2029-12-31,199343000.0,222391000.0,
+patrick_only,Goldman Sachs,2024Q2,"Pre-Paid Legal Services, Inc.",3.75,,2028-12-15,,2406000.0,,our rule: existing loan of another manager
+both,Goldman Sachs,2024Q2,"Priority Technology Holdings, Inc. (dba Priority Payment)",4.75,4.75,2031-05-16,2031-05-16,165000000.0,165000000.0,
+both,Goldman Sachs,2024Q2,"Sunshine Cadence HoldCo, LLC (dba Cadence Education)",5.0,5.0,2031-05-01,2031-05-01,70768000.0,70768000.0,
+patrick_only,Goldman Sachs,2024Q2,"Thrasio, LLC",10.11,,2029-06-18,,8789000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q2,Traverse Midstream Partners LLC,3.5,,2028-02-16,,1400000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2024Q2,"United Flow Technologies Intermediate Holdco II, LLC",5.25,5.25,2030-06-21,2030-06-21,44687000.0,48972000.0,
+patrick_only,Goldman Sachs,2024Q2,"United Flow Technologies Intermediate Holdco II, LLC",5.25,,2031-06-23,,667000.0,,our rule: BDC not industry-reporting
+both,Goldman Sachs,2024Q2,"Valet Waste Holdings, Inc. (dba Valet Living)",5.75,5.75,2029-05-01,2029-05-01,140466000.0,140466000.0,
+both,Goldman Sachs,2024Q2,"VisionSafe Holdings, Inc",6.0,6.0,2030-04-19,2030-04-19,22365000.0,22365000.0,
+patrick_only,PennantPark,2024Q2,"Adweek Purchaser, LLC",7.0,,2027-05-30,,2000000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,PennantPark,2024Q2,HEC Purchaser Corp.,5.5,5.5,2029-06-17,2029-06-17,21375000.0,21375000.0,
+both,PennantPark,2024Q2,"RTIC Subsidiary Holdings, LLC",5.75,5.75,2029-05-03,2029-05-03,82100000.0,82100000.0,
+both,PennantPark,2024Q2,Safe Haven Defense US LLC,5.25,5.25,2029-05-23,2029-05-23,32600000.0,32600000.0,
+patrick_only,PennantPark,2024Q2,"TPC Midco, LLC",5.75,,2029-06-26,,4000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Silver Point,2024Q2,Mounty US Holdings,6.0,6.0,2030-05-17,2030-05-17,7965813.0,6970087.0,
+both,Silver Point,2024Q2,NetSPI Midco Corporation,6.25,6.25,2029-05-31,2029-05-31,7679563.0,6911607.0,
+patrick_only,Silver Point,2024Q2,Peloton Interactive Inc,6.0,,2029-05-30,,10844182.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Stellus,2024Q2,"AGT Robotique, Inc",5.25,5.25,2029-06-22,2029-06-22,8503125.0,8503125.0,
+both,Stellus,2024Q2,"FairWave Holdings, LLC",6.5,6.5,2029-04-01,2029-04-01,3558122.0,3076639.0,
+patrick_only,Stellus,2024Q2,"Luxium Solutions, LLC",6.25,,2027-12-01,,11660622.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Stellus,2024Q2,"Monarch Behavioral Therapy, LLC",5.0,5.0,2030-06-06,2030-06-06,5261383.0,5261383.0,
+both,Stellus,2024Q2,"Said Intermediate, LLC",5.5,5.5,2029-06-13,2029-06-13,13298701.0,13298701.0,
+both,Stellus,2024Q2,"Teckrez, LLC",6.75,6.75,2028-11-30,2028-11-30,6164719.0,6055794.0,
+both,Stellus,2024Q2,TriplePoint Acquisition Holdings LLC,5.5,5.5,2029-05-31,2029-05-31,9602525.0,9602525.0,
+both,Stellus,2024Q2,"WER Holdings, LLC",5.5,5.5,2030-04-11,2030-04-11,3858333.0,3803891.0,
+both,Varagon,2024Q2,"BPCP NSA Intermedco, Inc.",5.0,5.0,2030-05-17,2030-05-17,6896000.0,6553000.0,
+both,Varagon,2024Q2,"Bebright MSO, LLC",5.75,5.75,2030-06-03,2030-06-03,6570000.0,6186000.0,
+both,Varagon,2024Q2,"Gen4 Dental Partners OPCO, LLC",5.5,5.5,2030-05-13,2030-05-13,8782000.0,8782000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,"APG Lions Purchaser, LLC",5.75,5.75,2030-04-16,2030-04-16,4183000.0,4114000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,BUSA Acquisition Co. (d/b/a BankCard USA Merchant Services Inc.),6.5,6.5,2029-03-30,2029-03-30,8716000.0,7981000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,"Clark Restaurant Service, LLC",5.75,5.75,2029-05-10,2029-05-10,5031000.0,5031000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,"PANOS Brands, LLC",5.75,5.75,2029-05-14,2029-05-14,8631000.0,8631000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,"Ribbon Communications Operating Company, Inc. (d/b/a Ribbon Communications Inc.)",6.25,6.25,2029-06-21,2029-06-21,8800000.0,8800000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,"TOT Group, Inc. (d/b/a Net Element Inc.)",7.5,7.5,2029-06-28,2029-06-28,8239000.0,8239000.0,
+both,"Whitehorse Finance, Inc.",2024Q2,TriplePoint Acquisition Holdings LLC,5.5,5.5,2029-05-31,2029-05-31,5376000.0,5376000.0,
+patrick_only,Brightwood Capital Corp I,2024Q3,OPCO Borrower LLC,6.0,,2029-04-26,,20935000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Brightwood Capital Corp I,2024Q3,"Team Car Care, LLC",4.5,4.5,2031-06-28,2031-06-28,3000000.0,3000000.0,
+both,Goldman Sachs,2024Q3,"AAP Buyer, Inc.",3.25,3.25,2031-09-09,2031-09-09,1675000.0,1675000.0,
+patrick_only,Goldman Sachs,2024Q3,"AI Titan Parent, Inc. (dba Prometheus)",4.75,,2031-08-29,,29977000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"AQ Sunshine, Inc. (dba Relation Insurance)",5.25,,2031-07-24,,108158000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"AQ Sunshine, Inc. (dba Relation Insurance)",5.25,,2030-07-24,,5921000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q3,"AQ Sunshine, Inc. (dba Relation Insurance) Insurance",5.25,,2031-07-24,,967000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"ASM Buyer, Inc.",5.0,,2031-08-22,,119000000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"Acrisure, LLC",3.25,,2030-11-06,,10082000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q3,"Advarra Holdings, Inc.",4.5,4.5,2031-09-15,2031-09-15,118921000.0,118921000.0,
+patrick_only,Goldman Sachs,2024Q3,"Alliant Holdings Intermediate, LLC",3.0,,2031-09-19,,5334000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"Athenahealth Group, Inc.",3.25,,2029-02-15,,4987000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2024Q3,"Aurora Acquireco, Inc. (dba AuditBoard)",4.75,4.75,2031-07-12,2031-07-12,51000000.0,51000000.0,
+patrick_only,Goldman Sachs,2024Q3,"Brown Group Holding, LLC",2.75,,2031-07-01,,9229000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q3,Chromalloy Corporation,3.75,,2031-03-27,,2494000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2024Q3,"Cloud Software Group, Inc.",4.0,,2029-03-30,,5989000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2024Q3,"Coding Solutions Acquisition, Inc. (dba CorroHealth)",5.0,,2031-08-07,,78360000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,Cotiviti Corporation,3.25,,2031-05-01,,4987000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2024Q3,"DRW Holdings, LLC",3.5,,2031-06-26,,17489000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q3,"Dealer Tire Financial, LLC",3.5,,2031-07-02,,9991000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q3,"Digital Borrower, LLC",3.25,,2031-07-02,,6484000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+both,Goldman Sachs,2024Q3,"Eagle Family Foods Group Holdings, LLC",5.0,5.0,2030-08-12,2030-08-12,248300000.0,226287000.0,
+both,Goldman Sachs,2024Q3,"Easy Mile Fitness, LLC",6.75,6.75,2029-09-12,2029-09-12,40968000.0,40968000.0,
+both,Goldman Sachs,2024Q3,"Edgewater Generation, LLC",4.25,4.25,2030-08-01,2030-08-01,3500000.0,3500000.0,
+patrick_only,Goldman Sachs,2024Q3,"Engage2Excel, Inc.",6.5,,2029-07-01,,36422000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2024Q3,"Galway Holdings, LP",4.5,,2028-09-29,,50301000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2024Q3,"HealthEdge Software, Inc.",4.75,,2031-07-16,,91418000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"Ingram Micro, Inc.",2.75,,2031-09-22,,2205000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,Kronos,4.0,,2031-07-08,,5481000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q3,LC Ahab US Bidco LLC,3.5,3.5000000000000004,2031-05-01,2031-05-01,3000000.0,3000000.0,
+both,Goldman Sachs,2024Q3,"Mandrake Bidco, Inc. (dba Miratech)",4.75,4.75,2031-08-20,2031-08-20,61333000.0,61333000.0,
+patrick_only,Goldman Sachs,2024Q3,NEXUS Buyer LLC,4.0,,2031-07-31,,3172000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,"Netsmart Technologies, Inc.",5.2,,2031-08-25,,177663000.0,,"our rule: spread range, PIK or fixed rate"
+patrick_only,Goldman Sachs,2024Q3,"Pluralsight, Inc",4.5,,2029-08-22,,27647000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q3,"Project Boost Purchaser, LLC",3.5,,2031-07-16,,6010000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q3,"Raising Cane's Restaurants, LLC",2.0,2.0,2031-09-18,2031-09-18,800000.0,800000.0,
+patrick_only,Goldman Sachs,2024Q3,"Rocky Debt Merger Sub, LLC (dba NContracts)",5.25,,2031-09-01,,107111000.0,,"our rule: spread range, PIK or fixed rate"
+patrick_only,Goldman Sachs,2024Q3,"Sedgwick Claims Management Services, Inc.",3.0,,2031-07-31,,4996000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q3,"Spectrum Safety Solutions Purchaser, LLC (dba Carrier Industrial Fire)",5.0,5.0,2031-07-01,2031-07-01,57841000.0,45810000.0,
+patrick_only,Goldman Sachs,2024Q3,"Sundance Group Holdings, Inc. (dba NetDocuments)",4.75,,2029-07-02,,119384000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,Superior UP,6.0,,2029-10-31,,12078000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2024Q3,"Superman Holdings, LLC (dba Foundation Software)",4.5,,2031-08-29,,83864000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q3,Truist Insurance Holdings LLC,3.25,,2031-05-06,,5000000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2024Q3,"Trystar, LLC",4.5,4.5,2031-08-06,2031-08-06,42326000.0,42326000.0,
+patrick_only,Goldman Sachs,2024Q3,UKG Inc.,3.25,,2031-02-10,,3491000.0,,our rule: existing loan of another manager
+both,Goldman Sachs,2024Q3,"US Signal Company, LLC",5.5,5.5,2029-09-04,2029-09-04,59526000.0,59526000.0,
+both,Goldman Sachs,2024Q3,Westwood Professional Services Inc.,4.75,4.75,2031-09-29,2031-09-29,95565000.0,95565000.0,
+patrick_only,Goldman Sachs,2024Q3,Whatabrands LLC,2.75,,2028-08-03,,2818000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2024Q3,White Cap Buyer LLC,3.25,,2029-10-19,,5000000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2024Q3,Wilsonart LLC,4.25,4.25,2031-08-05,2031-08-05,750000.0,750000.0,
+patrick_only,Goldman Sachs,2024Q3,Xactly Corporation IT Services,6.25,,2027-07-30,,62025000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2024Q3,"ARGANO, LLC",5.75,5.75,2029-09-13,2029-09-13,50768000.0,50768000.0,
+both,PennantPark,2024Q3,"Aechelon Technology, Inc.",7.5,7.5,2029-08-16,2029-08-16,19000000.0,19000000.0,
+both,PennantPark,2024Q3,"Archer Lewis, LLC",5.75,5.75,2029-08-28,2029-08-28,30400000.0,30400000.0,
+patrick_only,PennantPark,2024Q3,Burgess Point Purchaser Corporation,5.35,,2029-07-25,,14962000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2024Q3,"C5MI Acquisition, LLC",6.0,6.0,2030-07-31,2030-07-31,15276000.0,15000000.0,
+both,PennantPark,2024Q3,"Duggal Acquisition, LLC",5.0,5.0,2030-09-30,2030-09-30,15321000.0,22321000.0,
+patrick_only,PennantPark,2024Q3,"Dynata, LLC - First-Out Term Loan",5.26,,2028-07-15,,1856000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2024Q3,"Dynata, LLC - Last-Out Term Loan",5.76,,2028-10-15,,11514000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2024Q3,ENC Parent Corporation,4.51,,2029-08-20,,3391000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2024Q3,"GGG MIDCO, LLC",5.0,5.0,2030-09-27,2030-09-27,27768000.0,27768000.0,
+both,PennantPark,2024Q3,Harris & Co. LLC,5.0,5.0,2030-08-09,2030-08-09,37585000.0,37585000.0,
+both,PennantPark,2024Q3,"Issue Name Duggal Acquisition, LLC",5.0,5.0,2030-09-30,2030-09-30,7000000.0,22321000.0,
+both,PennantPark,2024Q3,NFS - CFP Holdings LLC,4.75,4.75,2030-09-13,2030-09-13,54300000.0,54300000.0,
+both,PennantPark,2024Q3,"PAR Excellence Holdings, Inc.",4.75,4.75,2030-09-03,2030-09-03,27500000.0,27500000.0,
+patrick_only,PennantPark,2024Q3,"PlayPower, Inc.",5.25,,2030-08-28,,38334000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,PennantPark,2024Q3,"RRA Corporate, LLC",5.0,5.0,2029-08-15,2029-08-15,25271000.0,23200000.0,
+both,Silver Point,2024Q3,Health Catalyst Inc,6.5,6.5,2029-07-16,2029-07-16,18920245.0,10511247.0,
+both,Silver Point,2024Q3,Likewize Corp,5.75,5.75,2029-08-27,2029-08-27,12342845.0,11314275.0,
+patrick_only,Silver Point,2024Q3,MMS BidCo LLC,5.37,,2029-06-30,,8622742.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Silver Point,2024Q3,Solaris Oilfield Infrastructure Inc,6.0,6.0,2029-09-11,2029-09-11,13400803.0,13400803.0,
+both,Silver Point,2024Q3,Sweet Oak Parent LLC (fka Ozark Holdings LLC),5.75,5.75,2030-08-05,2030-08-05,18273637.0,16713556.0,
+patrick_only,Silver Point,2024Q3,Vensure Employer Services Inc,5.0,,2031-09-27,,5700446.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Stellus,2024Q3,"Bart & Associates, LLC",5.25,5.25,2030-08-16,2030-08-16,3547840.0,12333394.0,
+both,Stellus,2024Q3,"Bart And Associates, LLC",5.25,5.25,2030-08-16,2030-08-16,9152058.0,12333394.0,
+patrick_only,Varagon,2024Q3,"A&R Logistics Holdings, Inc.",6.75,,2028-07-06,,930000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,AAMP Global Holdings Inc.,5.75,,2029-12-19,,14625000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"ACP Oak Buyer, Inc.",4.75,,2029-12-19,,816000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Accupac, LLC",6.0,,2029-12-19,,10719000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,Advanced Web Technologies Holding Company,5.75,,2028-08-16,,454000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,Arrowhead Holdco Company,2.5,,2027-12-17,,1081000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,BPC Holding III Corp.,5.25,,2028-08-31,,3315000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,BPC Holding III Corp.,5.25,,2027-12-21,,2379000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"BPCP NSA Intermedco, Inc.",4.75,,2027-11-16,,6536000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"BRG Acquisition Co., LLC",5.5,,2027-08-31,,6762000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"BRG Acquisition Co., LLC",6.0,,2027-11-16,,2978000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Bebright MSO, LLC",5.75,,2027-11-16,,6170000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Bebright MSO, LLC",5.75,,2027-12-17,,3340000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Boulder Scientific Company, LLC",5.0,,2027-12-21,,828000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Comar Holding Company, LLC",2.0,,2030-06-03,,6178000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Concord III, L.L.C.",6.25,,2030-06-03,,3820000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"EPTAM Plastics, Ltd.",5.5,,2029-07-20,,2988000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Eye Health America, LLC",4.75,,2027-11-16,,4116000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"G2 Secure Staff, L.L.C.",5.5,,2028-07-26,,477000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Gen4 Dental Partners OPCO, LLC",5.5,,2028-08-05,,8760000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Graffiti Buyer, Inc.",5.5,,2028-08-05,,1728000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,Heartland Veterinary Partners LLC,5.06,,2028-08-05,,10675000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Hissho Parent, LLC",5.0,,2028-08-05,,3492000.0,,our rule: existing loan of another manager
+patrick_only,Varagon,2024Q3,"Horizon Freight Holdings, Inc.",5.0,,2028-08-05,,6557000.0,,our rule: existing loan of another manager
+patrick_only,Varagon,2024Q3,"Hub Pen Company, LLC",5.25,,2028-12-20,,6294000.0,,our rule: existing loan of another manager
+patrick_only,Varagon,2024Q3,"KL Bronco Acquisition, Inc.",5.25,,2028-08-31,,3850000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,KL Charlie Acquisition Company,6.25,,2029-07-17,,621000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"KNPC Holdco, LLC",5.5,,2029-07-17,,8021000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"KeyImpact Holdings, Inc.",6.5,,2028-08-31,,11888000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Krayden Holdings, Inc.",4.75,,2028-07-14,,2040000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Krayden Holdings, Inc.",4.75,,2029-07-17,,1251000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"LAV Gear Holdings, Inc.",6.25,,2029-07-17,,2463000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,Liquid Environmental Solutions Corporation,4.75,,2029-07-17,,5865000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"MBS Holdings, Inc.",6.25,,2029-05-18,,313000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"MDI Buyer, Inc.",5.75,,2027-12-31,,8864000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Magnolia Wash Holdings (Express Wash Acquisition Company, LLC)",6.5,,2029-07-17,,5272000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Molecular Designs, LLC",4.5,,2027-12-31,,2269000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Varagon,2024Q3,"North Haven Stallone Buyer, LLC",5.25,,2028-09-01,,1574000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"North Haven Stallone Buyer, LLC",5.75,,2030-03-01,,355000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"OIS Management Services, LLC",4.75,,2028-09-01,,4925000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"POY Holdings, LLC",5.5,,2029-03-01,,6258000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Pediatric Home Respiratory Services, LLC",5.75,,2029-10-22,,4518000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Pediatric Home Respiratory Services, LLC",6.25,,2029-03-01,,2851000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,Polk Acquisition Corp.,5.25,,2029-08-13,,10928000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,Precinmac (US) Holdings Inc.,6.0,,2029-08-13,,10725000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Premier Imaging, LLC",8.0,,2028-06-29,,293000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Premier Imaging, LLC",8.0,,2028-03-10,,265000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Premier Imaging, LLC",8.0,,2029-03-01,,240000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Premier Imaging, LLC",8.0,,2029-08-13,,217000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Race Winning Brands, Inc.",5.5,,2028-07-15,,10851000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,Royal Holdco Corporation,5.75,,2028-07-15,,674000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"SGA Dental Partners Opco, LLC",5.5,,2028-07-15,,13693000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,TCP Hawker Intermediate LLC,5.5,,2030-01-11,,10719000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"Taymax Group, L.P.",6.0,,2030-01-11,,4900000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"TheKey, LLC",5.0,,2030-06-21,,495000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Varagon,2024Q3,"Titan Group Holdco, LLC.",5.0,5.0,2030-06-21,2030-06-21,2560000.0,2560000.0,
+patrick_only,Varagon,2024Q3,TriMech Acquisition Corp.,4.75,,2030-06-21,,8467000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Varagon,2024Q3,"United Musculoskeletal Partners Acquisition Holdings, LLC",5.75,,2027-11-09,,4900000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"VG Target Holdings, LLC",5.5,,2028-11-16,,5899000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Walnut Parent, Inc.",5.5,,2028-06-30,,9314000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2024Q3,"Wildcat Buyerco, Inc.",5.75,,2028-06-30,,532000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,"Whitehorse Finance, Inc.",2024Q3,AB Centers Acquisition Corporation,5.25,5.25,2031-07-02,2031-07-02,6286000.0,6286000.0,
+both,"Whitehorse Finance, Inc.",2024Q3,"Basel U.S. Acquisition Co., Inc.",5.5,5.5,2028-12-05,2028-12-05,3690000.0,3690000.0,
+both,"Whitehorse Finance, Inc.",2024Q3,Surge Amuze Holdings Inc.,6.0,6.0,2029-09-06,2029-09-06,5751000.0,5751000.0,
+patrick_only,"Whitehorse Finance, Inc.",2024Q3,"W Electric Intermediate Holdings, LLC",6.5,,2029-08-15,,12306000.0,,"our rule: spread range, PIK or fixed rate"
+patrick_only,"Whitehorse Finance, Inc.",2024Q3,"W&A Intermediate Co., LLC",6.25,,2029-08-01,,7966000.0,,our rule: existing loan of another manager
+both,Brightwood Capital Corp I,2024Q4,"Auto TransportHoldings, LLC",7.25,7.249999999999999,2029-11-04,2029-11-04,5000000.0,5000000.0,
+both,Brightwood Capital Corp I,2024Q4,"CNS Purchaser, LLC",5.5,5.5,2029-12-30,2029-12-30,15117000.0,15000000.0,
+both,Brightwood Capital Corp I,2024Q4,"Detroit Quality Staffing, LLC",7.5,7.5,2029-10-04,2029-10-04,6956000.0,6956000.0,
+both,Brightwood Capital Corp I,2024Q4,"Excite Parent, Inc.",4.25,4.25,2030-10-31,2030-10-31,5000000.0,5000000.0,
+both,Brightwood Capital Corp I,2024Q4,"IMS Technology Service, LLC",5.5,5.5,2029-11-22,2029-11-22,10000000.0,10000000.0,
+patrick_only,Goldman Sachs,2024Q4,"Amspec Parent, LLC",4.25,,2031-12-22,,43333000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q4,"Ankura Consulting Group, LLC",3.5,,2031-12-17,,11997000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q4,"Ark Data Centers, LLC",4.75,4.75,2030-11-27,2030-11-27,96900000.0,81033000.0,
+patrick_only,Goldman Sachs,2024Q4,"Boost Newco Borrower, LLC",2.5,,2031-01-31,,7531000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2024Q4,Citadel Securities LP,2.0,,2031-10-31,,26994000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q4,"Cloud Software Group, Inc.",3.75,,2031-03-21,,5500000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q4,Clover Holdings 2 LLC,4.0,4.0,2031-11-01,2031-11-01,13500000.0,13500000.0,
+both,Goldman Sachs,2024Q4,"Creek Parent, Inc. (dba Catalent)",5.25,5.25,2031-12-18,2031-12-18,68808000.0,68808000.0,
+both,Goldman Sachs,2024Q4,"Cube Industrials Buyer, Inc.",3.5,3.5000000000000004,2031-10-17,2031-10-17,3200000.0,3200000.0,
+patrick_only,Goldman Sachs,2024Q4,"Dwyer Instruments, LLC",4.75,,2029-07-20,,129400000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2024Q4,"First Advantage Holdings, LLC",3.25,,2031-10-31,,525000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2024Q4,"GSM Holdings, Inc.",5.0,,2031-09-30,,3990000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q4,"Hamilton Thorne, Inc.",5.5,,2031-11-28,,64296000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q4,INEOS Quattro Holdings UK Ltd,4.25,4.25,2031-10-07,2031-10-07,1909000.0,1909000.0,
+patrick_only,Goldman Sachs,2024Q4,"Innophos, Inc.",4.25,,2029-03-16,,11962000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q4,Jefferies Finance LLC,3.0,3.0,2031-10-21,2031-10-21,1200000.0,1200000.0,
+patrick_only,Goldman Sachs,2024Q4,Lightning Power LLC,3.25,,2031-08-18,,8978000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2024Q4,"Precinmac, LP",5.0,5.0,2031-12-02,2031-12-02,186161000.0,186161000.0,
+both,Goldman Sachs,2024Q4,"QBS Parent, Inc. (dba Quorum Software)",4.75,4.75,2031-11-07,2031-11-07,76882000.0,76882000.0,
+patrick_only,Goldman Sachs,2024Q4,Rock Star Mergersub LLC (dba Triumvirate Environmental),4.75,,2031-12-15,,42288000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q4,"Rotation Buyer, LLC (dba Rotating Machinery Services)",4.75,4.75,2031-12-26,2031-12-26,230797000.0,198755000.0,
+patrick_only,Goldman Sachs,2024Q4,"Rotation Buyer, LLC (dba Rotating Machinery Services)",5.0,,2031-07-01,,39806000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,Goldman Sachs,2024Q4,"Rotation Buyer, LLC (dba Rotating Machinery Services)",5.0,,2030-07-01,,8468000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,Goldman Sachs,2024Q4,"Runway Bidco, LLC (dba RedWood Software)",5.0,,2031-12-17,,91475000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2024Q4,"Sonar Acquisitionco, Inc. (dba SimPRO)",4.75,4.75,2030-10-24,2030-10-24,129490000.0,28862000.0,
+patrick_only,Goldman Sachs,2024Q4,"Sunshine Cadence HoldCo, LLC (dba Cadence Education)",7.5,,2028-08-14,,17671000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2024Q4,"Superman Holdings, LLC (dba Foundation Software)",6.5,,2029-08-01,,3652000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q4,"Tropical Bidco, LLC (dba Tropical Cheese)",4.75,4.75,2030-12-11,2030-12-11,156455000.0,130844000.0,
+patrick_only,Goldman Sachs,2024Q4,"USI, Inc.",2.25,,2029-11-21,,17705000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2024Q4,Veritiv Corporation,4.5,4.5,2030-11-30,2030-11-30,9152000.0,9152000.0,
+patrick_only,Goldman Sachs,2024Q4,x TSG Intermediate Corp.,4.75,,2028-02-28,,7125000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,PennantPark,2024Q4,"Azureon, LLC",5.75,5.75,2029-06-26,2029-06-26,16827000.0,16827000.0,
+both,PennantPark,2024Q4,"BLC Holding Company, Inc.",4.75,4.75,2030-11-20,2030-11-20,37131000.0,37131000.0,
+patrick_only,PennantPark,2024Q4,"Best Practice Associates, LLC",6.75,,2029-11-08,,89278000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,PennantPark,2024Q4,"Case Works, LLC",5.25,5.25,2029-10-01,2029-10-01,21170000.0,18772000.0,
+patrick_only,PennantPark,2024Q4,"Events Buyer, LLC",5.75,,2029-12-17,,17380000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2024Q4,Inovex Information Systems Incorporated,5.25,5.25,2030-12-17,2030-12-17,28850000.0,27205000.0,
+patrick_only,PennantPark,2024Q4,"Marketplace Events Acquisition, LLC",5.25,,2030-12-19,,95000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2024Q4,"Project Granite Buyer,Inc.",5.75,5.75,2030-12-31,2030-12-31,24500000.0,24500000.0,
+patrick_only,PennantPark,2024Q4,"Rancho Health MSO, Inc.",5.25,,2029-06-20,,5345000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2024Q4,"SV-Aero Holdings, LLC - Term Loan",5.25,,2030-11-01,,15567000.0,,our rule: borrower held by the family before (name match)
+both,PennantPark,2024Q4,"VRS Buyer, Inc.",4.75,4.75,2030-11-22,2030-11-22,23454000.0,23454000.0,
+both,Silver Point,2024Q4,Databricks Inc,4.5,4.5,2031-01-03,2031-01-03,10539688.0,8679743.0,
+both,Silver Point,2024Q4,Elessent Clean Technologies Inc,6.0,6.0,2029-11-15,2029-11-15,2752504.0,2511056.0,
+both,Silver Point,2024Q4,Gopher Resource LLC,7.0,7.000000000000001,2029-10-04,2029-10-04,16313832.0,15114813.0,
+both,Silver Point,2024Q4,Rayonier AM Products Inc,7.0,7.000000000000001,2029-10-29,2029-10-29,10858502.0,10858502.0,
+patrick_only,Silver Point,2024Q4,SP PF Buyer LLC,7.0,,2029-10-13,,18097503.0,,our rule: borrower held by the family before (name match)
+both,Silver Point,2024Q4,Shrieve Chemical Co LLC,6.0,6.0,2030-10-30,2030-10-30,6837822.0,6297994.0,
+both,Silver Point,2024Q4,Stryten Energy Resources LLC,5.5,5.25,2029-12-18,2029-12-20,17617927.0,2387542.0,
+both,Stellus,2024Q4,"AMII Acquisition, LLC",4.75,4.75,2029-12-04,2029-12-04,12433438.0,12433438.0,
+both,Stellus,2024Q4,"Carolinas Buyer, Inc.",5.25,5.25,2030-12-20,2030-12-20,9873127.0,9873127.0,
+both,Stellus,2024Q4,"Eskola LLC, Last Out",5.0,5.0,2029-12-19,2029-12-19,15695662.0,10979312.0,
+both,Stellus,2024Q4,Husk AcquireCo Inc,5.75,5.75,2029-11-15,2029-11-15,7447947.0,7447947.0,
+both,Stellus,2024Q4,MBH Management LLC,5.25,5.25,2029-11-15,2029-11-15,13360046.0,13360046.0,
+both,Stellus,2024Q4,"Norplex Micarta Acquisition, Inc.",5.25,5.25,2029-10-31,2029-10-31,18972094.0,18972094.0,
+both,Stellus,2024Q4,"Tiger 21, LLC",5.0,5.0,2030-12-30,2030-12-30,12000000.0,12376000.0,
+both,Stellus,2024Q4,"USDTL AcquisitionCo, Inc.",5.25,5.25,2030-12-09,2030-12-09,7852972.0,7563778.0,
+both,Stellus,2024Q4,iNovex Information Systems Incorporated,5.25,5.25,2030-12-17,2030-12-17,10954780.0,10926780.0,
+both,Varagon,2024Q4,"Apex Dental Partners, LLC",5.25,5.25,2030-10-29,2030-10-29,8391000.0,7213000.0,
+both,Varagon,2024Q4,"Basin Innovation Group, LLC",5.0,5.0,2030-12-06,2030-12-06,11700000.0,11700000.0,
+both,Varagon,2024Q4,Cold Spring Brewing Company,4.75,4.75,2030-12-10,2030-12-10,10984000.0,10984000.0,
+patrick_only,Varagon,2024Q4,"Easy Ice, LLC",5.25,,2030-10-30,,6738000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Varagon,2024Q4,"Eventus Buyer, LLC",5.5,5.5,2030-11-01,2030-11-01,6516000.0,6401000.0,
+patrick_only,Varagon,2024Q4,FS Squared Holding Corp.,4.75,,2030-12-23,,430000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,Varagon,2024Q4,"SunMed Group Holdings, LLC",4.75,,2028-06-16,,1762000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Varagon,2024Q4,TCP Hawker Intermediate LLC,5.0,,2029-08-30,,10719000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,"Whitehorse Finance, Inc.",2024Q4,Kelso Industries LLC,5.75,5.75,2029-12-31,2029-12-31,3611000.0,3611000.0,
+both,"Whitehorse Finance, Inc.",2024Q4,"LogicMonitor, Inc.",5.5,5.5,2031-11-19,2031-11-19,6220000.0,6220000.0,
+both,"Whitehorse Finance, Inc.",2024Q4,"Principal Lighting Group, LLC",5.25,5.25,2030-11-04,2030-11-04,3531000.0,3531000.0,
+patrick_only,"Whitehorse Finance, Inc.",2024Q4,TableTrust Brands LLC,5.75,,2028-06-28,,2505000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,"Whitehorse Finance, Inc.",2024Q4,Trailhead Media LLC,5.5,,2029-12-28,,6648000.0,,"our rule: spread range, PIK or fixed rate"
+patrick_only,Brightwood Capital Corp I,2025Q1,"Auto Transport Holdings, LLC",7.25,,2029-11-04,,4969000.0,,our rule: borrower held by the family before (name match)
+both,Brightwood Capital Corp I,2025Q1,"SLI Golden Bridge Holdco, LLC",6.0,6.0,2030-01-10,2030-01-10,9975000.0,9975000.0,
+both,Brightwood Capital Corp I,2025Q1,"Tavern Holdings, LLC",5.75,5.75,2030-01-10,2030-01-10,10000000.0,10000000.0,
+patrick_only,Brightwood Capital Corp I,2025Q1,"VHL Logistics, Inc.",5.0,,2029-12-13,,21441000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q1,AL GCX Fund VIII Holdings LLC,2.0,2.0,2032-01-30,2032-01-30,10800000.0,10800000.0,
+patrick_only,Goldman Sachs,2025Q1,"ASM Buyer, Inc.Commercial Services & Supplies",5.5,,2031-08-22,,85986000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2025Q1,"Admiral Buyer, Inc. (dba Fidelity Payment Services)",5.0,,2029-12-06,,129987000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q1,"AllSpring Buyer, LLC",3.0,,2030-11-01,,8000000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,"BCPE Empire Holdings, Inc.",3.25,,2030-12-11,,5184000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q1,CNT Holdings I Corp.,2.5,,2032-11-08,,15963000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,"CPM Holdings, Inc.",4.5,,2028-09-28,,4613000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Goldman Sachs,2025Q1,Celero Commerce LLC,5.0,,2031-02-28,,122907000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,"Charter NEX US, Inc.",3.0,,2030-11-29,,13465000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q1,Froneri International Ltd.,2.0,,2031-09-30,,810000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,"Frontline Road Safety Operations, LLC Commercial Services & Supplies",4.75,,2032-03-04,,167324000.0,,"our rule: spread range, PIK or fixed rate"
+patrick_only,Goldman Sachs,2025Q1,"I AQ Sunshine, Inc. (dba Relation Insurance) Insurance",5.25,,2031-07-24,,962000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2025Q1,"I Ark Data Centers, LLC IT Services",4.75,,2030-11-27,,13500000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2025Q1,"I GPS Phoenix Buyer, Inc. (dba Guidepoint) IT Services",6.0,,2029-10-02,,4559000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2025Q1,"KKR Apple Bidco, LLC Construction & Engineering",2.5,,2031-09-23,,11932000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q1,"KPA Parent Holdings, Inc.",4.75,4.75,2032-03-12,2032-03-12,45501000.0,35287000.0,
+patrick_only,Goldman Sachs,2025Q1,"MH Sub I, LLC",4.25,,2031-12-31,,4829000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q1,Nvent Electric Public Limited Company,3.5,,2032-01-30,,5275000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,"Onyx CenterSource, Inc.",5.25,,2029-12-14,,51014000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q1,"Packaging Coordinators Midco, Inc. (dba PCI Pharma)",4.75,4.75,2032-01-22,2032-01-22,229798000.0,229798000.0,
+patrick_only,Goldman Sachs,2025Q1,Physician Partners LLC,5.5,,2030-12-31,,265000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q1,"SRAM, LLC",2.25,,2032-02-27,,13465000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,"Splash Car Wash, Inc.",5.0,,2032-03-17,,34189000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q1,TRC Companies LLC,3.0,,2028-12-08,,18397000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q1,"Trident TPI Holdings, Inc.",3.75,,2028-09-15,,7531000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q1,"USI, Inc.",2.25,,2030-09-29,,5226000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q1,"VWand NewCo 3, Inc. Commercial Services & Supplies",2.5,,2031-01-30,,11331000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2025Q1,VWhite Cap Buyer LLC,3.25,,2029-10-19,,13466000.0,,our rule: borrower held by the family before (name match)
+both,Goldman Sachs,2025Q1,"Vamos Bidco, Inc. (dba VIP)",4.75,4.75,2032-01-30,2032-01-30,99489000.0,99489000.0,
+both,Goldman Sachs,2025Q1,WCG Intermediate Corp.,3.0,3.0,2032-02-25,2032-02-25,6625000.0,6625000.0,
+patrick_only,Goldman Sachs,2025Q1,"Wellness AcquisitionCo, Inc. (dba SPINS)",4.75,,2029-01-20,,27941000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q1,"eResearch Technology, Inc. (dba Clario)",4.75,4.75,2032-01-15,2032-01-15,186284000.0,158367000.0,
+patrick_only,Great Elm,2025Q1,Confluence Technologies,3.9,,2028-07-31,,1104000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Great Elm,2025Q1,EagleView Technology Corp,5.5,,2028-08-14,,7133000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Great Elm,2025Q1,SIRVA Worldwide Inc,8.0,,2029-02-20,,780000.0,,our rule: existing loan of another manager
+patrick_only,PennantPark,2025Q1,"Halo Buyer, Inc.",6.0,,2029-08-07,,34423000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2025Q1,"Impact Advisors, LLC",4.75,4.75,2032-03-19,2032-03-19,24600000.0,24600000.0,
+patrick_only,PennantPark,2025Q1,"Pragmatic Institute, LLC",5.5,,2030-03-28,,14349000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2025Q1,"RRA Corporate, LLC",5.0,,2031-01-17,,16476000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,PennantPark,2025Q1,"Ro Health, LLC",5.0,,2031-01-17,,11048000.0,,our rule: borrower held by the family before (name match)
+both,PennantPark,2025Q1,Route 66 Development,9.0,9.0,2031-01-24,2031-01-24,18000000.0,18000000.0,
+both,PennantPark,2025Q1,"Sath Industries, LLC",5.75,5.75,2029-12-17,2029-12-17,22798000.0,22798000.0,
+patrick_only,PennantPark,2025Q1,"Smartronix, LLC",4.5,,2032-02-06,,6000000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,PennantPark,2025Q1,"The Vertex Companies, LLC",5.1,,2028-08-31,,9118000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Silver Point,2025Q1,Bending Spoons US Inc,5.25,5.25,2031-03-07,2031-03-07,14510208.0,14510208.0,
+both,Silver Point,2025Q1,LVF Holdings Inc,5.5,5.5,2032-02-24,2032-02-24,18467538.0,16058729.0,
+both,Stellus,2025Q1,"Environmental Remedies, LLC",5.25,5.25,2030-01-15,2030-01-15,10648719.0,10648719.0,
+both,Stellus,2025Q1,"Identity Theft Guard Solutions, Inc.",5.5,5.5,2030-02-28,2030-02-28,15849959.0,15849959.0,
+patrick_only,Stellus,2025Q1,"Mobotrex Acquisition, LLC",5.0,,2030-06-07,,7229638.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Stellus,2025Q1,"Pacific Shoring Holdings, LLC",5.25,5.25,2030-01-10,2030-01-10,14147763.0,13827581.0,
+both,Stellus,2025Q1,Plus Delta Buyer LLC,5.25,5.25,2031-01-16,2031-01-16,11355716.0,11355716.0,
+both,Stellus,2025Q1,"Strategus, LLC",5.25,5.25,2031-01-27,2031-01-27,13815102.0,13815102.0,
+both,Varagon,2025Q1,"Allergy & Clinical MidCo, LLC",4.75,4.75,2031-01-29,2031-01-29,1286000.0,1286000.0,
+both,Varagon,2025Q1,"Healthfuse, LLC",5.0,5.0,2031-01-10,2031-01-10,5489000.0,5489000.0,
+both,Varagon,2025Q1,NBPT Acquisition LLC,5.0,5.0,2030-03-03,2030-03-03,5195000.0,5195000.0,
+both,Varagon,2025Q1,"SHF Holdings, Inc.",5.5,5.5,2030-01-22,2030-01-22,1508000.0,1508000.0,
+both,Varagon,2025Q1,"Source Holding Delaware, LLC",4.75,4.75,2031-02-07,2031-02-07,4015000.0,4015000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,"ELM One Call Locators, Inc.",6.25,6.25,2030-02-12,2030-02-12,7650000.0,7650000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,G-2 Lather Acquisition Corp.,5.0,5.0,2031-01-31,2031-01-31,3929000.0,3929000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,"Impact Advisors, LLC",4.75,4.75,2031-03-21,2031-03-21,4200000.0,4200000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,Infotree Holdco LLC,5.75,5.75,2030-02-19,2030-02-19,5515000.0,5515000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,"SCIC Buyer, Inc.",5.0,5.0,2031-03-28,2031-03-28,9454000.0,9159000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,The Crom Corporation,5.25,5.25,2031-01-31,2031-01-31,4224000.0,4080000.0,
+both,"Whitehorse Finance, Inc.",2025Q1,"WCHG Buyer, Inc.",5.0,5.0,2031-04-10,2031-04-10,7000000.0,7000000.0,
+both,Brightwood Capital Corp I,2025Q2,"Brightstar Group Holdings, Inc.",5.0,5.0,2032-03-01,2032-03-01,9975000.0,9975000.0,
+patrick_only,Brightwood Capital Corp I,2025Q2,Creative Foam Corporation,6.25,,2029-06-27,,5962000.0,,our rule: existing loan of another manager
+both,Goldman Sachs,2025Q2,Accommodations Plus Technologies LLC,4.5,4.5,2032-05-28,2032-05-28,56660000.0,56660000.0,
+patrick_only,Goldman Sachs,2025Q2,"Acrisure, LLC",3.25,,2032-06-21,,5418000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q2,"BCPE HIPH Parent, Inc. (dba Harrington Industrial Plastics)",5.75,5.75,2030-10-07,2030-10-07,109687000.0,109687000.0,
+patrick_only,Goldman Sachs,2025Q2,"Bottomline Technologies, Inc.",4.5,,2029-05-14,,77182000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q2,Buckeye Acquiror LLC (dba Superior Environmental Solutions),6.5,,2029-08-01,,22010000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2025Q2,CURiO Brands LLC,5.25,,2031-04-02,,32146000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q2,Clarios Global LP,2.75,,2032-01-28,,10525000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q2,Consilio Midco Limited (dba Cyncly),4.75,7.5,2032-04-19,2032-04-19,151199000.0,14526000.0,
+both,Goldman Sachs,2025Q2,"Curriculum Associates, LLC",4.75,4.75,2032-05-07,2032-05-07,303611000.0,303611000.0,
+both,Goldman Sachs,2025Q2,Diamond Communications LLC,4.0,4.0,2030-05-28,2030-05-28,50000000.0,50000000.0,
+patrick_only,Goldman Sachs,2025Q2,Formulations Parent Corporation (dba Chase Corp),4.0,,2032-04-09,,100000000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q2,"Groundworks, LLC",3.0,,2031-03-14,,9978000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q2,"Ideal Components Acquisition, LLC (dba Ideal Tridon)",5.0,5.0,2032-06-30,2032-06-30,56421000.0,61341000.0,
+patrick_only,Goldman Sachs,2025Q2,"Jane Street Group, LLC",2.0,,2031-12-15,,20935000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q2,"Javelin Buyer, Inc",3.0,,2031-12-05,,15711000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2025Q2,"Jupiter Refuel US Buyer, Inc. (dba 4Refuel)",5.25,5.25,2031-06-30,2031-06-30,8062000.0,8873000.0,
+patrick_only,Goldman Sachs,2025Q2,Madison IAQ LLC Commercial Services & Supplies,3.25,,2032-05-06,,5500000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q2,"North Star Acquisitionco, LLC (dba Everway)",4.5,,2029-05-03,,381061000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2025Q2,"Octane Purchaser, Inc. (dba Office Ally)",4.25,4.25,2032-05-19,2032-05-19,112509000.0,108568000.0,
+both,Goldman Sachs,2025Q2,"Paris US Holdco, Inc. (dba Precinmac)",4.75,4.75,2031-12-02,2031-12-02,211576000.0,190138000.0,
+patrick_only,Goldman Sachs,2025Q2,Pregis TopCo Corporation,4.0,,2029-02-01,,14965000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q2,"QBS Parent, Inc. (dba Quorum Software)",4.5,,2032-06-03,,109095000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q2,"Quikrete Holdings, Inc.",2.25,,2032-02-10,,2643000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q2,"Rocket Bidco, Inc. (dba Recochem)",5.75,,2030-11-01,,152002000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2025Q2,"Rubix Foods, LLC",4.75,4.75,2031-04-30,2031-04-30,91840000.0,90048000.0,
+patrick_only,Goldman Sachs,2025Q2,"Summit Buyer, LLC (dba Classic Collision)",5.0,,2031-06-02,,205934000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q2,"Summit Buyer, LLC (dba Classic Collision)",5.0,,2030-05-31,,1815000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q2,"Supreme Fitness Group NY Holdings, LLC",5.0,5.0,2031-04-14,2031-04-14,34798000.0,38581000.0,
+both,Goldman Sachs,2025Q2,TEI Intermediate LLC (dba Triumvirate Environmental),4.75,4.75,2031-12-15,2031-12-15,160204000.0,142118000.0,
+both,Goldman Sachs,2025Q2,Zeppelin US Buyer Inc. (dba Global Critical Logistics),4.75,4.75,2032-08-02,2032-08-02,2021000.0,185233000.0,
+patrick_only,Great Elm,2025Q2,"Walor North America, Inc",5.75,,2028-06-17,,1500000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,PennantPark,2025Q2,"Cornerstone Advisors of Arizona, LLC",4.75,4.75,2032-05-13,2032-05-13,18833000.0,18833000.0,
+both,PennantPark,2025Q2,"Express Wash Intermediate, LLC",6.25,6.25,2031-04-10,2031-04-10,45111000.0,45111000.0,
+both,PennantPark,2025Q2,First Medical Associates,5.75,5.75,2031-06-13,2031-06-13,4500000.0,4500000.0,
+patrick_only,PennantPark,2025Q2,"Sath Industries, LLC",5.5,,2029-02-17,,10332000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2025Q2,Wash & Wax Systems LLC,5.5,,2028-04-30,,6433000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Silver Point,2025Q2,Asurion LLC,4.25,,2030-09-19,,2500000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,Charter Nex US Inc,2.75,,2030-12-02,,4986945.0,,our rule: existing loan of another manager
+both,Silver Point,2025Q2,Conservice Midco LLC,3.0,3.0,2030-05-13,2030-05-13,4987469.0,4987469.0,
+both,Silver Point,2025Q2,Jaggaer LLC,3.0,3.0,2031-12-08,2031-12-08,7481250.0,7481250.0,
+patrick_only,Silver Point,2025Q2,Kaseya Inc,3.25,,2032-03-22,,7481250.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,Learning Care Group US No 2,4.0,,2028-08-11,,7481061.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,Lummus Technology Holdings V LLC,3.0,,2029-12-31,,4987437.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,Pro Mach Group Inc,2.75,,2028-08-31,,7480700.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,Storable Inc,3.25,,2031-04-16,,7481250.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,Telestream 2 LLC,6.25,,2028-06-07,,10220230.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Silver Point,2025Q2,TransDigm Inc,2.75,,2030-03-22,,7481061.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Silver Point,2025Q2,UKG Inc,3.0,,2031-02-10,,7481108.0,,our rule: existing loan of another manager
+both,Silver Point,2025Q2,Xactus LLC,5.5,5.5,2032-05-06,2032-05-06,8864093.0,8864093.0,
+both,Stellus,2025Q2,"GSF Buyer, LLC",5.0,5.0,2031-04-30,2031-04-30,5950486.0,5950486.0,
+both,Stellus,2025Q2,"International Cybernetics Acquisition, LLC",5.25,5.25,2030-06-03,2030-06-03,7847191.0,7847191.0,
+both,Stellus,2025Q2,"Solid Surface Holdco, LLC",6.0,6.0,2030-06-06,2030-06-06,7933981.0,7933981.0,
+patrick_only,Varagon,2025Q2,"ACP Oak Buyer, Inc.",5.0,,2031-05-16,,6991000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2025Q2,Express Wash Acquisition Company LLC,6.25,,2031-04-10,,3063000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Varagon,2025Q2,Hometown Food Company,4.5,4.5,2030-12-03,2030-12-03,3011000.0,3011000.0,
+both,Varagon,2025Q2,"U.S. Urology Partners, LLC",4.75,4.75,2032-04-08,2032-04-08,7106000.0,7106000.0,
+both,Varagon,2025Q2,Zep Holdco Inc,5.0,5.0,2031-06-30,2031-06-30,8860000.0,8700000.0,
+patrick_only,"Whitehorse Finance, Inc.",2025Q2,"Apollon Holdings, LLC (d/b/a Apollon Wealth Management, LLC)",5.5,,2032-06-18,,7912000.0,,in our all-BDC file but not core (industry or maturity missing)
+both,"Whitehorse Finance, Inc.",2025Q2,"GTT Communications Global, LLC (d/b/a GTT Communications, Inc.)",6.0,6.0,2031-04-15,2031-04-15,15360000.0,15360000.0,
+patrick_only,"Whitehorse Finance, Inc.",2025Q2,"NM Z Holdco Inc. (d/b/a Zep, Inc.)",5.0,,2031-06-30,,10632000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,"Whitehorse Finance, Inc.",2025Q2,Telestream 2 LLC (d/b/a Telestream Holdings Corporation),6.25,,2028-06-07,,11437000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Brightwood Capital Corp I,2025Q3,"12 Interactive, LLC",5.75,5.75,2030-09-05,2030-09-05,7481000.0,7481000.0,
+both,Brightwood Capital Corp I,2025Q3,"LGC US Finco, LLC",7.0,7.000000000000001,2030-08-14,2030-08-14,15000000.0,15000000.0,
+patrick_only,Brightwood Capital Corp I,2025Q3,"Medical Management Holdings, LLC",6.5,,2030-08-01,,10770000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Brightwood Capital Corp I,2025Q3,"NSC Technologies, LLC",6.25,6.25,2030-08-27,2030-08-27,19000000.0,19000000.0,
+both,Goldman Sachs,2025Q3,AGS Health BCP LLC (dba AGS Health),4.5,4.5,2032-08-02,2032-08-02,88640000.0,88640000.0,
+patrick_only,Goldman Sachs,2025Q3,"AL NGPL Holdings, LLC",2.25,,2030-12-09,,32008000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,"AlixPartners, LLP",2.0,,2032-08-12,,31875000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,Alterra Mountain Company,2.5,,2030-05-31,,3750000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q3,"Argos Health Holdings, Inc",5.25,,2029-12-03,,49798000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q3,"BCTO Bluebill Buyer, Inc. (dba Ren)",4.5,4.5,2032-07-30,2032-07-30,67843000.0,67843000.0,
+patrick_only,Goldman Sachs,2025Q3,BEP Intermediate Holdco LLC (dba Buyers Edge),2.75,,2031-07-25,,1506000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q3,"Blazing Star Shields Direct Parent, LLC (dba Shields Health Solutions)",6.0,6.0,2030-08-28,2030-08-28,265874000.0,256461000.0,
+patrick_only,Goldman Sachs,2025Q3,Chamberlain Group Inc,3.0,,2032-09-08,,20707000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,"Cloud Software Group, Inc.",3.25,,2032-08-13,,9900000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q3,"EnviroSmart, LLC (dba ES Integrated)",4.75,4.75,2031-09-24,2031-09-24,22804000.0,22804000.0,
+patrick_only,Goldman Sachs,2025Q3,Fullsteam Operations LLC,5.25,,2031-08-08,,218860000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,Grant Thornton Advisors LLC,3.0,,2031-06-02,,9000000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q3,"Icebox Holdco III, Inc.",3.25,,2031-12-22,,21716000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,"LS Clinical Services Holdings, Inc (dba CATO)",7.25,,2029-12-17,,35737000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q3,"LS Clinical Services Holdings, Inc (dba CATO)",7.25,,2029-06-18,,3870000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q3,"Lobos Parent, Inc. (dba NEOGOV)",4.5,,2032-09-27,,63146000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q3,Meade Pipeline Co LLC,2.0,2.0,2032-09-22,2032-09-22,12375000.0,12375000.0,
+both,Goldman Sachs,2025Q3,"Newtek Merchant Solutions, LLC",5.5,5.5,2030-09-26,2030-09-26,54509000.0,53573000.0,
+both,Goldman Sachs,2025Q3,PAS Parent Inc. (dba Pace Analytical),4.5,4.5,2032-08-18,2032-08-18,80939000.0,80939000.0,
+patrick_only,Goldman Sachs,2025Q3,"PDDS Holdco, Inc. (dba Planet DDS)",6.0,,2031-09-30,,185149000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q3,"PPW Aero Buyer, Inc. (dba Pursuit Aerospace)",5.0,5.0,2031-09-30,2031-09-30,42012000.0,42012000.0,
+patrick_only,Goldman Sachs,2025Q3,"Packaging Coordinators Midco, Inc. (dba PCI Pharma)",4.75,,2032-07-22,,229223000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q3,Precision Concepts Parent Inc.,4.75,4.75,2032-08-02,2032-08-02,14740000.0,14740000.0,
+patrick_only,Goldman Sachs,2025Q3,"Priority Holdings, LLC (dba Priority Payment)",3.75,,2032-07-30,,150000000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q3,Proneri International Ltd,2.0,2.0,2031-09-30,2031-09-30,806000.0,806000.0,
+patrick_only,Goldman Sachs,2025Q3,"TricorBraun Holdings, Inc.",3.25,,2031-03-03,,9081000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,"VASA Fitness Buyer, Inc.",6.25,,2030-08-15,,45702000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q3,W.R. Grace & Co.-Conn.,3.0,,2032-08-19,,7650000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q3,"Wildcat Solutions Holdings, LLC (dba O6 Environmental)",4.75,4.75,2032-08-05,2032-08-05,28779000.0,24219000.0,
+patrick_only,Goldman Sachs,2025Q3,x TSG Intermediate Corp.,3.75,,2032-08-06,,4850000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Great Elm,2025Q3,"Commercial Vehicle Group, Inc.",9.75,,2030-06-27,,4988000.0,,our rule: existing loan of another manager
+patrick_only,Great Elm,2025Q3,"DTI Holdco, Inc.",4.0,,2029-04-26,,1895000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Great Elm,2025Q3,"Vivos Holdings, LLC",6.0,,2030-08-13,,4750000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+patrick_only,PennantPark,2025Q3,"APT OPCO, LLC",5.0,,2031-09-30,,25375000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,"Aphix Buyer, Inc.",4.75,,2031-07-17,,24783000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,Blue Cloud Pediatric Surgery Centers LLC,5.25,,2031-01-21,,7482000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,PennantPark,2025Q3,"By Light Professional IT Services, LLC",5.5,,2031-07-15,,48946000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2025Q3,"Coolsys, Inc.",5.01,,2028-08-11,,2251000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,PennantPark,2025Q3,"LAV Gear Holdings, Inc. - Takeback TL",5.94,,2029-07-31,,13045000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,PennantPark,2025Q3,"North American Rail Solutions, LLC",4.75,,2031-08-29,,86667000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,Paving Lessor Corp.,5.25,,2031-07-01,,6974000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,Peninsula Pacific Entertainment,4.75,,2032-08-22,,5251000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,"Peninsula Pacific Entertainment, LLC",4.75,,2032-08-22,,15002000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,"Penta Group Holdings, Inc.",4.5,,2031-07-31,,8766000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,"Podean Buyer, LLC",6.0,,2031-08-04,,12030000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+patrick_only,PennantPark,2025Q3,"Rosco Parent, LLC",4.75,,2031-09-12,,10167000.0,,our rule: BDC's previous-quarter filing incomplete or missing
+both,Silver Point,2025Q3,Guava Buyer LLC (dba AVI-SPL),5.5,5.5,2032-08-12,2032-08-12,19636157.0,17563956.0,
+patrick_only,Silver Point,2025Q3,IXS Holdings Inc,5.5,,2029-09-05,,10624895.0,,our rule: existing loan of another manager
+patrick_only,Silver Point,2025Q3,Vantage Specialty Chemicals Inc,6.25,,2029-08-29,,20018657.0,,our rule: existing loan of another manager
+both,Stellus,2025Q3,Champion Services Acquireco LLC,5.0,5.0,2030-09-19,2030-09-19,19822508.0,19822508.0,
+both,Stellus,2025Q3,"DFO Enterprises, LLC",5.25,5.25,2030-09-22,2030-09-22,18938474.0,18938474.0,
+both,Stellus,2025Q3,"DMD Systems Recovery, LLC",5.0,5.0,2031-08-22,2031-08-22,7633888.0,7633888.0,
+both,Stellus,2025Q3,Elder Care Opco LLC,5.0,5.0,2030-07-31,2030-07-31,11270942.0,11270942.0,
+both,Stellus,2025Q3,The Millennium Alliance LLC,5.0,5.0,2031-07-31,2031-07-31,16780193.0,16780193.0,
+patrick_only,Varagon,2025Q3,"360 Partners, LLC",4.5,,2031-08-07,,5217000.0,,our rule: borrower held by the family before (name match)
+both,Varagon,2025Q3,"Amplify Buyer, Inc.",4.75,4.75,2032-09-17,2032-09-17,4783000.0,4783000.0,
+both,Varagon,2025Q3,Big Bucks Acquisition Corporation,5.0,5.0,2031-09-29,2031-09-29,4204000.0,4164000.0,
+both,Varagon,2025Q3,NS and Associates LLC,5.25,5.25,2030-08-06,2030-08-06,7032000.0,7032000.0,
+both,Varagon,2025Q3,"RBS Buyer, Inc.",5.0,5.0,2031-07-31,2031-07-31,3122000.0,3122000.0,
+both,Varagon,2025Q3,VTC Buyer Corp.,5.25,5.25,2031-07-15,2031-07-15,1597000.0,1597000.0,
+both,Varagon,2025Q3,"Xifin, Inc.",5.0,5.0,2031-07-31,2031-07-31,2609000.0,2609000.0,
+patrick_only,"Whitehorse Finance, Inc.",2025Q3,"Four Winds Health, LLC",7.0,,2029-07-31,,4375000.0,,our rule: existing loan of another manager
+patrick_only,"Whitehorse Finance, Inc.",2025Q3,"Media Source, LLC (d/b/a Media Source Inc.)",5.75,,2030-08-30,,4200000.0,,our rule: borrower held by the family before (name match)
+both,"Whitehorse Finance, Inc.",2025Q3,Oil & Gas Storage & Transportation,5.75,5.75,2032-07-16,2032-07-16,10498000.0,10498000.0,
+patrick_only,Brightwood Capital Corp I,2025Q4,"Palmdale Oil Company, LLC",4.75,,2031-12-12,,9565000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Brightwood Capital Corp I,2025Q4,"TouchFuse, LLC",5.0,,2029-11-23,,20513000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Brightwood Capital Corp I,2025Q4,"Voice Comm, LLC",6.25,,2030-12-19,,16651000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q4,AAG KP Borrower LLC (dba KUIU),5.0,5.0,2031-12-05,2031-12-05,248214000.0,248214000.0,
+patrick_only,Goldman Sachs,2025Q4,"AL GCX Holdings, LLC",2.25,,2032-12-17,,25325000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Avalara, Inc",2.75,,2032-03-26,,5661000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q4,"Buckeye Partners, L.P.",1.75,,2032-11-22,,28345000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q4,"Businessolver.com, Inc.",4.5,,2032-12-03,,65766000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Chobani, LLC",2.25,,2032-10-28,,21561000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Computer Services, Inc.",4.5,,2031-11-17,,277699000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Cotiviti, Inc.",2.75,,2032-03-26,,4987000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q4,"Edition Holdings, Inc. (dba Enverus)",4.5,,2032-12-20,,61440000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q4,"Edko, LLC",4.75,4.75,2031-10-02,2031-10-02,82696000.0,82696000.0,
+patrick_only,Goldman Sachs,2025Q4,"Engineered Machinery Holdings, Inc.",3.25,,2032-11-26,,21169000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,Epicor Software Corp,2.5,,2031-05-30,,7082000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2025Q4,"Experity, Inc.",5.0,,2030-02-22,,23013000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q4,"Fortress Intermediate 3, Inc",3.0,,2031-06-27,,4239000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2025Q4,HighTower Holdings LLC,2.75,2.75,2032-02-03,2032-02-03,7456000.0,7456000.0,
+patrick_only,Goldman Sachs,2025Q4,"Jeppesen Holdings, LLC",4.75,,2032-11-01,,226662000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Kene Acquisition, Inc. (dba Entrust)",4.75,,2032-12-17,,298179000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q4,"Lumexa Imaging, Inc.",3.0,3.0,2032-12-13,2032-12-13,3800000.0,3800000.0,
+patrick_only,Goldman Sachs,2025Q4,Madison IAQ LLC,2.75,,2032-11-08,,5566000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q4,"Omega Midwest Buyer, LLC (dba Omega Fitness Holdings)",4.75,4.75,2031-12-31,2031-12-31,51421000.0,1872000.0,
+both,Goldman Sachs,2025Q4,PFI Lower Midco LLC,4.0,4.0,2032-12-01,2032-12-01,2150000.0,2150000.0,
+both,Goldman Sachs,2025Q4,Pearl,4.5,4.5,2032-12-31,2032-12-31,15851000.0,5432000.0,
+patrick_only,Goldman Sachs,2025Q4,"Pro Mach Group, Inc.",2.75,,2032-10-15,,14175000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Project Alpha Intermediate Holding, Inc.",3.25,,2030-10-26,,7082000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q4,Prophix Software Inc. (dba Pound Bidco),6.0,,2030-04-24,,106737000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q4,"Raising Cane's Restaurants, LLC",2.0,,2032-11-03,,925000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2025Q4,"SCIH Salt Holdings, Inc.",2.75,,2029-01-31,,5175000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+patrick_only,Goldman Sachs,2025Q4,SI Swan UK Bidco Limited (dba Sapiens International)),4.75,,2032-12-16,,106424000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2025Q4,Saber Parent Holdings Corp. (dba Service Logic),4.5,4.5,2032-12-16,2032-12-16,101138000.0,101138000.0,
+patrick_only,Goldman Sachs,2025Q4,"Singlewire Software, LLC",4.75,,2030-05-10,,93848000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2025Q4,"Smyrna Ready Mix Concrete, LLC",3.0,,2029-04-02,,4987000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Goldman Sachs,2025Q4,UFT Buyer LLC (dba United Flow Technologies),4.5,4.5,2032-12-06,2032-12-06,99349000.0,99349000.0,
+both,Goldman Sachs,2025Q4,"VRS Buyer, Inc. (dba LiquidTech)",3.5,3.5000000000000004,2032-10-12,2032-10-12,113390000.0,113419000.0,
+patrick_only,Goldman Sachs,2025Q4,"Vaco Holdings, LLC",5.0,,2029-01-22,,2032000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2025Q4,"eShipping, LLC",4.5,4.5,2032-12-23,2032-12-23,157541000.0,142462000.0,
+patrick_only,Great Elm,2025Q4,"DS Admiral Bidco, LLC",4.25,,2031-06-26,,2493000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Great Elm,2025Q4,"Goodnight Water Solutions, LLC",4.0,,2029-06-04,,2992000.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Great Elm,2025Q4,ITG Communications LLC,4.75,4.75,2031-07-09,2031-07-09,2000000.0,2000000.0,
+patrick_only,Great Elm,2025Q4,Natus Medical Inc,5.25,,2029-07-20,,1000000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Great Elm,2025Q4,PFI Lower Midco LLC,4.0,4.0,2032-12-01,2032-12-01,1000000.0,1000000.0,
+both,Great Elm,2025Q4,"Ryan, LLC",3.5,3.5000000000000004,2032-11-05,2032-11-05,5000000.0,5000000.0,
+patrick_only,Great Elm,2025Q4,SCIH Salt Holdings Inc.,2.75,,2029-01-31,,4000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,PennantPark,2025Q4,"DX Electric Company, LLC",5.25,5.25,2031-10-01,2031-10-01,14092000.0,14092000.0,
+both,PennantPark,2025Q4,"PD Tri-State Holdco, LLC",5.25,5.25,2030-10-14,2030-10-14,8940000.0,5940000.0,
+both,PennantPark,2025Q4,"Puget Collision, LLC",4.75,4.75,2031-10-03,2031-10-03,47506000.0,56288000.0,
+both,PennantPark,2025Q4,"Puget Collision, LLC",4.75,4.75,2031-10-02,2031-10-03,10000000.0,56288000.0,
+both,Silver Point,2025Q4,"G-3 Chickadee Purchaser, LLC",5.75,5.75,2031-10-31,2031-10-31,5989252.0,5989252.0,
+both,Silver Point,2025Q4,Hammer IntermediateCo LLC,5.5,5.5,2031-10-01,2031-10-01,7527526.0,6465389.0,
+both,Silver Point,2025Q4,Igloo Group Parent Inc,5.0,5.0,2031-12-23,2031-12-23,18483344.0,18483344.0,
+both,Silver Point,2025Q4,Meta Buyer LLC,5.25,5.25,2031-12-22,2031-12-22,17462493.0,3657818.0,
+both,Silver Point,2025Q4,Metropolis Technologies Inc,5.25,5.25,2032-10-20,2032-10-20,2542173.0,2542173.0,
+patrick_only,Silver Point,2025Q4,Michael Baker International LLC,4.5,,2028-12-29,,23376259.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Silver Point,2025Q4,Pioneer AcquisitionCo LLC,3.25,3.25,2032-10-27,2032-10-27,3132000.0,3132000.0,
+both,Silver Point,2025Q4,Quirch Foods Holdings LLC,6.5,6.5,2030-11-12,2030-11-12,12898711.0,11689457.0,
+patrick_only,Silver Point,2025Q4,Radiate Holdco LLC,4.0,,2029-06-26,,5000250.0,,tenor 3 to 4 years (our window 4 to 8; in our variant file)
+both,Stellus,2025Q4,Fidus Systems Inc.,5.5,5.5,2031-10-17,2031-10-17,3023836.0,7782935.0,
+both,Stellus,2025Q4,"Pilot Power Group Acquisition, Inc.",5.25,5.25,2030-12-18,2030-12-18,21000000.0,21000000.0,
+both,Stellus,2025Q4,Pure Upper Holdco LLC,4.75,4.75,2031-12-03,2031-12-03,14472417.0,14472417.0,
+both,Stellus,2025Q4,"Valor Buyco, LLC",4.75,4.75,2031-12-23,2031-12-23,8918359.0,8918359.0,
+both,Varagon,2025Q4,"Pareto Buyer, LLC",4.5,4.5,2032-12-13,2032-12-13,2000000.0,2000000.0,
+both,Varagon,2025Q4,"Phia Purchaser, LLC",4.5,4.5,2032-12-01,2032-12-01,2770000.0,2770000.0,
+both,Varagon,2025Q4,"Pillr Health Intermediate II, LLC",4.75,4.75,2031-12-31,2031-12-31,2610000.0,2549000.0,
+both,Varagon,2025Q4,Reliable Medical Supply Acquisitionco LLC,4.5,4.5,2032-12-31,2032-12-31,2673000.0,2673000.0,
+both,Varagon,2025Q4,"Sentinel Technologies, Inc",4.5,4.5,2031-11-03,2031-11-03,2362000.0,2362000.0,
+patrick_only,Varagon,2025Q4,"VP Security Buyer, Inc.",4.75,,2031-10-10,,506000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+both,"Whitehorse Finance, Inc.",2025Q4,"ELM DebtCo, LLC",4.75,4.75,2031-11-14,2031-11-14,5543000.0,5543000.0,
+both,"Whitehorse Finance, Inc.",2025Q4,"Marki Microwave, LLC",4.25,4.25,2031-11-21,2031-11-21,6045000.0,6045000.0,
+both,"Whitehorse Finance, Inc.",2025Q4,Rewards Network Inc.,6.0,6.0,2031-12-05,2031-12-05,10851000.0,10213000.0,
+patrick_only,"Whitehorse Finance, Inc.",2025Q4,"Texas Express Wash, LLC",6.5,,2030-11-26,,11232000.0,,our rule: borrower held by the family before (name match)
+both,Brightwood Capital Corp I,2026Q1,"I Love Produce, LLC",6.0,6.0,2031-03-24,2031-03-24,10056000.0,10000000.0,
+patrick_only,Brightwood Capital Corp I,2026Q1,"MAPS Buyer, Inc.",5.75,,2031-02-18,,21154000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Brightwood Capital Corp I,2026Q1,"The Teaching Company, LLC",5.5,5.5,2031-02-11,2031-02-11,15000000.0,15000000.0,
+patrick_only,Goldman Sachs,2026Q1,Alpha Generation LLC,1.75,,2031-09-30,,5312000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2026Q1,Asurion LLC,3.75,,2033-02-23,,10154000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,CORA Health Holdings Corp,5.75,,2029-06-15,,43832000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q1,CQP Holdco LP,1.75,,2032-12-31,,29369000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,"Dayforce Bidco, LLC (dba Dayforce)",3.0,,2033-02-04,,130988000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,"Dayforce Bidco, LLC (dba Dayforce)",2.75,,2031-02-04,,25000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q1,"EOC Borrower, LLC",2.75,,2032-03-24,,5647000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q1,"Electron BidCo, Inc.",2.5,,2033-02-06,,10918000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,"Fluid-Flow Products, Inc.",3.25,,2033-03-04,,20146000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,Genesee & Wyoming Inc,1.75,,2031-04-10,,26508000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2026Q1,"HighLevel, Inc.",4.5,4.5,2033-02-23,2033-02-23,145937000.0,145937000.0,
+patrick_only,Goldman Sachs,2026Q1,IRB Holding Corp.,2.5,,2030-12-16,,10736000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q1,"Packaging Coordinators Midco, Inc. (dba PCI Pharma)",5.0,,2032-10-15,,75198000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q1,Pike Corporation,4.5,,2032-12-20,,209202000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q1,Proampac PG Borrower LLC,4.0,,2033-03-07,,16945000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,Propulsion (BC) Finco S.a.r.l.,2.5,,2032-12-01,,12938000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2026Q1,Recorded Books Inc. (dba RBMedia),5.0,,2029-08-31,,25825000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Goldman Sachs,2026Q1,"Sky Flight, LLC",2.75,2.75,2033-02-17,2033-02-17,5500000.0,5500000.0,
+patrick_only,Goldman Sachs,2026Q1,Spectris PLC,2.75,,2032-12-06,,8479000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q1,"TKC Holdings, Inc.",4.5,,2030-08-19,,2875000.0,,our rule: existing loan of another manager
+patrick_only,Goldman Sachs,2026Q1,Univision Communications Inc.,3.25,,2029-01-31,,7979000.0,,same loan held earlier by another manager (our existing-loan filter)
+both,Goldman Sachs,2026Q1,Victory Buyer LLC,3.0,3.0,2033-02-14,2033-02-14,4175000.0,4175000.0,
+patrick_only,Goldman Sachs,2026Q1,"WebPT, Inc.",6.25,,2030-01-18,,64160000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Great Elm,2026Q1,"ACTIV8 Health, LLC",5.75,5.75,2031-02-03,2031-02-03,3696000.0,3696000.0,
+both,Great Elm,2026Q1,JFL-Tiger Acquisition Co Inc,3.75,3.75,2030-10-17,2030-10-17,1995000.0,1995000.0,
+both,PennantPark,2026Q1,"GALT NEWCO, LLC",5.5,5.5,2032-03-27,2032-03-29,660000.0,3962000.0,
+both,PennantPark,2026Q1,"Galt Newco, LLC",5.5,5.5,2032-03-29,2032-03-29,3302000.0,3962000.0,
+both,PennantPark,2026Q1,"Harvest Group Topco Buyer, LLC",4.75,4.75,2032-03-02,2032-03-02,68484000.0,68484000.0,
+both,PennantPark,2026Q1,"Highwire Public Relations, LLC",5.0,5.0,2031-01-12,2031-01-12,20750000.0,30558000.0,
+both,PennantPark,2026Q1,"Highwire Public Relations, LLC",5.0,5.0,2031-01-13,2031-01-12,9808000.0,30558000.0,
+both,PennantPark,2026Q1,"Integrity Health Purchaser, LLC",6.0,6.0,2032-02-02,2032-02-02,3492000.0,3492000.0,
+both,PennantPark,2026Q1,"Real Life Intermediate Holdings, LLC",5.0,5.0,2031-01-16,2031-01-16,3479000.0,3479000.0,
+both,PennantPark,2026Q1,"SCP Clinical Research Intermediate Holdings, LLC",4.75,4.75,2032-01-02,2032-01-02,7982000.0,7090000.0,
+both,Silver Point,2026Q1,RKG Newco LLC,5.5,5.5,2033-02-02,2033-02-02,45748788.0,18189277.0,
+both,Silver Point,2026Q1,Resistance Holdings Inc,5.0,5.0,2031-03-14,2031-03-14,29568317.0,15107287.0,
+patrick_only,Stellus,2026Q1,"Precision Strategies, LLC",5.0,,2031-03-03,,10700361.0,,our rule: borrower held by the family before (name match)
+both,Stellus,2026Q1,Silver Corporate Holdings LLC,5.5,5.5,2031-01-09,2031-01-09,11712348.0,11712348.0,
+both,Stellus,2026Q1,"Synergy Health Partners MSO, LLC",5.0,5.0,2031-03-06,2031-03-06,11451964.0,11274448.0,
+both,Varagon,2026Q1,"Andretti Buyer, LLC",4.5,4.5,2033-01-28,2033-01-28,495000.0,495000.0,
+both,Varagon,2026Q1,"Charlie RF Voltron Acquisition, Inc.",5.0,5.0,2032-03-12,2032-03-12,710000.0,710000.0,
+patrick_only,Varagon,2026Q1,G-3 Mobility Buyer LLC,4.5,,2032-01-05,,3325000.0,,our rule: borrower held by the family before (name match)
+both,Varagon,2026Q1,TRX Buyer LLC,5.0,5.0,2032-03-24,2032-03-24,1540000.0,1502000.0,
+patrick_only,Brightwood Capital Corp I,2026Q2,"Everest AcquisitionCo, LLC",6.0,,2031-05-12,,14167000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Brightwood Capital Corp I,2026Q2,"FGG Spa, LLC",6.0,6.0,2031-06-30,2031-06-30,6000000.0,6000000.0,
+both,Brightwood Capital Corp I,2026Q2,"Heritage HVAC Holdings, LLC",5.0,5.0,2030-07-25,2030-07-25,4559000.0,4500000.0,
+patrick_only,Brightwood Capital Corp I,2026Q2,"Mission Critical Group, LLC",5.25,,2030-10-01,,9963000.0,,our rule: existing loan of another manager
+patrick_only,Brightwood Capital Corp I,2026Q2,OPCO Borrower LLC,6.0,,2030-05-08,,23025000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q2,"Advanced Cooling Technologies, Inc.",4.5,,2033-05-19,,34845000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q2,"Auctane, Inc. (dba ShipStation Global)",5.75,,2033-06-01,,5000000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Goldman Sachs,2026Q2,"Bells Parent, Inc. (dba Atwell, LLC)",5.0,5.0,2033-04-25,2033-04-25,26030000.0,46223000.0,
+patrick_only,Goldman Sachs,2026Q2,"Burgess Pigment, LLC",5.0,,2031-06-30,,46488000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q2,"Clearwater Analytics, LLC",4.5,,2033-06-27,,57447000.0,,refinancing / add-on of an existing borrower (our variant file)
+patrick_only,Goldman Sachs,2026Q2,"Clearwater Analytics, LLC One",4.5,,2033-06-27,,10638000.0,,our rule: borrower held by the family before (name match)
+patrick_only,Goldman Sachs,2026Q2,"Everest Portfolio Company, LLC",5.0,,2031-06-02,,570000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+both,Goldman Sachs,2026Q2,GS Fullsteam Operation LLC,5.25,5.25,2031-08-08,2031-08-08,2968000.0,913000.0,
+patrick_only,Goldman Sachs,2026Q2,"Pavement Preservation Acquisition, LLC (dba Pavement Preservation Group)",5.25,,2030-08-09,,10774000.0,,same loan held earlier by another manager (our existing-loan filter)
+patrick_only,Goldman Sachs,2026Q2,Prophix Software Inc. (dba Pound Bidco),5.25,,2029-05-01,,15245000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Goldman Sachs,2026Q2,"Summit Buyer, LLC (dba Classic Collision)",4.25,,2032-10-25,,5338000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,Great Elm,2026Q2,"NTI Buyer, LLC",4.25,4.25,2033-07-01,2033-07-01,3000000.0,3000000.0,
+patrick_only,PennantPark,2026Q2,"Bluebird Parent, Inc.",5.25,,2032-06-14,,55767000.0,,refinancing / add-on of an existing borrower (our variant file)
+both,PennantPark,2026Q2,"CTC Purchaser, LLC",5.75,5.75,2031-05-16,2031-05-16,16323000.0,14359000.0,
+both,PennantPark,2026Q2,"Elektrik App, Inc",5.5,5.5,2032-05-29,2032-05-28,1700000.0,17611000.0,
+both,PennantPark,2026Q2,"Elektrik App, Inc.",5.5,5.5,2032-05-28,2032-05-28,10101000.0,17611000.0,
+both,PennantPark,2026Q2,"GRVTY, Inc.",4.75,4.75,2033-05-31,2033-05-31,14483000.0,14483000.0,
+both,PennantPark,2026Q2,"Marwood Group Buyer, LLC",4.5,4.5,2032-04-01,2032-04-01,16176000.0,16176000.0,
+both,Silver Point,2026Q2,ChemCat AcquisitionCo LLC (Ketjen),4.75,4.75,2033-03-02,2033-03-02,12095546.0,12095546.0,
+both,Silver Point,2026Q2,Hawk Parent Holdings LLC,5.5,5.5,2032-06-01,2032-06-01,40940747.0,40940747.0,
+both,Silver Point,2026Q2,Iron Oak Energy Solutions LLC,5.5,5.5,2033-05-26,2033-05-26,10614226.0,10614226.0,
+both,Silver Point,2026Q2,LA Specialty Produce Co LLC(dba Vesta Foodservice),4.5,4.5,2033-04-01,2033-04-01,18735955.0,13436143.0,
+patrick_only,Silver Point,2026Q2,NP Gaming Acquisition LLC,6.5,,2031-04-21,,37188467.0,,our rule: borrower held by the family before (name match)
+both,Stellus,2026Q2,OW RSG LLC,5.5,5.5,2031-04-27,2031-04-27,10520000.0,10500000.0,
+both,Stellus,2026Q2,"Solomon Acquisition Co, LLC",5.25,5.25,2032-04-13,2032-04-13,4196557.0,6909130.0,
+both,Stellus,2026Q2,"Solomon AcquisitionCo, LLC",5.25,5.25,2032-04-13,2032-04-13,2712573.0,6909130.0,
+both,Stellus,2026Q2,"VeloSource Purchaser, LLC",5.25,5.25,2031-04-03,2031-04-03,8000000.0,8000000.0,
+both,Varagon,2026Q2,"Advanced Infusion Solutions Acquisition, LLC",5.0,5.0,2032-06-04,2032-06-04,2217000.0,2194000.0,
+both,Varagon,2026Q2,Champion Elevator Operating Corporation.,5.75,5.75,2032-05-28,2032-05-28,2617000.0,2617000.0,
+both,Varagon,2026Q2,Empower Benefits Inc.,5.0,5.0,2033-06-30,2033-06-30,989000.0,989000.0,
+both,Varagon,2026Q2,"ISQ Hawkeye HoldCo, Inc.",4.0,4.0,2031-08-20,2031-08-20,467000.0,467000.0,
+patrick_only,Varagon,2026Q2,"Iron Pillar United Mining Group, LLC",5.5,,2032-05-14,,748000.0,,our rule: acquisition date before the quarter (any line of the borrower)
+both,Varagon,2026Q2,"Le Sueur, Incorporated",6.0,6.0,2031-05-20,2031-05-20,2765000.0,2644000.0,
+patrick_only,Varagon,2026Q2,"SGA Dental Partners Sub Holdings, LLC",6.0,,2031-06-13,,15000000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+patrick_only,Varagon,2026Q2,"USN Opco, LLC",5.25,,2030-05-31,,2302000.0,,"refinancing / add-on of an existing borrower (our variant file), not in variant"
+both,Varagon,2026Q2,"iVision Buyer, LLC",5.5,5.5,2031-05-22,2031-05-22,2866000.0,2866000.0,
+patrick_only,"Whitehorse Finance, Inc.",2026Q2,"Empire amp; Co Inc. (d/b/a Empire Office, Inc.)",6.0,,2031-05-30,,10326000.0,,"not a candidate in ours (name not matched, line not eligible, or other quarter)"
+both,"Whitehorse Finance, Inc.",2026Q2,"Vibration Mountings amp; Controls, Inc",5.0,5.0,2031-06-23,2031-06-23,6378000.0,6378000.0,
+ours_only,Goldman Sachs,2023Q2,Superior,,5.5,,2030-07-03,,10133000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Stellus,2023Q2,2X LLC,,6.5,,2028-06-05,,8005669.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,"Whitehorse Finance, Inc.",2023Q2,MGT Merger Target LLC,,6.75,,2029-04-10,,6263000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q3,AL GCX Holdings LLC,,3.5000000000000004,,2029-05-17,,2133000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q3,Albaugh LLC,,3.75,,2029-04-06,,4763000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q3,AWP Group Holdings Inc.,,8.75,,2030-12-23,,24999000.0,Patrick: loan kind second_lien
+ours_only,Goldman Sachs,2023Q3,Bangl LLC,,4.5,,2029-02-01,,1075000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q3,Crewline Buyer Inc.,,6.75,,2030-07-30,,91667000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q3,Recochem Inc,,5.75,,2030-09-01,,113216000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q3,Syncapay Inc,,6.5,,2027-12-10,,944000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Silver Point,2023Q3,GC Bison Acquisition LLC,,6.0,,2029-09-01,,11959422.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Silver Point,2023Q3,Recorded Books Inc,,6.25,,2030-08-31,,7941982.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Silver Point,2023Q3,Wrangler Topco LLC,,7.5,,2029-07-07,,11988004.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Stellus,2023Q3,Compost 360 Acquisition LLC,,6.5,,2028-08-02,,15510256.0,Patrick: reference rate not identified as SOFR
+ours_only,Goldman Sachs,2023Q4,ASM Buyer Inc.,,6.0,,2028-01-29,,102567000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2023Q4,NEXUS Buyer LLC,,4.5,,2028-12-13,,250000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Stellus,2023Q4,AdCellerant LLC,,6.0,,2028-12-12,,15719319.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Varagon,2023Q4,Online Labels Group LLC,,5.25,,2029-12-19,,72000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,Charger Debt Merger Sub LLC,,5.0,,2031-03-01,,340255000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,Kaman Corporation,,3.5000000000000004,,2031-03-27,,425000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,Northstar Acquisition HoldCo LLC,,5.0,,2029-05-03,,150027000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,Prairie ECI Acquiror LP,,4.75,,2029-08-01,,1850000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,USA DeBusk LLC,,5.25,,2031-03-19,,148068000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,Vizient Inc.,,2.25,,2029-05-16,,3940000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,WhiteWater DBR HoldCo LLC,,2.75,,2031-03-03,,1325000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q1,Whitewater Whistler Holdings LLC,,2.75,,2030-02-15,,5250000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Brightwood Capital Corp I,2024Q2,GPI Acquisition Co. Inc,,5.75,,2029-03-30,,19449000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q2,AI Titan Parent Inc.,,4.75,,2031-06-03,,31939000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q2,Artifact Bidco Inc.,,4.5,,2031-07-28,,70148000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q2,Bleriot US Bidco Inc.,,3.25,,2030-10-31,,748000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q2,Broadstreet Partners Inc.,,3.25,,2031-06-14,,1850000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Silver Point,2024Q2,Hootsuite Inc.,,5.5,,2030-05-22,,12799229.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Silver Point,2024Q2,United Sates of America BayMark Health Services Inc,,8.76,,2028-06-11,,3333333.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2024Q3,Buffalo Merger Sub LLC,,5.25,,2030-09-30,,136023000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Geotechnical Merger Sub Inc.,,4.75,,2031-08-24,,73590000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,GSM Holdings Inc.,,5.0,,2031-09-29,,1550000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Hamilton Thorne Inc.,,5.5,,2031-08-01,,44877000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Help At Home Inc.,,5.0,,2031-09-24,,625000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Kohler Energy Co LLC,,4.75,,2031-05-01,,4988000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Kryptona Bidco US LLC,,5.75,,2031-07-18,,150000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Nvent Electric Public Limited Company,,4.0,,2031-09-12,,1925000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Plano HoldCo Inc,,3.5000000000000004,,2031-08-15,,4000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Rock Star Mergersub LLC,,4.75,,2031-09-09,,219768000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Runway Bidco LLC,,5.0,,2031-10-01,,136431000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Third Coast Infrastructure LLC,,4.25,,2030-09-25,,2475000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q3,Thunder Generation Funding LLC,,3.0,,2031-09-27,,4500000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Stellus,2024Q3,Guidant Corp,,6.5,,2029-03-12,,17637260.0,Patrick: acquisition date before the quarter
+ours_only,"Whitehorse Finance, Inc.",2024Q3,Camarillo Fitness Holdings LLC,,8.5,,2029-09-25,,11351000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q4,ABC Investment CST Buyer Company,,5.0,,2028-11-01,,6630000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2024Q4,Champ Acquisition Corporation,,4.5,,2031-11-25,,3775000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q4,LSF12 Crown US Commercial Bidco LLC,,4.25,,2031-12-02,,8000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2024Q4,Zelis Payments Buyer Inc.,,3.25,,2031-11-26,,4575000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Varagon,2024Q4,Acquis,,4.75,,2030-12-23,,417000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Varagon,2024Q4,UHY Advisors Inc.,,4.75,,2031-11-21,,6623000.0,Patrick: tranches with different spreads
+ours_only,"Whitehorse Finance, Inc.",2024Q4,FloWorks International LLC,,4.75,,2031-11-26,,5333000.0,Patrick: tranches with different spreads
+ours_only,Goldman Sachs,2025Q1,Berkeley Research Group LLC,,3.25,,2032-03-17,,3525000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q1,Shields Health Solutions,,6.0,,2032-03-03,,270506000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q1,Tecta America Corp.,,3.0,,2032-02-18,,8150000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,PennantPark,2025Q1,Commercial Fire Protection Holdings LLC,,4.75,,2030-09-23,,43534000.0,Patrick: near match
+ours_only,Silver Point,2025Q1,FourPoint Resources Intermediate Holdings LLC,,7.000000000000001,,2030-01-22,,11494239.0,Patrick: loan kind second_lien
+ours_only,Varagon,2025Q1,DRML Holdings LLC,,4.75,,2031-03-14,,10000000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2025Q2,Project Maroon LLC,,4.75,,2032-04-22,,237995000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q2,Whitewater Matterhorn Holdings LLC,,2.25,,2032-06-16,,13000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Atkore International Inc.,,2.0,,2032-09-29,,1700000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Dawn Bidco LLC,,3.0,,2032-10-07,,275000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Deep Blue Operating I LLC,,2.75,,2032-10-01,,15300000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Edition Holdings Inc.,,4.75,,2032-07-30,,75280000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Global Medical Response Inc,,3.5000000000000004,,2032-10-01,,9050000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Iris Specialty Acquisition LLC,,4.5,,2032-12-31,,212808000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Park River Holdings Inc,,4.5,,2031-03-15,,3025000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,SI Swan UK Bidco Limited,,4.75,,2032-08-12,,131375000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q3,Spectris PLC,,3.0,,2032-09-24,,5100000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Silver Point,2025Q3,1261229 BC LTD,,6.25,,2030-10-08,,22556651.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Silver Point,2025Q3,X Corp,,6.5,,2029-10-29,,11399267.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2025Q4,Clearwater Analytics LLC,,4.5,,2032-03-31,,780460000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2025Q4,Versant Media Group Inc,,3.5000000000000004,,2031-01-30,,8750000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,"Whitehorse Finance, Inc.",2025Q4,amp,,5.75,,2032-07-16,,10472000.0,Patrick: acquisition date before the quarter
+ours_only,Goldman Sachs,2026Q1,Advanced Cooling Technologies Inc.,,4.5,,2033-02-27,,70126000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Atwell LLC,,4.75,,2033-04-25,,72120000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Auctane Inc.,,4.75,,2032-12-31,,226000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Burgess Pigment Co.,,5.0,,2031-03-19,,290550000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Corinthia Bidco Limited,,4.0,,2032-02-23,,120000000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Envero Midco 2 LLC,,4.75,,2033-03-02,,89168000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Hologic Inc.,,2.25,,2033-04-07,,9950000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q1,Onward AcquireCo Inc.,,4.75,,2033-04-01,,284999000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Silver Point,2026Q1,Service Solutions WC Inc.,,4.5,,2033-02-07,,10760234.0,Patrick: near match
+ours_only,"Whitehorse Finance, Inc.",2026Q1,Cultural Experiences Abroad LLC,,6.0,,2032-01-21,,9508000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,"Whitehorse Finance, Inc.",2026Q1,Service Solutions WC Inc,,4.5,,2033-02-07,,5111000.0,Patrick: tranches with different spreads
+ours_only,Goldman Sachs,2026Q2,ACI Rover Parent LLC,,2.25,,2033-06-09,,2520000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,ADI Global Distribution Funding LLC,,2.75,,2033-06-17,,1605000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Bella Holding Company LLC,,3.25,,2033-06-16,,2070000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Birdsboro Power LLC,,3.75,,2033-06-16,,1610000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,BNI Intermediate Holdings LLC,,5.25,,2033-06-20,,47292000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
+ours_only,Goldman Sachs,2026Q2,Chemcat Acquisition LLC,,4.75,,2033-06-30,,970000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Emerald Expositions Holding Inc.,,3.5000000000000004,,2033-06-17,,1530000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,ESCO Technologies Inc.,,1.7500000000000002,,2033-06-11,,2495000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Gaia Purchaser Inc.,,4.0,,2033-06-25,,4475000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Lockton Inc.,,2.0,,2033-05-09,,1045000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,QXO Inc.,,2.0,,2033-07-01,,2540000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Trilon Group LLC,,3.5000000000000004,,2033-06-13,,3206000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,Goldman Sachs,2026Q2,Watlow Electric Manufacturing Company,,2.75,,2033-06-17,,914000.0,not a candidate in Patrick's data (parsing or first appearance in another quarter)
+ours_only,"Whitehorse Finance, Inc.",2026Q2,Intermedia Cloud Communications Inc.,,5.5,,2031-11-26,,6667000.0,"Patrick: undrawn (no drawn principal) or below USD 100,000"
