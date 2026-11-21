@@ -39,7 +39,7 @@ environment variable `SEC_USER_AGENT`.
 |---|---|
 | `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `02_estimate.ipynb` (baselines, models, horse race, choice of the main model, predictions for 03), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks) |
 | `data/raw/`, `data/interim/` | Downloads and caches, rebuilt by the code, not in Git |
-| `data/processed/` | Working datasets, data dictionary, sector and family mappings |
+| `data/processed/` | Working datasets, data dictionary, sector and family mappings; predictions of notebook 02 for notebook 03 (`predictions_validation.csv`, `predictions_test.csv`, `predictions_robustness.csv`) |
 | `output/tables/`, `output/figures/` | Funnel, precision, hand check, headline numbers, figures |
 | `docs/` | `for_modelling.md`, `data_report.md`, `model_report.md` (summary of notebook 02), `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
 

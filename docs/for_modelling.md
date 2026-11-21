@@ -65,5 +65,6 @@ maps to the infrequent group if the fold has one, otherwise to the reference cat
 size. (5) `lien` is "unknown" for almost all Stellus, TCW and Onex loans (not written in the line). (6) The test
 quarters are used once.
 
-**Status of notebook 02 (21 Nov 2026).** Results, interface for notebook 03 (file and columns) and open steps:
-`docs/model_report.md`. Validation predictions of every candidate: `data/processed/predictions_validation.csv`.
+**Status of notebook 02 (21 Nov 2026): complete.** Main model, results and the interface for notebook 03:
+`docs/model_report.md` (sections 6 and 7). Predictions: `data/processed/predictions_validation.csv`,
+`predictions_test.csv`, `predictions_robustness.csv`.

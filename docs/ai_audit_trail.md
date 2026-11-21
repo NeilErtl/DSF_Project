@@ -194,16 +194,18 @@ release only if every check passes. Report: `docs/history/release_report.md`.
 - Hand-made exclusions of single loans: residual odd names are documented in D43 and D44 instead (e.g. "Project
   Titan Tyber Medical", very likely not new, but no name rule links it to its earlier holding).
 
-## Session 6, 21 Nov 2026: notebook 02, steps 0 to 7 (estimation), Claude Opus 5.5 in Claude Code, with Neil Ertl
+## Session 6, 21 Nov 2026: notebook 02, steps 0 to 10 (estimation), Claude Opus 5.5 in Claude Code, with the notebook 02 owner
 
-**Task.** Build `code/02_estimate.ipynb` under CLAUDE.md and the team rules D45 (Neil decides consequential choices
+**Task.** Build `code/02_estimate.ipynb` under CLAUDE.md and the team rules D45 (the notebook 02 owner decides consequential choices
 before they are taken; the AI logs small ones). Entry updated at the end of the session.
 
 **What the AI did**
 - Installed the package versions of `requirements.txt` in Nuvolos (pandas 2.3.3 -> 3.1.1 etc.).
 - Steps 0 to 7: folds and checks, baselines, linear models, trees, neural net, horse race, diagnostics (6b, 6c),
-  residual-target round (6d, 6e; D47, decided by Neil) with its critical check (6f), optional features (step 7,
-  D48), the complete race figure (7b), the main model chosen by Neil (step 8, D49) with its feature importance. Logged D45 to D48; wrote `docs/model_report.md`; redesigned the race figure
+  residual-target round (6d, 6e; D47, decided by the notebook 02 owner) with its critical check (6f), optional features (step 7,
+  D48), the complete race figure (7b), the main model chosen by the notebook 02 owner (step 8, D49) with its feature importance,
+  test predictions of every candidate and robustness predictions of the main model (steps 9 and 10, D50), without
+  computing any test error. Logged D45 to D48; wrote `docs/model_report.md`; redesigned the race figure
   (readable values, colour and shape per round, all candidates).
 
 **What was checked (and changed because of it)**
@@ -213,10 +215,15 @@ before they are taken; the AI logs small ones). Entry updated at the end of the 
   the grid, so a "tuned" net was worse than its default; fixed (default competes, D47).
 - An overstatement corrected: the 55 bps yardstick of 6c bounds linear models only (boosting reached 58, forest 55).
 - Residual target challenged on the owner's request (6f): one-for-one pass-through (slope 0.79) and an inherited
-  bias of the tree-based residual models (+8 to +22 bps per validation quarter) documented as limitations in D47 and
+  bias of the tree-based residual models (+8 to +24 bps per validation quarter) documented as limitations in D47 and
   the model report. A first statement that all residual models were biased was corrected: the residual net is not.
 - Documentation chain audited on the owner's request: eight gaps fixed (notebook header, definitions table, model
-  report, README, for_modelling pointer, this entry, Neil's notes); critical check moved next to the round it tests.
+  report, README, for_modelling pointer, this entry, the owner's personal notes outside the repo); critical check moved next to the round it tests.
+- Full audit of notebook 02 before the hand-over (owner's request): outputs were not byte-identical across runs
+  (float noise from parallel trees, a run-time column): fixed (D50); personal names replaced by roles in the repo
+  (rule added to CLAUDE.md); `n_family_bdcs` is known at the cutoff for the lender but not for a sponsor or CFO,
+  although both are named users: the main model without it reaches 54.9 instead of 54.6 bps. The owner chose the
+  version without it (E11, D51); steps 7b, 8, 9 and 10 rerun (the test quarters had not been evaluated).
 
 **What was rejected**
 - `instrument` and `mkt_spread_t2_core` as optional features (D48); RandomizedSearchCV (full grids run in seconds);
