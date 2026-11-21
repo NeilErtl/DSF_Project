@@ -1,0 +1,2026 @@
+loan_id,quarter,family,y_true,y_pred,abs_error_bps,model,fold
+0030aef491,2024Q3,PennantPark,7.5,5.0,250.0,Baseline 1: market median t-2,0
+01c597ab30,2024Q3,Crescent,5.25,5.0,25.0,Baseline 1: market median t-2,0
+02cb8e1f61,2024Q3,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,0
+03a26e36aa,2024Q3,Investcorp,5.75,5.0,75.0,Baseline 1: market median t-2,0
+03e80f7582,2024Q3,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,0
+047436424b,2024Q3,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,0
+0671b289e1,2024Q3,Goldman Sachs,5.5,5.0,50.0,Baseline 1: market median t-2,0
+0965259fc9,2024Q3,Goldman Sachs,4.25,5.0,75.0,Baseline 1: market median t-2,0
+0c7df4afd2,2024Q3,BlackRock,3.25,5.0,175.0,Baseline 1: market median t-2,0
+0d3ac6ff85,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+0ded6bcaa9,2024Q3,Jefferies,4.5,5.0,50.0,Baseline 1: market median t-2,0
+0f464150e4,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+0fdec1c5b0,2024Q3,Apollo,1.75,5.0,325.0,Baseline 1: market median t-2,0
+0ff7e27487,2024Q3,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,0
+10f31dd297,2024Q3,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,0
+133abb07d4,2024Q3,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,0
+159078cd9b,2024Q3,Antares,3.75,5.0,125.0,Baseline 1: market median t-2,0
+15d129af6f,2024Q3,Apollo,8.0,5.0,300.0,Baseline 1: market median t-2,0
+17562960b2,2024Q3,Antares,4.5,5.0,50.0,Baseline 1: market median t-2,0
+1a8d4c7b11,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+2072913d08,2024Q3,First Eagle,3.5,5.0,150.0,Baseline 1: market median t-2,0
+209659de22,2024Q3,Jefferies,5.25,5.0,25.0,Baseline 1: market median t-2,0
+24e1808b26,2024Q3,Goldman Sachs,3.25,5.0,175.0,Baseline 1: market median t-2,0
+28d9c80bf8,2024Q3,Comvest,4.5,5.0,50.0,Baseline 1: market median t-2,0
+29162afdd2,2024Q3,First Eagle,3.5,5.0,150.0,Baseline 1: market median t-2,0
+2950bd6667,2024Q3,Goldman Sachs,3.5,5.0,150.0,Baseline 1: market median t-2,0
+2a994e0bbc,2024Q3,First Eagle,3.0,5.0,200.0,Baseline 1: market median t-2,0
+2c878ed07e,2024Q3,Jefferies,4.5,5.0,50.0,Baseline 1: market median t-2,0
+2cfbd3a397,2024Q3,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,0
+2d5676e563,2024Q3,Diameter Credit Co,5.5,5.0,50.0,Baseline 1: market median t-2,0
+2dab9390e2,2024Q3,Goldman Sachs,6.75,5.0,175.0,Baseline 1: market median t-2,0
+2eb642aabd,2024Q3,BlackRock,4.75,5.0,25.0,Baseline 1: market median t-2,0
+2f032aa4a9,2024Q3,Apollo,3.0,5.0,200.0,Baseline 1: market median t-2,0
+30b4b5c4bc,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+31bf980d6e,2024Q3,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,0
+35305fa983,2024Q3,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,0
+35f5c95bae,2024Q3,Redwood Enhanced Income Corp.,5.75,5.0,75.0,Baseline 1: market median t-2,0
+3768b1710d,2024Q3,Goldman Sachs,4.25,5.0,75.0,Baseline 1: market median t-2,0
+379a7b34a6,2024Q3,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,0
+380ad0f96a,2024Q3,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,0
+3bd1c89062,2024Q3,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,0
+3c7a7919ee,2024Q3,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,0
+3d3e7b4f93,2024Q3,First Eagle,5.5,5.0,50.0,Baseline 1: market median t-2,0
+3f28469d8f,2024Q3,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,0
+3f2d80aaf4,2024Q3,Goldman Sachs,3.5,5.0,150.0,Baseline 1: market median t-2,0
+4069c0e5a0,2024Q3,Apollo,6.0,5.0,100.0,Baseline 1: market median t-2,0
+40fd982d0c,2024Q3,Manulife Private Credit Fund,4.75,5.0,25.0,Baseline 1: market median t-2,0
+410e0adbaf,2024Q3,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,0
+42f5754c11,2024Q3,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,0
+4500a0778f,2024Q3,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,0
+4655d1ade5,2024Q3,BlackRock,5.0,5.0,0.0,Baseline 1: market median t-2,0
+4af95ad49f,2024Q3,First Eagle,5.25,5.0,25.0,Baseline 1: market median t-2,0
+4bc991be0a,2024Q3,Jefferies,4.5,5.0,50.0,Baseline 1: market median t-2,0
+4e04faa613,2024Q3,Msd Investment Corp.,5.5,5.0,50.0,Baseline 1: market median t-2,0
+4e35c3043a,2024Q3,BlackRock,3.25,5.0,175.0,Baseline 1: market median t-2,0
+4f9a6d1000,2024Q3,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,0
+4fce11691b,2024Q3,Jefferies,5.25,5.0,25.0,Baseline 1: market median t-2,0
+4fce3f84a9,2024Q3,Bain Capital,5.5,5.0,50.0,Baseline 1: market median t-2,0
+51264ad8bb,2024Q3,Silver Point,5.75,5.0,75.0,Baseline 1: market median t-2,0
+51bcde2252,2024Q3,Diameter Credit Co,4.5,5.0,50.0,Baseline 1: market median t-2,0
+52aaba4e0d,2024Q3,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,0
+583a6b58b3,2024Q3,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,0
+58bde6b8c5,2024Q3,Apollo,2.0,5.0,300.0,Baseline 1: market median t-2,0
+5bbd9886f9,2024Q3,First Eagle,3.0,5.0,200.0,Baseline 1: market median t-2,0
+5f95084da9,2024Q3,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,0
+5f9fb4ec30,2024Q3,PennantPark,5.0,5.0,0.0,Baseline 1: market median t-2,0
+5fb7cbef64,2024Q3,Goldman Sachs,5.25,5.0,25.0,Baseline 1: market median t-2,0
+5fca2fd1c4,2024Q3,Silver Point,6.5,5.0,150.0,Baseline 1: market median t-2,0
+5fec43ebd5,2024Q3,Goldman Sachs,2.0,5.0,300.0,Baseline 1: market median t-2,0
+61d11aff7b,2024Q3,Overland Advantage,5.5,5.0,50.0,Baseline 1: market median t-2,0
+67b728b063,2024Q3,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,0
+67bc092dcf,2024Q3,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,0
+682ac3d3f9,2024Q3,Bain Capital,5.75,5.0,75.0,Baseline 1: market median t-2,0
+698a054d2e,2024Q3,Bain Capital,5.75,5.0,75.0,Baseline 1: market median t-2,0
+6a4fc8b6ff,2024Q3,Stellus,6.5,5.0,150.0,Baseline 1: market median t-2,0
+6c29ceefca,2024Q3,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,0
+6d34c7d9a6,2024Q3,"Whitehorse Finance, Inc.",6.0,5.0,100.0,Baseline 1: market median t-2,0
+6df7627dfe,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+6f306680c4,2024Q3,PennantPark,5.0,5.0,0.0,Baseline 1: market median t-2,0
+70a1cc8663,2024Q3,Msd Investment Corp.,5.5,5.0,50.0,Baseline 1: market median t-2,0
+71e95e78e5,2024Q3,Crescent,4.75,5.0,25.0,Baseline 1: market median t-2,0
+75081c7b9b,2024Q3,First Eagle,5.5,5.0,50.0,Baseline 1: market median t-2,0
+755ccd955f,2024Q3,Goldman Sachs,5.75,5.0,75.0,Baseline 1: market median t-2,0
+7839cc16ed,2024Q3,Bain Capital,7.5,5.0,250.0,Baseline 1: market median t-2,0
+7a8fc5de15,2024Q3,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,0
+7a95080200,2024Q3,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,0
+7ad448b3f8,2024Q3,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,0
+7c9dc52d4d,2024Q3,First Eagle,5.25,5.0,25.0,Baseline 1: market median t-2,0
+7cacb0e7e9,2024Q3,First Eagle,4.0,5.0,100.0,Baseline 1: market median t-2,0
+7ecb87a938,2024Q3,Apollo,2.25,5.0,275.0,Baseline 1: market median t-2,0
+7f60394c9f,2024Q3,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,0
+822afa8d6d,2024Q3,Diameter Credit Co,4.75,5.0,25.0,Baseline 1: market median t-2,0
+82cc3aa758,2024Q3,Onex,5.5,5.0,50.0,Baseline 1: market median t-2,0
+8710cfac49,2024Q3,PennantPark,5.0,5.0,0.0,Baseline 1: market median t-2,0
+88ec545fa4,2024Q3,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,0
+897c7f26da,2024Q3,First Eagle,2.0,5.0,300.0,Baseline 1: market median t-2,0
+8a85cd179f,2024Q3,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,0
+8e779aadb6,2024Q3,Goldman Sachs,3.0,5.0,200.0,Baseline 1: market median t-2,0
+8e7b178f6a,2024Q3,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,0
+8f75fc9c36,2024Q3,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,0
+90163b5fe4,2024Q3,Apollo,3.5,5.0,150.0,Baseline 1: market median t-2,0
+9074ae3bce,2024Q3,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,0
+91eaca0e32,2024Q3,Jefferies,5.0,5.0,0.0,Baseline 1: market median t-2,0
+93e41eae88,2024Q3,Diameter Credit Co,5.5,5.0,50.0,Baseline 1: market median t-2,0
+94bc099c3b,2024Q3,Redwood Enhanced Income Corp.,6.0,5.0,100.0,Baseline 1: market median t-2,0
+94f2b24eb4,2024Q3,PennantPark,4.75,5.0,25.0,Baseline 1: market median t-2,0
+95a818e374,2024Q3,Goldman Sachs,4.0,5.0,100.0,Baseline 1: market median t-2,0
+95ce96a052,2024Q3,Apollo,6.0,5.0,100.0,Baseline 1: market median t-2,0
+9665307cce,2024Q3,Onex,4.25,5.0,75.0,Baseline 1: market median t-2,0
+966986d8b8,2024Q3,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,0
+98b57418f7,2024Q3,Antares,5.0,5.0,0.0,Baseline 1: market median t-2,0
+98f0659f5f,2024Q3,Apollo,2.75,5.0,225.0,Baseline 1: market median t-2,0
+9927f18df9,2024Q3,Comvest,4.75,5.0,25.0,Baseline 1: market median t-2,0
+99a93f1968,2024Q3,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,0
+9bd8441f3d,2024Q3,First Eagle,3.75,5.0,125.0,Baseline 1: market median t-2,0
+9bf607fa07,2024Q3,BlackRock,4.5,5.0,50.0,Baseline 1: market median t-2,0
+9cc029ade2,2024Q3,Apollo,3.5,5.0,150.0,Baseline 1: market median t-2,0
+9d3619b7c0,2024Q3,Antares,5.75,5.0,75.0,Baseline 1: market median t-2,0
+9e7f760997,2024Q3,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,0
+a1edcf9af4,2024Q3,BlackRock,6.0,5.0,100.0,Baseline 1: market median t-2,0
+a792d4c361,2024Q3,Brightwood Capital Corp I,4.5,5.0,50.0,Baseline 1: market median t-2,0
+a9645eb024,2024Q3,First Eagle,3.5,5.0,150.0,Baseline 1: market median t-2,0
+a9e0ea96a9,2024Q3,Jefferies,5.25,5.0,25.0,Baseline 1: market median t-2,0
+a9e7c6a0cc,2024Q3,BlackRock,5.25,5.0,25.0,Baseline 1: market median t-2,0
+ad3c46b512,2024Q3,Bain Capital,5.5,5.0,50.0,Baseline 1: market median t-2,0
+add2a6af7b,2024Q3,Bain Capital,5.25,5.0,25.0,Baseline 1: market median t-2,0
+adf42390a1,2024Q3,Apollo,2.25,5.0,275.0,Baseline 1: market median t-2,0
+af18eb3da3,2024Q3,Antares,5.0,5.0,0.0,Baseline 1: market median t-2,0
+af9141d294,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+b258c42cc2,2024Q3,Msd Investment Corp.,6.5,5.0,150.0,Baseline 1: market median t-2,0
+b2c68fb5e5,2024Q3,Diameter Credit Co,4.75,5.0,25.0,Baseline 1: market median t-2,0
+b2ea13b61d,2024Q3,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,0
+b408c8bf38,2024Q3,BlackRock,3.75,5.0,125.0,Baseline 1: market median t-2,0
+b47dae3a60,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+b5f356d0da,2024Q3,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,0
+b6a0fe90ae,2024Q3,Antares,3.0,5.0,200.0,Baseline 1: market median t-2,0
+b77de82d1e,2024Q3,Goldman Sachs,5.5,5.0,50.0,Baseline 1: market median t-2,0
+b7c24e6468,2024Q3,First Eagle,3.25,5.0,175.0,Baseline 1: market median t-2,0
+b98520924c,2024Q3,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,0
+ba29d53e52,2024Q3,Goldman Sachs,4.5,5.0,50.0,Baseline 1: market median t-2,0
+bd67f14473,2024Q3,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,0
+be44ea5ab0,2024Q3,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,0
+c0da95d50b,2024Q3,Comvest,5.73,5.0,73.00000000000004,Baseline 1: market median t-2,0
+c1ceef7210,2024Q3,Apollo,4.5,5.0,50.0,Baseline 1: market median t-2,0
+c30acdf8c9,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+c36779416f,2024Q3,First Eagle,5.75,5.0,75.0,Baseline 1: market median t-2,0
+c5f3fa1216,2024Q3,PennantPark,4.75,5.0,25.0,Baseline 1: market median t-2,0
+c91b3c1fd4,2024Q3,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,0
+cafd775a79,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+cc51fbadd4,2024Q3,Varagon,5.0,5.0,0.0,Baseline 1: market median t-2,0
+d003973d37,2024Q3,Silver Point,5.75,5.0,75.0,Baseline 1: market median t-2,0
+d1cf915960,2024Q3,Comvest,6.0,5.0,100.0,Baseline 1: market median t-2,0
+d1d7cd5825,2024Q3,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,0
+d3f290c0e7,2024Q3,Silver Point,6.0,5.0,100.0,Baseline 1: market median t-2,0
+d4febe694a,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+d51cc21f1a,2024Q3,Comvest,5.75,5.0,75.0,Baseline 1: market median t-2,0
+d55aa75d8d,2024Q3,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,0
+d580b0709b,2024Q3,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,0
+d5d9ed22b8,2024Q3,PennantPark,5.75,5.0,75.0,Baseline 1: market median t-2,0
+d94f37a4aa,2024Q3,Antares,5.25,5.0,25.0,Baseline 1: market median t-2,0
+d9800b13e7,2024Q3,PennantPark,5.75,5.0,75.0,Baseline 1: market median t-2,0
+d9db14da49,2024Q3,Apollo,2.0,5.0,300.0,Baseline 1: market median t-2,0
+da40a406b5,2024Q3,Goldman Sachs,4.25,5.0,75.0,Baseline 1: market median t-2,0
+daeb5017b3,2024Q3,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,0
+dc82abe85f,2024Q3,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,0
+dc84317aa7,2024Q3,PennantPark,6.0,5.0,100.0,Baseline 1: market median t-2,0
+de196df8b8,2024Q3,BlackRock,3.75,5.0,125.0,Baseline 1: market median t-2,0
+e21bd2a15d,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+e56cdac4e4,2024Q3,Diameter Credit Co,5.0,5.0,0.0,Baseline 1: market median t-2,0
+e62e32ca18,2024Q3,Apollo,5.75,5.0,75.0,Baseline 1: market median t-2,0
+e6d56bbd69,2024Q3,PennantPark,5.0,5.0,0.0,Baseline 1: market median t-2,0
+e8bed65395,2024Q3,Antares,5.0,5.0,0.0,Baseline 1: market median t-2,0
+eb34bc5505,2024Q3,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,0
+efdb272fdb,2024Q3,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,0
+f082459b10,2024Q3,Manulife Private Credit Fund,5.0,5.0,0.0,Baseline 1: market median t-2,0
+f0ec2eb6ba,2024Q3,Goldman Sachs,4.5,5.0,50.0,Baseline 1: market median t-2,0
+f285c115b6,2024Q3,First Eagle,2.25,5.0,275.0,Baseline 1: market median t-2,0
+f45af6e741,2024Q3,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,0
+f7d818824e,2024Q3,BlackRock,4.25,5.0,75.0,Baseline 1: market median t-2,0
+ff432af70a,2024Q3,"Whitehorse Finance, Inc.",8.5,5.0,350.0,Baseline 1: market median t-2,0
+0030aef491,2024Q3,PennantPark,7.5,6.25,125.0,Baseline 2: sector x size median,0
+01c597ab30,2024Q3,Crescent,5.25,6.25,100.0,Baseline 2: sector x size median,0
+02cb8e1f61,2024Q3,Goldman Sachs,5.0,6.5,150.0,Baseline 2: sector x size median,0
+03a26e36aa,2024Q3,Investcorp,5.75,4.5,125.0,Baseline 2: sector x size median,0
+03e80f7582,2024Q3,Goldman Sachs,4.75,3.375,137.5,Baseline 2: sector x size median,0
+047436424b,2024Q3,Goldman Sachs,5.0,5.75,75.0,Baseline 2: sector x size median,0
+0671b289e1,2024Q3,Goldman Sachs,5.5,6.5,100.0,Baseline 2: sector x size median,0
+0965259fc9,2024Q3,Goldman Sachs,4.25,5.25,100.0,Baseline 2: sector x size median,0
+0c7df4afd2,2024Q3,BlackRock,3.25,4.5,125.0,Baseline 2: sector x size median,0
+0d3ac6ff85,2024Q3,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,0
+0ded6bcaa9,2024Q3,Jefferies,4.5,6.0,150.0,Baseline 2: sector x size median,0
+0f464150e4,2024Q3,Apollo,5.0,6.25,125.0,Baseline 2: sector x size median,0
+0fdec1c5b0,2024Q3,Apollo,1.75,4.875,312.5,Baseline 2: sector x size median,0
+0ff7e27487,2024Q3,Msd Investment Corp.,5.0,6.0,100.0,Baseline 2: sector x size median,0
+10f31dd297,2024Q3,Goldman Sachs,5.0,6.0,100.0,Baseline 2: sector x size median,0
+133abb07d4,2024Q3,Antares,4.75,6.25,150.0,Baseline 2: sector x size median,0
+159078cd9b,2024Q3,Antares,3.75,5.5,175.0,Baseline 2: sector x size median,0
+15d129af6f,2024Q3,Apollo,8.0,6.25,175.0,Baseline 2: sector x size median,0
+17562960b2,2024Q3,Antares,4.5,5.625,112.5,Baseline 2: sector x size median,0
+1a8d4c7b11,2024Q3,Apollo,5.0,6.37,137.0,Baseline 2: sector x size median,0
+2072913d08,2024Q3,First Eagle,3.5,5.25,175.0,Baseline 2: sector x size median,0
+209659de22,2024Q3,Jefferies,5.25,6.25,100.0,Baseline 2: sector x size median,0
+24e1808b26,2024Q3,Goldman Sachs,3.25,4.5,125.0,Baseline 2: sector x size median,0
+28d9c80bf8,2024Q3,Comvest,4.5,5.25,75.0,Baseline 2: sector x size median,0
+29162afdd2,2024Q3,First Eagle,3.5,5.25,175.0,Baseline 2: sector x size median,0
+2950bd6667,2024Q3,Goldman Sachs,3.5,4.875,137.5,Baseline 2: sector x size median,0
+2a994e0bbc,2024Q3,First Eagle,3.0,4.5,150.0,Baseline 2: sector x size median,0
+2c878ed07e,2024Q3,Jefferies,4.5,6.0,150.0,Baseline 2: sector x size median,0
+2cfbd3a397,2024Q3,Antares,4.75,6.25,150.0,Baseline 2: sector x size median,0
+2d5676e563,2024Q3,Diameter Credit Co,5.5,6.0,50.0,Baseline 2: sector x size median,0
+2dab9390e2,2024Q3,Goldman Sachs,6.75,5.75,100.0,Baseline 2: sector x size median,0
+2eb642aabd,2024Q3,BlackRock,4.75,6.25,150.0,Baseline 2: sector x size median,0
+2f032aa4a9,2024Q3,Apollo,3.0,6.5,350.0,Baseline 2: sector x size median,0
+30b4b5c4bc,2024Q3,Apollo,5.0,6.5,150.0,Baseline 2: sector x size median,0
+31bf980d6e,2024Q3,Crescent,5.0,6.0,100.0,Baseline 2: sector x size median,0
+35305fa983,2024Q3,Apollo,3.25,5.5,225.0,Baseline 2: sector x size median,0
+35f5c95bae,2024Q3,Redwood Enhanced Income Corp.,5.75,6.25,50.0,Baseline 2: sector x size median,0
+3768b1710d,2024Q3,Goldman Sachs,4.25,5.0,75.0,Baseline 2: sector x size median,0
+379a7b34a6,2024Q3,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,0
+380ad0f96a,2024Q3,Apollo,5.25,5.5,25.0,Baseline 2: sector x size median,0
+3bd1c89062,2024Q3,Bain Capital,5.0,5.75,75.0,Baseline 2: sector x size median,0
+3c7a7919ee,2024Q3,Antares,3.25,4.5,125.0,Baseline 2: sector x size median,0
+3d3e7b4f93,2024Q3,First Eagle,5.5,6.25,75.0,Baseline 2: sector x size median,0
+3f28469d8f,2024Q3,Jefferies,4.75,6.0,125.0,Baseline 2: sector x size median,0
+3f2d80aaf4,2024Q3,Goldman Sachs,3.5,5.5,200.0,Baseline 2: sector x size median,0
+4069c0e5a0,2024Q3,Apollo,6.0,6.3100000000000005,31.00000000000005,Baseline 2: sector x size median,0
+40fd982d0c,2024Q3,Manulife Private Credit Fund,4.75,5.25,50.0,Baseline 2: sector x size median,0
+410e0adbaf,2024Q3,Antares,4.75,6.0,125.0,Baseline 2: sector x size median,0
+42f5754c11,2024Q3,Msd Investment Corp.,5.0,6.25,125.0,Baseline 2: sector x size median,0
+4500a0778f,2024Q3,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,0
+4655d1ade5,2024Q3,BlackRock,5.0,6.25,125.0,Baseline 2: sector x size median,0
+4af95ad49f,2024Q3,First Eagle,5.25,5.25,0.0,Baseline 2: sector x size median,0
+4bc991be0a,2024Q3,Jefferies,4.5,6.0,150.0,Baseline 2: sector x size median,0
+4e04faa613,2024Q3,Msd Investment Corp.,5.5,5.75,25.0,Baseline 2: sector x size median,0
+4e35c3043a,2024Q3,BlackRock,3.25,5.25,200.0,Baseline 2: sector x size median,0
+4f9a6d1000,2024Q3,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,0
+4fce11691b,2024Q3,Jefferies,5.25,5.25,0.0,Baseline 2: sector x size median,0
+4fce3f84a9,2024Q3,Bain Capital,5.5,6.0,50.0,Baseline 2: sector x size median,0
+51264ad8bb,2024Q3,Silver Point,5.75,5.625,12.5,Baseline 2: sector x size median,0
+51bcde2252,2024Q3,Diameter Credit Co,4.5,6.0,150.0,Baseline 2: sector x size median,0
+52aaba4e0d,2024Q3,Apollo,4.75,6.5,175.0,Baseline 2: sector x size median,0
+583a6b58b3,2024Q3,Jefferies,4.75,6.5,175.0,Baseline 2: sector x size median,0
+58bde6b8c5,2024Q3,Apollo,2.0,5.25,325.0,Baseline 2: sector x size median,0
+5bbd9886f9,2024Q3,First Eagle,3.0,5.75,275.0,Baseline 2: sector x size median,0
+5f95084da9,2024Q3,BlackRock,3.5,4.5,100.0,Baseline 2: sector x size median,0
+5f9fb4ec30,2024Q3,PennantPark,5.0,5.75,75.0,Baseline 2: sector x size median,0
+5fb7cbef64,2024Q3,Goldman Sachs,5.25,5.75,50.0,Baseline 2: sector x size median,0
+5fca2fd1c4,2024Q3,Silver Point,6.5,6.25,25.0,Baseline 2: sector x size median,0
+5fec43ebd5,2024Q3,Goldman Sachs,2.0,4.875,287.5,Baseline 2: sector x size median,0
+61d11aff7b,2024Q3,Overland Advantage,5.5,6.0,50.0,Baseline 2: sector x size median,0
+67b728b063,2024Q3,Msd Investment Corp.,5.0,6.0,100.0,Baseline 2: sector x size median,0
+67bc092dcf,2024Q3,Apollo,3.25,5.5,225.0,Baseline 2: sector x size median,0
+682ac3d3f9,2024Q3,Bain Capital,5.75,6.25,50.0,Baseline 2: sector x size median,0
+698a054d2e,2024Q3,Bain Capital,5.75,6.0,25.0,Baseline 2: sector x size median,0
+6a4fc8b6ff,2024Q3,Stellus,6.5,4.0,250.0,Baseline 2: sector x size median,0
+6c29ceefca,2024Q3,BlackRock,3.5,5.5,200.0,Baseline 2: sector x size median,0
+6d34c7d9a6,2024Q3,"Whitehorse Finance, Inc.",6.0,4.875,112.5,Baseline 2: sector x size median,0
+6df7627dfe,2024Q3,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,0
+6f306680c4,2024Q3,PennantPark,5.0,6.3100000000000005,131.00000000000006,Baseline 2: sector x size median,0
+70a1cc8663,2024Q3,Msd Investment Corp.,5.5,6.0,50.0,Baseline 2: sector x size median,0
+71e95e78e5,2024Q3,Crescent,4.75,5.5,75.0,Baseline 2: sector x size median,0
+75081c7b9b,2024Q3,First Eagle,5.5,5.25,25.0,Baseline 2: sector x size median,0
+755ccd955f,2024Q3,Goldman Sachs,5.75,6.5,75.0,Baseline 2: sector x size median,0
+7839cc16ed,2024Q3,Bain Capital,7.5,6.25,125.0,Baseline 2: sector x size median,0
+7a8fc5de15,2024Q3,Stellus,5.25,6.25,100.0,Baseline 2: sector x size median,0
+7a95080200,2024Q3,BlackRock,3.5,4.5,100.0,Baseline 2: sector x size median,0
+7ad448b3f8,2024Q3,Antares,3.25,5.25,200.0,Baseline 2: sector x size median,0
+7c9dc52d4d,2024Q3,First Eagle,5.25,5.625,37.5,Baseline 2: sector x size median,0
+7cacb0e7e9,2024Q3,First Eagle,4.0,4.5,50.0,Baseline 2: sector x size median,0
+7ecb87a938,2024Q3,Apollo,2.25,4.875,262.5,Baseline 2: sector x size median,0
+7f60394c9f,2024Q3,Goldman Sachs,5.0,6.0,100.0,Baseline 2: sector x size median,0
+822afa8d6d,2024Q3,Diameter Credit Co,4.75,6.0,125.0,Baseline 2: sector x size median,0
+82cc3aa758,2024Q3,Onex,5.5,5.25,25.0,Baseline 2: sector x size median,0
+8710cfac49,2024Q3,PennantPark,5.0,5.75,75.0,Baseline 2: sector x size median,0
+88ec545fa4,2024Q3,Antares,4.75,6.25,150.0,Baseline 2: sector x size median,0
+897c7f26da,2024Q3,First Eagle,2.0,6.5,450.0,Baseline 2: sector x size median,0
+8a85cd179f,2024Q3,Apollo,3.25,5.5,225.0,Baseline 2: sector x size median,0
+8e779aadb6,2024Q3,Goldman Sachs,3.0,3.375,37.5,Baseline 2: sector x size median,0
+8e7b178f6a,2024Q3,Msd Investment Corp.,5.0,6.25,125.0,Baseline 2: sector x size median,0
+8f75fc9c36,2024Q3,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,0
+90163b5fe4,2024Q3,Apollo,3.5,5.5,200.0,Baseline 2: sector x size median,0
+9074ae3bce,2024Q3,BlackRock,3.5,5.5,200.0,Baseline 2: sector x size median,0
+91eaca0e32,2024Q3,Jefferies,5.0,6.0,100.0,Baseline 2: sector x size median,0
+93e41eae88,2024Q3,Diameter Credit Co,5.5,6.0,50.0,Baseline 2: sector x size median,0
+94bc099c3b,2024Q3,Redwood Enhanced Income Corp.,6.0,4.875,112.5,Baseline 2: sector x size median,0
+94f2b24eb4,2024Q3,PennantPark,4.75,6.0,125.0,Baseline 2: sector x size median,0
+95a818e374,2024Q3,Goldman Sachs,4.0,5.25,125.0,Baseline 2: sector x size median,0
+95ce96a052,2024Q3,Apollo,6.0,6.25,25.0,Baseline 2: sector x size median,0
+9665307cce,2024Q3,Onex,4.25,4.5,25.0,Baseline 2: sector x size median,0
+966986d8b8,2024Q3,Apollo,5.25,5.5,25.0,Baseline 2: sector x size median,0
+98b57418f7,2024Q3,Antares,5.0,6.0,100.0,Baseline 2: sector x size median,0
+98f0659f5f,2024Q3,Apollo,2.75,4.875,212.5,Baseline 2: sector x size median,0
+9927f18df9,2024Q3,Comvest,4.75,6.25,150.0,Baseline 2: sector x size median,0
+99a93f1968,2024Q3,Apollo,5.25,6.0,75.0,Baseline 2: sector x size median,0
+9bd8441f3d,2024Q3,First Eagle,3.75,5.5,175.0,Baseline 2: sector x size median,0
+9bf607fa07,2024Q3,BlackRock,4.5,5.25,75.0,Baseline 2: sector x size median,0
+9cc029ade2,2024Q3,Apollo,3.5,5.25,175.0,Baseline 2: sector x size median,0
+9d3619b7c0,2024Q3,Antares,5.75,5.5,25.0,Baseline 2: sector x size median,0
+9e7f760997,2024Q3,Antares,4.75,5.5,75.0,Baseline 2: sector x size median,0
+a1edcf9af4,2024Q3,BlackRock,6.0,6.25,25.0,Baseline 2: sector x size median,0
+a792d4c361,2024Q3,Brightwood Capital Corp I,4.5,4.875,37.5,Baseline 2: sector x size median,0
+a9645eb024,2024Q3,First Eagle,3.5,5.5,200.0,Baseline 2: sector x size median,0
+a9e0ea96a9,2024Q3,Jefferies,5.25,6.0,75.0,Baseline 2: sector x size median,0
+a9e7c6a0cc,2024Q3,BlackRock,5.25,6.0,75.0,Baseline 2: sector x size median,0
+ad3c46b512,2024Q3,Bain Capital,5.5,6.0,50.0,Baseline 2: sector x size median,0
+add2a6af7b,2024Q3,Bain Capital,5.25,5.0,25.0,Baseline 2: sector x size median,0
+adf42390a1,2024Q3,Apollo,2.25,6.25,400.0,Baseline 2: sector x size median,0
+af18eb3da3,2024Q3,Antares,5.0,6.25,125.0,Baseline 2: sector x size median,0
+af9141d294,2024Q3,Apollo,5.0,5.75,75.0,Baseline 2: sector x size median,0
+b258c42cc2,2024Q3,Msd Investment Corp.,6.5,6.25,25.0,Baseline 2: sector x size median,0
+b2c68fb5e5,2024Q3,Diameter Credit Co,4.75,5.5,75.0,Baseline 2: sector x size median,0
+b2ea13b61d,2024Q3,Bain Capital,5.0,6.0,100.0,Baseline 2: sector x size median,0
+b408c8bf38,2024Q3,BlackRock,3.75,5.5,175.0,Baseline 2: sector x size median,0
+b47dae3a60,2024Q3,Apollo,5.0,5.625,62.5,Baseline 2: sector x size median,0
+b5f356d0da,2024Q3,Jefferies,4.75,6.25,150.0,Baseline 2: sector x size median,0
+b6a0fe90ae,2024Q3,Antares,3.0,4.5,150.0,Baseline 2: sector x size median,0
+b77de82d1e,2024Q3,Goldman Sachs,5.5,6.0,50.0,Baseline 2: sector x size median,0
+b7c24e6468,2024Q3,First Eagle,3.25,4.5,125.0,Baseline 2: sector x size median,0
+b98520924c,2024Q3,Crescent,5.0,6.25,125.0,Baseline 2: sector x size median,0
+ba29d53e52,2024Q3,Goldman Sachs,4.5,6.0,150.0,Baseline 2: sector x size median,0
+bd67f14473,2024Q3,BlackRock,3.5,5.25,175.0,Baseline 2: sector x size median,0
+be44ea5ab0,2024Q3,Goldman Sachs,5.0,5.25,25.0,Baseline 2: sector x size median,0
+c0da95d50b,2024Q3,Comvest,5.73,5.25,48.00000000000004,Baseline 2: sector x size median,0
+c1ceef7210,2024Q3,Apollo,4.5,5.75,125.0,Baseline 2: sector x size median,0
+c30acdf8c9,2024Q3,Apollo,5.0,6.25,125.0,Baseline 2: sector x size median,0
+c36779416f,2024Q3,First Eagle,5.75,6.25,50.0,Baseline 2: sector x size median,0
+c5f3fa1216,2024Q3,PennantPark,4.75,6.0,125.0,Baseline 2: sector x size median,0
+c91b3c1fd4,2024Q3,Jefferies,4.75,6.0,125.0,Baseline 2: sector x size median,0
+cafd775a79,2024Q3,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,0
+cc51fbadd4,2024Q3,Varagon,5.0,5.25,25.0,Baseline 2: sector x size median,0
+d003973d37,2024Q3,Silver Point,5.75,6.25,50.0,Baseline 2: sector x size median,0
+d1cf915960,2024Q3,Comvest,6.0,6.3100000000000005,31.00000000000005,Baseline 2: sector x size median,0
+d1d7cd5825,2024Q3,Msd Investment Corp.,5.0,6.0,100.0,Baseline 2: sector x size median,0
+d3f290c0e7,2024Q3,Silver Point,6.0,4.0,200.0,Baseline 2: sector x size median,0
+d4febe694a,2024Q3,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,0
+d51cc21f1a,2024Q3,Comvest,5.75,4.875,87.5,Baseline 2: sector x size median,0
+d55aa75d8d,2024Q3,Apollo,3.25,5.625,237.5,Baseline 2: sector x size median,0
+d580b0709b,2024Q3,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,0
+d5d9ed22b8,2024Q3,PennantPark,5.75,6.0,25.0,Baseline 2: sector x size median,0
+d94f37a4aa,2024Q3,Antares,5.25,5.5,25.0,Baseline 2: sector x size median,0
+d9800b13e7,2024Q3,PennantPark,5.75,6.0,25.0,Baseline 2: sector x size median,0
+d9db14da49,2024Q3,Apollo,2.0,5.75,375.0,Baseline 2: sector x size median,0
+da40a406b5,2024Q3,Goldman Sachs,4.25,3.375,87.5,Baseline 2: sector x size median,0
+daeb5017b3,2024Q3,Antares,4.75,4.5,25.0,Baseline 2: sector x size median,0
+dc82abe85f,2024Q3,Apollo,5.25,6.25,100.0,Baseline 2: sector x size median,0
+dc84317aa7,2024Q3,PennantPark,6.0,6.25,25.0,Baseline 2: sector x size median,0
+de196df8b8,2024Q3,BlackRock,3.75,5.5,175.0,Baseline 2: sector x size median,0
+e21bd2a15d,2024Q3,Apollo,5.0,5.75,75.0,Baseline 2: sector x size median,0
+e56cdac4e4,2024Q3,Diameter Credit Co,5.0,5.75,75.0,Baseline 2: sector x size median,0
+e62e32ca18,2024Q3,Apollo,5.75,6.0,25.0,Baseline 2: sector x size median,0
+e6d56bbd69,2024Q3,PennantPark,5.0,6.0,100.0,Baseline 2: sector x size median,0
+e8bed65395,2024Q3,Antares,5.0,6.0,100.0,Baseline 2: sector x size median,0
+eb34bc5505,2024Q3,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,0
+efdb272fdb,2024Q3,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,0
+f082459b10,2024Q3,Manulife Private Credit Fund,5.0,4.875,12.5,Baseline 2: sector x size median,0
+f0ec2eb6ba,2024Q3,Goldman Sachs,4.5,6.0,150.0,Baseline 2: sector x size median,0
+f285c115b6,2024Q3,First Eagle,2.25,4.5,225.0,Baseline 2: sector x size median,0
+f45af6e741,2024Q3,Goldman Sachs,4.75,6.5,175.0,Baseline 2: sector x size median,0
+f7d818824e,2024Q3,BlackRock,4.25,5.25,100.0,Baseline 2: sector x size median,0
+ff432af70a,2024Q3,"Whitehorse Finance, Inc.",8.5,6.25,225.0,Baseline 2: sector x size median,0
+0030aef491,2024Q3,PennantPark,7.5,5.673830508474577,182.6169491525423,Reference: training mean,0
+01c597ab30,2024Q3,Crescent,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+02cb8e1f61,2024Q3,Goldman Sachs,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+03a26e36aa,2024Q3,Investcorp,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+03e80f7582,2024Q3,Goldman Sachs,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+047436424b,2024Q3,Goldman Sachs,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+0671b289e1,2024Q3,Goldman Sachs,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+0965259fc9,2024Q3,Goldman Sachs,4.25,5.673830508474577,142.3830508474577,Reference: training mean,0
+0c7df4afd2,2024Q3,BlackRock,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+0d3ac6ff85,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+0ded6bcaa9,2024Q3,Jefferies,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+0f464150e4,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+0fdec1c5b0,2024Q3,Apollo,1.75,5.673830508474577,392.3830508474577,Reference: training mean,0
+0ff7e27487,2024Q3,Msd Investment Corp.,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+10f31dd297,2024Q3,Goldman Sachs,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+133abb07d4,2024Q3,Antares,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+159078cd9b,2024Q3,Antares,3.75,5.673830508474577,192.3830508474577,Reference: training mean,0
+15d129af6f,2024Q3,Apollo,8.0,5.673830508474577,232.6169491525423,Reference: training mean,0
+17562960b2,2024Q3,Antares,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+1a8d4c7b11,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+2072913d08,2024Q3,First Eagle,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+209659de22,2024Q3,Jefferies,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+24e1808b26,2024Q3,Goldman Sachs,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+28d9c80bf8,2024Q3,Comvest,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+29162afdd2,2024Q3,First Eagle,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+2950bd6667,2024Q3,Goldman Sachs,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+2a994e0bbc,2024Q3,First Eagle,3.0,5.673830508474577,267.3830508474577,Reference: training mean,0
+2c878ed07e,2024Q3,Jefferies,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+2cfbd3a397,2024Q3,Antares,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+2d5676e563,2024Q3,Diameter Credit Co,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+2dab9390e2,2024Q3,Goldman Sachs,6.75,5.673830508474577,107.61694915254232,Reference: training mean,0
+2eb642aabd,2024Q3,BlackRock,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+2f032aa4a9,2024Q3,Apollo,3.0,5.673830508474577,267.3830508474577,Reference: training mean,0
+30b4b5c4bc,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+31bf980d6e,2024Q3,Crescent,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+35305fa983,2024Q3,Apollo,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+35f5c95bae,2024Q3,Redwood Enhanced Income Corp.,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+3768b1710d,2024Q3,Goldman Sachs,4.25,5.673830508474577,142.3830508474577,Reference: training mean,0
+379a7b34a6,2024Q3,Goldman Sachs,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+380ad0f96a,2024Q3,Apollo,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+3bd1c89062,2024Q3,Bain Capital,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+3c7a7919ee,2024Q3,Antares,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+3d3e7b4f93,2024Q3,First Eagle,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+3f28469d8f,2024Q3,Jefferies,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+3f2d80aaf4,2024Q3,Goldman Sachs,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+4069c0e5a0,2024Q3,Apollo,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+40fd982d0c,2024Q3,Manulife Private Credit Fund,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+410e0adbaf,2024Q3,Antares,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+42f5754c11,2024Q3,Msd Investment Corp.,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+4500a0778f,2024Q3,Apollo,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+4655d1ade5,2024Q3,BlackRock,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+4af95ad49f,2024Q3,First Eagle,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+4bc991be0a,2024Q3,Jefferies,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+4e04faa613,2024Q3,Msd Investment Corp.,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+4e35c3043a,2024Q3,BlackRock,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+4f9a6d1000,2024Q3,Goldman Sachs,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+4fce11691b,2024Q3,Jefferies,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+4fce3f84a9,2024Q3,Bain Capital,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+51264ad8bb,2024Q3,Silver Point,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+51bcde2252,2024Q3,Diameter Credit Co,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+52aaba4e0d,2024Q3,Apollo,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+583a6b58b3,2024Q3,Jefferies,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+58bde6b8c5,2024Q3,Apollo,2.0,5.673830508474577,367.3830508474577,Reference: training mean,0
+5bbd9886f9,2024Q3,First Eagle,3.0,5.673830508474577,267.3830508474577,Reference: training mean,0
+5f95084da9,2024Q3,BlackRock,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+5f9fb4ec30,2024Q3,PennantPark,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+5fb7cbef64,2024Q3,Goldman Sachs,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+5fca2fd1c4,2024Q3,Silver Point,6.5,5.673830508474577,82.61694915254232,Reference: training mean,0
+5fec43ebd5,2024Q3,Goldman Sachs,2.0,5.673830508474577,367.3830508474577,Reference: training mean,0
+61d11aff7b,2024Q3,Overland Advantage,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+67b728b063,2024Q3,Msd Investment Corp.,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+67bc092dcf,2024Q3,Apollo,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+682ac3d3f9,2024Q3,Bain Capital,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+698a054d2e,2024Q3,Bain Capital,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+6a4fc8b6ff,2024Q3,Stellus,6.5,5.673830508474577,82.61694915254232,Reference: training mean,0
+6c29ceefca,2024Q3,BlackRock,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+6d34c7d9a6,2024Q3,"Whitehorse Finance, Inc.",6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+6df7627dfe,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+6f306680c4,2024Q3,PennantPark,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+70a1cc8663,2024Q3,Msd Investment Corp.,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+71e95e78e5,2024Q3,Crescent,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+75081c7b9b,2024Q3,First Eagle,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+755ccd955f,2024Q3,Goldman Sachs,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+7839cc16ed,2024Q3,Bain Capital,7.5,5.673830508474577,182.6169491525423,Reference: training mean,0
+7a8fc5de15,2024Q3,Stellus,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+7a95080200,2024Q3,BlackRock,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+7ad448b3f8,2024Q3,Antares,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+7c9dc52d4d,2024Q3,First Eagle,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+7cacb0e7e9,2024Q3,First Eagle,4.0,5.673830508474577,167.3830508474577,Reference: training mean,0
+7ecb87a938,2024Q3,Apollo,2.25,5.673830508474577,342.3830508474577,Reference: training mean,0
+7f60394c9f,2024Q3,Goldman Sachs,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+822afa8d6d,2024Q3,Diameter Credit Co,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+82cc3aa758,2024Q3,Onex,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+8710cfac49,2024Q3,PennantPark,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+88ec545fa4,2024Q3,Antares,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+897c7f26da,2024Q3,First Eagle,2.0,5.673830508474577,367.3830508474577,Reference: training mean,0
+8a85cd179f,2024Q3,Apollo,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+8e779aadb6,2024Q3,Goldman Sachs,3.0,5.673830508474577,267.3830508474577,Reference: training mean,0
+8e7b178f6a,2024Q3,Msd Investment Corp.,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+8f75fc9c36,2024Q3,Goldman Sachs,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+90163b5fe4,2024Q3,Apollo,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+9074ae3bce,2024Q3,BlackRock,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+91eaca0e32,2024Q3,Jefferies,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+93e41eae88,2024Q3,Diameter Credit Co,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+94bc099c3b,2024Q3,Redwood Enhanced Income Corp.,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+94f2b24eb4,2024Q3,PennantPark,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+95a818e374,2024Q3,Goldman Sachs,4.0,5.673830508474577,167.3830508474577,Reference: training mean,0
+95ce96a052,2024Q3,Apollo,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+9665307cce,2024Q3,Onex,4.25,5.673830508474577,142.3830508474577,Reference: training mean,0
+966986d8b8,2024Q3,Apollo,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+98b57418f7,2024Q3,Antares,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+98f0659f5f,2024Q3,Apollo,2.75,5.673830508474577,292.3830508474577,Reference: training mean,0
+9927f18df9,2024Q3,Comvest,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+99a93f1968,2024Q3,Apollo,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+9bd8441f3d,2024Q3,First Eagle,3.75,5.673830508474577,192.3830508474577,Reference: training mean,0
+9bf607fa07,2024Q3,BlackRock,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+9cc029ade2,2024Q3,Apollo,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+9d3619b7c0,2024Q3,Antares,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+9e7f760997,2024Q3,Antares,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+a1edcf9af4,2024Q3,BlackRock,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+a792d4c361,2024Q3,Brightwood Capital Corp I,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+a9645eb024,2024Q3,First Eagle,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+a9e0ea96a9,2024Q3,Jefferies,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+a9e7c6a0cc,2024Q3,BlackRock,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+ad3c46b512,2024Q3,Bain Capital,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+add2a6af7b,2024Q3,Bain Capital,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+adf42390a1,2024Q3,Apollo,2.25,5.673830508474577,342.3830508474577,Reference: training mean,0
+af18eb3da3,2024Q3,Antares,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+af9141d294,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+b258c42cc2,2024Q3,Msd Investment Corp.,6.5,5.673830508474577,82.61694915254232,Reference: training mean,0
+b2c68fb5e5,2024Q3,Diameter Credit Co,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+b2ea13b61d,2024Q3,Bain Capital,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+b408c8bf38,2024Q3,BlackRock,3.75,5.673830508474577,192.3830508474577,Reference: training mean,0
+b47dae3a60,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+b5f356d0da,2024Q3,Jefferies,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+b6a0fe90ae,2024Q3,Antares,3.0,5.673830508474577,267.3830508474577,Reference: training mean,0
+b77de82d1e,2024Q3,Goldman Sachs,5.5,5.673830508474577,17.38305084745768,Reference: training mean,0
+b7c24e6468,2024Q3,First Eagle,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+b98520924c,2024Q3,Crescent,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+ba29d53e52,2024Q3,Goldman Sachs,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+bd67f14473,2024Q3,BlackRock,3.5,5.673830508474577,217.3830508474577,Reference: training mean,0
+be44ea5ab0,2024Q3,Goldman Sachs,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+c0da95d50b,2024Q3,Comvest,5.73,5.673830508474577,5.616949152542361,Reference: training mean,0
+c1ceef7210,2024Q3,Apollo,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+c30acdf8c9,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+c36779416f,2024Q3,First Eagle,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+c5f3fa1216,2024Q3,PennantPark,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+c91b3c1fd4,2024Q3,Jefferies,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+cafd775a79,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+cc51fbadd4,2024Q3,Varagon,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+d003973d37,2024Q3,Silver Point,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+d1cf915960,2024Q3,Comvest,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+d1d7cd5825,2024Q3,Msd Investment Corp.,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+d3f290c0e7,2024Q3,Silver Point,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+d4febe694a,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+d51cc21f1a,2024Q3,Comvest,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+d55aa75d8d,2024Q3,Apollo,3.25,5.673830508474577,242.3830508474577,Reference: training mean,0
+d580b0709b,2024Q3,Goldman Sachs,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+d5d9ed22b8,2024Q3,PennantPark,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+d94f37a4aa,2024Q3,Antares,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+d9800b13e7,2024Q3,PennantPark,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+d9db14da49,2024Q3,Apollo,2.0,5.673830508474577,367.3830508474577,Reference: training mean,0
+da40a406b5,2024Q3,Goldman Sachs,4.25,5.673830508474577,142.3830508474577,Reference: training mean,0
+daeb5017b3,2024Q3,Antares,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+dc82abe85f,2024Q3,Apollo,5.25,5.673830508474577,42.38305084745768,Reference: training mean,0
+dc84317aa7,2024Q3,PennantPark,6.0,5.673830508474577,32.61694915254232,Reference: training mean,0
+de196df8b8,2024Q3,BlackRock,3.75,5.673830508474577,192.3830508474577,Reference: training mean,0
+e21bd2a15d,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+e56cdac4e4,2024Q3,Diameter Credit Co,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+e62e32ca18,2024Q3,Apollo,5.75,5.673830508474577,7.616949152542318,Reference: training mean,0
+e6d56bbd69,2024Q3,PennantPark,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+e8bed65395,2024Q3,Antares,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+eb34bc5505,2024Q3,Apollo,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+efdb272fdb,2024Q3,Apollo,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+f082459b10,2024Q3,Manulife Private Credit Fund,5.0,5.673830508474577,67.38305084745768,Reference: training mean,0
+f0ec2eb6ba,2024Q3,Goldman Sachs,4.5,5.673830508474577,117.38305084745768,Reference: training mean,0
+f285c115b6,2024Q3,First Eagle,2.25,5.673830508474577,342.3830508474577,Reference: training mean,0
+f45af6e741,2024Q3,Goldman Sachs,4.75,5.673830508474577,92.38305084745768,Reference: training mean,0
+f7d818824e,2024Q3,BlackRock,4.25,5.673830508474577,142.3830508474577,Reference: training mean,0
+ff432af70a,2024Q3,"Whitehorse Finance, Inc.",8.5,5.673830508474577,282.6169491525423,Reference: training mean,0
+010d3045ce,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+0219d19d67,2024Q4,Bain Capital,5.25,5.0,25.0,Baseline 1: market median t-2,1
+026d1fed5c,2024Q4,Antares,2.75,5.0,225.0,Baseline 1: market median t-2,1
+03874ad30c,2024Q4,Apollo,2.5,5.0,250.0,Baseline 1: market median t-2,1
+03f9a9255a,2024Q4,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,1
+04b85beec2,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+04dff676d2,2024Q4,BC Partners,7.0,5.0,200.0,Baseline 1: market median t-2,1
+056db0554f,2024Q4,TCW,5.5,5.0,50.0,Baseline 1: market median t-2,1
+0771748a67,2024Q4,Comvest,5.5,5.0,50.0,Baseline 1: market median t-2,1
+079177a92c,2024Q4,First Eagle,3.0,5.0,200.0,Baseline 1: market median t-2,1
+08bb0b57fc,2024Q4,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,1
+0934d32e05,2024Q4,Silver Point,4.5,5.0,50.0,Baseline 1: market median t-2,1
+0983593649,2024Q4,Msd Investment Corp.,6.0,5.0,100.0,Baseline 1: market median t-2,1
+09bb437023,2024Q4,BlackRock,5.5,5.0,50.0,Baseline 1: market median t-2,1
+09fe14ac89,2024Q4,Overland Advantage,3.25,5.0,175.0,Baseline 1: market median t-2,1
+0b24481e45,2024Q4,Comvest,5.5,5.0,50.0,Baseline 1: market median t-2,1
+0c29983bdf,2024Q4,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,1
+0c93f11696,2024Q4,First Eagle,3.0,5.0,200.0,Baseline 1: market median t-2,1
+0d326c82aa,2024Q4,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,1
+0dacdffd02,2024Q4,Goldman Sachs,5.0,5.0,0.0,Baseline 1: market median t-2,1
+0e5298e5a2,2024Q4,Apollo,5.75,5.0,75.0,Baseline 1: market median t-2,1
+0f3f97b2ff,2024Q4,Stellus,4.75,5.0,25.0,Baseline 1: market median t-2,1
+0f776a6ca6,2024Q4,PennantPark,5.25,5.0,25.0,Baseline 1: market median t-2,1
+0fcee9c694,2024Q4,Manulife Private Credit Fund,5.0,5.0,0.0,Baseline 1: market median t-2,1
+10a8d482ed,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.0,75.0,Baseline 1: market median t-2,1
+10d8f13aec,2024Q4,PennantPark,5.75,5.0,75.0,Baseline 1: market median t-2,1
+1462926ed4,2024Q4,"Whitehorse Finance, Inc.",5.75,5.0,75.0,Baseline 1: market median t-2,1
+17fc978b11,2024Q4,Redwood Enhanced Income Corp.,7.5,5.0,250.0,Baseline 1: market median t-2,1
+198224fa08,2024Q4,BlackRock,4.25,5.0,75.0,Baseline 1: market median t-2,1
+1a1b88b650,2024Q4,BlackRock,4.5,5.0,50.0,Baseline 1: market median t-2,1
+214ac82287,2024Q4,Manulife Private Credit Fund,4.5,5.0,50.0,Baseline 1: market median t-2,1
+21f9b12290,2024Q4,Varagon,5.0,5.0,0.0,Baseline 1: market median t-2,1
+22cc410b4f,2024Q4,Investcorp,5.0,5.0,0.0,Baseline 1: market median t-2,1
+231ce808bc,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.0,50.0,Baseline 1: market median t-2,1
+247a24b818,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+24b0c96e85,2024Q4,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,1
+251ad468a6,2024Q4,Comvest,4.75,5.0,25.0,Baseline 1: market median t-2,1
+28d41ac0bf,2024Q4,PennantPark,5.75,5.0,75.0,Baseline 1: market median t-2,1
+2da13c032a,2024Q4,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,1
+2de7f7370b,2024Q4,BlackRock,5.25,5.0,25.0,Baseline 1: market median t-2,1
+2f10d206c2,2024Q4,Comvest,4.25,5.0,75.0,Baseline 1: market median t-2,1
+2fc2430885,2024Q4,Manulife Private Credit Fund,4.75,5.0,25.0,Baseline 1: market median t-2,1
+2fc4aa47db,2024Q4,Bain Capital,5.4,5.0,40.000000000000036,Baseline 1: market median t-2,1
+33ae9caaf7,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+344f2fb74a,2024Q4,Overland Advantage,5.25,5.0,25.0,Baseline 1: market median t-2,1
+3544ec929e,2024Q4,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,1
+394525b4a3,2024Q4,First Eagle,3.0,5.0,200.0,Baseline 1: market median t-2,1
+3a36e66007,2024Q4,Comvest,5.75,5.0,75.0,Baseline 1: market median t-2,1
+3a940bf385,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+3b04d78b5b,2024Q4,Onex,5.5,5.0,50.0,Baseline 1: market median t-2,1
+3e2f0c8306,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.0,50.0,Baseline 1: market median t-2,1
+3e7cb2575e,2024Q4,Msd Investment Corp.,5.75,5.0,75.0,Baseline 1: market median t-2,1
+3f458b57f9,2024Q4,First Eagle,2.25,5.0,275.0,Baseline 1: market median t-2,1
+3fc0620040,2024Q4,Bain Capital,5.25,5.0,25.0,Baseline 1: market median t-2,1
+433e75655b,2024Q4,Silver Point,6.0,5.0,100.0,Baseline 1: market median t-2,1
+45bd24dccf,2024Q4,Apollo,2.75,5.0,225.0,Baseline 1: market median t-2,1
+462750b830,2024Q4,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,1
+469cf66a5e,2024Q4,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,1
+48cf8fccbe,2024Q4,Comvest,6.0,5.0,100.0,Baseline 1: market median t-2,1
+492dfd9c88,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+4bdcb46e82,2024Q4,Palmer Square Capital Bdc Inc.,5.0,5.0,0.0,Baseline 1: market median t-2,1
+521e1b383a,2024Q4,Apollo,2.25,5.0,275.0,Baseline 1: market median t-2,1
+524b5041cf,2024Q4,Onex,4.25,5.0,75.0,Baseline 1: market median t-2,1
+5258f82bf2,2024Q4,Goldman Sachs,4.0,5.0,100.0,Baseline 1: market median t-2,1
+529a1740c0,2024Q4,Varagon,5.25,5.0,25.0,Baseline 1: market median t-2,1
+580b042e2f,2024Q4,Apollo,3.5,5.0,150.0,Baseline 1: market median t-2,1
+5b98738aee,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+5bb7b90e20,2024Q4,Crescent,5.5,5.0,50.0,Baseline 1: market median t-2,1
+5e940077a5,2024Q4,Apollo,5.75,5.0,75.0,Baseline 1: market median t-2,1
+5f31813525,2024Q4,Varagon,4.75,5.0,25.0,Baseline 1: market median t-2,1
+603e423a52,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+61708aa836,2024Q4,Varagon,4.75,5.0,25.0,Baseline 1: market median t-2,1
+62f7a6d21c,2024Q4,First Eagle,2.0,5.0,300.0,Baseline 1: market median t-2,1
+6471647b2a,2024Q4,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,1
+6557be21b4,2024Q4,PennantPark,5.25,5.0,25.0,Baseline 1: market median t-2,1
+659161ca2d,2024Q4,Brightwood Capital Corp I,5.5,5.0,50.0,Baseline 1: market median t-2,1
+65df281ad2,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+67260aa136,2024Q4,First Eagle,2.75,5.0,225.0,Baseline 1: market median t-2,1
+67ea5fd785,2024Q4,Varagon,5.5,5.0,50.0,Baseline 1: market median t-2,1
+694ede194f,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+6cfa1db248,2024Q4,Goldman Sachs,4.5,5.0,50.0,Baseline 1: market median t-2,1
+6f56717f9f,2024Q4,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,1
+6f6883c091,2024Q4,Comvest,4.5,5.0,50.0,Baseline 1: market median t-2,1
+71334c225b,2024Q4,Apollo,5.5,5.0,50.0,Baseline 1: market median t-2,1
+719155ccaf,2024Q4,First Eagle,4.0,5.0,100.0,Baseline 1: market median t-2,1
+723f65ef13,2024Q4,Brightwood Capital Corp I,5.5,5.0,50.0,Baseline 1: market median t-2,1
+724370998e,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.0,75.0,Baseline 1: market median t-2,1
+73c4f41a4a,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+73e0a477bc,2024Q4,TCW,6.25,5.0,125.0,Baseline 1: market median t-2,1
+743ba328c6,2024Q4,Varagon,4.75,5.0,25.0,Baseline 1: market median t-2,1
+75453a3b9d,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+767432d9ee,2024Q4,Apollo,6.25,5.0,125.0,Baseline 1: market median t-2,1
+76b03c64df,2024Q4,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,1
+773c0986c7,2024Q4,Comvest,5.75,5.0,75.0,Baseline 1: market median t-2,1
+7a53359631,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+7ab38b27ae,2024Q4,Goldman Sachs,4.25,5.0,75.0,Baseline 1: market median t-2,1
+7bf498d9f6,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+7cc8f35d8a,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+7f22f99e6e,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+7f7ecce11c,2024Q4,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,1
+833d4ed52b,2024Q4,First Eagle,4.5,5.0,50.0,Baseline 1: market median t-2,1
+850b278a23,2024Q4,Goldman Sachs,3.5,5.0,150.0,Baseline 1: market median t-2,1
+8629375f1e,2024Q4,Overland Advantage,4.5,5.0,50.0,Baseline 1: market median t-2,1
+88401b42b7,2024Q4,Apollo,3.0,5.0,200.0,Baseline 1: market median t-2,1
+8c7c8b8cff,2024Q4,Goldman Sachs,3.25,5.0,175.0,Baseline 1: market median t-2,1
+8e5820256f,2024Q4,First Eagle,3.5,5.0,150.0,Baseline 1: market median t-2,1
+8f9b5812ca,2024Q4,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,1
+8fc3177d84,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.0,75.0,Baseline 1: market median t-2,1
+905b9e1995,2024Q4,Bain Capital,5.25,5.0,25.0,Baseline 1: market median t-2,1
+939f2809ab,2024Q4,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,1
+94917c6dcd,2024Q4,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,1
+94eeeabd05,2024Q4,Bain Capital,5.25,5.0,25.0,Baseline 1: market median t-2,1
+9605a24ca8,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.0,50.0,Baseline 1: market median t-2,1
+974cfd501a,2024Q4,Brightwood Capital Corp I,7.25,5.0,225.0,Baseline 1: market median t-2,1
+97e713e91d,2024Q4,Comvest,5.75,5.0,75.0,Baseline 1: market median t-2,1
+9915ec5113,2024Q4,First Eagle,3.25,5.0,175.0,Baseline 1: market median t-2,1
+9c9b378f27,2024Q4,BlackRock,4.0,5.0,100.0,Baseline 1: market median t-2,1
+9e1cf6c221,2024Q4,"Whitehorse Finance, Inc.",5.5,5.0,50.0,Baseline 1: market median t-2,1
+9e2eaf6694,2024Q4,Msd Investment Corp.,6.0,5.0,100.0,Baseline 1: market median t-2,1
+9e861a1f96,2024Q4,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,1
+a1f08494c1,2024Q4,BlackRock,5.0,5.0,0.0,Baseline 1: market median t-2,1
+a1f0a0cac0,2024Q4,Silver Point,6.0,5.0,100.0,Baseline 1: market median t-2,1
+a3982c3528,2024Q4,Bain Capital,5.6,5.0,59.999999999999964,Baseline 1: market median t-2,1
+a959d2ed39,2024Q4,Silver Point,5.5,5.0,50.0,Baseline 1: market median t-2,1
+a9c6bec944,2024Q4,First Eagle,2.25,5.0,275.0,Baseline 1: market median t-2,1
+aa6a57be45,2024Q4,Stellus,5.75,5.0,75.0,Baseline 1: market median t-2,1
+ac03ab169b,2024Q4,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,1
+af0991c1e6,2024Q4,Manulife Private Credit Fund,5.0,5.0,0.0,Baseline 1: market median t-2,1
+b14e4d6903,2024Q4,Comvest,6.25,5.0,125.0,Baseline 1: market median t-2,1
+b1dd7aad6b,2024Q4,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,1
+b4e2953c9b,2024Q4,Stellus,5.0,5.0,0.0,Baseline 1: market median t-2,1
+b5741433b5,2024Q4,Stellus,5.0,5.0,0.0,Baseline 1: market median t-2,1
+b61a519656,2024Q4,Goldman Sachs,5.25,5.0,25.0,Baseline 1: market median t-2,1
+b67e28f565,2024Q4,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,1
+b72d65f95a,2024Q4,Silver Point,7.0,5.0,200.0,Baseline 1: market median t-2,1
+b77dbc1878,2024Q4,Manulife Private Credit Fund,4.75,5.0,25.0,Baseline 1: market median t-2,1
+b873715928,2024Q4,Overland Advantage,4.0,5.0,100.0,Baseline 1: market median t-2,1
+b88dbf67d7,2024Q4,Msd Investment Corp.,5.75,5.0,75.0,Baseline 1: market median t-2,1
+b976899a5a,2024Q4,First Eagle,2.5,5.0,250.0,Baseline 1: market median t-2,1
+b9c2c0ad03,2024Q4,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,1
+ba632b7a66,2024Q4,BlackRock,6.0,5.0,100.0,Baseline 1: market median t-2,1
+bc83b9649b,2024Q4,Silver Point,5.25,5.0,25.0,Baseline 1: market median t-2,1
+bcfaa50bce,2024Q4,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,1
+bd1ea2186f,2024Q4,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,1
+be2cf78d9e,2024Q4,BlackRock,3.0,5.0,200.0,Baseline 1: market median t-2,1
+c30394384e,2024Q4,First Eagle,5.25,5.0,25.0,Baseline 1: market median t-2,1
+c34da7e717,2024Q4,Brightwood Capital Corp I,7.5,5.0,250.0,Baseline 1: market median t-2,1
+c5a49793a9,2024Q4,Overland Advantage,6.75,5.0,175.0,Baseline 1: market median t-2,1
+c859e37758,2024Q4,Jefferies,5.0,5.0,0.0,Baseline 1: market median t-2,1
+cb2c2b142b,2024Q4,Bain Capital,7.0,5.0,200.0,Baseline 1: market median t-2,1
+cc2de3248d,2024Q4,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,1
+cc381a6226,2024Q4,Apollo,4.0,5.0,100.0,Baseline 1: market median t-2,1
+cd63ba5bce,2024Q4,BlackRock,3.25,5.0,175.0,Baseline 1: market median t-2,1
+d11e7492f3,2024Q4,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,1
+d27cbf4242,2024Q4,Manulife Private Credit Fund,5.0,5.0,0.0,Baseline 1: market median t-2,1
+d2ca8493aa,2024Q4,Msd Investment Corp.,5.5,5.0,50.0,Baseline 1: market median t-2,1
+d2d6d37ecc,2024Q4,Brightwood Capital Corp I,4.25,5.0,75.0,Baseline 1: market median t-2,1
+d35a1ba5e2,2024Q4,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,1
+d47f8feb16,2024Q4,Comvest,5.0,5.0,0.0,Baseline 1: market median t-2,1
+d4c8e5c6a7,2024Q4,Comvest,6.0,5.0,100.0,Baseline 1: market median t-2,1
+d5fcd36c39,2024Q4,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,1
+d65851cd1a,2024Q4,Redwood Enhanced Income Corp.,6.0,5.0,100.0,Baseline 1: market median t-2,1
+d72a470771,2024Q4,PennantPark,4.75,5.0,25.0,Baseline 1: market median t-2,1
+d8b7b26f39,2024Q4,First Eagle,3.0,5.0,200.0,Baseline 1: market median t-2,1
+d8ff3af6fb,2024Q4,Palmer Square Capital Bdc Inc.,5.0,5.0,0.0,Baseline 1: market median t-2,1
+db728802ce,2024Q4,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,1
+dba7c631cf,2024Q4,Goldman Sachs,4.25,5.0,75.0,Baseline 1: market median t-2,1
+dc29c191a8,2024Q4,Comvest,6.5,5.0,150.0,Baseline 1: market median t-2,1
+de366a645c,2024Q4,BC Partners,8.0,5.0,300.0,Baseline 1: market median t-2,1
+df2403f012,2024Q4,Jefferies,5.0,5.0,0.0,Baseline 1: market median t-2,1
+e053ce8d9d,2024Q4,Apollo,4.5,5.0,50.0,Baseline 1: market median t-2,1
+e10769f85f,2024Q4,Manulife Private Credit Fund,5.25,5.0,25.0,Baseline 1: market median t-2,1
+e218121898,2024Q4,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,1
+e269e3a950,2024Q4,Manulife Private Credit Fund,4.75,5.0,25.0,Baseline 1: market median t-2,1
+e293e15c08,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.0,50.0,Baseline 1: market median t-2,1
+e32e00ed8e,2024Q4,BlackRock,3.0,5.0,200.0,Baseline 1: market median t-2,1
+e3e5f7035f,2024Q4,TCW,6.25,5.0,125.0,Baseline 1: market median t-2,1
+e4304a95b5,2024Q4,First Eagle,5.0,5.0,0.0,Baseline 1: market median t-2,1
+e480a2f2a6,2024Q4,First Eagle,5.25,5.0,25.0,Baseline 1: market median t-2,1
+e598dfab1d,2024Q4,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,1
+e5bc9bc52f,2024Q4,Overland Advantage,3.75,5.0,125.0,Baseline 1: market median t-2,1
+e7bec61135,2024Q4,Goldman Sachs,3.0,5.0,200.0,Baseline 1: market median t-2,1
+e84841c355,2024Q4,First Eagle,4.25,5.0,75.0,Baseline 1: market median t-2,1
+e8c5c82b49,2024Q4,BlackRock,4.75,5.0,25.0,Baseline 1: market median t-2,1
+e9ac00c224,2024Q4,Apollo,4.0,5.0,100.0,Baseline 1: market median t-2,1
+e9d9b6972d,2024Q4,Silver Point,7.0,5.0,200.0,Baseline 1: market median t-2,1
+ea1e03ea9f,2024Q4,Onex,4.25,5.0,75.0,Baseline 1: market median t-2,1
+eb670f89b3,2024Q4,PennantPark,4.75,5.0,25.0,Baseline 1: market median t-2,1
+ec06d62306,2024Q4,Antares,5.25,5.0,25.0,Baseline 1: market median t-2,1
+ed1bb25ca5,2024Q4,Jefferies,5.0,5.0,0.0,Baseline 1: market median t-2,1
+ee01a4ba3b,2024Q4,Bain Capital,8.5,5.0,350.0,Baseline 1: market median t-2,1
+eeeff504bf,2024Q4,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,1
+f0fe5968ac,2024Q4,Antares,2.75,5.0,225.0,Baseline 1: market median t-2,1
+f1cd7ca8e1,2024Q4,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,1
+f2111b5ded,2024Q4,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,1
+f23bccb43a,2024Q4,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,1
+f6d0cec3c9,2024Q4,Goldman Sachs,4.5,5.0,50.0,Baseline 1: market median t-2,1
+f7930da209,2024Q4,Antares,5.0,5.0,0.0,Baseline 1: market median t-2,1
+f851aa20cb,2024Q4,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,1
+f87bfcb113,2024Q4,Comvest,4.75,5.0,25.0,Baseline 1: market median t-2,1
+f91bcd5a58,2024Q4,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,1
+fbbaa695d4,2024Q4,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,1
+fdc2612951,2024Q4,Manulife Private Credit Fund,5.25,5.0,25.0,Baseline 1: market median t-2,1
+fe0110ebd8,2024Q4,Crescent,4.5,5.0,50.0,Baseline 1: market median t-2,1
+fe5dbc5ace,2024Q4,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,1
+010d3045ce,2024Q4,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,1
+0219d19d67,2024Q4,Bain Capital,5.25,6.0,75.0,Baseline 2: sector x size median,1
+026d1fed5c,2024Q4,Antares,2.75,5.0,225.0,Baseline 2: sector x size median,1
+03874ad30c,2024Q4,Apollo,2.5,6.0,350.0,Baseline 2: sector x size median,1
+03f9a9255a,2024Q4,Goldman Sachs,5.0,6.0,100.0,Baseline 2: sector x size median,1
+04b85beec2,2024Q4,Antares,4.75,5.0,25.0,Baseline 2: sector x size median,1
+04dff676d2,2024Q4,BC Partners,7.0,6.0,100.0,Baseline 2: sector x size median,1
+056db0554f,2024Q4,TCW,5.5,5.75,25.0,Baseline 2: sector x size median,1
+0771748a67,2024Q4,Comvest,5.5,6.05,54.999999999999986,Baseline 2: sector x size median,1
+079177a92c,2024Q4,First Eagle,3.0,4.25,125.0,Baseline 2: sector x size median,1
+08bb0b57fc,2024Q4,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,1
+0934d32e05,2024Q4,Silver Point,4.5,6.05,154.99999999999997,Baseline 2: sector x size median,1
+0983593649,2024Q4,Msd Investment Corp.,6.0,6.0,0.0,Baseline 2: sector x size median,1
+09bb437023,2024Q4,BlackRock,5.5,6.05,54.999999999999986,Baseline 2: sector x size median,1
+09fe14ac89,2024Q4,Overland Advantage,3.25,5.625,237.5,Baseline 2: sector x size median,1
+0b24481e45,2024Q4,Comvest,5.5,5.625,12.5,Baseline 2: sector x size median,1
+0c29983bdf,2024Q4,Apollo,5.25,6.0,75.0,Baseline 2: sector x size median,1
+0c93f11696,2024Q4,First Eagle,3.0,3.875,87.5,Baseline 2: sector x size median,1
+0d326c82aa,2024Q4,Apollo,4.75,5.75,100.0,Baseline 2: sector x size median,1
+0dacdffd02,2024Q4,Goldman Sachs,5.0,6.0,100.0,Baseline 2: sector x size median,1
+0e5298e5a2,2024Q4,Apollo,5.75,6.0,25.0,Baseline 2: sector x size median,1
+0f3f97b2ff,2024Q4,Stellus,4.75,6.0,125.0,Baseline 2: sector x size median,1
+0f776a6ca6,2024Q4,PennantPark,5.25,5.75,50.0,Baseline 2: sector x size median,1
+0fcee9c694,2024Q4,Manulife Private Credit Fund,5.0,3.5,150.0,Baseline 2: sector x size median,1
+10a8d482ed,2024Q4,Palmer Square Capital Bdc Inc.,4.25,6.05,179.99999999999997,Baseline 2: sector x size median,1
+10d8f13aec,2024Q4,PennantPark,5.75,6.0,25.0,Baseline 2: sector x size median,1
+1462926ed4,2024Q4,"Whitehorse Finance, Inc.",5.75,4.25,150.0,Baseline 2: sector x size median,1
+17fc978b11,2024Q4,Redwood Enhanced Income Corp.,7.5,5.5,200.0,Baseline 2: sector x size median,1
+198224fa08,2024Q4,BlackRock,4.25,4.25,0.0,Baseline 2: sector x size median,1
+1a1b88b650,2024Q4,BlackRock,4.5,3.75,75.0,Baseline 2: sector x size median,1
+214ac82287,2024Q4,Manulife Private Credit Fund,4.5,3.75,75.0,Baseline 2: sector x size median,1
+21f9b12290,2024Q4,Varagon,5.0,5.75,75.0,Baseline 2: sector x size median,1
+22cc410b4f,2024Q4,Investcorp,5.0,3.75,125.0,Baseline 2: sector x size median,1
+231ce808bc,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.0,50.0,Baseline 2: sector x size median,1
+247a24b818,2024Q4,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,1
+24b0c96e85,2024Q4,BlackRock,3.5,4.25,75.0,Baseline 2: sector x size median,1
+251ad468a6,2024Q4,Comvest,4.75,5.75,100.0,Baseline 2: sector x size median,1
+28d41ac0bf,2024Q4,PennantPark,5.75,6.0,25.0,Baseline 2: sector x size median,1
+2da13c032a,2024Q4,Stellus,5.25,5.625,37.5,Baseline 2: sector x size median,1
+2de7f7370b,2024Q4,BlackRock,5.25,6.0,75.0,Baseline 2: sector x size median,1
+2f10d206c2,2024Q4,Comvest,4.25,5.5,125.0,Baseline 2: sector x size median,1
+2fc2430885,2024Q4,Manulife Private Credit Fund,4.75,4.25,50.0,Baseline 2: sector x size median,1
+2fc4aa47db,2024Q4,Bain Capital,5.4,6.0,59.999999999999964,Baseline 2: sector x size median,1
+33ae9caaf7,2024Q4,Antares,4.75,6.0,125.0,Baseline 2: sector x size median,1
+344f2fb74a,2024Q4,Overland Advantage,5.25,6.0,75.0,Baseline 2: sector x size median,1
+3544ec929e,2024Q4,Antares,3.25,5.5,225.0,Baseline 2: sector x size median,1
+394525b4a3,2024Q4,First Eagle,3.0,4.25,125.0,Baseline 2: sector x size median,1
+3a36e66007,2024Q4,Comvest,5.75,6.0,25.0,Baseline 2: sector x size median,1
+3a940bf385,2024Q4,Antares,4.75,5.0,25.0,Baseline 2: sector x size median,1
+3b04d78b5b,2024Q4,Onex,5.5,6.05,54.999999999999986,Baseline 2: sector x size median,1
+3e2f0c8306,2024Q4,Palmer Square Capital Bdc Inc.,4.5,6.25,175.0,Baseline 2: sector x size median,1
+3e7cb2575e,2024Q4,Msd Investment Corp.,5.75,5.625,12.5,Baseline 2: sector x size median,1
+3f458b57f9,2024Q4,First Eagle,2.25,3.75,150.0,Baseline 2: sector x size median,1
+3fc0620040,2024Q4,Bain Capital,5.25,5.75,50.0,Baseline 2: sector x size median,1
+433e75655b,2024Q4,Silver Point,6.0,5.375,62.5,Baseline 2: sector x size median,1
+45bd24dccf,2024Q4,Apollo,2.75,5.5,275.0,Baseline 2: sector x size median,1
+462750b830,2024Q4,Bain Capital,5.0,6.0,100.0,Baseline 2: sector x size median,1
+469cf66a5e,2024Q4,Stellus,5.25,5.75,50.0,Baseline 2: sector x size median,1
+48cf8fccbe,2024Q4,Comvest,6.0,6.0,0.0,Baseline 2: sector x size median,1
+492dfd9c88,2024Q4,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,1
+4bdcb46e82,2024Q4,Palmer Square Capital Bdc Inc.,5.0,4.25,75.0,Baseline 2: sector x size median,1
+521e1b383a,2024Q4,Apollo,2.25,4.25,200.0,Baseline 2: sector x size median,1
+524b5041cf,2024Q4,Onex,4.25,4.25,0.0,Baseline 2: sector x size median,1
+5258f82bf2,2024Q4,Goldman Sachs,4.0,6.05,204.99999999999997,Baseline 2: sector x size median,1
+529a1740c0,2024Q4,Varagon,5.25,5.625,37.5,Baseline 2: sector x size median,1
+580b042e2f,2024Q4,Apollo,3.5,5.625,212.5,Baseline 2: sector x size median,1
+5b98738aee,2024Q4,Antares,4.75,6.05,129.99999999999997,Baseline 2: sector x size median,1
+5bb7b90e20,2024Q4,Crescent,5.5,5.75,25.0,Baseline 2: sector x size median,1
+5e940077a5,2024Q4,Apollo,5.75,6.0,25.0,Baseline 2: sector x size median,1
+5f31813525,2024Q4,Varagon,4.75,6.0,125.0,Baseline 2: sector x size median,1
+603e423a52,2024Q4,Antares,4.75,5.625,87.5,Baseline 2: sector x size median,1
+61708aa836,2024Q4,Varagon,4.75,5.75,100.0,Baseline 2: sector x size median,1
+62f7a6d21c,2024Q4,First Eagle,2.0,3.875,187.5,Baseline 2: sector x size median,1
+6471647b2a,2024Q4,Apollo,4.75,5.75,100.0,Baseline 2: sector x size median,1
+6557be21b4,2024Q4,PennantPark,5.25,6.0,75.0,Baseline 2: sector x size median,1
+659161ca2d,2024Q4,Brightwood Capital Corp I,5.5,5.625,12.5,Baseline 2: sector x size median,1
+65df281ad2,2024Q4,Antares,4.75,5.75,100.0,Baseline 2: sector x size median,1
+67260aa136,2024Q4,First Eagle,2.75,3.5,75.0,Baseline 2: sector x size median,1
+67ea5fd785,2024Q4,Varagon,5.5,5.625,12.5,Baseline 2: sector x size median,1
+694ede194f,2024Q4,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,1
+6cfa1db248,2024Q4,Goldman Sachs,4.5,3.75,75.0,Baseline 2: sector x size median,1
+6f56717f9f,2024Q4,Crescent,5.0,5.0,0.0,Baseline 2: sector x size median,1
+6f6883c091,2024Q4,Comvest,4.5,5.625,112.5,Baseline 2: sector x size median,1
+71334c225b,2024Q4,Apollo,5.5,5.375,12.5,Baseline 2: sector x size median,1
+719155ccaf,2024Q4,First Eagle,4.0,6.0,200.0,Baseline 2: sector x size median,1
+723f65ef13,2024Q4,Brightwood Capital Corp I,5.5,6.05,54.999999999999986,Baseline 2: sector x size median,1
+724370998e,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.75,150.0,Baseline 2: sector x size median,1
+73c4f41a4a,2024Q4,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,1
+73e0a477bc,2024Q4,TCW,6.25,6.0,25.0,Baseline 2: sector x size median,1
+743ba328c6,2024Q4,Varagon,4.75,6.0,125.0,Baseline 2: sector x size median,1
+75453a3b9d,2024Q4,Antares,4.75,5.75,100.0,Baseline 2: sector x size median,1
+767432d9ee,2024Q4,Apollo,6.25,5.5,75.0,Baseline 2: sector x size median,1
+76b03c64df,2024Q4,Jefferies,4.75,5.75,100.0,Baseline 2: sector x size median,1
+773c0986c7,2024Q4,Comvest,5.75,5.75,0.0,Baseline 2: sector x size median,1
+7a53359631,2024Q4,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,1
+7ab38b27ae,2024Q4,Goldman Sachs,4.25,5.75,150.0,Baseline 2: sector x size median,1
+7bf498d9f6,2024Q4,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,1
+7cc8f35d8a,2024Q4,Apollo,5.0,5.75,75.0,Baseline 2: sector x size median,1
+7f22f99e6e,2024Q4,Apollo,5.0,6.0,100.0,Baseline 2: sector x size median,1
+7f7ecce11c,2024Q4,Palmer Square Capital Bdc Inc.,3.5,3.875,37.5,Baseline 2: sector x size median,1
+833d4ed52b,2024Q4,First Eagle,4.5,5.5,100.0,Baseline 2: sector x size median,1
+850b278a23,2024Q4,Goldman Sachs,3.5,4.25,75.0,Baseline 2: sector x size median,1
+8629375f1e,2024Q4,Overland Advantage,4.5,6.0,150.0,Baseline 2: sector x size median,1
+88401b42b7,2024Q4,Apollo,3.0,5.75,275.0,Baseline 2: sector x size median,1
+8c7c8b8cff,2024Q4,Goldman Sachs,3.25,5.0,175.0,Baseline 2: sector x size median,1
+8e5820256f,2024Q4,First Eagle,3.5,5.0,150.0,Baseline 2: sector x size median,1
+8f9b5812ca,2024Q4,Bain Capital,5.0,6.0,100.0,Baseline 2: sector x size median,1
+8fc3177d84,2024Q4,Palmer Square Capital Bdc Inc.,4.25,3.875,37.5,Baseline 2: sector x size median,1
+905b9e1995,2024Q4,Bain Capital,5.25,5.75,50.0,Baseline 2: sector x size median,1
+939f2809ab,2024Q4,Apollo,4.75,6.0,125.0,Baseline 2: sector x size median,1
+94917c6dcd,2024Q4,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,1
+94eeeabd05,2024Q4,Bain Capital,5.25,6.05,79.99999999999999,Baseline 2: sector x size median,1
+9605a24ca8,2024Q4,Palmer Square Capital Bdc Inc.,4.5,3.5,100.0,Baseline 2: sector x size median,1
+974cfd501a,2024Q4,Brightwood Capital Corp I,7.25,4.25,300.0,Baseline 2: sector x size median,1
+97e713e91d,2024Q4,Comvest,5.75,5.75,0.0,Baseline 2: sector x size median,1
+9915ec5113,2024Q4,First Eagle,3.25,5.5,225.0,Baseline 2: sector x size median,1
+9c9b378f27,2024Q4,BlackRock,4.0,5.0,100.0,Baseline 2: sector x size median,1
+9e1cf6c221,2024Q4,"Whitehorse Finance, Inc.",5.5,6.05,54.999999999999986,Baseline 2: sector x size median,1
+9e2eaf6694,2024Q4,Msd Investment Corp.,6.0,6.0,0.0,Baseline 2: sector x size median,1
+9e861a1f96,2024Q4,Apollo,5.0,6.05,104.99999999999999,Baseline 2: sector x size median,1
+a1f08494c1,2024Q4,BlackRock,5.0,5.5,50.0,Baseline 2: sector x size median,1
+a1f0a0cac0,2024Q4,Silver Point,6.0,3.875,212.5,Baseline 2: sector x size median,1
+a3982c3528,2024Q4,Bain Capital,5.6,5.75,15.000000000000036,Baseline 2: sector x size median,1
+a959d2ed39,2024Q4,Silver Point,5.5,5.75,25.0,Baseline 2: sector x size median,1
+a9c6bec944,2024Q4,First Eagle,2.25,3.875,162.5,Baseline 2: sector x size median,1
+aa6a57be45,2024Q4,Stellus,5.75,6.0,25.0,Baseline 2: sector x size median,1
+ac03ab169b,2024Q4,Jefferies,4.75,5.75,100.0,Baseline 2: sector x size median,1
+af0991c1e6,2024Q4,Manulife Private Credit Fund,5.0,4.25,75.0,Baseline 2: sector x size median,1
+b14e4d6903,2024Q4,Comvest,6.25,6.0,25.0,Baseline 2: sector x size median,1
+b1dd7aad6b,2024Q4,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,1
+b4e2953c9b,2024Q4,Stellus,5.0,5.75,75.0,Baseline 2: sector x size median,1
+b5741433b5,2024Q4,Stellus,5.0,6.0,100.0,Baseline 2: sector x size median,1
+b61a519656,2024Q4,Goldman Sachs,5.25,5.75,50.0,Baseline 2: sector x size median,1
+b67e28f565,2024Q4,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,1
+b72d65f95a,2024Q4,Silver Point,7.0,5.375,162.5,Baseline 2: sector x size median,1
+b77dbc1878,2024Q4,Manulife Private Credit Fund,4.75,4.25,50.0,Baseline 2: sector x size median,1
+b873715928,2024Q4,Overland Advantage,4.0,5.75,175.0,Baseline 2: sector x size median,1
+b88dbf67d7,2024Q4,Msd Investment Corp.,5.75,5.75,0.0,Baseline 2: sector x size median,1
+b976899a5a,2024Q4,First Eagle,2.5,4.25,175.0,Baseline 2: sector x size median,1
+b9c2c0ad03,2024Q4,Apollo,3.25,5.75,250.0,Baseline 2: sector x size median,1
+ba632b7a66,2024Q4,BlackRock,6.0,5.75,25.0,Baseline 2: sector x size median,1
+bc83b9649b,2024Q4,Silver Point,5.25,3.5,175.0,Baseline 2: sector x size median,1
+bcfaa50bce,2024Q4,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,1
+bd1ea2186f,2024Q4,Apollo,4.75,6.0,125.0,Baseline 2: sector x size median,1
+be2cf78d9e,2024Q4,BlackRock,3.0,3.5,50.0,Baseline 2: sector x size median,1
+c30394384e,2024Q4,First Eagle,5.25,4.25,100.0,Baseline 2: sector x size median,1
+c34da7e717,2024Q4,Brightwood Capital Corp I,7.5,5.75,175.0,Baseline 2: sector x size median,1
+c5a49793a9,2024Q4,Overland Advantage,6.75,5.5,125.0,Baseline 2: sector x size median,1
+c859e37758,2024Q4,Jefferies,5.0,6.0,100.0,Baseline 2: sector x size median,1
+cb2c2b142b,2024Q4,Bain Capital,7.0,6.05,95.00000000000001,Baseline 2: sector x size median,1
+cc2de3248d,2024Q4,Stellus,5.25,5.375,12.5,Baseline 2: sector x size median,1
+cc381a6226,2024Q4,Apollo,4.0,6.0,200.0,Baseline 2: sector x size median,1
+cd63ba5bce,2024Q4,BlackRock,3.25,5.5,225.0,Baseline 2: sector x size median,1
+d11e7492f3,2024Q4,Jefferies,4.75,6.0,125.0,Baseline 2: sector x size median,1
+d27cbf4242,2024Q4,Manulife Private Credit Fund,5.0,5.0,0.0,Baseline 2: sector x size median,1
+d2ca8493aa,2024Q4,Msd Investment Corp.,5.5,6.0,50.0,Baseline 2: sector x size median,1
+d2d6d37ecc,2024Q4,Brightwood Capital Corp I,4.25,5.0,75.0,Baseline 2: sector x size median,1
+d35a1ba5e2,2024Q4,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,1
+d47f8feb16,2024Q4,Comvest,5.0,5.5,50.0,Baseline 2: sector x size median,1
+d4c8e5c6a7,2024Q4,Comvest,6.0,5.75,25.0,Baseline 2: sector x size median,1
+d5fcd36c39,2024Q4,Stellus,5.25,5.625,37.5,Baseline 2: sector x size median,1
+d65851cd1a,2024Q4,Redwood Enhanced Income Corp.,6.0,5.75,25.0,Baseline 2: sector x size median,1
+d72a470771,2024Q4,PennantPark,4.75,6.0,125.0,Baseline 2: sector x size median,1
+d8b7b26f39,2024Q4,First Eagle,3.0,4.25,125.0,Baseline 2: sector x size median,1
+d8ff3af6fb,2024Q4,Palmer Square Capital Bdc Inc.,5.0,5.0,0.0,Baseline 2: sector x size median,1
+db728802ce,2024Q4,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 2: sector x size median,1
+dba7c631cf,2024Q4,Goldman Sachs,4.25,3.875,37.5,Baseline 2: sector x size median,1
+dc29c191a8,2024Q4,Comvest,6.5,6.0,50.0,Baseline 2: sector x size median,1
+de366a645c,2024Q4,BC Partners,8.0,4.25,375.0,Baseline 2: sector x size median,1
+df2403f012,2024Q4,Jefferies,5.0,5.75,75.0,Baseline 2: sector x size median,1
+e053ce8d9d,2024Q4,Apollo,4.5,6.0,150.0,Baseline 2: sector x size median,1
+e10769f85f,2024Q4,Manulife Private Credit Fund,5.25,3.75,150.0,Baseline 2: sector x size median,1
+e218121898,2024Q4,Antares,3.25,5.0,175.0,Baseline 2: sector x size median,1
+e269e3a950,2024Q4,Manulife Private Credit Fund,4.75,6.0,125.0,Baseline 2: sector x size median,1
+e293e15c08,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.5,100.0,Baseline 2: sector x size median,1
+e32e00ed8e,2024Q4,BlackRock,3.0,4.25,125.0,Baseline 2: sector x size median,1
+e3e5f7035f,2024Q4,TCW,6.25,5.0,125.0,Baseline 2: sector x size median,1
+e4304a95b5,2024Q4,First Eagle,5.0,5.5,50.0,Baseline 2: sector x size median,1
+e480a2f2a6,2024Q4,First Eagle,5.25,3.75,150.0,Baseline 2: sector x size median,1
+e598dfab1d,2024Q4,Crescent,5.0,5.625,62.5,Baseline 2: sector x size median,1
+e5bc9bc52f,2024Q4,Overland Advantage,3.75,4.25,50.0,Baseline 2: sector x size median,1
+e7bec61135,2024Q4,Goldman Sachs,3.0,3.5,50.0,Baseline 2: sector x size median,1
+e84841c355,2024Q4,First Eagle,4.25,4.25,0.0,Baseline 2: sector x size median,1
+e8c5c82b49,2024Q4,BlackRock,4.75,3.75,100.0,Baseline 2: sector x size median,1
+e9ac00c224,2024Q4,Apollo,4.0,6.0,200.0,Baseline 2: sector x size median,1
+e9d9b6972d,2024Q4,Silver Point,7.0,5.75,125.0,Baseline 2: sector x size median,1
+ea1e03ea9f,2024Q4,Onex,4.25,4.25,0.0,Baseline 2: sector x size median,1
+eb670f89b3,2024Q4,PennantPark,4.75,6.0,125.0,Baseline 2: sector x size median,1
+ec06d62306,2024Q4,Antares,5.25,5.5,25.0,Baseline 2: sector x size median,1
+ed1bb25ca5,2024Q4,Jefferies,5.0,6.0,100.0,Baseline 2: sector x size median,1
+ee01a4ba3b,2024Q4,Bain Capital,8.5,3.75,475.0,Baseline 2: sector x size median,1
+eeeff504bf,2024Q4,Apollo,3.25,5.5,225.0,Baseline 2: sector x size median,1
+f0fe5968ac,2024Q4,Antares,2.75,4.25,150.0,Baseline 2: sector x size median,1
+f1cd7ca8e1,2024Q4,Apollo,5.25,5.75,50.0,Baseline 2: sector x size median,1
+f2111b5ded,2024Q4,Antares,3.25,5.5,225.0,Baseline 2: sector x size median,1
+f23bccb43a,2024Q4,Crescent,5.0,4.25,75.0,Baseline 2: sector x size median,1
+f6d0cec3c9,2024Q4,Goldman Sachs,4.5,6.0,150.0,Baseline 2: sector x size median,1
+f7930da209,2024Q4,Antares,5.0,6.0,100.0,Baseline 2: sector x size median,1
+f851aa20cb,2024Q4,Goldman Sachs,4.75,6.0,125.0,Baseline 2: sector x size median,1
+f87bfcb113,2024Q4,Comvest,4.75,5.625,87.5,Baseline 2: sector x size median,1
+f91bcd5a58,2024Q4,Msd Investment Corp.,5.0,6.0,100.0,Baseline 2: sector x size median,1
+fbbaa695d4,2024Q4,Stellus,5.25,6.0,75.0,Baseline 2: sector x size median,1
+fdc2612951,2024Q4,Manulife Private Credit Fund,5.25,5.5,25.0,Baseline 2: sector x size median,1
+fe0110ebd8,2024Q4,Crescent,4.5,5.0,50.0,Baseline 2: sector x size median,1
+fe5dbc5ace,2024Q4,Antares,4.75,5.5,75.0,Baseline 2: sector x size median,1
+010d3045ce,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+0219d19d67,2024Q4,Bain Capital,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+026d1fed5c,2024Q4,Antares,2.75,5.427740492170023,267.7740492170023,Reference: training mean,1
+03874ad30c,2024Q4,Apollo,2.5,5.427740492170023,292.7740492170023,Reference: training mean,1
+03f9a9255a,2024Q4,Goldman Sachs,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+04b85beec2,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+04dff676d2,2024Q4,BC Partners,7.0,5.427740492170023,157.2259507829977,Reference: training mean,1
+056db0554f,2024Q4,TCW,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+0771748a67,2024Q4,Comvest,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+079177a92c,2024Q4,First Eagle,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+08bb0b57fc,2024Q4,Goldman Sachs,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+0934d32e05,2024Q4,Silver Point,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+0983593649,2024Q4,Msd Investment Corp.,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+09bb437023,2024Q4,BlackRock,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+09fe14ac89,2024Q4,Overland Advantage,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+0b24481e45,2024Q4,Comvest,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+0c29983bdf,2024Q4,Apollo,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+0c93f11696,2024Q4,First Eagle,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+0d326c82aa,2024Q4,Apollo,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+0dacdffd02,2024Q4,Goldman Sachs,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+0e5298e5a2,2024Q4,Apollo,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+0f3f97b2ff,2024Q4,Stellus,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+0f776a6ca6,2024Q4,PennantPark,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+0fcee9c694,2024Q4,Manulife Private Credit Fund,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+10a8d482ed,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+10d8f13aec,2024Q4,PennantPark,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+1462926ed4,2024Q4,"Whitehorse Finance, Inc.",5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+17fc978b11,2024Q4,Redwood Enhanced Income Corp.,7.5,5.427740492170023,207.2259507829977,Reference: training mean,1
+198224fa08,2024Q4,BlackRock,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+1a1b88b650,2024Q4,BlackRock,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+214ac82287,2024Q4,Manulife Private Credit Fund,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+21f9b12290,2024Q4,Varagon,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+22cc410b4f,2024Q4,Investcorp,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+231ce808bc,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+247a24b818,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+24b0c96e85,2024Q4,BlackRock,3.5,5.427740492170023,192.7740492170023,Reference: training mean,1
+251ad468a6,2024Q4,Comvest,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+28d41ac0bf,2024Q4,PennantPark,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+2da13c032a,2024Q4,Stellus,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+2de7f7370b,2024Q4,BlackRock,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+2f10d206c2,2024Q4,Comvest,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+2fc2430885,2024Q4,Manulife Private Credit Fund,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+2fc4aa47db,2024Q4,Bain Capital,5.4,5.427740492170023,2.7740492170022613,Reference: training mean,1
+33ae9caaf7,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+344f2fb74a,2024Q4,Overland Advantage,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+3544ec929e,2024Q4,Antares,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+394525b4a3,2024Q4,First Eagle,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+3a36e66007,2024Q4,Comvest,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+3a940bf385,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+3b04d78b5b,2024Q4,Onex,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+3e2f0c8306,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+3e7cb2575e,2024Q4,Msd Investment Corp.,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+3f458b57f9,2024Q4,First Eagle,2.25,5.427740492170023,317.7740492170023,Reference: training mean,1
+3fc0620040,2024Q4,Bain Capital,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+433e75655b,2024Q4,Silver Point,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+45bd24dccf,2024Q4,Apollo,2.75,5.427740492170023,267.7740492170023,Reference: training mean,1
+462750b830,2024Q4,Bain Capital,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+469cf66a5e,2024Q4,Stellus,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+48cf8fccbe,2024Q4,Comvest,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+492dfd9c88,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+4bdcb46e82,2024Q4,Palmer Square Capital Bdc Inc.,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+521e1b383a,2024Q4,Apollo,2.25,5.427740492170023,317.7740492170023,Reference: training mean,1
+524b5041cf,2024Q4,Onex,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+5258f82bf2,2024Q4,Goldman Sachs,4.0,5.427740492170023,142.7740492170023,Reference: training mean,1
+529a1740c0,2024Q4,Varagon,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+580b042e2f,2024Q4,Apollo,3.5,5.427740492170023,192.7740492170023,Reference: training mean,1
+5b98738aee,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+5bb7b90e20,2024Q4,Crescent,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+5e940077a5,2024Q4,Apollo,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+5f31813525,2024Q4,Varagon,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+603e423a52,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+61708aa836,2024Q4,Varagon,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+62f7a6d21c,2024Q4,First Eagle,2.0,5.427740492170023,342.7740492170023,Reference: training mean,1
+6471647b2a,2024Q4,Apollo,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+6557be21b4,2024Q4,PennantPark,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+659161ca2d,2024Q4,Brightwood Capital Corp I,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+65df281ad2,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+67260aa136,2024Q4,First Eagle,2.75,5.427740492170023,267.7740492170023,Reference: training mean,1
+67ea5fd785,2024Q4,Varagon,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+694ede194f,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+6cfa1db248,2024Q4,Goldman Sachs,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+6f56717f9f,2024Q4,Crescent,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+6f6883c091,2024Q4,Comvest,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+71334c225b,2024Q4,Apollo,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+719155ccaf,2024Q4,First Eagle,4.0,5.427740492170023,142.7740492170023,Reference: training mean,1
+723f65ef13,2024Q4,Brightwood Capital Corp I,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+724370998e,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+73c4f41a4a,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+73e0a477bc,2024Q4,TCW,6.25,5.427740492170023,82.2259507829977,Reference: training mean,1
+743ba328c6,2024Q4,Varagon,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+75453a3b9d,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+767432d9ee,2024Q4,Apollo,6.25,5.427740492170023,82.2259507829977,Reference: training mean,1
+76b03c64df,2024Q4,Jefferies,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+773c0986c7,2024Q4,Comvest,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+7a53359631,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+7ab38b27ae,2024Q4,Goldman Sachs,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+7bf498d9f6,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+7cc8f35d8a,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+7f22f99e6e,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+7f7ecce11c,2024Q4,Palmer Square Capital Bdc Inc.,3.5,5.427740492170023,192.7740492170023,Reference: training mean,1
+833d4ed52b,2024Q4,First Eagle,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+850b278a23,2024Q4,Goldman Sachs,3.5,5.427740492170023,192.7740492170023,Reference: training mean,1
+8629375f1e,2024Q4,Overland Advantage,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+88401b42b7,2024Q4,Apollo,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+8c7c8b8cff,2024Q4,Goldman Sachs,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+8e5820256f,2024Q4,First Eagle,3.5,5.427740492170023,192.7740492170023,Reference: training mean,1
+8f9b5812ca,2024Q4,Bain Capital,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+8fc3177d84,2024Q4,Palmer Square Capital Bdc Inc.,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+905b9e1995,2024Q4,Bain Capital,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+939f2809ab,2024Q4,Apollo,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+94917c6dcd,2024Q4,Goldman Sachs,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+94eeeabd05,2024Q4,Bain Capital,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+9605a24ca8,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+974cfd501a,2024Q4,Brightwood Capital Corp I,7.25,5.427740492170023,182.2259507829977,Reference: training mean,1
+97e713e91d,2024Q4,Comvest,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+9915ec5113,2024Q4,First Eagle,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+9c9b378f27,2024Q4,BlackRock,4.0,5.427740492170023,142.7740492170023,Reference: training mean,1
+9e1cf6c221,2024Q4,"Whitehorse Finance, Inc.",5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+9e2eaf6694,2024Q4,Msd Investment Corp.,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+9e861a1f96,2024Q4,Apollo,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+a1f08494c1,2024Q4,BlackRock,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+a1f0a0cac0,2024Q4,Silver Point,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+a3982c3528,2024Q4,Bain Capital,5.6,5.427740492170023,17.225950782997668,Reference: training mean,1
+a959d2ed39,2024Q4,Silver Point,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+a9c6bec944,2024Q4,First Eagle,2.25,5.427740492170023,317.7740492170023,Reference: training mean,1
+aa6a57be45,2024Q4,Stellus,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+ac03ab169b,2024Q4,Jefferies,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+af0991c1e6,2024Q4,Manulife Private Credit Fund,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+b14e4d6903,2024Q4,Comvest,6.25,5.427740492170023,82.2259507829977,Reference: training mean,1
+b1dd7aad6b,2024Q4,Goldman Sachs,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+b4e2953c9b,2024Q4,Stellus,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+b5741433b5,2024Q4,Stellus,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+b61a519656,2024Q4,Goldman Sachs,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+b67e28f565,2024Q4,Apollo,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+b72d65f95a,2024Q4,Silver Point,7.0,5.427740492170023,157.2259507829977,Reference: training mean,1
+b77dbc1878,2024Q4,Manulife Private Credit Fund,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+b873715928,2024Q4,Overland Advantage,4.0,5.427740492170023,142.7740492170023,Reference: training mean,1
+b88dbf67d7,2024Q4,Msd Investment Corp.,5.75,5.427740492170023,32.2259507829977,Reference: training mean,1
+b976899a5a,2024Q4,First Eagle,2.5,5.427740492170023,292.7740492170023,Reference: training mean,1
+b9c2c0ad03,2024Q4,Apollo,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+ba632b7a66,2024Q4,BlackRock,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+bc83b9649b,2024Q4,Silver Point,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+bcfaa50bce,2024Q4,Apollo,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+bd1ea2186f,2024Q4,Apollo,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+be2cf78d9e,2024Q4,BlackRock,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+c30394384e,2024Q4,First Eagle,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+c34da7e717,2024Q4,Brightwood Capital Corp I,7.5,5.427740492170023,207.2259507829977,Reference: training mean,1
+c5a49793a9,2024Q4,Overland Advantage,6.75,5.427740492170023,132.2259507829977,Reference: training mean,1
+c859e37758,2024Q4,Jefferies,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+cb2c2b142b,2024Q4,Bain Capital,7.0,5.427740492170023,157.2259507829977,Reference: training mean,1
+cc2de3248d,2024Q4,Stellus,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+cc381a6226,2024Q4,Apollo,4.0,5.427740492170023,142.7740492170023,Reference: training mean,1
+cd63ba5bce,2024Q4,BlackRock,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+d11e7492f3,2024Q4,Jefferies,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+d27cbf4242,2024Q4,Manulife Private Credit Fund,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+d2ca8493aa,2024Q4,Msd Investment Corp.,5.5,5.427740492170023,7.225950782997703,Reference: training mean,1
+d2d6d37ecc,2024Q4,Brightwood Capital Corp I,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+d35a1ba5e2,2024Q4,Goldman Sachs,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+d47f8feb16,2024Q4,Comvest,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+d4c8e5c6a7,2024Q4,Comvest,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+d5fcd36c39,2024Q4,Stellus,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+d65851cd1a,2024Q4,Redwood Enhanced Income Corp.,6.0,5.427740492170023,57.2259507829977,Reference: training mean,1
+d72a470771,2024Q4,PennantPark,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+d8b7b26f39,2024Q4,First Eagle,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+d8ff3af6fb,2024Q4,Palmer Square Capital Bdc Inc.,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+db728802ce,2024Q4,Palmer Square Capital Bdc Inc.,3.5,5.427740492170023,192.7740492170023,Reference: training mean,1
+dba7c631cf,2024Q4,Goldman Sachs,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+dc29c191a8,2024Q4,Comvest,6.5,5.427740492170023,107.2259507829977,Reference: training mean,1
+de366a645c,2024Q4,BC Partners,8.0,5.427740492170023,257.2259507829977,Reference: training mean,1
+df2403f012,2024Q4,Jefferies,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+e053ce8d9d,2024Q4,Apollo,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+e10769f85f,2024Q4,Manulife Private Credit Fund,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+e218121898,2024Q4,Antares,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+e269e3a950,2024Q4,Manulife Private Credit Fund,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+e293e15c08,2024Q4,Palmer Square Capital Bdc Inc.,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+e32e00ed8e,2024Q4,BlackRock,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+e3e5f7035f,2024Q4,TCW,6.25,5.427740492170023,82.2259507829977,Reference: training mean,1
+e4304a95b5,2024Q4,First Eagle,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+e480a2f2a6,2024Q4,First Eagle,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+e598dfab1d,2024Q4,Crescent,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+e5bc9bc52f,2024Q4,Overland Advantage,3.75,5.427740492170023,167.7740492170023,Reference: training mean,1
+e7bec61135,2024Q4,Goldman Sachs,3.0,5.427740492170023,242.7740492170023,Reference: training mean,1
+e84841c355,2024Q4,First Eagle,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+e8c5c82b49,2024Q4,BlackRock,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+e9ac00c224,2024Q4,Apollo,4.0,5.427740492170023,142.7740492170023,Reference: training mean,1
+e9d9b6972d,2024Q4,Silver Point,7.0,5.427740492170023,157.2259507829977,Reference: training mean,1
+ea1e03ea9f,2024Q4,Onex,4.25,5.427740492170023,117.7740492170023,Reference: training mean,1
+eb670f89b3,2024Q4,PennantPark,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+ec06d62306,2024Q4,Antares,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+ed1bb25ca5,2024Q4,Jefferies,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+ee01a4ba3b,2024Q4,Bain Capital,8.5,5.427740492170023,307.2259507829977,Reference: training mean,1
+eeeff504bf,2024Q4,Apollo,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+f0fe5968ac,2024Q4,Antares,2.75,5.427740492170023,267.7740492170023,Reference: training mean,1
+f1cd7ca8e1,2024Q4,Apollo,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+f2111b5ded,2024Q4,Antares,3.25,5.427740492170023,217.7740492170023,Reference: training mean,1
+f23bccb43a,2024Q4,Crescent,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+f6d0cec3c9,2024Q4,Goldman Sachs,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+f7930da209,2024Q4,Antares,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+f851aa20cb,2024Q4,Goldman Sachs,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+f87bfcb113,2024Q4,Comvest,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+f91bcd5a58,2024Q4,Msd Investment Corp.,5.0,5.427740492170023,42.7740492170023,Reference: training mean,1
+fbbaa695d4,2024Q4,Stellus,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+fdc2612951,2024Q4,Manulife Private Credit Fund,5.25,5.427740492170023,17.774049217002297,Reference: training mean,1
+fe0110ebd8,2024Q4,Crescent,4.5,5.427740492170023,92.7740492170023,Reference: training mean,1
+fe5dbc5ace,2024Q4,Antares,4.75,5.427740492170023,67.7740492170023,Reference: training mean,1
+003a044674,2025Q1,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,2
+00c83f2704,2025Q1,Msd Investment Corp.,4.5,5.0,50.0,Baseline 1: market median t-2,2
+0120c5e32e,2025Q1,"Whitehorse Finance, Inc.",4.75,5.0,25.0,Baseline 1: market median t-2,2
+0135591e87,2025Q1,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,2
+02483e01e9,2025Q1,Varagon,5.0,5.0,0.0,Baseline 1: market median t-2,2
+02540662ae,2025Q1,Bain Capital,2.5,5.0,250.0,Baseline 1: market median t-2,2
+032f5b9347,2025Q1,First Eagle,5.25,5.0,25.0,Baseline 1: market median t-2,2
+082af8303a,2025Q1,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,2
+0856d452fd,2025Q1,Apollo,5.75,5.0,75.0,Baseline 1: market median t-2,2
+0871fbddf8,2025Q1,BlackRock,5.0,5.0,0.0,Baseline 1: market median t-2,2
+0883c1ab2c,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,2
+08a064b4a2,2025Q1,Comvest,5.25,5.0,25.0,Baseline 1: market median t-2,2
+0d43eee685,2025Q1,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,2
+1232f9c8dc,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+14fe9e57f6,2025Q1,Comvest,5.5,5.0,50.0,Baseline 1: market median t-2,2
+1518f0bda5,2025Q1,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,2
+166eafa581,2025Q1,Msd Investment Corp.,7.0,5.0,200.0,Baseline 1: market median t-2,2
+16b6d27d18,2025Q1,BlackRock,2.75,5.0,225.0,Baseline 1: market median t-2,2
+1b049793e6,2025Q1,SLR,5.3,5.0,29.999999999999982,Baseline 1: market median t-2,2
+1c5ac17f4a,2025Q1,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,2
+1e9f2bf919,2025Q1,TCW,6.25,5.0,125.0,Baseline 1: market median t-2,2
+1f4911c875,2025Q1,Agl Private Credit Income Fund,4.75,5.0,25.0,Baseline 1: market median t-2,2
+1f84981b1d,2025Q1,Brightwood Capital Corp I,5.75,5.0,75.0,Baseline 1: market median t-2,2
+2002bb8913,2025Q1,Msd Investment Corp.,6.5,5.0,150.0,Baseline 1: market median t-2,2
+232c7db4c0,2025Q1,Comvest,5.0,5.0,0.0,Baseline 1: market median t-2,2
+249a79bd6b,2025Q1,Apollo,4.25,5.0,75.0,Baseline 1: market median t-2,2
+24e3a4a0ab,2025Q1,Goldman Sachs,2.0,5.0,300.0,Baseline 1: market median t-2,2
+2635b3e200,2025Q1,Bain Capital,5.25,5.0,25.0,Baseline 1: market median t-2,2
+2908a9ca54,2025Q1,TCW,7.5,5.0,250.0,Baseline 1: market median t-2,2
+29221eb622,2025Q1,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,2
+3133dc5a1f,2025Q1,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,2
+323ac9a399,2025Q1,Bain Capital,5.5,5.0,50.0,Baseline 1: market median t-2,2
+342e1c73eb,2025Q1,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,2
+344e732c7d,2025Q1,"Whitehorse Finance, Inc.",5.0,5.0,0.0,Baseline 1: market median t-2,2
+38547e33e4,2025Q1,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,2
+3f4153b63c,2025Q1,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,2
+410dcec0fb,2025Q1,BlackRock,3.0,5.0,200.0,Baseline 1: market median t-2,2
+42f3a71826,2025Q1,First Eagle,5.0,5.0,0.0,Baseline 1: market median t-2,2
+459fbed846,2025Q1,Silver Point,5.5,5.0,50.0,Baseline 1: market median t-2,2
+466b47ddc0,2025Q1,"Whitehorse Finance, Inc.",5.75,5.0,75.0,Baseline 1: market median t-2,2
+4b6749262f,2025Q1,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,2
+4ea9d6f0a8,2025Q1,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,2
+4f2a0a9ba8,2025Q1,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,2
+4f9f78f392,2025Q1,Varagon,5.0,5.0,0.0,Baseline 1: market median t-2,2
+504c9eab8e,2025Q1,Onex,4.75,5.0,25.0,Baseline 1: market median t-2,2
+521a614038,2025Q1,First Eagle,3.5,5.0,150.0,Baseline 1: market median t-2,2
+53bd970639,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+544cda6428,2025Q1,First Eagle,2.75,5.0,225.0,Baseline 1: market median t-2,2
+559e339a1b,2025Q1,Msd Investment Corp.,4.5,5.0,50.0,Baseline 1: market median t-2,2
+575e3ab753,2025Q1,Apollo,2.0,5.0,300.0,Baseline 1: market median t-2,2
+576d46b0ce,2025Q1,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,2
+59c434092a,2025Q1,Apollo,3.0,5.0,200.0,Baseline 1: market median t-2,2
+5c935b9d29,2025Q1,First Eagle,3.5,5.0,150.0,Baseline 1: market median t-2,2
+5f28b1111b,2025Q1,BlackRock,3.25,5.0,175.0,Baseline 1: market median t-2,2
+5f5e65198d,2025Q1,Palmer Square Capital Bdc Inc.,3.25,5.0,175.0,Baseline 1: market median t-2,2
+6179617ac0,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+622d074f00,2025Q1,Comvest,5.0,5.0,0.0,Baseline 1: market median t-2,2
+627568e358,2025Q1,Jefferies,4.5,5.0,50.0,Baseline 1: market median t-2,2
+62942c853c,2025Q1,Apollo,6.0,5.0,100.0,Baseline 1: market median t-2,2
+6772863119,2025Q1,Msd Investment Corp.,5.25,5.0,25.0,Baseline 1: market median t-2,2
+693b772aca,2025Q1,Antares,4.5,5.0,50.0,Baseline 1: market median t-2,2
+695c59b453,2025Q1,Msd Investment Corp.,5.0,5.0,0.0,Baseline 1: market median t-2,2
+697836689f,2025Q1,Antares,5.0,5.0,0.0,Baseline 1: market median t-2,2
+6a63af3e15,2025Q1,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,2
+6e17cd9518,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+72575eb254,2025Q1,Agl Private Credit Income Fund,4.5,5.0,50.0,Baseline 1: market median t-2,2
+7262d3d0ff,2025Q1,"Whitehorse Finance, Inc.",6.25,5.0,125.0,Baseline 1: market median t-2,2
+7811f03d9d,2025Q1,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,2
+789721b391,2025Q1,Goldman Sachs,6.0,5.0,100.0,Baseline 1: market median t-2,2
+7921b70220,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,2
+79915d9f52,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+7ae70e53d1,2025Q1,Apollo,2.25,5.0,275.0,Baseline 1: market median t-2,2
+81de2c0d8a,2025Q1,Apollo,2.0,5.0,300.0,Baseline 1: market median t-2,2
+81fe25c22c,2025Q1,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,2
+8303cb232b,2025Q1,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,2
+849571ab8d,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+874c113d63,2025Q1,PennantPark,4.75,5.0,25.0,Baseline 1: market median t-2,2
+88c89c60b9,2025Q1,Diameter Credit Co,5.0,5.0,0.0,Baseline 1: market median t-2,2
+88e11725fb,2025Q1,Diameter Credit Co,6.6,5.0,159.99999999999997,Baseline 1: market median t-2,2
+8a4f6d8dbe,2025Q1,Palmer Square Capital Bdc Inc.,4.0,5.0,100.0,Baseline 1: market median t-2,2
+8a9a2bc11a,2025Q1,Jefferies,4.75,5.0,25.0,Baseline 1: market median t-2,2
+8bdc267cce,2025Q1,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,2
+8c9d22a137,2025Q1,Onex,4.25,5.0,75.0,Baseline 1: market median t-2,2
+8e4dd7613e,2025Q1,Goldman Sachs,4.75,5.0,25.0,Baseline 1: market median t-2,2
+90808fd6e1,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,2
+90a34d5ad3,2025Q1,Onex,4.5,5.0,50.0,Baseline 1: market median t-2,2
+93a4aaddb0,2025Q1,BlackRock,2.75,5.0,225.0,Baseline 1: market median t-2,2
+944638342a,2025Q1,BlackRock,5.5,5.0,50.0,Baseline 1: market median t-2,2
+94e91136ae,2025Q1,BlackRock,2.75,5.0,225.0,Baseline 1: market median t-2,2
+9670b60ca9,2025Q1,Varagon,5.5,5.0,50.0,Baseline 1: market median t-2,2
+977ca5b0fd,2025Q1,Antares,5.0,5.0,0.0,Baseline 1: market median t-2,2
+9787496b97,2025Q1,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,2
+98ac56f020,2025Q1,BlackRock,3.0,5.0,200.0,Baseline 1: market median t-2,2
+9e83398f39,2025Q1,Apollo,5.5,5.0,50.0,Baseline 1: market median t-2,2
+a0feaa71ef,2025Q1,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,2
+a1c62cc173,2025Q1,BlackRock,3.5,5.0,150.0,Baseline 1: market median t-2,2
+a542b93b98,2025Q1,Goldman Sachs,3.0,5.0,200.0,Baseline 1: market median t-2,2
+a6ab35a7a4,2025Q1,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,2
+a963c15add,2025Q1,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,2
+a9782f30b5,2025Q1,"Whitehorse Finance, Inc.",5.0,5.0,0.0,Baseline 1: market median t-2,2
+aaf43ab717,2025Q1,Bain Capital,5.0,5.0,0.0,Baseline 1: market median t-2,2
+ab385dc5f8,2025Q1,Stellus,5.5,5.0,50.0,Baseline 1: market median t-2,2
+ac942f39ce,2025Q1,PennantPark,9.0,5.0,400.0,Baseline 1: market median t-2,2
+acdeda2b06,2025Q1,BlackRock,3.0,5.0,200.0,Baseline 1: market median t-2,2
+adf2c57681,2025Q1,Stellus,5.25,5.0,25.0,Baseline 1: market median t-2,2
+b0295a91c7,2025Q1,Bain Capital,5.5,5.0,50.0,Baseline 1: market median t-2,2
+b1dd0c5d6a,2025Q1,BlackRock,3.25,5.0,175.0,Baseline 1: market median t-2,2
+b20b075a4e,2025Q1,Palmer Square Capital Bdc Inc.,4.0,5.0,100.0,Baseline 1: market median t-2,2
+b28654615f,2025Q1,SLR,5.0,5.0,0.0,Baseline 1: market median t-2,2
+b34a08087a,2025Q1,BlackRock,4.0,5.0,100.0,Baseline 1: market median t-2,2
+b49a9d420b,2025Q1,PennantPark,4.75,5.0,25.0,Baseline 1: market median t-2,2
+bddac826ba,2025Q1,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,2
+bec64c09c0,2025Q1,Jefferies,4.5,5.0,50.0,Baseline 1: market median t-2,2
+c25b304319,2025Q1,Silver Point,7.0,5.0,200.0,Baseline 1: market median t-2,2
+c2cf5fd935,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,2
+c3f2837b9f,2025Q1,Agl Private Credit Income Fund,5.0,5.0,0.0,Baseline 1: market median t-2,2
+c41953bd24,2025Q1,Brightwood Capital Corp I,6.0,5.0,100.0,Baseline 1: market median t-2,2
+c561d4e86f,2025Q1,Apollo,5.0,5.0,0.0,Baseline 1: market median t-2,2
+ca9934639a,2025Q1,Apollo,2.25,5.0,275.0,Baseline 1: market median t-2,2
+cb1a14bb6a,2025Q1,"Andalusian Credit Company, Llc",4.75,5.0,25.0,Baseline 1: market median t-2,2
+d009b4c221,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 1: market median t-2,2
+d01143b44e,2025Q1,Bain Capital,2.25,5.0,275.0,Baseline 1: market median t-2,2
+d256de074e,2025Q1,Antares,4.0,5.0,100.0,Baseline 1: market median t-2,2
+d36df7a5ef,2025Q1,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,2
+d47cab5ab8,2025Q1,Apollo,4.0,5.0,100.0,Baseline 1: market median t-2,2
+d53460005e,2025Q1,PennantPark,5.75,5.0,75.0,Baseline 1: market median t-2,2
+d6815cad77,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+d73fc85044,2025Q1,Silver Point,5.25,5.0,25.0,Baseline 1: market median t-2,2
+d7b9691afe,2025Q1,Crescent,5.0,5.0,0.0,Baseline 1: market median t-2,2
+da3e94de15,2025Q1,BlackRock,3.25,5.0,175.0,Baseline 1: market median t-2,2
+dabeee7714,2025Q1,Palmer Square Capital Bdc Inc.,3.25,5.0,175.0,Baseline 1: market median t-2,2
+dbe02f1773,2025Q1,Antares,4.75,5.0,25.0,Baseline 1: market median t-2,2
+e0db90da36,2025Q1,Varagon,4.75,5.0,25.0,Baseline 1: market median t-2,2
+e4397a5f60,2025Q1,Investcorp,5.0,5.0,0.0,Baseline 1: market median t-2,2
+e72538ae0d,2025Q1,Antares,4.5,5.0,50.0,Baseline 1: market median t-2,2
+e7e55eae09,2025Q1,Varagon,4.75,5.0,25.0,Baseline 1: market median t-2,2
+e80e65c538,2025Q1,Apollo,4.75,5.0,25.0,Baseline 1: market median t-2,2
+ea87aeb0f4,2025Q1,Goldman Sachs,3.25,5.0,175.0,Baseline 1: market median t-2,2
+ec0c0802a9,2025Q1,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,2
+efcb523a75,2025Q1,Apollo,5.25,5.0,25.0,Baseline 1: market median t-2,2
+f1c8d92691,2025Q1,Apollo,6.5,5.0,150.0,Baseline 1: market median t-2,2
+f34a62f7b8,2025Q1,Goldman Sachs,3.0,5.0,200.0,Baseline 1: market median t-2,2
+f38fb82237,2025Q1,Msd Investment Corp.,7.0,5.0,200.0,Baseline 1: market median t-2,2
+f415711592,2025Q1,Apollo,4.5,5.0,50.0,Baseline 1: market median t-2,2
+f50203ebd2,2025Q1,Antares,4.5,5.0,50.0,Baseline 1: market median t-2,2
+f5a2842e05,2025Q1,Jefferies,5.0,5.0,0.0,Baseline 1: market median t-2,2
+f9a8a62e63,2025Q1,Antares,3.25,5.0,175.0,Baseline 1: market median t-2,2
+f9b184c965,2025Q1,First Eagle,5.5,5.0,50.0,Baseline 1: market median t-2,2
+fa496b6d5b,2025Q1,Varagon,4.75,5.0,25.0,Baseline 1: market median t-2,2
+fa56b6daf8,2025Q1,Apollo,3.25,5.0,175.0,Baseline 1: market median t-2,2
+ff4710081c,2025Q1,Palmer Square Capital Bdc Inc.,5.0,5.0,0.0,Baseline 1: market median t-2,2
+003a044674,2025Q1,Bain Capital,5.0,5.5,50.0,Baseline 2: sector x size median,2
+00c83f2704,2025Q1,Msd Investment Corp.,4.5,5.25,75.0,Baseline 2: sector x size median,2
+0120c5e32e,2025Q1,"Whitehorse Finance, Inc.",4.75,5.375,62.5,Baseline 2: sector x size median,2
+0135591e87,2025Q1,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,2
+02483e01e9,2025Q1,Varagon,5.0,5.375,37.5,Baseline 2: sector x size median,2
+02540662ae,2025Q1,Bain Capital,2.5,3.75,125.0,Baseline 2: sector x size median,2
+032f5b9347,2025Q1,First Eagle,5.25,5.75,50.0,Baseline 2: sector x size median,2
+082af8303a,2025Q1,Goldman Sachs,4.75,5.5,75.0,Baseline 2: sector x size median,2
+0856d452fd,2025Q1,Apollo,5.75,5.25,50.0,Baseline 2: sector x size median,2
+0871fbddf8,2025Q1,BlackRock,5.0,5.375,37.5,Baseline 2: sector x size median,2
+0883c1ab2c,2025Q1,Palmer Square Capital Bdc Inc.,3.5,3.75,25.0,Baseline 2: sector x size median,2
+08a064b4a2,2025Q1,Comvest,5.25,5.75,50.0,Baseline 2: sector x size median,2
+0d43eee685,2025Q1,Antares,4.75,5.75,100.0,Baseline 2: sector x size median,2
+1232f9c8dc,2025Q1,Apollo,4.75,5.25,50.0,Baseline 2: sector x size median,2
+14fe9e57f6,2025Q1,Comvest,5.5,5.875,37.5,Baseline 2: sector x size median,2
+1518f0bda5,2025Q1,Stellus,5.25,5.5,25.0,Baseline 2: sector x size median,2
+166eafa581,2025Q1,Msd Investment Corp.,7.0,5.25,175.0,Baseline 2: sector x size median,2
+16b6d27d18,2025Q1,BlackRock,2.75,5.375,262.5,Baseline 2: sector x size median,2
+1b049793e6,2025Q1,SLR,5.3,5.25,4.999999999999982,Baseline 2: sector x size median,2
+1c5ac17f4a,2025Q1,Apollo,5.25,5.5,25.0,Baseline 2: sector x size median,2
+1e9f2bf919,2025Q1,TCW,6.25,5.375,87.5,Baseline 2: sector x size median,2
+1f4911c875,2025Q1,Agl Private Credit Income Fund,4.75,5.25,50.0,Baseline 2: sector x size median,2
+1f84981b1d,2025Q1,Brightwood Capital Corp I,5.75,5.875,12.5,Baseline 2: sector x size median,2
+2002bb8913,2025Q1,Msd Investment Corp.,6.5,5.5,100.0,Baseline 2: sector x size median,2
+232c7db4c0,2025Q1,Comvest,5.0,5.5,50.0,Baseline 2: sector x size median,2
+249a79bd6b,2025Q1,Apollo,4.25,6.125,187.5,Baseline 2: sector x size median,2
+24e3a4a0ab,2025Q1,Goldman Sachs,2.0,6.5,450.0,Baseline 2: sector x size median,2
+2635b3e200,2025Q1,Bain Capital,5.25,4.25,100.0,Baseline 2: sector x size median,2
+2908a9ca54,2025Q1,TCW,7.5,6.0,150.0,Baseline 2: sector x size median,2
+29221eb622,2025Q1,Bain Capital,5.0,5.25,25.0,Baseline 2: sector x size median,2
+3133dc5a1f,2025Q1,Jefferies,4.75,5.5,75.0,Baseline 2: sector x size median,2
+323ac9a399,2025Q1,Bain Capital,5.5,5.5,0.0,Baseline 2: sector x size median,2
+342e1c73eb,2025Q1,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,2
+344e732c7d,2025Q1,"Whitehorse Finance, Inc.",5.0,5.5,50.0,Baseline 2: sector x size median,2
+38547e33e4,2025Q1,Antares,4.75,5.5,75.0,Baseline 2: sector x size median,2
+3f4153b63c,2025Q1,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,2
+410dcec0fb,2025Q1,BlackRock,3.0,3.875,87.5,Baseline 2: sector x size median,2
+42f3a71826,2025Q1,First Eagle,5.0,5.5,50.0,Baseline 2: sector x size median,2
+459fbed846,2025Q1,Silver Point,5.5,6.0,50.0,Baseline 2: sector x size median,2
+466b47ddc0,2025Q1,"Whitehorse Finance, Inc.",5.75,4.25,150.0,Baseline 2: sector x size median,2
+4b6749262f,2025Q1,Apollo,3.25,5.5,225.0,Baseline 2: sector x size median,2
+4ea9d6f0a8,2025Q1,Apollo,3.25,5.375,212.5,Baseline 2: sector x size median,2
+4f2a0a9ba8,2025Q1,Apollo,5.0,5.25,25.0,Baseline 2: sector x size median,2
+4f9f78f392,2025Q1,Varagon,5.0,5.375,37.5,Baseline 2: sector x size median,2
+504c9eab8e,2025Q1,Onex,4.75,4.25,50.0,Baseline 2: sector x size median,2
+521a614038,2025Q1,First Eagle,3.5,3.75,25.0,Baseline 2: sector x size median,2
+53bd970639,2025Q1,Apollo,4.75,5.25,50.0,Baseline 2: sector x size median,2
+544cda6428,2025Q1,First Eagle,2.75,4.25,150.0,Baseline 2: sector x size median,2
+559e339a1b,2025Q1,Msd Investment Corp.,4.5,5.5,100.0,Baseline 2: sector x size median,2
+575e3ab753,2025Q1,Apollo,2.0,6.5,450.0,Baseline 2: sector x size median,2
+576d46b0ce,2025Q1,BlackRock,3.5,3.75,25.0,Baseline 2: sector x size median,2
+59c434092a,2025Q1,Apollo,3.0,5.25,225.0,Baseline 2: sector x size median,2
+5c935b9d29,2025Q1,First Eagle,3.5,4.25,75.0,Baseline 2: sector x size median,2
+5f28b1111b,2025Q1,BlackRock,3.25,6.0,275.0,Baseline 2: sector x size median,2
+5f5e65198d,2025Q1,Palmer Square Capital Bdc Inc.,3.25,3.75,50.0,Baseline 2: sector x size median,2
+6179617ac0,2025Q1,Apollo,4.75,4.75,0.0,Baseline 2: sector x size median,2
+622d074f00,2025Q1,Comvest,5.0,5.5,50.0,Baseline 2: sector x size median,2
+627568e358,2025Q1,Jefferies,4.5,5.75,125.0,Baseline 2: sector x size median,2
+62942c853c,2025Q1,Apollo,6.0,5.25,75.0,Baseline 2: sector x size median,2
+6772863119,2025Q1,Msd Investment Corp.,5.25,5.5,25.0,Baseline 2: sector x size median,2
+693b772aca,2025Q1,Antares,4.5,5.5,100.0,Baseline 2: sector x size median,2
+695c59b453,2025Q1,Msd Investment Corp.,5.0,6.125,112.5,Baseline 2: sector x size median,2
+697836689f,2025Q1,Antares,5.0,5.5,50.0,Baseline 2: sector x size median,2
+6a63af3e15,2025Q1,Stellus,5.25,5.5,25.0,Baseline 2: sector x size median,2
+6e17cd9518,2025Q1,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,2
+72575eb254,2025Q1,Agl Private Credit Income Fund,4.5,5.75,125.0,Baseline 2: sector x size median,2
+7262d3d0ff,2025Q1,"Whitehorse Finance, Inc.",6.25,5.5,75.0,Baseline 2: sector x size median,2
+7811f03d9d,2025Q1,Goldman Sachs,4.75,5.25,50.0,Baseline 2: sector x size median,2
+789721b391,2025Q1,Goldman Sachs,6.0,5.25,75.0,Baseline 2: sector x size median,2
+7921b70220,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.0,150.0,Baseline 2: sector x size median,2
+79915d9f52,2025Q1,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,2
+7ae70e53d1,2025Q1,Apollo,2.25,5.75,350.0,Baseline 2: sector x size median,2
+81de2c0d8a,2025Q1,Apollo,2.0,5.875,387.5,Baseline 2: sector x size median,2
+81fe25c22c,2025Q1,Goldman Sachs,4.75,5.5,75.0,Baseline 2: sector x size median,2
+8303cb232b,2025Q1,Antares,3.25,4.25,100.0,Baseline 2: sector x size median,2
+849571ab8d,2025Q1,Apollo,4.75,5.75,100.0,Baseline 2: sector x size median,2
+874c113d63,2025Q1,PennantPark,4.75,5.5,75.0,Baseline 2: sector x size median,2
+88c89c60b9,2025Q1,Diameter Credit Co,5.0,5.375,37.5,Baseline 2: sector x size median,2
+88e11725fb,2025Q1,Diameter Credit Co,6.6,6.125,47.499999999999964,Baseline 2: sector x size median,2
+8a4f6d8dbe,2025Q1,Palmer Square Capital Bdc Inc.,4.0,3.75,25.0,Baseline 2: sector x size median,2
+8a9a2bc11a,2025Q1,Jefferies,4.75,5.75,100.0,Baseline 2: sector x size median,2
+8bdc267cce,2025Q1,Antares,4.75,5.75,100.0,Baseline 2: sector x size median,2
+8c9d22a137,2025Q1,Onex,4.25,3.75,50.0,Baseline 2: sector x size median,2
+8e4dd7613e,2025Q1,Goldman Sachs,4.75,5.25,50.0,Baseline 2: sector x size median,2
+90808fd6e1,2025Q1,Palmer Square Capital Bdc Inc.,3.5,4.25,75.0,Baseline 2: sector x size median,2
+90a34d5ad3,2025Q1,Onex,4.5,5.375,87.5,Baseline 2: sector x size median,2
+93a4aaddb0,2025Q1,BlackRock,2.75,3.75,100.0,Baseline 2: sector x size median,2
+944638342a,2025Q1,BlackRock,5.5,3.875,162.5,Baseline 2: sector x size median,2
+94e91136ae,2025Q1,BlackRock,2.75,4.25,150.0,Baseline 2: sector x size median,2
+9670b60ca9,2025Q1,Varagon,5.5,6.0,50.0,Baseline 2: sector x size median,2
+977ca5b0fd,2025Q1,Antares,5.0,5.25,25.0,Baseline 2: sector x size median,2
+9787496b97,2025Q1,Apollo,5.0,5.375,37.5,Baseline 2: sector x size median,2
+98ac56f020,2025Q1,BlackRock,3.0,4.25,125.0,Baseline 2: sector x size median,2
+9e83398f39,2025Q1,Apollo,5.5,5.5,0.0,Baseline 2: sector x size median,2
+a0feaa71ef,2025Q1,Antares,4.75,5.375,62.5,Baseline 2: sector x size median,2
+a1c62cc173,2025Q1,BlackRock,3.5,3.875,37.5,Baseline 2: sector x size median,2
+a542b93b98,2025Q1,Goldman Sachs,3.0,5.5,250.0,Baseline 2: sector x size median,2
+a6ab35a7a4,2025Q1,Apollo,5.25,5.5,25.0,Baseline 2: sector x size median,2
+a963c15add,2025Q1,Stellus,5.25,6.0,75.0,Baseline 2: sector x size median,2
+a9782f30b5,2025Q1,"Whitehorse Finance, Inc.",5.0,4.75,25.0,Baseline 2: sector x size median,2
+aaf43ab717,2025Q1,Bain Capital,5.0,5.5,50.0,Baseline 2: sector x size median,2
+ab385dc5f8,2025Q1,Stellus,5.5,5.5,0.0,Baseline 2: sector x size median,2
+ac942f39ce,2025Q1,PennantPark,9.0,5.875,312.5,Baseline 2: sector x size median,2
+acdeda2b06,2025Q1,BlackRock,3.0,3.75,75.0,Baseline 2: sector x size median,2
+adf2c57681,2025Q1,Stellus,5.25,5.5,25.0,Baseline 2: sector x size median,2
+b0295a91c7,2025Q1,Bain Capital,5.5,5.25,25.0,Baseline 2: sector x size median,2
+b1dd0c5d6a,2025Q1,BlackRock,3.25,3.75,50.0,Baseline 2: sector x size median,2
+b20b075a4e,2025Q1,Palmer Square Capital Bdc Inc.,4.0,5.875,187.5,Baseline 2: sector x size median,2
+b28654615f,2025Q1,SLR,5.0,5.875,87.5,Baseline 2: sector x size median,2
+b34a08087a,2025Q1,BlackRock,4.0,5.5,150.0,Baseline 2: sector x size median,2
+b49a9d420b,2025Q1,PennantPark,4.75,5.5,75.0,Baseline 2: sector x size median,2
+bddac826ba,2025Q1,Crescent,5.0,4.25,75.0,Baseline 2: sector x size median,2
+bec64c09c0,2025Q1,Jefferies,4.5,5.5,100.0,Baseline 2: sector x size median,2
+c25b304319,2025Q1,Silver Point,7.0,6.5,50.0,Baseline 2: sector x size median,2
+c2cf5fd935,2025Q1,Palmer Square Capital Bdc Inc.,3.5,3.75,25.0,Baseline 2: sector x size median,2
+c3f2837b9f,2025Q1,Agl Private Credit Income Fund,5.0,5.75,75.0,Baseline 2: sector x size median,2
+c41953bd24,2025Q1,Brightwood Capital Corp I,6.0,5.5,50.0,Baseline 2: sector x size median,2
+c561d4e86f,2025Q1,Apollo,5.0,5.375,37.5,Baseline 2: sector x size median,2
+ca9934639a,2025Q1,Apollo,2.25,5.25,300.0,Baseline 2: sector x size median,2
+cb1a14bb6a,2025Q1,"Andalusian Credit Company, Llc",4.75,5.5,75.0,Baseline 2: sector x size median,2
+d009b4c221,2025Q1,Palmer Square Capital Bdc Inc.,3.5,3.25,25.0,Baseline 2: sector x size median,2
+d01143b44e,2025Q1,Bain Capital,2.25,4.25,200.0,Baseline 2: sector x size median,2
+d256de074e,2025Q1,Antares,4.0,5.875,187.5,Baseline 2: sector x size median,2
+d36df7a5ef,2025Q1,Apollo,3.25,5.25,200.0,Baseline 2: sector x size median,2
+d47cab5ab8,2025Q1,Apollo,4.0,5.5,150.0,Baseline 2: sector x size median,2
+d53460005e,2025Q1,PennantPark,5.75,5.5,25.0,Baseline 2: sector x size median,2
+d6815cad77,2025Q1,Apollo,4.75,5.0,25.0,Baseline 2: sector x size median,2
+d73fc85044,2025Q1,Silver Point,5.25,5.75,50.0,Baseline 2: sector x size median,2
+d7b9691afe,2025Q1,Crescent,5.0,3.75,125.0,Baseline 2: sector x size median,2
+da3e94de15,2025Q1,BlackRock,3.25,3.75,50.0,Baseline 2: sector x size median,2
+dabeee7714,2025Q1,Palmer Square Capital Bdc Inc.,3.25,3.75,50.0,Baseline 2: sector x size median,2
+dbe02f1773,2025Q1,Antares,4.75,5.25,50.0,Baseline 2: sector x size median,2
+e0db90da36,2025Q1,Varagon,4.75,5.375,62.5,Baseline 2: sector x size median,2
+e4397a5f60,2025Q1,Investcorp,5.0,3.75,125.0,Baseline 2: sector x size median,2
+e72538ae0d,2025Q1,Antares,4.5,5.25,75.0,Baseline 2: sector x size median,2
+e7e55eae09,2025Q1,Varagon,4.75,5.5,75.0,Baseline 2: sector x size median,2
+e80e65c538,2025Q1,Apollo,4.75,5.5,75.0,Baseline 2: sector x size median,2
+ea87aeb0f4,2025Q1,Goldman Sachs,3.25,4.25,100.0,Baseline 2: sector x size median,2
+ec0c0802a9,2025Q1,Apollo,3.25,5.75,250.0,Baseline 2: sector x size median,2
+efcb523a75,2025Q1,Apollo,5.25,5.5,25.0,Baseline 2: sector x size median,2
+f1c8d92691,2025Q1,Apollo,6.5,5.75,75.0,Baseline 2: sector x size median,2
+f34a62f7b8,2025Q1,Goldman Sachs,3.0,5.5,250.0,Baseline 2: sector x size median,2
+f38fb82237,2025Q1,Msd Investment Corp.,7.0,5.25,175.0,Baseline 2: sector x size median,2
+f415711592,2025Q1,Apollo,4.5,6.0,150.0,Baseline 2: sector x size median,2
+f50203ebd2,2025Q1,Antares,4.5,5.5,100.0,Baseline 2: sector x size median,2
+f5a2842e05,2025Q1,Jefferies,5.0,5.375,37.5,Baseline 2: sector x size median,2
+f9a8a62e63,2025Q1,Antares,3.25,3.75,50.0,Baseline 2: sector x size median,2
+f9b184c965,2025Q1,First Eagle,5.5,3.25,225.0,Baseline 2: sector x size median,2
+fa496b6d5b,2025Q1,Varagon,4.75,4.25,50.0,Baseline 2: sector x size median,2
+fa56b6daf8,2025Q1,Apollo,3.25,6.0,275.0,Baseline 2: sector x size median,2
+ff4710081c,2025Q1,Palmer Square Capital Bdc Inc.,5.0,3.75,125.0,Baseline 2: sector x size median,2
+003a044674,2025Q1,Bain Capital,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+00c83f2704,2025Q1,Msd Investment Corp.,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+0120c5e32e,2025Q1,"Whitehorse Finance, Inc.",4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+0135591e87,2025Q1,Apollo,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+02483e01e9,2025Q1,Varagon,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+02540662ae,2025Q1,Bain Capital,2.5,5.227958532695375,272.7958532695375,Reference: training mean,2
+032f5b9347,2025Q1,First Eagle,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+082af8303a,2025Q1,Goldman Sachs,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+0856d452fd,2025Q1,Apollo,5.75,5.227958532695375,52.2041467304625,Reference: training mean,2
+0871fbddf8,2025Q1,BlackRock,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+0883c1ab2c,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+08a064b4a2,2025Q1,Comvest,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+0d43eee685,2025Q1,Antares,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+1232f9c8dc,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+14fe9e57f6,2025Q1,Comvest,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+1518f0bda5,2025Q1,Stellus,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+166eafa581,2025Q1,Msd Investment Corp.,7.0,5.227958532695375,177.2041467304625,Reference: training mean,2
+16b6d27d18,2025Q1,BlackRock,2.75,5.227958532695375,247.7958532695375,Reference: training mean,2
+1b049793e6,2025Q1,SLR,5.3,5.227958532695375,7.2041467304624796,Reference: training mean,2
+1c5ac17f4a,2025Q1,Apollo,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+1e9f2bf919,2025Q1,TCW,6.25,5.227958532695375,102.2041467304625,Reference: training mean,2
+1f4911c875,2025Q1,Agl Private Credit Income Fund,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+1f84981b1d,2025Q1,Brightwood Capital Corp I,5.75,5.227958532695375,52.2041467304625,Reference: training mean,2
+2002bb8913,2025Q1,Msd Investment Corp.,6.5,5.227958532695375,127.2041467304625,Reference: training mean,2
+232c7db4c0,2025Q1,Comvest,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+249a79bd6b,2025Q1,Apollo,4.25,5.227958532695375,97.7958532695375,Reference: training mean,2
+24e3a4a0ab,2025Q1,Goldman Sachs,2.0,5.227958532695375,322.7958532695375,Reference: training mean,2
+2635b3e200,2025Q1,Bain Capital,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+2908a9ca54,2025Q1,TCW,7.5,5.227958532695375,227.2041467304625,Reference: training mean,2
+29221eb622,2025Q1,Bain Capital,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+3133dc5a1f,2025Q1,Jefferies,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+323ac9a399,2025Q1,Bain Capital,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+342e1c73eb,2025Q1,Apollo,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+344e732c7d,2025Q1,"Whitehorse Finance, Inc.",5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+38547e33e4,2025Q1,Antares,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+3f4153b63c,2025Q1,Apollo,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+410dcec0fb,2025Q1,BlackRock,3.0,5.227958532695375,222.7958532695375,Reference: training mean,2
+42f3a71826,2025Q1,First Eagle,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+459fbed846,2025Q1,Silver Point,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+466b47ddc0,2025Q1,"Whitehorse Finance, Inc.",5.75,5.227958532695375,52.2041467304625,Reference: training mean,2
+4b6749262f,2025Q1,Apollo,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+4ea9d6f0a8,2025Q1,Apollo,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+4f2a0a9ba8,2025Q1,Apollo,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+4f9f78f392,2025Q1,Varagon,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+504c9eab8e,2025Q1,Onex,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+521a614038,2025Q1,First Eagle,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+53bd970639,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+544cda6428,2025Q1,First Eagle,2.75,5.227958532695375,247.7958532695375,Reference: training mean,2
+559e339a1b,2025Q1,Msd Investment Corp.,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+575e3ab753,2025Q1,Apollo,2.0,5.227958532695375,322.7958532695375,Reference: training mean,2
+576d46b0ce,2025Q1,BlackRock,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+59c434092a,2025Q1,Apollo,3.0,5.227958532695375,222.7958532695375,Reference: training mean,2
+5c935b9d29,2025Q1,First Eagle,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+5f28b1111b,2025Q1,BlackRock,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+5f5e65198d,2025Q1,Palmer Square Capital Bdc Inc.,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+6179617ac0,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+622d074f00,2025Q1,Comvest,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+627568e358,2025Q1,Jefferies,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+62942c853c,2025Q1,Apollo,6.0,5.227958532695375,77.2041467304625,Reference: training mean,2
+6772863119,2025Q1,Msd Investment Corp.,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+693b772aca,2025Q1,Antares,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+695c59b453,2025Q1,Msd Investment Corp.,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+697836689f,2025Q1,Antares,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+6a63af3e15,2025Q1,Stellus,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+6e17cd9518,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+72575eb254,2025Q1,Agl Private Credit Income Fund,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+7262d3d0ff,2025Q1,"Whitehorse Finance, Inc.",6.25,5.227958532695375,102.2041467304625,Reference: training mean,2
+7811f03d9d,2025Q1,Goldman Sachs,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+789721b391,2025Q1,Goldman Sachs,6.0,5.227958532695375,77.2041467304625,Reference: training mean,2
+7921b70220,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+79915d9f52,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+7ae70e53d1,2025Q1,Apollo,2.25,5.227958532695375,297.7958532695375,Reference: training mean,2
+81de2c0d8a,2025Q1,Apollo,2.0,5.227958532695375,322.7958532695375,Reference: training mean,2
+81fe25c22c,2025Q1,Goldman Sachs,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+8303cb232b,2025Q1,Antares,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+849571ab8d,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+874c113d63,2025Q1,PennantPark,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+88c89c60b9,2025Q1,Diameter Credit Co,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+88e11725fb,2025Q1,Diameter Credit Co,6.6,5.227958532695375,137.20414673046247,Reference: training mean,2
+8a4f6d8dbe,2025Q1,Palmer Square Capital Bdc Inc.,4.0,5.227958532695375,122.7958532695375,Reference: training mean,2
+8a9a2bc11a,2025Q1,Jefferies,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+8bdc267cce,2025Q1,Antares,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+8c9d22a137,2025Q1,Onex,4.25,5.227958532695375,97.7958532695375,Reference: training mean,2
+8e4dd7613e,2025Q1,Goldman Sachs,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+90808fd6e1,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+90a34d5ad3,2025Q1,Onex,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+93a4aaddb0,2025Q1,BlackRock,2.75,5.227958532695375,247.7958532695375,Reference: training mean,2
+944638342a,2025Q1,BlackRock,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+94e91136ae,2025Q1,BlackRock,2.75,5.227958532695375,247.7958532695375,Reference: training mean,2
+9670b60ca9,2025Q1,Varagon,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+977ca5b0fd,2025Q1,Antares,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+9787496b97,2025Q1,Apollo,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+98ac56f020,2025Q1,BlackRock,3.0,5.227958532695375,222.7958532695375,Reference: training mean,2
+9e83398f39,2025Q1,Apollo,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+a0feaa71ef,2025Q1,Antares,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+a1c62cc173,2025Q1,BlackRock,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+a542b93b98,2025Q1,Goldman Sachs,3.0,5.227958532695375,222.7958532695375,Reference: training mean,2
+a6ab35a7a4,2025Q1,Apollo,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+a963c15add,2025Q1,Stellus,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+a9782f30b5,2025Q1,"Whitehorse Finance, Inc.",5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+aaf43ab717,2025Q1,Bain Capital,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+ab385dc5f8,2025Q1,Stellus,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+ac942f39ce,2025Q1,PennantPark,9.0,5.227958532695375,377.2041467304625,Reference: training mean,2
+acdeda2b06,2025Q1,BlackRock,3.0,5.227958532695375,222.7958532695375,Reference: training mean,2
+adf2c57681,2025Q1,Stellus,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+b0295a91c7,2025Q1,Bain Capital,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+b1dd0c5d6a,2025Q1,BlackRock,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+b20b075a4e,2025Q1,Palmer Square Capital Bdc Inc.,4.0,5.227958532695375,122.7958532695375,Reference: training mean,2
+b28654615f,2025Q1,SLR,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+b34a08087a,2025Q1,BlackRock,4.0,5.227958532695375,122.7958532695375,Reference: training mean,2
+b49a9d420b,2025Q1,PennantPark,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+bddac826ba,2025Q1,Crescent,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+bec64c09c0,2025Q1,Jefferies,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+c25b304319,2025Q1,Silver Point,7.0,5.227958532695375,177.2041467304625,Reference: training mean,2
+c2cf5fd935,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+c3f2837b9f,2025Q1,Agl Private Credit Income Fund,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+c41953bd24,2025Q1,Brightwood Capital Corp I,6.0,5.227958532695375,77.2041467304625,Reference: training mean,2
+c561d4e86f,2025Q1,Apollo,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+ca9934639a,2025Q1,Apollo,2.25,5.227958532695375,297.7958532695375,Reference: training mean,2
+cb1a14bb6a,2025Q1,"Andalusian Credit Company, Llc",4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+d009b4c221,2025Q1,Palmer Square Capital Bdc Inc.,3.5,5.227958532695375,172.7958532695375,Reference: training mean,2
+d01143b44e,2025Q1,Bain Capital,2.25,5.227958532695375,297.7958532695375,Reference: training mean,2
+d256de074e,2025Q1,Antares,4.0,5.227958532695375,122.7958532695375,Reference: training mean,2
+d36df7a5ef,2025Q1,Apollo,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+d47cab5ab8,2025Q1,Apollo,4.0,5.227958532695375,122.7958532695375,Reference: training mean,2
+d53460005e,2025Q1,PennantPark,5.75,5.227958532695375,52.2041467304625,Reference: training mean,2
+d6815cad77,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+d73fc85044,2025Q1,Silver Point,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+d7b9691afe,2025Q1,Crescent,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+da3e94de15,2025Q1,BlackRock,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+dabeee7714,2025Q1,Palmer Square Capital Bdc Inc.,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+dbe02f1773,2025Q1,Antares,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+e0db90da36,2025Q1,Varagon,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+e4397a5f60,2025Q1,Investcorp,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+e72538ae0d,2025Q1,Antares,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+e7e55eae09,2025Q1,Varagon,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+e80e65c538,2025Q1,Apollo,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+ea87aeb0f4,2025Q1,Goldman Sachs,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+ec0c0802a9,2025Q1,Apollo,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+efcb523a75,2025Q1,Apollo,5.25,5.227958532695375,2.2041467304624973,Reference: training mean,2
+f1c8d92691,2025Q1,Apollo,6.5,5.227958532695375,127.2041467304625,Reference: training mean,2
+f34a62f7b8,2025Q1,Goldman Sachs,3.0,5.227958532695375,222.7958532695375,Reference: training mean,2
+f38fb82237,2025Q1,Msd Investment Corp.,7.0,5.227958532695375,177.2041467304625,Reference: training mean,2
+f415711592,2025Q1,Apollo,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+f50203ebd2,2025Q1,Antares,4.5,5.227958532695375,72.7958532695375,Reference: training mean,2
+f5a2842e05,2025Q1,Jefferies,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+f9a8a62e63,2025Q1,Antares,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+f9b184c965,2025Q1,First Eagle,5.5,5.227958532695375,27.204146730462497,Reference: training mean,2
+fa496b6d5b,2025Q1,Varagon,4.75,5.227958532695375,47.7958532695375,Reference: training mean,2
+fa56b6daf8,2025Q1,Apollo,3.25,5.227958532695375,197.7958532695375,Reference: training mean,2
+ff4710081c,2025Q1,Palmer Square Capital Bdc Inc.,5.0,5.227958532695375,22.795853269537503,Reference: training mean,2
+025b24b655,2025Q2,Overland Advantage,5.25,4.75,50.0,Baseline 1: market median t-2,3
+038a55fade,2025Q2,Goldman Sachs,4.0,4.75,75.0,Baseline 1: market median t-2,3
+04faee34f0,2025Q2,Jefferies,5.0,4.75,25.0,Baseline 1: market median t-2,3
+05b4af5a78,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+0657d2a878,2025Q2,Antares,3.5,4.75,125.0,Baseline 1: market median t-2,3
+0863866fec,2025Q2,Overland Advantage,5.25,4.75,50.0,Baseline 1: market median t-2,3
+0932adad40,2025Q2,Palmer Square Capital Bdc Inc.,4.5,4.75,25.0,Baseline 1: market median t-2,3
+0953cd4e44,2025Q2,Antares,3.25,4.75,150.0,Baseline 1: market median t-2,3
+09d80f3b63,2025Q2,Varagon,4.75,4.75,0.0,Baseline 1: market median t-2,3
+0bae35fc55,2025Q2,Goldman Sachs,2.25,4.75,250.0,Baseline 1: market median t-2,3
+10a327918b,2025Q2,Apollo,5.25,4.75,50.0,Baseline 1: market median t-2,3
+14148cf7c4,2025Q2,Antares,3.5,4.75,125.0,Baseline 1: market median t-2,3
+161f020ac2,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+1644ac1348,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+16f20a0f43,2025Q2,Antares,3.25,4.75,150.0,Baseline 1: market median t-2,3
+185b095aa3,2025Q2,Diameter Credit Co,7.25,4.75,250.0,Baseline 1: market median t-2,3
+18b5ac6a49,2025Q2,BC Partners,6.25,4.75,150.0,Baseline 1: market median t-2,3
+19d571b258,2025Q2,Antares,3.0,4.75,175.0,Baseline 1: market median t-2,3
+1d91fb19c9,2025Q2,Comvest,5.5,4.75,75.0,Baseline 1: market median t-2,3
+21feffbfe6,2025Q2,PennantPark,4.75,4.75,0.0,Baseline 1: market median t-2,3
+22d24e2e07,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+282342d751,2025Q2,Apollo,3.25,4.75,150.0,Baseline 1: market median t-2,3
+2986357642,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+2a1650241c,2025Q2,Bain Capital,5.75,4.75,100.0,Baseline 1: market median t-2,3
+2ae881644f,2025Q2,Bain Capital,7.5,4.75,275.0,Baseline 1: market median t-2,3
+2b21e37eb5,2025Q2,Apollo,4.5,4.75,25.0,Baseline 1: market median t-2,3
+2c0d7520f2,2025Q2,BlackRock,5.75,4.75,100.0,Baseline 1: market median t-2,3
+30ef83a59b,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+3490a8b102,2025Q2,Jefferies,4.5,4.75,25.0,Baseline 1: market median t-2,3
+3624e08e0d,2025Q2,Apollo,6.5,4.75,175.0,Baseline 1: market median t-2,3
+373c7164df,2025Q2,Comvest,6.25,4.75,150.0,Baseline 1: market median t-2,3
+3ad0d3f677,2025Q2,Varagon,4.5,4.75,25.0,Baseline 1: market median t-2,3
+3c462a5240,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+3c55b331d4,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+3c73906f43,2025Q2,BlackRock,4.75,4.75,0.0,Baseline 1: market median t-2,3
+3d4e42b81a,2025Q2,Silver Point,3.0,4.75,175.0,Baseline 1: market median t-2,3
+4086bfee59,2025Q2,Overland Advantage,9.0,4.75,425.0,Baseline 1: market median t-2,3
+4174e540d6,2025Q2,Msd Investment Corp.,4.5,4.75,25.0,Baseline 1: market median t-2,3
+4624ae81d8,2025Q2,Jefferies,5.75,4.75,100.0,Baseline 1: market median t-2,3
+4728e75d3c,2025Q2,Antares,4.75,4.75,0.0,Baseline 1: market median t-2,3
+494e38d539,2025Q2,Palmer Square Capital Bdc Inc.,5.25,4.75,50.0,Baseline 1: market median t-2,3
+4de107c533,2025Q2,Comvest,5.25,4.75,50.0,Baseline 1: market median t-2,3
+5aaf97e998,2025Q2,BlackRock,3.25,4.75,150.0,Baseline 1: market median t-2,3
+5c0434978b,2025Q2,Manulife Private Credit Fund,5.0,4.75,25.0,Baseline 1: market median t-2,3
+5c3d7e9f90,2025Q2,Diameter Credit Co,5.0,4.75,25.0,Baseline 1: market median t-2,3
+5dd68341bb,2025Q2,BlackRock,4.0,4.75,75.0,Baseline 1: market median t-2,3
+5de0500439,2025Q2,Antares,2.75,4.75,200.0,Baseline 1: market median t-2,3
+5f8169461e,2025Q2,"Whitehorse Finance, Inc.",6.0,4.75,125.0,Baseline 1: market median t-2,3
+62135cfea2,2025Q2,Jefferies,5.0,4.75,25.0,Baseline 1: market median t-2,3
+651e640432,2025Q2,Silver Point,3.0,4.75,175.0,Baseline 1: market median t-2,3
+662a335152,2025Q2,Stellus,5.0,4.75,25.0,Baseline 1: market median t-2,3
+66d6dd21d0,2025Q2,First Eagle,5.0,4.75,25.0,Baseline 1: market median t-2,3
+6b87aeab6c,2025Q2,Apollo,4.5,4.75,25.0,Baseline 1: market median t-2,3
+6ea0602448,2025Q2,First Eagle,4.75,4.75,0.0,Baseline 1: market median t-2,3
+6fbd34b95f,2025Q2,Antares,4.5,4.75,25.0,Baseline 1: market median t-2,3
+738349c1ab,2025Q2,Jefferies,5.0,4.75,25.0,Baseline 1: market median t-2,3
+7480236747,2025Q2,Palmer Square Capital Bdc Inc.,4.0,4.75,75.0,Baseline 1: market median t-2,3
+75de6640b7,2025Q2,Apollo,4.5,4.75,25.0,Baseline 1: market median t-2,3
+78b87b5ed6,2025Q2,Apollo,3.75,4.75,100.0,Baseline 1: market median t-2,3
+7d1b22648a,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+7d4b657210,2025Q2,Apollo,3.5,4.75,125.0,Baseline 1: market median t-2,3
+7f76cde936,2025Q2,SLR,4.75,4.75,0.0,Baseline 1: market median t-2,3
+84fa29fcdd,2025Q2,BlackRock,3.0,4.75,175.0,Baseline 1: market median t-2,3
+856bad11c3,2025Q2,Stellus,6.0,4.75,125.0,Baseline 1: market median t-2,3
+87c9958ef3,2025Q2,Antares,4.5,4.75,25.0,Baseline 1: market median t-2,3
+88ff2545fb,2025Q2,Goldman Sachs,4.5,4.75,25.0,Baseline 1: market median t-2,3
+895c62db5d,2025Q2,BlackRock,3.5,4.75,125.0,Baseline 1: market median t-2,3
+8968aa97f0,2025Q2,Apollo,3.25,4.75,150.0,Baseline 1: market median t-2,3
+89d217a109,2025Q2,Overland Advantage,5.75,4.75,100.0,Baseline 1: market median t-2,3
+8a550c118e,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+8ee02fa2ba,2025Q2,Jefferies,5.75,4.75,100.0,Baseline 1: market median t-2,3
+9193322b96,2025Q2,Jefferies,5.25,4.75,50.0,Baseline 1: market median t-2,3
+91e0c61fd8,2025Q2,First Eagle,6.0,4.75,125.0,Baseline 1: market median t-2,3
+97e9a0ffdf,2025Q2,Antares,4.25,4.75,50.0,Baseline 1: market median t-2,3
+98cc4162eb,2025Q2,Manulife Private Credit Fund,4.75,4.75,0.0,Baseline 1: market median t-2,3
+98d402b113,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+9931a0a956,2025Q2,Antares,4.5,4.75,25.0,Baseline 1: market median t-2,3
+993ea0b34b,2025Q2,Apollo,1.75,4.75,300.0,Baseline 1: market median t-2,3
+997f722617,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+9b84279c68,2025Q2,Bain Capital,5.75,4.75,100.0,Baseline 1: market median t-2,3
+9e11365da8,2025Q2,Overland Advantage,5.25,4.75,50.0,Baseline 1: market median t-2,3
+9e6753371a,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+a0c2beaf3b,2025Q2,Goldman Sachs,4.75,4.75,0.0,Baseline 1: market median t-2,3
+a102901b92,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+a1b26542b8,2025Q2,Silver Point,5.5,4.75,75.0,Baseline 1: market median t-2,3
+a4151b5b00,2025Q2,Diameter Credit Co,5.0,4.75,25.0,Baseline 1: market median t-2,3
+a90d7b5ebf,2025Q2,PennantPark,5.75,4.75,100.0,Baseline 1: market median t-2,3
+a9925dcaa2,2025Q2,Jefferies,4.5,4.75,25.0,Baseline 1: market median t-2,3
+a9cfe087ca,2025Q2,Stellus,5.25,4.75,50.0,Baseline 1: market median t-2,3
+af005b002f,2025Q2,Apollo,5.25,4.75,50.0,Baseline 1: market median t-2,3
+af9d46ed33,2025Q2,Apollo,4.5,4.75,25.0,Baseline 1: market median t-2,3
+aff92a6a88,2025Q2,BlackRock,5.25,4.75,50.0,Baseline 1: market median t-2,3
+b12d30c867,2025Q2,Varagon,5.0,4.75,25.0,Baseline 1: market median t-2,3
+b17c81973c,2025Q2,Overland Advantage,9.0,4.75,425.0,Baseline 1: market median t-2,3
+b2ce045698,2025Q2,Antares,4.75,4.75,0.0,Baseline 1: market median t-2,3
+b359dcbf4e,2025Q2,Apollo,3.75,4.75,100.0,Baseline 1: market median t-2,3
+b49c063413,2025Q2,Goldman Sachs,4.25,4.75,50.0,Baseline 1: market median t-2,3
+b4a08a9c09,2025Q2,BlackRock,5.25,4.75,50.0,Baseline 1: market median t-2,3
+b4bf8eac80,2025Q2,Bain Capital,5.25,4.75,50.0,Baseline 1: market median t-2,3
+b5187373e7,2025Q2,Onex,4.25,4.75,50.0,Baseline 1: market median t-2,3
+b9157d7b5e,2025Q2,Brightwood Capital Corp I,5.0,4.75,25.0,Baseline 1: market median t-2,3
+bab1ed67eb,2025Q2,Apollo,4.5,4.75,25.0,Baseline 1: market median t-2,3
+bba1ee283d,2025Q2,Apollo,4.25,4.75,50.0,Baseline 1: market median t-2,3
+be5d515fa9,2025Q2,Overland Advantage,5.0,4.75,25.0,Baseline 1: market median t-2,3
+be929215a6,2025Q2,BlackRock,4.25,4.75,50.0,Baseline 1: market median t-2,3
+bedbeac003,2025Q2,SLR,4.25,4.75,50.0,Baseline 1: market median t-2,3
+bf86406736,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+c2da6d87df,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+c4cb40df65,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+c70afa6d15,2025Q2,Apollo,2.5,4.75,225.0,Baseline 1: market median t-2,3
+c9a04aa075,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+cd91d4c46f,2025Q2,Apollo,5.0,4.75,25.0,Baseline 1: market median t-2,3
+cdc7896b9f,2025Q2,Comvest,5.25,4.75,50.0,Baseline 1: market median t-2,3
+cdf074b75d,2025Q2,Goldman Sachs,5.75,4.75,100.0,Baseline 1: market median t-2,3
+cffd7f7d5b,2025Q2,BlackRock,3.0,4.75,175.0,Baseline 1: market median t-2,3
+d008583a74,2025Q2,Manulife Private Credit Fund,4.75,4.75,0.0,Baseline 1: market median t-2,3
+d0f842886e,2025Q2,Apollo,5.25,4.75,50.0,Baseline 1: market median t-2,3
+d2b07756e1,2025Q2,Manulife Private Credit Fund,6.0,4.75,125.0,Baseline 1: market median t-2,3
+d8a90c122e,2025Q2,Palmer Square Capital Bdc Inc.,3.75,4.75,100.0,Baseline 1: market median t-2,3
+da04457285,2025Q2,Palmer Square Capital Bdc Inc.,3.5,4.75,125.0,Baseline 1: market median t-2,3
+e233b1a0e8,2025Q2,Goldman Sachs,5.0,4.75,25.0,Baseline 1: market median t-2,3
+e2898ca788,2025Q2,Apollo,4.75,4.75,0.0,Baseline 1: market median t-2,3
+e31ae49763,2025Q2,Goldman Sachs,5.25,4.75,50.0,Baseline 1: market median t-2,3
+e67127d2c3,2025Q2,BlackRock,5.0,4.75,25.0,Baseline 1: market median t-2,3
+e7043eca9f,2025Q2,Goldman Sachs,5.0,4.75,25.0,Baseline 1: market median t-2,3
+ed1e360e2c,2025Q2,SLR,4.0,4.75,75.0,Baseline 1: market median t-2,3
+eecde5fda8,2025Q2,TCW,6.5,4.75,175.0,Baseline 1: market median t-2,3
+f1a0f874c4,2025Q2,SLR,4.0,4.75,75.0,Baseline 1: market median t-2,3
+f1bd0bb778,2025Q2,Manulife Private Credit Fund,4.5,4.75,25.0,Baseline 1: market median t-2,3
+f368575d9b,2025Q2,Crescent,5.0,4.75,25.0,Baseline 1: market median t-2,3
+f5826d0dae,2025Q2,BlackRock,5.5,4.75,75.0,Baseline 1: market median t-2,3
+f5da6b58b4,2025Q2,Manulife Private Credit Fund,4.5,4.75,25.0,Baseline 1: market median t-2,3
+f64f457d8a,2025Q2,Comvest,6.5,4.75,175.0,Baseline 1: market median t-2,3
+f927fda69a,2025Q2,Manulife Private Credit Fund,5.0,4.75,25.0,Baseline 1: market median t-2,3
+fa59e2f1bf,2025Q2,Bain Capital,6.0,4.75,125.0,Baseline 1: market median t-2,3
+fbc447e358,2025Q2,Apollo,6.75,4.75,200.0,Baseline 1: market median t-2,3
+fcb4f7db7e,2025Q2,Goldman Sachs,7.5,4.75,275.0,Baseline 1: market median t-2,3
+fe0d059e4e,2025Q2,Apollo,5.5,4.75,75.0,Baseline 1: market median t-2,3
+ff2ee8ab78,2025Q2,Apollo,4.75,4.75,0.0,Baseline 1: market median t-2,3
+025b24b655,2025Q2,Overland Advantage,5.25,4.75,50.0,Baseline 2: sector x size median,3
+038a55fade,2025Q2,Goldman Sachs,4.0,5.5,150.0,Baseline 2: sector x size median,3
+04faee34f0,2025Q2,Jefferies,5.0,5.25,25.0,Baseline 2: sector x size median,3
+05b4af5a78,2025Q2,Apollo,5.0,5.25,25.0,Baseline 2: sector x size median,3
+0657d2a878,2025Q2,Antares,3.5,3.25,25.0,Baseline 2: sector x size median,3
+0863866fec,2025Q2,Overland Advantage,5.25,4.75,50.0,Baseline 2: sector x size median,3
+0932adad40,2025Q2,Palmer Square Capital Bdc Inc.,4.5,4.25,25.0,Baseline 2: sector x size median,3
+0953cd4e44,2025Q2,Antares,3.25,4.75,150.0,Baseline 2: sector x size median,3
+09d80f3b63,2025Q2,Varagon,4.75,5.25,50.0,Baseline 2: sector x size median,3
+0bae35fc55,2025Q2,Goldman Sachs,2.25,6.0,375.0,Baseline 2: sector x size median,3
+10a327918b,2025Q2,Apollo,5.25,5.75,50.0,Baseline 2: sector x size median,3
+14148cf7c4,2025Q2,Antares,3.5,3.5,0.0,Baseline 2: sector x size median,3
+161f020ac2,2025Q2,Apollo,5.0,5.5,50.0,Baseline 2: sector x size median,3
+1644ac1348,2025Q2,Goldman Sachs,4.75,5.125,37.5,Baseline 2: sector x size median,3
+16f20a0f43,2025Q2,Antares,3.25,3.5,25.0,Baseline 2: sector x size median,3
+185b095aa3,2025Q2,Diameter Credit Co,7.25,5.0,225.0,Baseline 2: sector x size median,3
+18b5ac6a49,2025Q2,BC Partners,6.25,4.75,150.0,Baseline 2: sector x size median,3
+19d571b258,2025Q2,Antares,3.0,3.25,25.0,Baseline 2: sector x size median,3
+1d91fb19c9,2025Q2,Comvest,5.5,5.0,50.0,Baseline 2: sector x size median,3
+21feffbfe6,2025Q2,PennantPark,4.75,5.125,37.5,Baseline 2: sector x size median,3
+22d24e2e07,2025Q2,Goldman Sachs,4.75,5.0,25.0,Baseline 2: sector x size median,3
+282342d751,2025Q2,Apollo,3.25,5.0,175.0,Baseline 2: sector x size median,3
+2986357642,2025Q2,Goldman Sachs,4.75,5.125,37.5,Baseline 2: sector x size median,3
+2a1650241c,2025Q2,Bain Capital,5.75,5.0,75.0,Baseline 2: sector x size median,3
+2ae881644f,2025Q2,Bain Capital,7.5,5.0,250.0,Baseline 2: sector x size median,3
+2b21e37eb5,2025Q2,Apollo,4.5,5.125,62.5,Baseline 2: sector x size median,3
+2c0d7520f2,2025Q2,BlackRock,5.75,5.25,50.0,Baseline 2: sector x size median,3
+30ef83a59b,2025Q2,Goldman Sachs,4.75,5.0,25.0,Baseline 2: sector x size median,3
+3490a8b102,2025Q2,Jefferies,4.5,5.125,62.5,Baseline 2: sector x size median,3
+3624e08e0d,2025Q2,Apollo,6.5,5.25,125.0,Baseline 2: sector x size median,3
+373c7164df,2025Q2,Comvest,6.25,5.0,125.0,Baseline 2: sector x size median,3
+3ad0d3f677,2025Q2,Varagon,4.5,4.75,25.0,Baseline 2: sector x size median,3
+3c462a5240,2025Q2,Goldman Sachs,4.75,5.0,25.0,Baseline 2: sector x size median,3
+3c55b331d4,2025Q2,BlackRock,5.0,5.0,0.0,Baseline 2: sector x size median,3
+3c73906f43,2025Q2,BlackRock,4.75,5.25,50.0,Baseline 2: sector x size median,3
+3d4e42b81a,2025Q2,Silver Point,3.0,5.25,225.0,Baseline 2: sector x size median,3
+4086bfee59,2025Q2,Overland Advantage,9.0,5.25,375.0,Baseline 2: sector x size median,3
+4174e540d6,2025Q2,Msd Investment Corp.,4.5,5.25,75.0,Baseline 2: sector x size median,3
+4624ae81d8,2025Q2,Jefferies,5.75,4.75,100.0,Baseline 2: sector x size median,3
+4728e75d3c,2025Q2,Antares,4.75,5.25,50.0,Baseline 2: sector x size median,3
+494e38d539,2025Q2,Palmer Square Capital Bdc Inc.,5.25,5.75,50.0,Baseline 2: sector x size median,3
+4de107c533,2025Q2,Comvest,5.25,5.0,25.0,Baseline 2: sector x size median,3
+5aaf97e998,2025Q2,BlackRock,3.25,4.5,125.0,Baseline 2: sector x size median,3
+5c0434978b,2025Q2,Manulife Private Credit Fund,5.0,4.5,50.0,Baseline 2: sector x size median,3
+5c3d7e9f90,2025Q2,Diameter Credit Co,5.0,5.0,0.0,Baseline 2: sector x size median,3
+5dd68341bb,2025Q2,BlackRock,4.0,4.5,50.0,Baseline 2: sector x size median,3
+5de0500439,2025Q2,Antares,2.75,4.5,175.0,Baseline 2: sector x size median,3
+5f8169461e,2025Q2,"Whitehorse Finance, Inc.",6.0,5.75,25.0,Baseline 2: sector x size median,3
+62135cfea2,2025Q2,Jefferies,5.0,5.25,25.0,Baseline 2: sector x size median,3
+651e640432,2025Q2,Silver Point,3.0,4.75,175.0,Baseline 2: sector x size median,3
+662a335152,2025Q2,Stellus,5.0,5.25,25.0,Baseline 2: sector x size median,3
+66d6dd21d0,2025Q2,First Eagle,5.0,5.25,25.0,Baseline 2: sector x size median,3
+6b87aeab6c,2025Q2,Apollo,4.5,5.0,50.0,Baseline 2: sector x size median,3
+6ea0602448,2025Q2,First Eagle,4.75,5.25,50.0,Baseline 2: sector x size median,3
+6fbd34b95f,2025Q2,Antares,4.5,5.0,50.0,Baseline 2: sector x size median,3
+738349c1ab,2025Q2,Jefferies,5.0,5.125,12.5,Baseline 2: sector x size median,3
+7480236747,2025Q2,Palmer Square Capital Bdc Inc.,4.0,5.75,175.0,Baseline 2: sector x size median,3
+75de6640b7,2025Q2,Apollo,4.5,5.0,50.0,Baseline 2: sector x size median,3
+78b87b5ed6,2025Q2,Apollo,3.75,5.25,150.0,Baseline 2: sector x size median,3
+7d1b22648a,2025Q2,BlackRock,5.0,5.125,12.5,Baseline 2: sector x size median,3
+7d4b657210,2025Q2,Apollo,3.5,4.75,125.0,Baseline 2: sector x size median,3
+7f76cde936,2025Q2,SLR,4.75,5.25,50.0,Baseline 2: sector x size median,3
+84fa29fcdd,2025Q2,BlackRock,3.0,4.75,175.0,Baseline 2: sector x size median,3
+856bad11c3,2025Q2,Stellus,6.0,5.25,75.0,Baseline 2: sector x size median,3
+87c9958ef3,2025Q2,Antares,4.5,5.25,75.0,Baseline 2: sector x size median,3
+88ff2545fb,2025Q2,Goldman Sachs,4.5,5.0,50.0,Baseline 2: sector x size median,3
+895c62db5d,2025Q2,BlackRock,3.5,3.25,25.0,Baseline 2: sector x size median,3
+8968aa97f0,2025Q2,Apollo,3.25,4.75,150.0,Baseline 2: sector x size median,3
+89d217a109,2025Q2,Overland Advantage,5.75,5.25,50.0,Baseline 2: sector x size median,3
+8a550c118e,2025Q2,Apollo,5.0,5.25,25.0,Baseline 2: sector x size median,3
+8ee02fa2ba,2025Q2,Jefferies,5.75,4.75,100.0,Baseline 2: sector x size median,3
+9193322b96,2025Q2,Jefferies,5.25,5.0,25.0,Baseline 2: sector x size median,3
+91e0c61fd8,2025Q2,First Eagle,6.0,4.75,125.0,Baseline 2: sector x size median,3
+97e9a0ffdf,2025Q2,Antares,4.25,5.0,75.0,Baseline 2: sector x size median,3
+98cc4162eb,2025Q2,Manulife Private Credit Fund,4.75,4.5,25.0,Baseline 2: sector x size median,3
+98d402b113,2025Q2,BlackRock,5.0,4.25,75.0,Baseline 2: sector x size median,3
+9931a0a956,2025Q2,Antares,4.5,4.75,25.0,Baseline 2: sector x size median,3
+993ea0b34b,2025Q2,Apollo,1.75,6.0,425.0,Baseline 2: sector x size median,3
+997f722617,2025Q2,Goldman Sachs,4.75,5.125,37.5,Baseline 2: sector x size median,3
+9b84279c68,2025Q2,Bain Capital,5.75,5.25,50.0,Baseline 2: sector x size median,3
+9e11365da8,2025Q2,Overland Advantage,5.25,4.75,50.0,Baseline 2: sector x size median,3
+9e6753371a,2025Q2,BlackRock,5.0,3.25,175.0,Baseline 2: sector x size median,3
+a0c2beaf3b,2025Q2,Goldman Sachs,4.75,5.25,50.0,Baseline 2: sector x size median,3
+a102901b92,2025Q2,BlackRock,5.0,5.0,0.0,Baseline 2: sector x size median,3
+a1b26542b8,2025Q2,Silver Point,5.5,5.25,25.0,Baseline 2: sector x size median,3
+a4151b5b00,2025Q2,Diameter Credit Co,5.0,5.0,0.0,Baseline 2: sector x size median,3
+a90d7b5ebf,2025Q2,PennantPark,5.75,4.5,125.0,Baseline 2: sector x size median,3
+a9925dcaa2,2025Q2,Jefferies,4.5,5.25,75.0,Baseline 2: sector x size median,3
+a9cfe087ca,2025Q2,Stellus,5.25,5.25,0.0,Baseline 2: sector x size median,3
+af005b002f,2025Q2,Apollo,5.25,5.25,0.0,Baseline 2: sector x size median,3
+af9d46ed33,2025Q2,Apollo,4.5,5.25,75.0,Baseline 2: sector x size median,3
+aff92a6a88,2025Q2,BlackRock,5.25,4.75,50.0,Baseline 2: sector x size median,3
+b12d30c867,2025Q2,Varagon,5.0,5.75,75.0,Baseline 2: sector x size median,3
+b17c81973c,2025Q2,Overland Advantage,9.0,5.25,375.0,Baseline 2: sector x size median,3
+b2ce045698,2025Q2,Antares,4.75,5.25,50.0,Baseline 2: sector x size median,3
+b359dcbf4e,2025Q2,Apollo,3.75,5.0,125.0,Baseline 2: sector x size median,3
+b49c063413,2025Q2,Goldman Sachs,4.25,5.25,100.0,Baseline 2: sector x size median,3
+b4a08a9c09,2025Q2,BlackRock,5.25,5.0,25.0,Baseline 2: sector x size median,3
+b4bf8eac80,2025Q2,Bain Capital,5.25,5.25,0.0,Baseline 2: sector x size median,3
+b5187373e7,2025Q2,Onex,4.25,4.5,25.0,Baseline 2: sector x size median,3
+b9157d7b5e,2025Q2,Brightwood Capital Corp I,5.0,5.0,0.0,Baseline 2: sector x size median,3
+bab1ed67eb,2025Q2,Apollo,4.5,5.125,62.5,Baseline 2: sector x size median,3
+bba1ee283d,2025Q2,Apollo,4.25,5.25,100.0,Baseline 2: sector x size median,3
+be5d515fa9,2025Q2,Overland Advantage,5.0,5.125,12.5,Baseline 2: sector x size median,3
+be929215a6,2025Q2,BlackRock,4.25,5.0,75.0,Baseline 2: sector x size median,3
+bedbeac003,2025Q2,SLR,4.25,5.25,100.0,Baseline 2: sector x size median,3
+bf86406736,2025Q2,BlackRock,5.0,3.25,175.0,Baseline 2: sector x size median,3
+c2da6d87df,2025Q2,Apollo,5.0,5.0,0.0,Baseline 2: sector x size median,3
+c4cb40df65,2025Q2,Apollo,5.0,5.125,12.5,Baseline 2: sector x size median,3
+c70afa6d15,2025Q2,Apollo,2.5,5.25,275.0,Baseline 2: sector x size median,3
+c9a04aa075,2025Q2,Apollo,5.0,5.0,0.0,Baseline 2: sector x size median,3
+cd91d4c46f,2025Q2,Apollo,5.0,5.25,25.0,Baseline 2: sector x size median,3
+cdc7896b9f,2025Q2,Comvest,5.25,5.25,0.0,Baseline 2: sector x size median,3
+cdf074b75d,2025Q2,Goldman Sachs,5.75,5.0,75.0,Baseline 2: sector x size median,3
+cffd7f7d5b,2025Q2,BlackRock,3.0,4.5,150.0,Baseline 2: sector x size median,3
+d008583a74,2025Q2,Manulife Private Credit Fund,4.75,5.25,50.0,Baseline 2: sector x size median,3
+d0f842886e,2025Q2,Apollo,5.25,5.25,0.0,Baseline 2: sector x size median,3
+d2b07756e1,2025Q2,Manulife Private Credit Fund,6.0,4.5,150.0,Baseline 2: sector x size median,3
+d8a90c122e,2025Q2,Palmer Square Capital Bdc Inc.,3.75,3.5,25.0,Baseline 2: sector x size median,3
+da04457285,2025Q2,Palmer Square Capital Bdc Inc.,3.5,4.75,125.0,Baseline 2: sector x size median,3
+e233b1a0e8,2025Q2,Goldman Sachs,5.0,5.0,0.0,Baseline 2: sector x size median,3
+e2898ca788,2025Q2,Apollo,4.75,5.0,25.0,Baseline 2: sector x size median,3
+e31ae49763,2025Q2,Goldman Sachs,5.25,6.0,75.0,Baseline 2: sector x size median,3
+e67127d2c3,2025Q2,BlackRock,5.0,5.0,0.0,Baseline 2: sector x size median,3
+e7043eca9f,2025Q2,Goldman Sachs,5.0,5.125,12.5,Baseline 2: sector x size median,3
+ed1e360e2c,2025Q2,SLR,4.0,5.25,125.0,Baseline 2: sector x size median,3
+eecde5fda8,2025Q2,TCW,6.5,5.25,125.0,Baseline 2: sector x size median,3
+f1a0f874c4,2025Q2,SLR,4.0,5.375,137.5,Baseline 2: sector x size median,3
+f1bd0bb778,2025Q2,Manulife Private Credit Fund,4.5,4.5,0.0,Baseline 2: sector x size median,3
+f368575d9b,2025Q2,Crescent,5.0,5.125,12.5,Baseline 2: sector x size median,3
+f5826d0dae,2025Q2,BlackRock,5.5,5.0,50.0,Baseline 2: sector x size median,3
+f5da6b58b4,2025Q2,Manulife Private Credit Fund,4.5,4.25,25.0,Baseline 2: sector x size median,3
+f64f457d8a,2025Q2,Comvest,6.5,4.75,175.0,Baseline 2: sector x size median,3
+f927fda69a,2025Q2,Manulife Private Credit Fund,5.0,4.75,25.0,Baseline 2: sector x size median,3
+fa59e2f1bf,2025Q2,Bain Capital,6.0,5.125,87.5,Baseline 2: sector x size median,3
+fbc447e358,2025Q2,Apollo,6.75,5.0,175.0,Baseline 2: sector x size median,3
+fcb4f7db7e,2025Q2,Goldman Sachs,7.5,5.25,225.0,Baseline 2: sector x size median,3
+fe0d059e4e,2025Q2,Apollo,5.5,5.25,25.0,Baseline 2: sector x size median,3
+ff2ee8ab78,2025Q2,Apollo,4.75,5.25,50.0,Baseline 2: sector x size median,3
+025b24b655,2025Q2,Overland Advantage,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+038a55fade,2025Q2,Goldman Sachs,4.0,5.125518072289157,112.55180722891573,Reference: training mean,3
+04faee34f0,2025Q2,Jefferies,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+05b4af5a78,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+0657d2a878,2025Q2,Antares,3.5,5.125518072289157,162.55180722891572,Reference: training mean,3
+0863866fec,2025Q2,Overland Advantage,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+0932adad40,2025Q2,Palmer Square Capital Bdc Inc.,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+0953cd4e44,2025Q2,Antares,3.25,5.125518072289157,187.55180722891572,Reference: training mean,3
+09d80f3b63,2025Q2,Varagon,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+0bae35fc55,2025Q2,Goldman Sachs,2.25,5.125518072289157,287.5518072289157,Reference: training mean,3
+10a327918b,2025Q2,Apollo,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+14148cf7c4,2025Q2,Antares,3.5,5.125518072289157,162.55180722891572,Reference: training mean,3
+161f020ac2,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+1644ac1348,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+16f20a0f43,2025Q2,Antares,3.25,5.125518072289157,187.55180722891572,Reference: training mean,3
+185b095aa3,2025Q2,Diameter Credit Co,7.25,5.125518072289157,212.44819277108428,Reference: training mean,3
+18b5ac6a49,2025Q2,BC Partners,6.25,5.125518072289157,112.44819277108427,Reference: training mean,3
+19d571b258,2025Q2,Antares,3.0,5.125518072289157,212.55180722891572,Reference: training mean,3
+1d91fb19c9,2025Q2,Comvest,5.5,5.125518072289157,37.448192771084265,Reference: training mean,3
+21feffbfe6,2025Q2,PennantPark,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+22d24e2e07,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+282342d751,2025Q2,Apollo,3.25,5.125518072289157,187.55180722891572,Reference: training mean,3
+2986357642,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+2a1650241c,2025Q2,Bain Capital,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+2ae881644f,2025Q2,Bain Capital,7.5,5.125518072289157,237.44819277108428,Reference: training mean,3
+2b21e37eb5,2025Q2,Apollo,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+2c0d7520f2,2025Q2,BlackRock,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+30ef83a59b,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+3490a8b102,2025Q2,Jefferies,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+3624e08e0d,2025Q2,Apollo,6.5,5.125518072289157,137.44819277108428,Reference: training mean,3
+373c7164df,2025Q2,Comvest,6.25,5.125518072289157,112.44819277108427,Reference: training mean,3
+3ad0d3f677,2025Q2,Varagon,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+3c462a5240,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+3c55b331d4,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+3c73906f43,2025Q2,BlackRock,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+3d4e42b81a,2025Q2,Silver Point,3.0,5.125518072289157,212.55180722891572,Reference: training mean,3
+4086bfee59,2025Q2,Overland Advantage,9.0,5.125518072289157,387.4481927710843,Reference: training mean,3
+4174e540d6,2025Q2,Msd Investment Corp.,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+4624ae81d8,2025Q2,Jefferies,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+4728e75d3c,2025Q2,Antares,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+494e38d539,2025Q2,Palmer Square Capital Bdc Inc.,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+4de107c533,2025Q2,Comvest,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+5aaf97e998,2025Q2,BlackRock,3.25,5.125518072289157,187.55180722891572,Reference: training mean,3
+5c0434978b,2025Q2,Manulife Private Credit Fund,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+5c3d7e9f90,2025Q2,Diameter Credit Co,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+5dd68341bb,2025Q2,BlackRock,4.0,5.125518072289157,112.55180722891573,Reference: training mean,3
+5de0500439,2025Q2,Antares,2.75,5.125518072289157,237.55180722891572,Reference: training mean,3
+5f8169461e,2025Q2,"Whitehorse Finance, Inc.",6.0,5.125518072289157,87.44819277108427,Reference: training mean,3
+62135cfea2,2025Q2,Jefferies,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+651e640432,2025Q2,Silver Point,3.0,5.125518072289157,212.55180722891572,Reference: training mean,3
+662a335152,2025Q2,Stellus,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+66d6dd21d0,2025Q2,First Eagle,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+6b87aeab6c,2025Q2,Apollo,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+6ea0602448,2025Q2,First Eagle,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+6fbd34b95f,2025Q2,Antares,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+738349c1ab,2025Q2,Jefferies,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+7480236747,2025Q2,Palmer Square Capital Bdc Inc.,4.0,5.125518072289157,112.55180722891573,Reference: training mean,3
+75de6640b7,2025Q2,Apollo,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+78b87b5ed6,2025Q2,Apollo,3.75,5.125518072289157,137.55180722891572,Reference: training mean,3
+7d1b22648a,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+7d4b657210,2025Q2,Apollo,3.5,5.125518072289157,162.55180722891572,Reference: training mean,3
+7f76cde936,2025Q2,SLR,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+84fa29fcdd,2025Q2,BlackRock,3.0,5.125518072289157,212.55180722891572,Reference: training mean,3
+856bad11c3,2025Q2,Stellus,6.0,5.125518072289157,87.44819277108427,Reference: training mean,3
+87c9958ef3,2025Q2,Antares,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+88ff2545fb,2025Q2,Goldman Sachs,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+895c62db5d,2025Q2,BlackRock,3.5,5.125518072289157,162.55180722891572,Reference: training mean,3
+8968aa97f0,2025Q2,Apollo,3.25,5.125518072289157,187.55180722891572,Reference: training mean,3
+89d217a109,2025Q2,Overland Advantage,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+8a550c118e,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+8ee02fa2ba,2025Q2,Jefferies,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+9193322b96,2025Q2,Jefferies,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+91e0c61fd8,2025Q2,First Eagle,6.0,5.125518072289157,87.44819277108427,Reference: training mean,3
+97e9a0ffdf,2025Q2,Antares,4.25,5.125518072289157,87.55180722891573,Reference: training mean,3
+98cc4162eb,2025Q2,Manulife Private Credit Fund,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+98d402b113,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+9931a0a956,2025Q2,Antares,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+993ea0b34b,2025Q2,Apollo,1.75,5.125518072289157,337.5518072289157,Reference: training mean,3
+997f722617,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+9b84279c68,2025Q2,Bain Capital,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+9e11365da8,2025Q2,Overland Advantage,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+9e6753371a,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+a0c2beaf3b,2025Q2,Goldman Sachs,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+a102901b92,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+a1b26542b8,2025Q2,Silver Point,5.5,5.125518072289157,37.448192771084265,Reference: training mean,3
+a4151b5b00,2025Q2,Diameter Credit Co,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+a90d7b5ebf,2025Q2,PennantPark,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+a9925dcaa2,2025Q2,Jefferies,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+a9cfe087ca,2025Q2,Stellus,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+af005b002f,2025Q2,Apollo,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+af9d46ed33,2025Q2,Apollo,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+aff92a6a88,2025Q2,BlackRock,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+b12d30c867,2025Q2,Varagon,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+b17c81973c,2025Q2,Overland Advantage,9.0,5.125518072289157,387.4481927710843,Reference: training mean,3
+b2ce045698,2025Q2,Antares,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+b359dcbf4e,2025Q2,Apollo,3.75,5.125518072289157,137.55180722891572,Reference: training mean,3
+b49c063413,2025Q2,Goldman Sachs,4.25,5.125518072289157,87.55180722891573,Reference: training mean,3
+b4a08a9c09,2025Q2,BlackRock,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+b4bf8eac80,2025Q2,Bain Capital,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+b5187373e7,2025Q2,Onex,4.25,5.125518072289157,87.55180722891573,Reference: training mean,3
+b9157d7b5e,2025Q2,Brightwood Capital Corp I,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+bab1ed67eb,2025Q2,Apollo,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+bba1ee283d,2025Q2,Apollo,4.25,5.125518072289157,87.55180722891573,Reference: training mean,3
+be5d515fa9,2025Q2,Overland Advantage,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+be929215a6,2025Q2,BlackRock,4.25,5.125518072289157,87.55180722891573,Reference: training mean,3
+bedbeac003,2025Q2,SLR,4.25,5.125518072289157,87.55180722891573,Reference: training mean,3
+bf86406736,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+c2da6d87df,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+c4cb40df65,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+c70afa6d15,2025Q2,Apollo,2.5,5.125518072289157,262.5518072289157,Reference: training mean,3
+c9a04aa075,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+cd91d4c46f,2025Q2,Apollo,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+cdc7896b9f,2025Q2,Comvest,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+cdf074b75d,2025Q2,Goldman Sachs,5.75,5.125518072289157,62.448192771084265,Reference: training mean,3
+cffd7f7d5b,2025Q2,BlackRock,3.0,5.125518072289157,212.55180722891572,Reference: training mean,3
+d008583a74,2025Q2,Manulife Private Credit Fund,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+d0f842886e,2025Q2,Apollo,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+d2b07756e1,2025Q2,Manulife Private Credit Fund,6.0,5.125518072289157,87.44819277108427,Reference: training mean,3
+d8a90c122e,2025Q2,Palmer Square Capital Bdc Inc.,3.75,5.125518072289157,137.55180722891572,Reference: training mean,3
+da04457285,2025Q2,Palmer Square Capital Bdc Inc.,3.5,5.125518072289157,162.55180722891572,Reference: training mean,3
+e233b1a0e8,2025Q2,Goldman Sachs,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+e2898ca788,2025Q2,Apollo,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3
+e31ae49763,2025Q2,Goldman Sachs,5.25,5.125518072289157,12.448192771084265,Reference: training mean,3
+e67127d2c3,2025Q2,BlackRock,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+e7043eca9f,2025Q2,Goldman Sachs,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+ed1e360e2c,2025Q2,SLR,4.0,5.125518072289157,112.55180722891573,Reference: training mean,3
+eecde5fda8,2025Q2,TCW,6.5,5.125518072289157,137.44819277108428,Reference: training mean,3
+f1a0f874c4,2025Q2,SLR,4.0,5.125518072289157,112.55180722891573,Reference: training mean,3
+f1bd0bb778,2025Q2,Manulife Private Credit Fund,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+f368575d9b,2025Q2,Crescent,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+f5826d0dae,2025Q2,BlackRock,5.5,5.125518072289157,37.448192771084265,Reference: training mean,3
+f5da6b58b4,2025Q2,Manulife Private Credit Fund,4.5,5.125518072289157,62.551807228915735,Reference: training mean,3
+f64f457d8a,2025Q2,Comvest,6.5,5.125518072289157,137.44819277108428,Reference: training mean,3
+f927fda69a,2025Q2,Manulife Private Credit Fund,5.0,5.125518072289157,12.551807228915735,Reference: training mean,3
+fa59e2f1bf,2025Q2,Bain Capital,6.0,5.125518072289157,87.44819277108427,Reference: training mean,3
+fbc447e358,2025Q2,Apollo,6.75,5.125518072289157,162.44819277108428,Reference: training mean,3
+fcb4f7db7e,2025Q2,Goldman Sachs,7.5,5.125518072289157,237.44819277108428,Reference: training mean,3
+fe0d059e4e,2025Q2,Apollo,5.5,5.125518072289157,37.448192771084265,Reference: training mean,3
+ff2ee8ab78,2025Q2,Apollo,4.75,5.125518072289157,37.551807228915735,Reference: training mean,3

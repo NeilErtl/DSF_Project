@@ -83,6 +83,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D42 | Release polish: rounding of processed files, cleaned display names, fixed role vocabulary in the data dictionary. | taken (AI, work order 5) | See D42. |
 | D43 | Release checker fixes: spelling variants count as held before; acquisition date and spread checked across the family; per-line spread unit; industry labels are not names; "InvestmentType" and "amp;" parsed. | taken (AI, work order 5), **consequential** (sample) | See D43. |
 | D44 | Second release check: matching key from the cleaned name; brand-prefixed names count as held before; implied base rate must be a SOFR level. | taken (AI, work order 5), **consequential** (sample) | See D44. |
+| D45 | Working rules for notebooks 02/03: split of tasks as in the course template, model choice on pooled validation MAE, small tuning grids, one optional-feature variant, package versions from `requirements.txt`. | taken (team: Neil, notebook 02 owner), **consequential** (main model choice rule) | See D45. |
 
 ---
 
@@ -511,3 +512,28 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   uses its own `loan_id` (the hash includes the maturity) and is not a superset of the main sample (join on family,
   quarter and borrower_key, `docs/for_modelling.md`). The data dictionary's loan_id note describes the main files.
 - **Reversible:** steps 5 (key), 8 (net 4) and 9 (implied base rate).
+
+### D45. Working rules for notebooks 02 and 03 (team: Neil Ertl, owner of notebook 02; 21 Nov 2026)
+- **Why.** CLAUDE.md fixes models, baselines, metrics and split, but not how hyperparameters are tuned, how the main
+  model is chosen, or where the line between notebooks 02 and 03 lies. Owners: 02 Neil Ertl, 03 Nathan Steiner.
+- **E1, AI autonomy.** Options: AI decides and logs (CLAUDE.md so far); AI asks for every choice; AI asks only for
+  consequential choices. Chosen: the third (team rule added to CLAUDE.md). Reason: the owner must be able to explain
+  every consequential choice in the interview; small choices would slow the work without adding understanding.
+- **E2, split between 02 and 03.** Options: (A) as the course template `files/example_project_structure`:
+  02 produces predictions, 03 evaluates them; (B) 02 only validation, 03 refits and tests. Chosen: A. Reason: the
+  lecturers' template; all model fitting in one place; the commitments ask for test MAE per quarter for all models
+  and baselines, which one prediction file serves. Safeguard: the main model is written to a file in 02 before the
+  test predictions are produced, and 02 computes no test error.
+- **E3, choice criterion.** Options: MAE pooled over all validation loans; mean of the four fold MAEs. Chosen: pooled
+  (matches how the test MAE is computed), the per-fold MAEs shown next to it. Deck 16 rule 4: a simpler model is
+  preferred when the gap is within the spread across the folds.
+- **E4, tuning.** Small, explained grids on the same time folds (deck 16: "long searches are not expected"); a table
+  of default against tuned validation error per model, and whether the gain exceeds the fold spread.
+- **E5, optional features.** Main race with the committed features (`mh.NUM`, `mh.CAT`); one variant of the best
+  model with the optional features of `for_modelling.md`, judged on the validation folds only.
+- **E6, environment.** Packages installed at the versions of `requirements.txt` (the Nuvolos default had pandas
+  2.3.3); Python is 3.13 on Nuvolos against 3.12 used for notebook 01.
+- **E7, robustness.** 02 also produces the predictions of the chosen model on the robustness files
+  (`loans_all_bdc.csv` without sector, `loans_incl_refi.csv`), with the same test protocol; the syndicated-loan
+  sensitivity is a subset of the main predictions and is computed in 03.
+- **Reversible:** all of them; no data change.

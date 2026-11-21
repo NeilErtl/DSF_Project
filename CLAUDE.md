@@ -47,6 +47,12 @@ Deadline 30 Nov 2026 (report, slides, code, data). Interview: every step must be
   with: why the decision came up, the options considered, pros and cons of each, the evidence (numbers), the choice,
   and whether it is easy to reverse. Mark decisions that change the target, sample, split, metric or main model as
   `consequential`: the team reviews those afterwards.
+  Exception for notebooks 02 and 03 (team rule, D45): consequential choices there (feature set, model choice,
+  test protocol, metric) are put to the notebook owner **before** they are taken, as a question with options and a
+  recommendation; small choices stay with the AI and are logged.
+- Notebook 02 fits and tunes all models and baselines on the validation folds, chooses and records the main model,
+  then writes the test-period predictions of all candidates to a file without computing any test error. Notebook 03
+  reads that file and computes all metrics, figures and the interpretation; it fits no model (course template, D45).
 - Report every change to definitions, sample, preprocessing, model or evaluation.
 - Separate decisions made by the team from choices the AI made.
 - Never touch the test set before the final evaluation. Never choose between models on the test set.
