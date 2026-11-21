@@ -1,17 +1,18 @@
 # Model report: estimation of the spread over SOFR (notebook 02)
 
-Notebook: `code/02_estimate.ipynb` (runs top to bottom). Decisions with evidence: `docs/decisions.md` (D45 to D48).
-Every number below comes from the tables in `output/tables/`: `horse_race_validation.csv` (all candidates),
-`tuning_default_vs_tuned.csv`, `validation_error_yardsticks.csv` (6c), `residual_target_checks.csv` (6f)
-and `optional_features_validation.csv` (step 7). Counterpart of `docs/data_report.md` for notebook 01.
+Notebook: `code/02_estimate.ipynb` (runs top to bottom). Decisions with evidence: `docs/decisions.md` (D45 to D49).
+Counterpart of `docs/data_report.md` for notebook 01. Every number below comes from the tables in `output/tables/`:
+`horse_race_validation.csv` (all candidates), `tuning_default_vs_tuned.csv`, `validation_error_yardsticks.csv` (6c),
+`residual_target_checks.csv` (6f), `optional_features_validation.csv` (step 7), `model_choice.csv` and
+`feature_importance_main_model.csv` (step 8).
 
-**Status (21 Nov 2026):** steps 0 to 7 done (validation race, residual-target round with its critical check,
-optional features, complete race figure). Open: step 8 choice of the main model (owner), steps 9 and 10 test and robustness predictions for notebook 03.
+**Status (21 Nov 2026):** steps 0 to 8 done (validation race, residual-target round with its critical check,
+optional features, main model chosen). Open: steps 9 and 10, test and robustness predictions for notebook 03.
 
 ## 1. Task as understood
 - **Predict** the spread over SOFR (`spread_pp`, percentage points) of a newly originated loan at the start of its
-  quarter, from the features fixed in CLAUDE.md (`mh.NUM` + `mh.CAT`, optional features of `for_modelling.md` as a
-  variant); errors in basis points.
+  quarter, from the features fixed in CLAUDE.md (`mh.NUM` + `mh.CAT`; the optional features of `for_modelling.md`
+  as a variant); errors in basis points.
 - **Validate** on four expanding-window folds with a one-quarter gap (validation quarters 2024Q3, 2024Q4, 2025Q1,
   2025Q2; 675 loans), training loans filed before the validation quarter starts. The test quarters (2025Q3 to 2026Q2)
   are not used for any choice.
@@ -21,18 +22,21 @@ optional features, complete race figure). Open: step 8 choice of the main model 
   loan (`model, fold, loan_id, quarter, family, y_true, y_pred, abs_error_bps`). Notebook 03 computes all test
   metrics and fits no model (D45).
 
-## 2. What was done
-1. **Baselines** (as committed): (1) median spread of new loans in quarter t-2, (2) median by sector and size tercile
-   over t-5 to t-2 with fallbacks; a training-mean reference.
-2. **Models** (course models only, each in a pipeline with the shared preprocessor, fitted per fold): linear
-   regression, ridge, lasso, one tree, random forest, gradient boosting, a small neural network.
+## 2. What was done (in the order of the notebook)
+1. **Baselines** (step 2, as committed): (1) median spread of new loans in quarter t-2, (2) median by sector and size
+   tercile over t-5 to t-2 with fallbacks; a training-mean reference.
+2. **Models** (steps 3 to 5; course models only, each in a pipeline with the shared preprocessor, fitted per fold):
+   linear regression, ridge, lasso, one tree, random forest, gradient boosting, a small neural network.
 3. **Tuning:** small grids on the same folds; the default setting competes with the grid (D46, D47).
-4. **Diagnostics:** why trees lose with the spread as target (6b); how much these features can explain (6c).
-5. **Second round (D47):** every model trained on the deviation from the market median
+4. **Horse race and diagnostics** (step 6): why trees lose with the spread as target (6b); how much these features
+   can explain (6c).
+5. **Second round** (6d, 6e; D47): every model trained on the deviation from the market median
    (`spread_pp - mkt_spread_t2_all`); prediction = predicted deviation + median; scored on the spread as before.
-6. **Critical check of the residual target (6f, D47):** pass-through of the market level and bias per quarter.
-7. **Optional features (step 7, D48):** `has_revolver`, `has_delayed_draw`, `n_family_bdcs` added to the three best
+6. **Critical check of the residual target** (6f, D47): pass-through of the market level and bias per quarter.
+7. **Optional features** (step 7, D48): `has_revolver`, `has_delayed_draw`, `n_family_bdcs` added to the three best
    residual models, tuned settings kept; the complete race in one figure (7b).
+8. **Main model** (step 8, D49): chosen by the owner on the validation folds before any test prediction; feature
+   importance from the model refitted on all training loans.
 
 ## 3. Results on the validation quarters (675 loans; MAE in bps)
 | Candidate | Spread as target | Residual target | Residual + optional features |
@@ -48,15 +52,14 @@ optional features, complete race figure). Open: step 8 choice of the main model 
 | Baseline 2: sector x size median | 98.3 | | |
 | Reference: training mean | 96.0 | | |
 
-- **Best:** random forest, residual target, optional features: 54.6 bps, 24 bps below baseline 1; lower than the
-  forest without optional features in each of the four folds; share within 50 bps 63.1% against 58.4% for baseline
-  1 (the only candidate ahead of baseline 1 on both metrics). Fold spread 7.0 bps; boosting (57.3, 58.3) and the
-  residual forest without optional features (59.3) lie within it.
-- All residual models beat baseline 1 in all four folds; linear regression is identical in both rounds by
-  construction (the market median is a feature).
+- With the spread as target, lasso is best (68.5) and the tree models lose to baseline 1.
+- With the residual target, all models beat baseline 1 in all four folds; linear regression is identical in both
+  rounds by construction (the market median is a feature).
+- With the optional features, the random forest improves from 59.3 to 54.6 bps, in each of the four folds.
 - Tuning gains larger than the fold spread only for lasso (the default alpha removes every coefficient) and for ridge
   and lasso on the residual target; elsewhere tuning polishes (deck 16).
-- Figure: `output/figures/horse_race_validation.png` (all 20 candidates; colour and shape mark the round).
+- Figure: `output/figures/horse_race_validation.png` (all 20 candidates; colour and shape mark the round; the main
+  model is marked).
 
 ## 4. Findings
 - **The market level carries most of the predictable signal.** Baseline 1 beats the sector x size median by 20 bps
@@ -70,8 +73,8 @@ optional features, complete race figure). Open: step 8 choice of the main model 
   Knowing the true quarter median still leaves 74 to 83 bps; a lasso fitted on the validation quarter itself reaches
   55 to 59 bps (the limit for linear models). Leverage, earnings and sponsor, which drive spreads, are not in the
   filings.
-- **Where the error sits.** Spreads at or below 4 pp and above 7 pp are pulled towards the middle; 10% of loans with
-  errors above 150 bps carry 31% of the lasso error.
+- **Where the error sits.** Spreads at or below 4 pp and above 7 pp are pulled towards the middle; for lasso, 10% of
+  loans with errors above 150 bps carry 31% of the error.
 - **Metric caveat.** 97% of spreads lie on a 25 bps grid, so a constant median hits 17.5% of loans exactly. Report
   MAE and the share within 50 bps together.
 
@@ -84,24 +87,40 @@ optional features, complete race figure). Open: step 8 choice of the main model 
   training quarters the median spread moved 0.79 pp per 1 pp of the t-2 median. (2) The premium is learned in a
   falling market, so the tree-based residual models (boosting, forest, also with the optional features) predict too
   low in every validation quarter (mean error +8 to +22 bps); baseline 1, lasso and the residual neural net err in
-  both directions. A rising market would increase this bias. (3) Feature importances of
-  a residual model describe the premium, not the spread level.
+  both directions. A rising market would increase this bias. (3) Feature importances of a residual model describe
+  the premium, not the spread level.
 
-## 6. Checks
+## 6. Main model (step 8, D49)
+- **Random forest on the residual target with the optional features** (300 trees, `max_features` 0.33,
+  `min_samples_leaf` 1, seed 42), chosen by the notebook owner before any test prediction. Specification:
+  `output/tables/model_choice.csv`.
+- **Why:** lowest validation MAE (54.6 bps, 24 below baseline 1); lower than the same forest without the optional
+  features in each fold; the only candidate ahead of baseline 1 on both metrics (63.1% within 50 bps against 58.4%).
+  Alternatives within its fold spread (7.0 bps): boosting (both variants), forest without optional features,
+  residual neural net; none is simpler. Ridge (64.7) is further away than the fold spread.
+- **Known weakness:** predicted too low in each validation quarter (+11 to +22 bps; section 5).
+- **What it uses** (feature importance, deck 17, refitted on all training loans; it explains the premium over the
+  market median, is predictive, not causal, and favours continuous features, so read it as a ranking): tenor 0.24,
+  hold size 0.23, manager family 0.15, revolver 0.10, sector 0.07, market features 0.04 to 0.05 (the market level is
+  already in the residual target), number of BDCs, lien and delayed draw 0.02 to 0.03.
+  Figure: `output/figures/feature_importance_main_model.png`.
+
+## 7. Checks
 Fold construction (gap, filing dates) asserted; no never-feature among the features (incl. the optional ones); every
 candidate predicts every validation loan once; baseline 2 recomputed by separate code for all 675 loans; predictions
-within 1 to 15 pp; best ridge and lasso alpha inside their grids; tuning never ends below the default; the notebook
-runs top to bottom with fixed seeds.
+within 1 to 15 pp; best ridge and lasso alpha inside their grids; tuning never ends below the default; the recorded
+main-model specification reproduces its validation MAE; a full rerun of the notebook reproduces all 13,500
+validation predictions (differences below 1e-14).
 
-## 7. Decisions for team review (`docs/decisions.md`)
+## 8. Decisions for team review (`docs/decisions.md`)
 D45 working rules for 02/03; D46 small choices in steps 2 to 6; D47 residual target as second round
-(**consequential**, model specification, with the critical assessment); D48 optional features. Pending: choice of
-the main model (step 8, **consequential**).
+(**consequential**, model specification, with the critical assessment); D48 optional features; D49 main model
+(**consequential**).
 
-## 8. Open risks
+## 9. Open risks
 - **Selection optimism:** about 20 candidates were compared on the same four quarters; the best validation score is
   optimistic. The test quarters give the honest number.
 - Four validation quarters only; differences below about 6 to 8 bps are within the spread across the folds.
-- Tree-based residual models: inherited bias from a falling market (section 5).
+- Tree-based residual models, including the main model: inherited bias from a falling market (section 5).
 - 61 validation loans belong to a manager family not seen in their training fold (pooled infrequent category).
 - The early-stopping holdout of the neural net is drawn at random within the training fold (D46).

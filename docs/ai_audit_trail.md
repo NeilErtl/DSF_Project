@@ -203,7 +203,7 @@ before they are taken; the AI logs small ones). Entry updated at the end of the 
 - Installed the package versions of `requirements.txt` in Nuvolos (pandas 2.3.3 -> 3.1.1 etc.).
 - Steps 0 to 7: folds and checks, baselines, linear models, trees, neural net, horse race, diagnostics (6b, 6c),
   residual-target round (6d, 6e; D47, decided by Neil) with its critical check (6f), optional features (step 7,
-  D48), the complete race figure (7b). Logged D45 to D48; wrote `docs/model_report.md`; redesigned the race figure
+  D48), the complete race figure (7b), the main model chosen by Neil (step 8, D49) with its feature importance. Logged D45 to D48; wrote `docs/model_report.md`; redesigned the race figure
   (readable values, colour and shape per round, all candidates).
 
 **What was checked (and changed because of it)**

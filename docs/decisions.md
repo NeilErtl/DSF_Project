@@ -37,6 +37,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D45 | Notebooks 02/03: 02 fits and tunes every model on four time folds, chooses on pooled validation MAE, writes test predictions without test error; 03 evaluates, fits nothing | taken (team: Neil) |
 | D46, D47 | Small tuning grids, default competes; second race round with the residual target (spread minus market median t-2), scored on the spread | taken (team: Neil; AI implementation), D47 **consequential** |
 | D48 | Optional features `has_revolver`, `has_delayed_draw`, `n_family_bdcs` tested on the three best residual models | taken (AI, small) |
+| D49 | Main model: random forest on the residual target with the optional features (300 trees, max_features 0.33, min_samples_leaf 1); declared before any test prediction | taken (team: Neil, E10), **consequential** |
 
 ## Decision log (history and evidence)
 
@@ -90,6 +91,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D46 | Notebook 02 steps 2 to 6: reference mean added; tuning grids; random-forest feature share; neural-net early stopping; unknown-category warning silenced and counted; diagnostics 6b and 6c. | taken (AI, small; reviewed by notebook owner) | See D46. |
 | D47 | Second race round with the residual target (spread minus market median t-2) for all models; default setting competes in tuning. | taken (team: Neil, E9; AI implementation), **consequential** (model specification) | See D47. |
 | D48 | Optional features (`has_revolver`, `has_delayed_draw`, `n_family_bdcs`) tested on the three best residual models; `instrument` and `mkt_spread_t2_core` not tested. | taken (AI, small, under E5) | See D48. |
+| D49 | Main model: random forest, residual target, optional features. | taken (team: Neil, E10), **consequential** (main model) | See D49. |
 
 ---
 
@@ -614,3 +616,23 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   neural net 60.8 -> 68.3 (unstable, fold spread 24 bps). Pooled gains are below the fold spread, but the forest gain
   is in the same direction in every fold (a paired comparison on the same loans).
 - **Reversible:** yes; the committed-feature versions stay in `predictions_validation.csv`.
+
+### D49. Choice of the main model (team: Neil Ertl, notebook 02 owner, E10; 21 Nov 2026)
+- **Why it came up.** Step 8 of notebook 02: the main model must be declared on the validation folds before any test
+  prediction (deck 16, rule 5); all candidates still get test predictions for notebook 03.
+- **Options.** (A) random forest, residual target, optional features: 54.6 bps; (B) boosting, same set-up: 57.3;
+  (C) ridge, residual target: 64.7 (simplest to explain); (D) boosting, residual target, committed features only:
+  58.3.
+- **Pros and cons.** A: lowest MAE; lower than the forest without optional features in each of the four folds; the
+  only candidate ahead of baseline 1 on both metrics (63.1% within 50 bps against 58.4%); forests are robust to their
+  settings (deck 17); con: like every tree-based residual model it predicted too low in each validation quarter (+11
+  to +22 bps, D47) and it is harder to explain than ridge. B: within the fold spread of A but not simpler, more
+  tuning-sensitive. C: transparent coefficients, but 10 bps worse, more than the fold spread (7.0), so deck 16 rule 4
+  does not favour it. D: stays with the committed features, 3.7 bps worse.
+- **Choice: A.** Specification in `output/tables/model_choice.csv`; it reproduces the validation MAE exactly. Feature
+  importance (deck 17, refitted on all training loans): tenor 0.24, hold size 0.23, manager family 0.15,
+  has_revolver 0.10, sector 0.07, market features 0.04 to 0.05; it describes the premium over the market median and
+  favours continuous features.
+- **Caveat.** About 20 candidates were compared on the same four quarters: 54.6 bps is optimistic.
+- **Reversible:** yes until the test predictions are evaluated in notebook 03; after that, changing the main model
+  would turn the test quarters into validation data.
