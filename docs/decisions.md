@@ -34,6 +34,9 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D35 | Refinancings and add-ons only in `loans_incl_refi.csv` | recommended, to be confirmed by team |
 | D37 | Hold size never takes the fair value | taken |
 | D39, D42 | Headline numbers from the notebook; rounding of processed files; fixed role vocabulary in the dictionary | taken |
+| D45 | Notebooks 02/03: 02 fits and tunes every model on four time folds, chooses on pooled validation MAE, writes test predictions without test error; 03 evaluates, fits nothing | taken (team: Neil) |
+| D46, D47 | Small tuning grids, default competes; second race round with the residual target (spread minus market median t-2), scored on the spread | taken (team: Neil; AI implementation), D47 **consequential** |
+| D48 | Optional features `has_revolver`, `has_delayed_draw`, `n_family_bdcs` tested on the three best residual models | taken (AI, small) |
 
 ## Decision log (history and evidence)
 
@@ -86,6 +89,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D45 | Working rules for notebooks 02/03: split of tasks as in the course template, model choice on pooled validation MAE, small tuning grids, one optional-feature variant, package versions from `requirements.txt`. | taken (team: Neil, notebook 02 owner), **consequential** (main model choice rule) | See D45. |
 | D46 | Notebook 02 steps 2 to 6: reference mean added; tuning grids; random-forest feature share; neural-net early stopping; unknown-category warning silenced and counted; diagnostics 6b and 6c. | taken (AI, small; reviewed by notebook owner) | See D46. |
 | D47 | Second race round with the residual target (spread minus market median t-2) for all models; default setting competes in tuning. | taken (team: Neil, E9; AI implementation), **consequential** (model specification) | See D47. |
+| D48 | Optional features (`has_revolver`, `has_delayed_draw`, `n_family_bdcs`) tested on the three best residual models; `instrument` and `mkt_spread_t2_core` not tested. | taken (AI, small, under E5) | See D48. |
 
 ---
 
@@ -584,3 +588,29 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   stopping and max_iter). No other number changed.
 - **Next (owner):** choice of the main model in step 8 among the candidates within the fold spread of the best.
 - **Reversible:** yes (the first round stays in the notebook and in `predictions_validation.csv`).
+- **Critical assessment (owner's request, notebook step 6f).** Does the residual target still answer the committed question?
+  *Fits:* the predicted and scored quantity is unchanged (spread over SOFR at the cutoff, MAE in bps); the market
+  median t-2 is a committed feature and the committed baseline 1, so no new information and no leakage; the
+  decomposition "market level + loan premium" is how a deal team prices against comparables; transforming the
+  training target has a course precedent (log price in notebook 209). *Assumptions, stated as limitations:* (1) for
+  trees the market level passes through one-for-one, while the slope of the quarter median spread on the t-2 market
+  median is 0.79 over nine training quarters (linear residual models still estimate their own coefficient); (2) the
+  learned premium carries the training period's average gap between the current spread and the t-2 median (median
+  deviation 0 to -0.25 pp in a falling market): the tree-based residual models (boosting, forest) predict too low in
+  every validation quarter (mean error +8 to +22 bps), while baseline 1, lasso and the residual neural net err in
+  both directions. If the market turned up, this bias would grow. (3) Feature importances of a residual model describe the premium, not the spread level. *Verdict:* the
+  approach answers the committed question; the bias is reported by quarter in notebook 03 and in the limitations.
+
+### D48. Optional features in step 7 (AI, small choices under D45/E5; 21 Nov 2026)
+- **What.** The three best candidates of 6d (boosting, random forest, neural net on the residual target; within the
+  fold spread of each other) refitted with `has_revolver`, `has_delayed_draw` (deal structure, known at the term
+  sheet) and `n_family_bdcs` (the lender's own allocation), keeping the tuned settings of 6d (no re-tuning: the
+  variant should show the value of the features, not of a new search).
+- **Not tested.** `instrument`: term loan for 1,119 of 1,122 training loans. `mkt_spread_t2_core`: an alternative to
+  `mkt_spread_t2_all` (`for_modelling.md`), missing for 94 loans, and the residual target is defined on the all-BDC
+  median.
+- **Evidence (validation MAE, bps).** Random forest 59.3 -> 54.6 (lower in each of the four folds: 57.9/55.9/62.6/
+  62.7 -> 55.7/52.9/51.6/58.6; share within 50 bps 57.3% -> 63.1%, above baseline 1's 58.4%); boosting 58.3 -> 57.3;
+  neural net 60.8 -> 68.3 (unstable, fold spread 24 bps). Pooled gains are below the fold spread, but the forest gain
+  is in the same direction in every fold (a paired comparison on the same loans).
+- **Reversible:** yes; the committed-feature versions stay in `predictions_validation.csv`.

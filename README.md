@@ -37,11 +37,11 @@ environment variable `SEC_USER_AGENT`.
 ## Folder map
 | Folder | Content |
 |---|---|
-| `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks) |
+| `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `02_estimate.ipynb` (baselines, models, horse race, choice of the main model, predictions for 03), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks) |
 | `data/raw/`, `data/interim/` | Downloads and caches, rebuilt by the code, not in Git |
 | `data/processed/` | Working datasets, data dictionary, sector and family mappings |
 | `output/tables/`, `output/figures/` | Funnel, precision, hand check, headline numbers, figures |
-| `docs/` | `for_modelling.md`, `data_report.md`, `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
+| `docs/` | `for_modelling.md`, `data_report.md`, `model_report.md` (summary of notebook 02), `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
 
 ## Sample definitions (status: recommended by the preprocessing team, to be confirmed)
 | Definition | Reason | Robustness file or flag |
@@ -58,7 +58,8 @@ Main test protocol (D41): one model per test quarter, trained on all loans up to
 - Mathis Aeby: preprocessing (notebook 01), documentation. *(to be completed)*
 - Patrick Eppler: independent preprocessing version, comparison, hand check of 50 loans, modelling helpers design.
   *(to be completed)*
-- Neil Ertl, Nathan Steiner: *(to be completed)*
+- Neil Ertl: estimation (notebook 02, `docs/model_report.md`). *(to be completed)*
+- Nathan Steiner: evaluation on the test quarters (notebook 03). *(to be completed)*
 
 ## Use of AI
 The preprocessing code and documentation were written with an AI assistant (Claude Code) under the rules in

@@ -193,3 +193,31 @@ release only if every check passes. Report: `docs/history/release_report.md`.
   candidate lines whose parsed name is an industry label (left for a parser improvement; the lines are excluded).
 - Hand-made exclusions of single loans: residual odd names are documented in D43 and D44 instead (e.g. "Project
   Titan Tyber Medical", very likely not new, but no name rule links it to its earlier holding).
+
+## Session 6, 21 Nov 2026: notebook 02, steps 0 to 7 (estimation), Claude Opus 5.5 in Claude Code, with Neil Ertl
+
+**Task.** Build `code/02_estimate.ipynb` under CLAUDE.md and the team rules D45 (Neil decides consequential choices
+before they are taken; the AI logs small ones). Entry updated at the end of the session.
+
+**What the AI did**
+- Installed the package versions of `requirements.txt` in Nuvolos (pandas 2.3.3 -> 3.1.1 etc.).
+- Steps 0 to 7: folds and checks, baselines, linear models, trees, neural net, horse race, diagnostics (6b, 6c),
+  residual-target round (6d, 6e; D47, decided by Neil) with its critical check (6f), optional features (step 7,
+  D48), the complete race figure (7b). Logged D45 to D48; wrote `docs/model_report.md`; redesigned the race figure
+  (readable values, colour and shape per round, all candidates).
+
+**What was checked (and changed because of it)**
+- Baseline 2 recomputed by separate code for all 675 validation loans (first check failed on a fallback case; the
+  check was widened, the helper was right).
+- No overfitting, no never-feature, predictions aligned to loans; tuning bug found: the default setting was not in
+  the grid, so a "tuned" net was worse than its default; fixed (default competes, D47).
+- An overstatement corrected: the 55 bps yardstick of 6c bounds linear models only (boosting reached 58, forest 55).
+- Residual target challenged on the owner's request (6f): one-for-one pass-through (slope 0.79) and an inherited
+  bias of the tree-based residual models (+8 to +22 bps per validation quarter) documented as limitations in D47 and
+  the model report. A first statement that all residual models were biased was corrected: the residual net is not.
+- Documentation chain audited on the owner's request: eight gaps fixed (notebook header, definitions table, model
+  report, README, for_modelling pointer, this entry, Neil's notes); critical check moved next to the round it tests.
+
+**What was rejected**
+- `instrument` and `mkt_spread_t2_core` as optional features (D48); RandomizedSearchCV (full grids run in seconds);
+  the residual round for trees only (unfair race).
