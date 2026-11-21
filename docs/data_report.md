@@ -26,7 +26,7 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
 1. **Data.** 23 SEC BDC data set zips (filings submitted Oct 2022 to Oct 2026) and 3 FRED series, downloaded by
    code. Current-period rows of `soi.tsv`, one filing per BDC and quarter (latest filed), quarters 2022Q3 to 2026Q2,
    204 registrants mapped to manager families by explicit rules.
-2. **Borrowers.** A parser learns each BDC's identifier format and extracts the borrower name (1.9% empty); a second
+2. **Borrowers.** A parser learns each BDC's identifier format and extracts the borrower name (3.2% empty, incl. lines whose parsed name was only an industry label); a second
    pass removes display names and stray letters glued to the legal name (D28).
 3. **New loans.** No BDC of the same family held the borrower in any earlier quarter, checked on current holdings and
    the prior-period comparatives of every filing, with rarity-weighted name matching plus an exact-name check. The
@@ -44,35 +44,35 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
 ## 3. Funnel (all BDCs / core sample; `output/tables/funnel.csv`)
 | Step | All BDCs | Core |
 |---|---:|---:|
-| Candidate loans (borrower x BDC x quarter, eligible line) | 213,758 | 54,498 |
-| BDC filed a complete previous quarter | 197,874 | 51,414 |
-| Not held by the family before (incl. spelling variants) | 14,212 | 4,117 |
-| One row per borrower x family x quarter | 9,620 | 3,080 |
-| No acquisition date before the quarter at any BDC of the family | 9,542 | 3,051 |
-| Spread, all-in rate, PIK, hold, tenor, SOFR filters | 8,142 | 2,379 |
-| Not an existing loan of an unaffiliated lender | 7,463 | 1,924 |
-| Tranche (one spread across the family) and near-match rules | 7,379 | 1,892 |
-| Quarters from 2023Q2 | 7,174 | 1,864 |
-| Core: industry and maturity known | | **1,725** |
+| Candidate loans (borrower x BDC x quarter, eligible line) | 213,660 | 54,450 |
+| BDC filed a complete previous quarter | 197,796 | 51,384 |
+| Not held by the family before (incl. spelling variants) | 13,941 | 4,054 |
+| One row per borrower x family x quarter | 9,381 | 3,029 |
+| No acquisition date before the quarter at any BDC of the family | 9,316 | 3,001 |
+| Spread, all-in rate, PIK, hold, tenor, SOFR (stated, implied base 2.5 pp or more) | 7,909 | 2,350 |
+| Not an existing loan of an unaffiliated lender | 7,255 | 1,894 |
+| Tranche (one spread across the family) and near-match rules | 7,175 | 1,864 |
+| Quarters from 2023Q2 | 6,979 | 1,836 |
+| Core: industry and maturity known | | **1,705** |
 
 ## 4. Final sample (`data/processed/loans.csv`)
-- **1,725 loans**, 2023Q2 to 2026Q2, 31 manager families. **BDC counts:** each loan has one lead BDC (the family's
+- **1,705 loans**, 2023Q2 to 2026Q2, 31 manager families. **BDC counts:** each loan has one lead BDC (the family's
   BDC with the largest position, column `cik`); the lead BDCs are 45 distinct BDCs (48 names, because some BDCs were
   renamed). Counting also the other BDCs of the family that hold the loans: 61 BDCs. Universe: 67 BDCs that state
   borrower industries.
-- Train 1,131 (2023Q2 to 2025Q2), test 594 (2025Q3 170, 2025Q4 151, 2026Q1 148, 2026Q2 125). The final model with
-  the one-quarter gap trains on 990 loans (to 2025Q1).
+- Train 1,122 (2023Q2 to 2025Q2), test 583 (2025Q3 164, 2025Q4 149, 2026Q1 147, 2026Q2 123). The final model with
+  the one-quarter gap trains on 983 loans (to 2025Q1).
 - Largest families: Apollo 19%, Goldman Sachs 11%, BlackRock 7%, Antares 7%, First Eagle 5%.
-- Spread median 5.00 pp (2023 6.10, 2024 5.00; the notebook also shows test-period years as descriptives: no rule
+- Spread median 5.00 pp (2023 6.25, 2024 5.00; the notebook also shows test-period years as descriptives: no rule
   or threshold was set on them, and they must not guide model choices); hold median USD 10.6m; tenor median 6.2 years;
-  93% first lien (6% unknown: Stellus, TCW, Onex write no lien in the line). 38% of loans are held by three or more other families in the same quarter (syndicated or club
+  94% first lien (6% unknown: Stellus, TCW, Onex write no lien in the line). 39% of loans are held by three or more other families in the same quarter (syndicated or club
   loans; flag `n_other_families_same_q`).
-- Robustness files: `loans_all_bdc.csv` 7,174 loans (other BDCs: median spread 4.75 pp, tenor known for 16%);
-  `loans_incl_refi.csv` 2,171 loans, of which 402 refinancings/add-ons and 55 with tenor 3 to 4 years (D35).
+- Robustness files: `loans_all_bdc.csv` 6,979 loans (other BDCs: median spread 4.75 pp, tenor known for 15%);
+  `loans_incl_refi.csv` 2,170 loans, of which 424 refinancings/add-ons and 56 with tenor 3 to 4 years (D35).
 
 ## 5. Validation
 - **Precision against acquisition dates** (dated loans after all filters): 94.8% acquired in the quarter of first
-  appearance (95% CI 91.5 to 96.9%, n = 271). An upper bound: a purchase also has a date in the quarter.
+  appearance (95% CI 91.4 to 96.9%, n = 268). An upper bound: a purchase also has a date in the quarter.
 - **Our hand check of 50 loans** (`docs/hand_check.csv`, stratified by family, re-checked by Mathis): borrower,
   spread and principal found 50/50, maturity 49/50. In the 36 that remain in the final sample: (a) originated in the
   quarter 32 = 89% (95% CI 75 to 96%), (b) bought later 3, (c) affiliate transfer 1. Optimistic: the existing-loan
@@ -89,7 +89,8 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
 - **Release checker (work order 5, fresh agent)**: row rules, cutoff, numbers, fresh-clone reproducibility, teammate
   test and hygiene passed; the newness audit found loans that were not new (spelling variants of borrowers the family
   held, an acquisition date at a sister BDC), spreads lost to a unit error, family-level spread differences and
-  industry labels parsed as names. Fixed (D43): 33 loans left, 11 entered; a further EDGAR check of 10 loans
+  industry labels parsed as names; a second fresh checker found brand-prefixed names and one SARON loan. Fixed in
+  two rounds (D43, D44): 1,747 to 1,705 loans; a further EDGAR check of 10 loans
   (`docs/verification_sample_10_release.csv`): (a) 7, (b) 2, not new 1 (since removed).
 - **Leakage and cutoff audit** by a fresh reviewer: one small real leak fixed (fair value replaced an implausible
   principal for 34 loans, D37), otherwise none; FRED and t-2 features recomputed exactly.
@@ -108,9 +109,9 @@ D27 PIK excluded, D31 near-match rule, D32 unfunded lines, D35 refinancings only
 without fair value, D40 joint-venture schedules excluded.
 
 ## 7. Open risks
-- About one in seven loans may not be a fresh origination (secondary purchase, or transfer from an affiliated private
+- About one loan in five to one in ten may not be a fresh origination (secondary purchase, or transfer from an affiliated private
   fund, which BDC filings cannot reveal).
-- Syndicated versus direct-lending mix: 38% of loans are held by three or more other families, and the share of
+- Syndicated versus direct-lending mix: 39% of loans are held by three or more other families, and the share of
   low-spread loans rises over time, so train and test may differ in composition (D25).
 - Hold size is measured at the reporting date and is the lender's hold, not the facility size.
 - Borrower names come from a parser; a borrower renamed after a merger can be counted twice.

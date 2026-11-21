@@ -23,15 +23,15 @@ environment variable `SEC_USER_AGENT`.
    laptop with little free memory).
 
 ## The working dataset (numbers from `output/tables/headline_numbers.csv`)
-- `data/processed/loans.csv`: **1,725 new loans**, 2023Q2 to 2026Q2, 31 manager families; the lead BDC of each loan
-  is one of 45 BDCs (distinct `cik`). Train 1,131 loans (to 2025Q2), test 594 (2025Q3 to 2026Q2).
+- `data/processed/loans.csv`: **1,705 new loans**, 2023Q2 to 2026Q2, 31 manager families; the lead BDC of each loan
+  is one of 45 BDCs (distinct `cik`). Train 1,122 loans (to 2025Q2), test 583 (2025Q3 to 2026Q2).
 - Target: spread over SOFR of newly originated loans (median 5.00 pp). Three origination checks: our hand check 32 of 36 (89%), Patrick's
   hand check 25 of 26 (96%), and an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%; the cleanest estimate, since
   no filter was designed on it); over all 91 distinct checked loans in the sample 88% (95% CI 80 to 93%). About one
   loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
   priced into a BDC portfolio.
 - Largest families: Apollo 19%, Goldman Sachs 11%, BlackRock 7%, Antares 7%, First Eagle 5%.
-- Robustness files: `loans_all_bdc.csv` (7,174 loans, all BDCs), `loans_incl_refi.csv` (2,171 loans incl.
+- Robustness files: `loans_all_bdc.csv` (6,979 loans, all BDCs), `loans_incl_refi.csv` (2,170 loans incl.
   refinancings and add-ons). Columns: `data_dictionary.csv`. How to use them: `docs/for_modelling.md`.
 
 ## Folder map
@@ -46,11 +46,11 @@ environment variable `SEC_USER_AGENT`.
 ## Sample definitions (status: recommended by the preprocessing team, to be confirmed)
 | Definition | Reason | Robustness file or flag |
 |---|---|---|
-| Refinancings and add-ons of existing borrowers out (D35) | Only 43% of dated ones were acquired in their quarter, against 95% for new borrowers: mostly add-ons priced at old terms | `loans_incl_refi.csv`, flag `refi_of_existing_borrower` |
+| Refinancings and add-ons of existing borrowers out (D35) | Only 52% of dated ones were acquired in their quarter, against 95% for new borrowers: mostly add-ons priced at old terms | `loans_incl_refi.csv`, flag `refi_of_existing_borrower` |
 | Existing loans of other managers dropped (D22) | Same loan held earlier by an unaffiliated BDC: a secondary purchase, not a new price | none (filter step 9b); kept borrowers seen earlier elsewhere carry `seen_at_other_family_before` |
 | Universe: BDCs that state borrower industries (D3) | Sector is a committed feature; 31 families instead of a hand-picked list | `loans_all_bdc.csv` (run without sector) |
 | Tenor 4 to 8 years (D8) | Shorter tenors are mostly older loans bought later (lower precision) | `loans_incl_refi.csv`, flag `tenor_3_to_4` |
-| Syndicated loans kept, with a sensitivity check (D25) | No clean marker; club deals look alike | flag `n_other_families_same_q` (3 or more: 38% of loans) |
+| Syndicated loans kept, with a sensitivity check (D25) | No clean marker; club deals look alike | flag `n_other_families_same_q` (3 or more: 39% of loans) |
 
 Main test protocol (D41): one model per test quarter, trained on all loans up to t-2 (`docs/for_modelling.md`).
 

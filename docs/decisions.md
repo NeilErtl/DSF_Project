@@ -14,11 +14,11 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | Id | Definition (one line) | Status |
 |---|---|---|
 | D1, D2 | SEC BDC Data Sets `soi.tsv`, one filing per BDC and quarter (latest filed) | taken |
-| D3 | Main universe: BDCs that state borrower industries (67 BDCs; 45 lead BDCs in the sample, 31 families; 1,725 loans) | recommended, to be confirmed by team |
-| D4, D43 | New loan: no BDC of the same family held the borrower (or a spelling variant) before; no acquisition date before the quarter at any BDC of the family | taken (team rule) |
+| D3 | Main universe: BDCs that state borrower industries (67 BDCs; 45 lead BDCs in the sample, 31 families; 1,705 loans) | recommended, to be confirmed by team |
+| D4, D43, D44 | New loan: no BDC of the same family held the borrower (or a spelling variant or brand-prefixed name) before; no acquisition date before the quarter at any BDC of the family | taken (team rule) |
 | D5, D15, D32, D34 | One funded SOFR term line per borrower; hold size sums the loan's tranches; unfunded lines excluded | taken |
 | D6 | Unit: one borrower x one manager family x one quarter of first appearance | taken (team rule) |
-| D7, D27, D33, D43 | Spread 1 to 15 pp (unit per filing and per line), not the all-in rate; no PIK; hold at least USD 100,000 | taken |
+| D7, D27, D33, D43, D44 | Spread 1 to 15 pp (unit per filing and per line), not the all-in rate, implied base rate a SOFR level; no PIK; hold at least USD 100,000 | taken |
 | D8 | Tenor 4 to 8 years (3 to 4 years only in `loans_incl_refi.csv`) | recommended, to be confirmed by team |
 | D10 | Market features: Baa spread and SOFR before the cutoff, t-2 new-loan median filed before the cutoff | taken |
 | D11, D38 | Split by time, test 2025Q3 to 2026Q2; one-quarter gap; training rows filed before the cutoff | taken |
@@ -41,7 +41,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 |---|----------|--------|--------|
 | D1 | Data source: SEC BDC Data Sets, `soi.tsv`, quarter-ends Sep 2022 to Jun 2026 (16 quarters). | taken | Verified: 2022Q3 to 2026Q2 complete; 2026Q3 has only 4 filers (dropped). Loans from 2023Q2 (D14). |
 | D2 | One filing per BDC and quarter: if a quarter has several filings (amendments), keep the latest. | taken | 12 BDC-quarters affected. |
-| D3 | Main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines) instead of the 16 BDCs; all-BDC file for the robustness check. | taken (AI), **consequential** | 67 industry-reporting BDCs; final core sample 1,747 loans, lead BDCs 45 in 31 families (D39; 16-BDC rule: about 680). |
+| D3 | Main sample: **industry-reporting BDCs by rule** (industry found for at least 80% of loan lines) instead of the 16 BDCs; all-BDC file for the robustness check. | taken (AI), **consequential** | 67 industry-reporting BDCs; final core sample 1,705 loans, lead BDCs 45 in 31 families (D39; 16-BDC rule: about 680). |
 | D4 | New loan = no BDC of the same family held the borrower in any earlier quarter (current holdings, prior-period comparatives, exact name); complete previous-quarter filing; no acquisition date before the quarter; family dedupe. | taken (team rule, AI implementation), **consequential** | Binding commitment (1). Details in D4, D13, D21. |
 | D5 | Funded floating-rate USD term loans over SOFR; drop revolvers, delayed-draw lines, unfunded commitments, non-USD, Prime, LIBOR, structured products, joint-venture lines. | taken | See D15, D16, D26. |
 | D6 | One row per borrower x manager family x quarter; different managers stay separate. | taken | 28.6% of new loans are held by more than one BDC of the family. |
@@ -82,6 +82,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D41 | Target wording with all three origination checks; main test protocol one model per test quarter; the five sample definitions kept. | taken (preprocessing owner, work order 5), to be confirmed by team, **consequential** | See D41. |
 | D42 | Release polish: rounding of processed files, cleaned display names, fixed role vocabulary in the data dictionary. | taken (AI, work order 5) | See D42. |
 | D43 | Release checker fixes: spelling variants count as held before; acquisition date and spread checked across the family; per-line spread unit; industry labels are not names; "InvestmentType" and "amp;" parsed. | taken (AI, work order 5), **consequential** (sample) | See D43. |
+| D44 | Second release check: matching key from the cleaned name; brand-prefixed names count as held before; implied base rate must be a SOFR level. | taken (AI, work order 5), **consequential** (sample) | See D44. |
 
 ---
 
@@ -93,7 +94,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   a standard Moody's/GICS industry name in the identifier), with the same 80% threshold.
 - **Pros and cons.** (1) matches the project description but is small and concentrated in 7 managers. (2) is large
   (7,385 loans) but only 38% have a known tenor and 40% a stated base rate. (3) keeps industry and tenor for every
-  loan, gave 1,798 loans from 31 families (1,747 after work order 3, 1,725 after work order 5), and answers the lecturers' concern that 16 BDCs are not representative.
+  loan, gave 1,798 loans from 31 families (1,747 after work order 3, 1,705 after work order 5), and answers the lecturers' concern that 16 BDCs are not representative.
   Risk: industry found by vocabulary matching can be wrong for some lines (hand check: 48 of 50 match the filing,
   the other 2 come from the tagged XBRL field).
 - **Evidence.** Medians core vs other BDCs: spread 5.00 vs 4.75 pp, hold USD 10.0m vs 9.7m (now 10.5m vs 9.9m), tenor 6.2 vs 6.2 years
@@ -466,7 +467,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   4. The tranche rule (D30) now also requires one spread across the family's BDCs (12 loans had different spreads at
      two BDCs of the family, 4 of them from the unit error).
   5. A parsed "name" that is only an industry label ("Hotels", "Aerospace &", "Electronic Equipment") is not a name:
-     the key is emptied, so the line is no candidate (447 candidate lines; a name with a legal word such as "Staples
+     the key is emptied, so the line is no candidate (10,369 holdings lines, about 450 of them candidates; a name with a legal word such as "Staples
      Inc." is kept). "amp;" written as text is decoded before parsing. The empty-name sanity limit of step 5 rises
      from 3% to 4% because these lines now count as empty.
 - **Effect.** Core sample 1,747 to 1,725 loans (33 left, 11 entered: 8 Crescent and 2 Apollo loans recovered by the
@@ -476,7 +477,35 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 - **Remaining, documented, not changed.** Truncated or odd names whose newness rests on the rare-word matching only
   (Goldman "Superior" = Superior Environmental Solutions, Palmer Square "Goose Inc" = Canada Goose, Varagon "Acquis" =
   FS Squared Holding Corp.); AllianceBernstein lines naming "BLACKSTONE INC" and "ONEX CORP" (that is how the filing
-  names the issuer); Crescent "Affordable Care" (a rename after a restructuring, D40); 12 loans whose fair value is
-  below half of the principal (hold size kept, D37); two loans with a 0.00% tagged coupon. The first-pass names of
-  447 lines with an industry label are lost rather than recovered (a parser improvement for later).
+  names the issuer); Crescent "Affordable Care" (a rename after a restructuring, D40); 11 loans whose fair value is
+  below half of the principal (10 after D44) (hold size kept, D37); two loans with a 0.00% tagged coupon. The first-pass names of
+  about 450 candidate lines with an industry label are lost rather than recovered (a parser improvement for later).
 - **Reversible:** each fix is one switch or function in steps 5, 6, 8 and 9.
+
+### D44. Fixes after the second release check (consequential for the sample; AI, work order 5)
+- **Why.** A second fresh checker (all checks again after D43) passed rows, cutoff, numbers, the EDGAR batch, the
+  fresh-clone run, the teammate test and hygiene, but found 8 loans that were not new and one loan priced over SARON.
+- **Fixes and evidence.**
+  1. The matching key is built from the cleaned display name (D42 rules plus trailing "Tranche B Loan" / "Term A
+     Loan" text and a misspelled "United Sates of America" prefix), so "F&M Buyer LLCF&M Buyer LLC", "eniorSenior
+     Support ..." (twice in one quarter at Comvest), "BCP V Everise ... Cov-Lite" match their earlier holdings.
+  2. Net 4 of `held_as_variant`: an earlier compact name of 8 letters or more at the end of the current one (or the
+     reverse) counts as held before: "Clarience Technologies Truck-Lite" / "Truck-Lite", "Convergint DG Investment
+     Intermediate Holdings 2" / "DG Investment ...", "BayMark Health Services". Tested on the sample before the run:
+     it hit exactly these three loans. 427 candidates are now flagged as variants (172 before D44).
+  3. Where an all-in rate is tagged, rate minus spread must be at least 2.5 pp (SOFR was 3.6 to 5.3% in 2023 to 2026):
+     Crescent "Solvias AG" (SARON, base 0.75%) and three loans with an implausible coupon (BlackRock "Distributed
+     Power", "GAIA Purchaser"; Andalusian "Kids Empire") leave; 65 all-BDC lines, 4 core.
+  4. "Oil & Gas Storage & Transportation" and two other GICS energy labels added to the industry vocabulary: the
+     WhiteHorse line that names no borrower leaves.
+- **Effect.** Core sample 1,725 to 1,705 loans (train 1,122, test 583, final-model training 983); all-BDC file 6,979;
+  variant 2,170 (424 refinancings/add-ons; their dated precision 52%, 12 of 23, against 95% for new borrowers).
+  Precision on dated core loans 94.8% (n = 268). Hand checks unchanged (32 of 36, 25 of 26, 24 of 30; all three
+  80 of 91). Cleaning the holdings' keys also exposed earlier holdings of some Apollo, BlackRock and TCW borrowers
+  under display-prefixed names (e.g. "Keystone Koala", "Weber Stephen Products"), which therefore leave as not new.
+- **Remaining, documented.** "Project Titan Tyber Medical" (Apollo 2026Q1; same spread and maturity as "Project Titan
+  Titan Luxco I", held since 2025Q2: very likely the same loan, no name rule links them); borderline group cases
+  (Catalent Creek Parent vs Catalent Pharma Solutions, AL GCX Fund VIII Holdings vs AL GCX Holdings); the variant file
+  uses its own `loan_id` (the hash includes the maturity) and is not a superset of the main sample (join on family,
+  quarter and borrower_key, `docs/for_modelling.md`). The data dictionary's loan_id note describes the main files.
+- **Reversible:** steps 5 (key), 8 (net 4) and 9 (implied base rate).
