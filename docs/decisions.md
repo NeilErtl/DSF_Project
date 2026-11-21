@@ -29,7 +29,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D23, D41 | Target: spread over SOFR of newly originated loans, with the three origination checks | taken, to be confirmed by team |
 | D25 | Syndicated loans kept, flag `n_other_families_same_q`, sensitivity check | recommended, to be confirmed by team |
 | D26, D40 | Joint-venture schedule lines excluded (PennantPark, WhiteHorse, Monroe) | taken |
-| D28, D42 | Borrower names: parser with second naming pass; display names cleaned (matching unaffected) | taken |
+| D28, D42 | Borrower names: parser with second naming pass; display names cleaned; since D44 the matching key is built from the cleaned name | taken |
 | D30, D31, D43 | One spread across the loan's tranches and the family's BDCs; no near match at the family | taken |
 | D35 | Refinancings and add-ons only in `loans_incl_refi.csv` | recommended, to be confirmed by team |
 | D37 | Hold size never takes the fair value | taken |
@@ -493,7 +493,9 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
      reverse) counts as held before: "Clarience Technologies Truck-Lite" / "Truck-Lite", "Convergint DG Investment
      Intermediate Holdings 2" / "DG Investment ...", "BayMark Health Services". Tested on the sample before the run:
      it hit exactly these three loans. 427 candidates are now flagged as variants (172 before D44).
-  3. Where an all-in rate is tagged, rate minus spread must be at least 2.5 pp (SOFR was 3.6 to 5.3% in 2023 to 2026):
+  3. Where a non-zero all-in rate is tagged, rate minus spread must not lie between 0.01 and 2.5 pp (SOFR was 3.6 to
+     5.3% in 2023 to 2026; a tagged 0.00% rate is treated as untagged, and there is no upper bound, so two loans with
+     an implied base of 6.5 and 8.75 pp stay):
      Crescent "Solvias AG" (SARON, base 0.75%) and three loans with an implausible coupon (BlackRock "Distributed
      Power", "GAIA Purchaser"; Andalusian "Kids Empire") leave; 65 all-BDC lines, 4 core.
   4. "Oil & Gas Storage & Transportation" and two other GICS energy labels added to the industry vocabulary: the
