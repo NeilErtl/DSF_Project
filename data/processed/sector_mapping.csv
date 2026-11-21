@@ -19,21 +19,21 @@ Media & Entertainment,1,Communication Services
 Diversified Consumer Services,28,Consumer Discretionary
 Consumer Services,24,Consumer Discretionary
 "Hotels, Restaurants & Leisure",24,Consumer Discretionary
-Hotels,21,Consumer Discretionary
-Specialty Retail,17,Consumer Discretionary
+Hotels,20,Consumer Discretionary
+Specialty Retail,16,Consumer Discretionary
 Distributors,15,Consumer Discretionary
 Trading Companies & Distributors,13,Consumer Discretionary
-Automobile Components,11,Consumer Discretionary
+Automobile Components,10,Consumer Discretionary
 Services: Consumer,8,Consumer Discretionary
-Household Durables,7,Consumer Discretionary
 Leisure Products,7,Consumer Discretionary
 Textiles,7,Consumer Discretionary
 Automotive,6,Consumer Discretionary
 Diversified consumer services,6,Consumer Discretionary
+Household Durables,6,Consumer Discretionary
 Consumer Products,5,Consumer Discretionary
-Hotel Gaming And Leisure,4,Consumer Discretionary
 "Hotel, Gaming & Leisure",4,Consumer Discretionary
 Franchising,3,Consumer Discretionary
+Hotel Gaming And Leisure,3,Consumer Discretionary
 "Textiles, Apparel & Luxury Goods",3,Consumer Discretionary
 Automobiles,2,Consumer Discretionary
 Consumer goods: Durable,2,Consumer Discretionary
@@ -83,9 +83,8 @@ Energy Equipment and Services,2,Energy
 Oil And Gas Energy,2,Energy
 Oilfield Services,2,Energy
 Energy: Oil & Gas,1,Energy
-Oil And Gas Storage And Transportation,1,Energy
 Financial Services,65,Financials
-Insurance,35,Financials
+Insurance,34,Financials
 Capital Markets,17,Financials
 Diversified Financial Services,11,Financials
 Consumer Finance,3,Financials
@@ -96,37 +95,37 @@ Insurance & Insurance Services,1,Financials
 Sovereign & Public Finance,1,Financials
 Specialized Finance,1,Financials
 Transaction Payment Processing Services,1,Financials
-Health Care Providers & Services,64,Health Care
+Health Care Providers & Services,63,Health Care
 Health Care Technology,41,Health Care
 Healthcare & Pharmaceuticals,33,Health Care
-Pharmaceuticals,23,Health Care
+Pharmaceuticals,22,Health Care
 Health Care Equipment & Supplies,20,Health Care
 Healthcare,20,Health Care
 Healthcare Providers and Services,18,Health Care
 Health Care,11,Health Care
 Life Sciences Tools & Services,9,Health Care
 Health care,7,Health Care
-Health Care Equipment & Services,6,Health Care
+Health Care Equipment & Services,4,Health Care
 Healthcare Pharmaceuticals,4,Health Care
 Healthcare Technology,4,Health Care
 Biotechnology,2,Health Care
 Health Care & Services,2,Health Care
-Healthcare Providers & Services,2,Health Care
 Health care providers & services,1,Health Care
 Healthcare Equipment & Supplies,1,Health Care
 Healthcare Equipment and Services,1,Health Care
+Healthcare Providers & Services,1,Health Care
 Pharmaceuticals & Life Sciences,1,Health Care
 Professional Services,80,Industrials
-Commercial Services & Supplies,71,Industrials
-Business Services,52,Industrials
-Machinery,44,Industrials
-Aerospace & Defense,39,Industrials
+Commercial Services & Supplies,70,Industrials
+Business Services,50,Industrials
+Machinery,43,Industrials
+Aerospace & Defense,40,Industrials
 Building Products,26,Industrials
 Services: Business,24,Industrials
 Construction & Engineering,22,Industrials
 Electrical Equipment,17,Industrials
 Capital Equipment,13,Industrials
-Construction & Building,12,Industrials
+Construction & Building,11,Industrials
 Aerospace and Defense,10,Industrials
 Transportation,8,Industrials
 Capital Goods,7,Industrials
@@ -135,11 +134,11 @@ Wholesale,6,Industrials
 Air Freight & Logistics,5,Industrials
 Construction,5,Industrials
 Industrial Conglomerates,5,Industrials
-Environmental Industries,4,Industrials
 Industrial Products & Services,4,Industrials
 Professional services,4,Industrials
 Commercial and Professional Services,3,Industrials
 Construction and Engineering,3,Industrials
+Environmental Industries,3,Industrials
 Transportation Infrastructure,3,Industrials
 Transportation: Cargo,3,Industrials
 Aerospace And Defense,2,Industrials
@@ -148,7 +147,6 @@ Capital Equipment Industry,2,Industrials
 Commercial & Professional Services,2,Industrials
 Construction And Engineering,2,Industrials
 Industrial Machinery,2,Industrials
-Marine Transportation,2,Industrials
 distribution,2,Industrials
 Aerospace & defense,1,Industrials
 Air Freight and Logistics,1,Industrials
@@ -164,11 +162,12 @@ Environmental Solutions,1,Industrials
 Event Services,1,Industrials
 Human Resource Employment Services,1,Industrials
 Industrial,1,Industrials
+Marine Transportation,1,Industrials
 Research And Consulting Services,1,Industrials
 Road and Rail,1,Industrials
 Services Business,1,Industrials
 Trading Companies & Distributor,1,Industrials
-Software,155,Information Technology
+Software,153,Information Technology
 High Tech Industries,34,Information Technology
 IT Services,27,Information Technology
 Software & Services,25,Information Technology

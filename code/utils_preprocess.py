@@ -533,6 +533,7 @@ STANDARD_INDUSTRIES = [
     "Independent Power and Renewable Electricity Producers", "Real Estate Management & Development",
     "Health Care", "Healthcare", "Business Services", "Consumer Services", "Consumer Products", "Industrials",
     "Information Technology", "Technology", "Education", "Food & Beverage", "Healthcare Services",
+    "Oil & Gas Storage & Transportation", "Oil & Gas Equipment & Services", "Oil & Gas Exploration & Production",
 ]
 
 
@@ -891,7 +892,9 @@ def filing_snippets(url, name, user_agent, width=700, max_hits=3):
 # Display names (work order 5): cosmetic clean-up of the `borrower` column only
 # ---------------------------------------------------------------------------
 _TRAILING_JUNK = re.compile(r"\s+(?:(?:Ma\w{0,3}rity|Maturity|Acquisitions?|Acquisition Date)\s+\d{1,2}/\d{1,2}/\d{2,4}"
-                            r"|Rate and Spread|Reference Rate|Amendment No\.?\s*\d|Cov-Lite\b).*$", re.I)
+                            r"|Rate and Spread|Reference Rate|Amendment No\.?\s*\d|Cov-Lite\b"
+                            r"|(?:Tranche|Term)\s+[A-Z0-9]{1,2}\s+Loan\b).*$", re.I)
+_LEADING_JUNK = re.compile(r"^United S\w*tes of America\s+(?=\S+\s+\S)", re.I)    # not "United States Steel"
 _LINE_END = re.compile(r"\s*(?:,\s*)?(?:First Lien|1st Lien|Second Lien|2nd Lien|Senior Secured|Senior Loan|"
                        r"Term Loan|Unitranche)\b", re.I)
 
@@ -926,6 +929,7 @@ def display_name(name, identifier="", known_names=()):
             cut += 1
         s = s[:cut].strip()
     s = _TRAILING_JUNK.sub("", s).strip(" ,")                                          # rule 2
+    s = _LEADING_JUNK.sub("", s)                       # misspelled country in front ("United Sates of America X")
     m = re.match(r"([a-z]{3,})([A-Z][a-z]+)\b", s)                 # glued fragment: "eniorSenior" -> "Senior"
     if m and m.group(2).lower().endswith(m.group(1)):
         s = s[len(m.group(1)):]
@@ -989,7 +993,9 @@ def held_as_variant(cand, hold, ratio=0.85, days=60, strong=0.9):
     whatever the maturity; (2) a near-identical compact key (similarity at least `ratio`, same first letter, length
     within 2: "Escalen"/"Escalent", "Indera"/"Idera") with a maturity within `days` days, i.e. the same loan under a
     misspelled name; (3) a long compact key (10 letters or more) with similarity at least `strong`, whatever the
-    maturity ("Proneri International"/"Froneri International", "GS Fullsteam Operation"/"Fullsteam Operations").
+    maturity ("Proneri International"/"Froneri International", "GS Fullsteam Operation"/"Fullsteam Operations");
+    (4) an earlier compact key of 8 letters or more at the end of the current one, or the reverse (a brand or display
+    prefix: "Clarience Technologies Truck-Lite" / "Truck-Lite", "Convergint DG Investment ..." / "DG Investment ...").
     cand: rows with family, q_int, borrower_key, maturity; hold: rows with family, q_int, borrower_key, maturity.
     """
     from difflib import SequenceMatcher
@@ -1004,6 +1010,8 @@ def held_as_variant(cand, hold, ratio=0.85, days=60, strong=0.9):
         d = grams_by_fam.setdefault(f, {})
         for i in range(len(k) - 4):
             d.setdefault(k[i:i + 5], set()).add(k)
+    long_keys = first_q[first_q.index.get_level_values("ck").str.len() >= 8]
+    suffix_by_fam = {f: list(zip(g.index.get_level_values("ck"), g.values)) for f, g in long_keys.groupby(level="family")}
     out = []
     for f, q, k, m in zip(cand.family, cand.q_int, cand.borrower_key, cand.maturity):
         ck, ckg = compact_key(k), compact_key(k, keep_generic=True)
@@ -1029,6 +1037,11 @@ def held_as_variant(cand, hold, ratio=0.85, days=60, strong=0.9):
             for other in pool:
                 if (other != ck and first_q.get((f, other), 10**9) < q and abs(len(other) - len(ck)) <= 3
                         and SequenceMatcher(None, ck, other).ratio() >= strong):
+                    hit = True
+                    break
+        if not hit and f in suffix_by_fam:            # (4) a brand prefix: "Clarience Technologies Truck-Lite"
+            for other, q0 in suffix_by_fam[f]:
+                if q0 < q and other != ck and (ck.endswith(other) or (len(ck) >= 8 and other.endswith(ck))):
                     hit = True
                     break
         out.append(hit)
