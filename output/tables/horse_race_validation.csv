@@ -1,0 +1,22 @@
+model,n,mae_bps,share_within_50bps,mae_fold0_2024Q3,mae_fold1_2024Q4,mae_fold2_2025Q1,mae_fold3_2025Q2,fold_spread_bps,folds_beating_baseline_1,gain_vs_baseline_1_bps
+"Random forest (residual, optional features)",675.0,54.6,0.631,55.7,52.9,51.6,58.6,7.0,4,24.0
+"Random forest (residual, revolver + delayed draw)",675.0,54.9,0.63,55.4,53.3,52.1,59.4,7.3,4,23.7
+"Boosting (residual, optional features)",675.0,57.3,0.6,55.7,55.7,60.5,58.3,4.8,4,21.2
+Boosting (residual),675.0,58.3,0.576,55.1,57.3,60.4,61.5,6.4,4,20.2
+Random forest (residual),675.0,59.3,0.573,57.9,55.9,62.6,62.7,6.8,4,19.0
+Neural network (residual),675.0,60.8,0.559,62.3,55.7,63.6,63.5,7.9,4,17.5
+Ridge (residual),675.0,64.7,0.535,65.3,61.2,65.9,67.7,6.5,4,13.7
+Lasso (residual),675.0,66.4,0.532,66.0,63.3,67.1,70.6,7.3,4,12.0
+"Neural network (residual, optional features)",675.0,68.3,0.483,69.7,54.5,75.6,78.7,24.2,3,9.1
+Lasso,675.0,68.5,0.487,68.9,70.0,65.1,69.3,4.9,4,10.4
+Tree (residual),675.0,68.6,0.513,63.6,63.9,77.9,72.1,14.4,4,9.4
+Ridge,675.0,72.1,0.431,67.4,83.9,67.7,65.7,18.2,3,7.5
+Linear regression (residual),675.0,74.9,0.418,69.6,91.6,67.5,65.0,26.6,3,5.3
+Linear regression,675.0,74.9,0.418,69.6,91.6,67.5,65.0,26.6,3,5.3
+Baseline 1: market median t-2,675.0,78.6,0.584,77.9,76.3,85.4,75.4,10.0,0,0.0
+Random forest,675.0,85.4,0.321,80.5,81.1,83.7,100.0,19.5,1,-7.6
+Boosting,675.0,86.7,0.292,93.5,76.3,91.3,88.4,17.2,1,-8.6
+Tree,675.0,89.0,0.409,88.4,100.2,70.2,93.7,30.0,1,-9.4
+Reference: training mean,675.0,96.0,0.409,112.0,93.1,96.4,79.2,32.7,0,-16.4
+Baseline 2: sector x size median,675.0,98.3,0.385,115.8,99.3,95.5,77.2,38.6,0,-18.2
+Neural network,675.0,126.6,0.259,78.8,66.3,181.9,217.3,151.0,1,-57.4

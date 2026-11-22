@@ -34,6 +34,11 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D35 | Refinancings and add-ons only in `loans_incl_refi.csv` | recommended, to be confirmed by team |
 | D37 | Hold size never takes the fair value | taken |
 | D39, D42 | Headline numbers from the notebook; rounding of processed files; fixed role vocabulary in the dictionary | taken |
+| D45 | Notebooks 02/03: 02 fits and tunes every model on four time folds, chooses on pooled validation MAE, writes test predictions without test error; 03 evaluates, fits nothing | taken (team: notebook 02 owner) |
+| D46, D47 | Small tuning grids, default competes; second race round with the residual target (spread minus market median t-2), scored on the spread | taken (team: notebook 02 owner; AI implementation), D47 **consequential** |
+| D48 | Optional features `has_revolver`, `has_delayed_draw`, `n_family_bdcs` tested on the three best residual models | taken (AI, small) |
+| D49, D51 | Main model: random forest on the residual target with the committed features plus `has_revolver` and `has_delayed_draw` (300 trees, max_features 0.33, min_samples_leaf 1); declared before any test prediction | taken (team: notebook 02 owner, E10, E11), **consequential** |
+| D50 | Test and robustness predictions written by 02 (protocol D41, no test error computed); evaluation in 03 | taken (AI, small, under D45) |
 
 ## Decision log (history and evidence)
 
@@ -83,6 +88,13 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D42 | Release polish: rounding of processed files, cleaned display names, fixed role vocabulary in the data dictionary. | taken (AI, work order 5) | See D42. |
 | D43 | Release checker fixes: spelling variants count as held before; acquisition date and spread checked across the family; per-line spread unit; industry labels are not names; "InvestmentType" and "amp;" parsed. | taken (AI, work order 5), **consequential** (sample) | See D43. |
 | D44 | Second release check: matching key from the cleaned name; brand-prefixed names count as held before; implied base rate must be a SOFR level. | taken (AI, work order 5), **consequential** (sample) | See D44. |
+| D45 | Working rules for notebooks 02/03: split of tasks as in the course template, model choice on pooled validation MAE, small tuning grids, one optional-feature variant, package versions from `requirements.txt`. | taken (team: notebook 02 owner), **consequential** (main model choice rule) | See D45. |
+| D46 | Notebook 02 steps 2 to 6: reference mean added; tuning grids; random-forest feature share; neural-net early stopping; unknown-category warning silenced and counted; diagnostics 6b and 6c. | taken (AI, small; reviewed by notebook owner) | See D46. |
+| D47 | Second race round with the residual target (spread minus market median t-2) for all models; default setting competes in tuning. | taken (team: notebook 02 owner, E9; AI implementation), **consequential** (model specification) | See D47. |
+| D48 | Optional features (`has_revolver`, `has_delayed_draw`, `n_family_bdcs`) tested on the three best residual models; `instrument` and `mkt_spread_t2_core` not tested. | taken (AI, small, under E5) | See D48. |
+| D49 | Main model: random forest, residual target, optional features. | taken (team: notebook 02 owner, E10), **consequential** (main model) | See D49. |
+| D51 | Main model without `n_family_bdcs` (known to the lender only): random forest, residual target, revolver and delayed draw. Supersedes the feature set of D49. | taken (team: notebook 02 owner, E11), **consequential** (main model) | See D51. |
+| D50 | Test and robustness predictions: implementation details of steps 9 and 10. | taken (AI, small, under D45) | See D50. |
 
 ---
 
@@ -511,3 +523,154 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   uses its own `loan_id` (the hash includes the maturity) and is not a superset of the main sample (join on family,
   quarter and borrower_key, `docs/for_modelling.md`). The data dictionary's loan_id note describes the main files.
 - **Reversible:** steps 5 (key), 8 (net 4) and 9 (implied base rate).
+
+### D45. Working rules for notebooks 02 and 03 (team: notebook 02 owner; 21 Nov 2026)
+- **Why.** CLAUDE.md fixes models, baselines, metrics and split, but not how hyperparameters are tuned, how the main
+  model is chosen, or where the line between notebooks 02 and 03 lies. One team member owns notebook 02, another notebook 03 (names: README, "Who did what").
+- **E1, AI autonomy.** Options: AI decides and logs (CLAUDE.md so far); AI asks for every choice; AI asks only for
+  consequential choices. Chosen: the third (team rule added to CLAUDE.md). Reason: the owner must be able to explain
+  every consequential choice in the interview; small choices would slow the work without adding understanding.
+- **E2, split between 02 and 03.** Options: (A) as the course template `files/example_project_structure`:
+  02 produces predictions, 03 evaluates them; (B) 02 only validation, 03 refits and tests. Chosen: A. Reason: the
+  lecturers' template; all model fitting in one place; the commitments ask for test MAE per quarter for all models
+  and baselines, which one prediction file serves. Safeguard: the main model is written to a file in 02 before the
+  test predictions are produced, and 02 computes no test error.
+- **E3, choice criterion.** Options: MAE pooled over all validation loans; mean of the four fold MAEs. Chosen: pooled
+  (matches how the test MAE is computed), the per-fold MAEs shown next to it. Deck 16 rule 4: a simpler model is
+  preferred when the gap is within the spread across the folds.
+- **E4, tuning.** Small, explained grids on the same time folds (deck 16: "long searches are not expected"); a table
+  of default against tuned validation error per model, and whether the gain exceeds the fold spread.
+- **E5, optional features.** Main race with the committed features (`mh.NUM`, `mh.CAT`); one variant of the best
+  model with the optional features of `for_modelling.md`, judged on the validation folds only.
+- **E6, environment.** Packages installed at the versions of `requirements.txt` (the Nuvolos default had pandas
+  2.3.3); Python is 3.13 on Nuvolos against 3.12 used for notebook 01.
+- **E7, robustness.** 02 also produces the predictions of the chosen model on the robustness files
+  (`loans_all_bdc.csv` without sector, `loans_incl_refi.csv`), with the same test protocol; the syndicated-loan
+  sensitivity is a subset of the main predictions and is computed in 03.
+- **Reversible:** all of them; no data change.
+
+### D46. Choices in notebook 02, steps 2 to 6 (AI, small choices under D45; 21 Nov 2026)
+- **Reference "training mean"** shown next to the two committed baselines (deck 16's mean baseline). Not a committed
+  baseline and not a candidate. Evidence: 96.0 bps against 78.6 for baseline 1, i.e. ignoring the falling market
+  costs about 17 bps. Reversible.
+- **Tuning grids** (E4): ridge alpha 0.1 to 1000 (8 values), lasso alpha 0.0003 to 1 (7), tree depth 2 to 8 x
+  min leaf 5/20, forest max_features sqrt/0.33/0.5 x min leaf 1/5/10 with 300 trees, boosting learning rate
+  0.03/0.1 x 100/300 trees x depth 2/3 with subsample 0.8, MLP layers (16)/(32)/(32,16) x alpha 1e-4/1e-2 with early
+  stopping. Best ridge and lasso alpha inside the grid (3 and 0.01). Options considered: RandomizedSearchCV (notebook
+  210) instead of full grids: not needed, the full grids run in 40 seconds. Reversible.
+- **Random forest max_features below 1** (deck 17: the scikit-learn default for regression is bagging).
+- **Neural net early stopping** on 10% of the training fold, drawn at random (not the latest quarter): a small
+  look-ahead inside the training fold, never into the validation quarter. Option: time-ordered holdout (not available
+  in MLPRegressor). Effect is irrelevant for the choice: the net is last by 40 bps.
+- **Warning silenced:** scikit-learn warns when a validation loan has a manager family not seen in the training fold;
+  the encoder maps it to the pooled infrequent group as designed (`mh.make_preprocessor`). The number is printed
+  instead: 61 of 675 validation loans.
+- **Diagnostics (6b, 6c):** market features of every validation quarter lie outside the training range (trees cannot
+  extrapolate); 97% of spreads on a 25 bps grid; lasso training MAE 63 to 69 bps, validation 65 to 70 bps (no
+  overfitting); yardsticks that use the validation outcomes (true quarter median 74 to 83 bps; lasso fitted on the
+  quarter itself 55 to 59 bps) show the information limit of the features. 10% of loans with errors above 150 bps
+  carry 31% of the lasso error; spreads above 7 pp are predicted at 5.4 pp on average.
+- **E9 decided:** see D47.
+- **Wording fixed (D47):** yardstick (b) of 6c is the limit of a *linear* model with these features, not of all models.
+
+### D47. Residual target as a second round for all models; default setting competes in tuning (team, E9; 21 Nov 2026)
+- **Why it came up.** Steps 6b and 6c: the market level of every validation quarter lies outside the training range,
+  so trees and the neural net cannot follow the falling market; most of the error is between loans within a quarter.
+- **Options (E9).** (A) keep the spread as the only training target; (B) a second round for all models trained on
+  the deviation from the market median, `spread_pp - mkt_spread_t2_all`, prediction = deviation + median; (C) the
+  second round only for trees and the net. Chosen by the notebook owner: **B** (same folds, grids and metric for
+  all; C would make the race unfair). The scored target stays the spread; features unchanged; baseline 1 is the
+  special case "deviation = 0". The market median is a feature known at the cutoff (t-2 rule), so no leakage.
+- **Evidence.** Deviation of training loans by year (median 0.00 / -0.25 / 0.00 pp, IQR about 1 pp) is stable.
+  Validation MAE, spread target -> residual target: boosting 86.7 -> **58.3**, random forest 85.4 -> 59.3, neural net
+  126.6 -> 60.8, ridge 72.1 -> 64.7, lasso 68.5 -> 66.4, tree 89.0 -> 68.6, linear regression 74.9 -> 74.9
+  (identical by construction: the market median is a feature, so OLS only shifts its coefficient by one). All
+  residual models beat baseline 1 (78.6) in all four folds; fold spread 6 to 8 bps for the best five.
+- **Tuning fix (AI, small).** The default setting now competes with the grid (tuned = best of default and grid), so
+  tuning can never end worse than the default. Before, the residual neural net was reported as "tuned" 66.0 against
+  a default of 60.8 because the default (100 units) was not in the grid. "Default" means the scikit-learn default
+  plus the fixed settings of the notebook (lasso max_iter, forest 300 trees, boosting subsample 0.8, net early
+  stopping and max_iter). No other number changed.
+- **Next (owner):** choice of the main model in step 8 among the candidates within the fold spread of the best.
+- **Reversible:** yes (the first round stays in the notebook and in `predictions_validation.csv`).
+- **Critical assessment (owner's request, notebook step 6f).** Does the residual target still answer the committed question?
+  *Fits:* the predicted and scored quantity is unchanged (spread over SOFR at the cutoff, MAE in bps); the market
+  median t-2 is a committed feature and the committed baseline 1, so no new information and no leakage; the
+  decomposition "market level + loan premium" is how a deal team prices against comparables; transforming the
+  training target has a course precedent (log price in notebook 209). *Assumptions, stated as limitations:* (1) for
+  trees the market level passes through one-for-one, while the slope of the quarter median spread on the t-2 market
+  median is 0.79 over nine training quarters (linear residual models still estimate their own coefficient); (2) the
+  learned premium carries the training period's average gap between the current spread and the t-2 median (median
+  deviation 0 to -0.25 pp in a falling market): the tree-based residual models (boosting, forest) predict too low in
+  every validation quarter (mean error +8 to +24 bps, incl. the main model of D51), while baseline 1, lasso and the residual neural net err in
+  both directions. If the market turned up, this bias would grow. (3) Feature importances of a residual model describe the premium, not the spread level. *Verdict:* the
+  approach answers the committed question; the bias is reported by quarter in notebook 03 and in the limitations.
+
+### D48. Optional features in step 7 (AI, small choices under D45/E5; 21 Nov 2026)
+- **What.** The three best candidates of 6d (boosting, random forest, neural net on the residual target; within the
+  fold spread of each other) refitted with `has_revolver`, `has_delayed_draw` (deal structure, known at the term
+  sheet) and `n_family_bdcs` (the lender's own allocation), keeping the tuned settings of 6d (no re-tuning: the
+  variant should show the value of the features, not of a new search).
+- **Not tested.** `instrument`: term loan for 1,119 of 1,122 training loans. `mkt_spread_t2_core`: an alternative to
+  `mkt_spread_t2_all` (`for_modelling.md`), missing for 94 loans, and the residual target is defined on the all-BDC
+  median.
+- **Evidence (validation MAE, bps).** Random forest 59.3 -> 54.6 (lower in each of the four folds: 57.9/55.9/62.6/
+  62.7 -> 55.7/52.9/51.6/58.6; share within 50 bps 57.3% -> 63.1%, above baseline 1's 58.4%); boosting 58.3 -> 57.3;
+  neural net 60.8 -> 68.3 (unstable, fold spread 24 bps). Pooled gains are below the fold spread, but the forest gain
+  is in the same direction in every fold (a paired comparison on the same loans).
+- **Reversible:** yes; the committed-feature versions stay in `predictions_validation.csv`.
+
+### D49. Choice of the main model (team: notebook 02 owner, E10; 21 Nov 2026; feature set superseded by D51)
+- **Why it came up.** Step 8 of notebook 02: the main model must be declared on the validation folds before any test
+  prediction (deck 16, rule 5); all candidates still get test predictions for notebook 03.
+- **Options.** (A) random forest, residual target, optional features: 54.6 bps; (B) boosting, same set-up: 57.3;
+  (C) ridge, residual target: 64.7 (simplest to explain); (D) boosting, residual target, committed features only:
+  58.3.
+- **Pros and cons.** A: lowest MAE; lower than the forest without optional features in each of the four folds; the
+  only candidate ahead of baseline 1 on both metrics (63.1% within 50 bps against 58.4%); forests are robust to their
+  settings (deck 17); con: like every tree-based residual model it predicted too low in each validation quarter (+11
+  to +22 bps, D47) and it is harder to explain than ridge. B: within the fold spread of A but not simpler, more
+  tuning-sensitive. C: transparent coefficients, but 10 bps worse, more than the fold spread (7.0), so deck 16 rule 4
+  does not favour it. D: stays with the committed features, 3.7 bps worse.
+- **Choice: A.** Specification in `output/tables/model_choice.csv`; it reproduces the validation MAE exactly. Feature
+  importance (deck 17, refitted on all training loans): tenor 0.24, hold size 0.23, manager family 0.15,
+  has_revolver 0.10, sector 0.07, market features 0.04 to 0.05; it describes the premium over the market median and
+  favours continuous features.
+- **Caveat.** About 20 candidates were compared on the same four quarters: 54.6 bps is optimistic.
+- **Reversible:** yes until the test predictions are evaluated in notebook 03; after that, changing the main model
+  would turn the test quarters into validation data.
+
+### D50. Test and robustness predictions in notebook 02, steps 9 and 10 (AI, small choices under D45/E7; 21 Nov 2026)
+- **Test predictions (`data/processed/predictions_test.csv`).** All 21 candidates (models, both baselines, the
+  reference, protocol D41 (one fit per test quarter on loans up to t-2 filed before t; 983 to 1,435 training loans),
+  settings tuned on the validation folds; plus the main model fitted once up to 2025Q1 (`mh.final_train_test`,
+  secondary view of D41), labelled "[single fit to 2025Q1]". 22 models x 583 test loans (after D51).
+- **No test error in 02.** The file keeps `abs_error_bps` for the shared format; 02 prints only counts. Options
+  considered: dropping the column (breaks the agreed format for notebook 03). Every metric is computed in 03.
+- **Robustness (`data/processed/predictions_robustness.csv`, column `dataset`).** Main model and baseline 1, same
+  protocol and settings: `loans_all_bdc.csv` without sector (tenor missing for 63%, imputed with the training median
+  in the pipeline), 2,261 test loans; `loans_incl_refi.csv`, 759 test loans. Baseline 2 is not repeated (it needs the
+  sector). The syndicated-loan sensitivity is a subset of the main predictions (`n_other_families_same_q < 3`, join
+  on `loan_id` with `loans.csv`), computed in 03.
+- **Reproducibility (audit of 21 Nov 2026).** Two full runs first differed in the last digits of the predictions
+  (parallel tree fitting) and in the run-time column of the tuning table. Predictions are now saved rounded to 6
+  decimals and the run time is printed, not saved: two full runs give byte-identical output files (as D39 for
+  notebook 01).
+- **Reversible:** yes; the files are rebuilt by running the notebook.
+
+### D51. Main model without `n_family_bdcs` (team: notebook 02 owner, E11; 21 Nov 2026)
+- **Why it came up.** Full audit of notebook 02 before the hand-over: `data_dictionary.csv` marks `n_family_bdcs`
+  as known at the cutoff "for the lender (its own allocation), not for a sponsor". Our question names both users
+  (the deal team of a private credit fund and a sponsor or CFO). `has_revolver` and `has_delayed_draw` are deal
+  structure, known to both.
+- **Options.** (A) keep D49 and state that a sponsor would need a version without the feature; (B) make the version
+  without `n_family_bdcs` the main model.
+- **Evidence (validation, notebook 7b).** With `n_family_bdcs`: 54.6 bps, 63.1% within 50 bps, folds
+  55.7/52.9/51.6/58.6. Without: 54.9 bps, 63.0%, folds 55.4/53.3/52.1/59.4, fold spread 7.3. The difference (0.3 bps)
+  is far below the fold spread; deck 16, rule 4 favours the simpler model, and it is valid for every named user.
+- **Choice: B.** Main model: random forest, residual target, committed features plus `has_revolver` and
+  `has_delayed_draw`; settings as in D49. Mean error per validation quarter +8.1 / +18.4 / +13.4 / +24.4 bps (the
+  bias of D47). Feature importance (refitted on all training loans): tenor 0.24, hold size 0.24, manager family
+  0.16, revolver 0.09, sector 0.08, market features 0.04 to 0.05, lien 0.03, delayed draw 0.02. Steps 8 to 10
+  rerun; no test error had been computed before the change, so the test quarters stay untouched.
+- **Reversible:** yes until notebook 03 evaluates the test predictions.

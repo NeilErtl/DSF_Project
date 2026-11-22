@@ -1,0 +1,4 @@
+model,committed_features_mae,with_optional_features_mae,gain_bps,fold_spread_bps,gain_larger_than_fold_spread
+Boosting (residual),58.3,57.3,1.0,6.4,False
+Random forest (residual),59.3,54.6,4.7,6.8,False
+Neural network (residual),60.8,68.3,-7.5,7.9,False

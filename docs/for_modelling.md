@@ -64,3 +64,7 @@ maps to the infrequent group if the fold has one, otherwise to the reference cat
 (3) If you add `mkt_spread_t2_core`, it is missing in 94 loans; the pipeline imputes the training median. (4) Hold size is the held principal, not the deal
 size. (5) `lien` is "unknown" for almost all Stellus, TCW and Onex loans (not written in the line). (6) The test
 quarters are used once.
+
+**Status of notebook 02 (21 Nov 2026): complete.** Main model, results and the interface for notebook 03:
+`docs/model_report.md` (sections 6 and 7). Predictions: `data/processed/predictions_validation.csv`,
+`predictions_test.csv`, `predictions_robustness.csv`.

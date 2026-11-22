@@ -1,0 +1,6 @@
+model,2024Q3,2024Q4,2025Q1,2025Q2,quarter_level_slope
+Baseline 1: market median t-2,-26.8,-18.3,-41.1,9.2,0.79
+Lasso,-23.2,-41.8,0.4,-6.4,0.79
+Boosting (residual),7.6,9.0,12.5,13.7,0.79
+Random forest (residual),11.6,15.8,21.8,21.6,0.79
+Neural network (residual),11.7,-3.0,-17.8,3.4,0.79
