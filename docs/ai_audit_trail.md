@@ -232,3 +232,35 @@ before they are taken; the AI logs small ones). Entry updated at the end of the 
 **What was rejected**
 - `instrument` and `mkt_spread_t2_core` as optional features (D48); RandomizedSearchCV (full grids run in seconds);
   the residual round for trees only (unfair race).
+
+## Session 7, 22 Nov 2026: notebook 03 (evaluation on the test quarters), Claude Opus 5.5 in Claude Code, with the notebook 03 owner
+
+**Task.** Build `code/03_evaluate.ipynb` under CLAUDE.md and D45 (03 reads the predictions of 02, fits no model;
+consequential choices are put to the notebook 03 owner before they are taken).
+
+**What the AI did**
+- Environment in a fresh Nuvolos workspace: installed `requirements.txt` (nbformat was missing, so `%run` of a
+  notebook failed), created the gitignored `sec_user_agent.txt` with the owner's consent, downloaded the raw data.
+- Put two choices to the owner before computing any test error: presentation of the 22 candidates (E12) and the
+  uncertainty measure (E13); logged both and the small AI choices as D52.
+- Wrote notebook 03 (steps 0 to 9): input checks, headline table, by quarter with a two-panel figure, paired
+  bootstrap within quarters, by family, all candidates (descriptive), single-fit protocol, sensitivity and
+  robustness. Added it to `main.ipynb` with a check; wrote `docs/evaluation_report.md`; updated the README.
+
+**What was checked (and changed because of it)**
+- Alignment: every candidate predicts every test loan once; `y_true` equals `loans.csv`; stored errors equal the
+  recomputed ones; quarter MAEs average to the pooled MAE; bootstrap point estimate equals the table gap; both test
+  protocols coincide in 2025Q3.
+- Sign of the mean error verified against D51 on the validation predictions (+8.1 / +18.4 / +13.4 / +24.4 bps).
+- Two full runs of notebook 03 give identical tables; `main.ipynb` run without step 1 (02 and 03): all checks pass
+  and notebook 02 rewrote byte-identical files under pandas 3.1.1.
+- A sentence of the first report draft was wrong ("every residual model beats its spread-target version"): ridge
+  is better with the spread as target on test (66.0 against 67.6). Corrected.
+
+**What was rejected / left open**
+- A bootstrap over quarters (only four clusters, too few) and pooling small families into one row (hides them).
+- Not fixed, reported to the owner: notebook 01 exceeds the 8 GB memory of the Nuvolos default (kernel stopped
+  twice, noted in the README); FRED does not answer requests with the user agent "DSF-student-project" set in
+  notebook 01 step 1 (time-out), but answers the default one; the raw FRED files were downloaded with the default
+  user agent. Changing notebook 01 is left to the preprocessing owner.
+- A full run including notebook 01 was not possible in this workspace (memory).

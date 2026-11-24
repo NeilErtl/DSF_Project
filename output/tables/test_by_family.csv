@@ -1,0 +1,31 @@
+family,n,main_mae_bps,baseline_1_mae_bps,gap_bps,main_share_within_50bps,main_mean_error_bps
+Apollo,94,63.7,95.5,-31.8,0.532,-7.0
+AllianceBernstein,57,81.6,149.8,-68.2,0.246,-49.1
+Goldman Sachs,55,60.5,90.0,-29.5,0.527,-23.3
+BlackRock,39,68.2,118.6,-50.4,0.436,-37.4
+Antares,35,37.5,44.3,-6.8,0.714,-12.3
+Bain Capital,29,30.1,49.5,-19.3,0.828,0.3
+Jefferies,28,42.5,30.4,12.1,0.714,17.3
+Palmer Square Capital Bdc Inc.,28,66.1,103.6,-37.5,0.464,8.0
+Varagon,20,43.8,43.8,0.0,0.75,36.0
+First Eagle,18,104.8,172.9,-68.2,0.333,-5.7
+Silver Point,17,74.4,80.9,-6.5,0.412,45.5
+"Andalusian Credit Company, Llc",16,45.8,46.9,-1.1,0.688,7.2
+Manulife Private Credit Fund,15,59.5,55.0,4.5,0.6,32.7
+Diameter Credit Co,14,42.3,41.1,1.2,0.571,-0.0
+Stellus,14,21.1,44.6,-23.6,1.0,3.2
+Comvest,12,65.5,97.9,-32.4,0.667,63.3
+Crescent,11,31.0,25.0,6.0,0.818,5.3
+PennantPark,11,44.8,54.5,-9.8,0.545,0.0
+Onex,10,54.1,50.0,4.1,0.4,23.2
+Overland Advantage,10,54.1,85.0,-30.9,0.7,29.4
+TCW,9,19.5,100.0,-80.5,0.889,11.8
+Brightwood Capital Corp I,7,69.5,125.0,-55.5,0.286,37.6
+Great Elm,6,64.9,70.8,-6.0,0.333,34.4
+Msd Investment Corp.,6,41.0,41.7,-0.6,0.667,-14.9
+Kayne Anderson,5,30.5,80.0,-49.5,0.8,20.7
+SLR,5,77.8,101.0,-23.2,0.4,43.5
+"Whitehorse Finance, Inc.",5,46.2,85.0,-38.8,0.6,14.5
+BC Partners,4,104.8,225.0,-120.2,0.25,104.8
+Agl Private Credit Income Fund,2,45.4,75.0,-29.6,0.5,45.4
+Redwood Enhanced Income Corp.,1,175.6,100.0,75.6,0.0,175.6

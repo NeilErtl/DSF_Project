@@ -1,0 +1,5 @@
+model,n_test,test_mae_bps,test_share_within_50bps,test_mean_error_bps,validation_mae_bps,validation_share_within_50bps,test_minus_validation_mae_bps
+"Random forest (residual, revolver + delayed draw)",583,58.1,0.554,-1.7,54.9,0.63,3.2
+Baseline 1: market median t-2,583,86.3,0.503,-27.8,78.6,0.584,7.7
+Baseline 2: sector x size median,583,79.9,0.537,-24.0,98.3,0.385,-18.4
+Reference: training mean,583,92.3,0.451,-57.0,96.0,0.409,-3.7

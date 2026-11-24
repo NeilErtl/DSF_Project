@@ -39,6 +39,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D48 | Optional features `has_revolver`, `has_delayed_draw`, `n_family_bdcs` tested on the three best residual models | taken (AI, small) |
 | D49, D51 | Main model: random forest on the residual target with the committed features plus `has_revolver` and `has_delayed_draw` (300 trees, max_features 0.33, min_samples_leaf 1); declared before any test prediction | taken (team: notebook 02 owner, E10, E11), **consequential** |
 | D50 | Test and robustness predictions written by 02 (protocol D41, no test error computed); evaluation in 03 | taken (AI, small, under D45) |
+| D52 | Notebook 03: main model and baselines in front, all candidates descriptive only; paired bootstrap within test quarters for the gap to the baselines; mean error = actual minus predicted | taken (team: notebook 03 owner, E12, E13; AI small choices) |
 
 ## Decision log (history and evidence)
 
@@ -94,6 +95,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D48 | Optional features (`has_revolver`, `has_delayed_draw`, `n_family_bdcs`) tested on the three best residual models; `instrument` and `mkt_spread_t2_core` not tested. | taken (AI, small, under E5) | See D48. |
 | D49 | Main model: random forest, residual target, optional features. | taken (team: notebook 02 owner, E10), **consequential** (main model) | See D49. |
 | D51 | Main model without `n_family_bdcs` (known to the lender only): random forest, residual target, revolver and delayed draw. Supersedes the feature set of D49. | taken (team: notebook 02 owner, E11), **consequential** (main model) | See D51. |
+| D52 | Presentation and uncertainty of the test evaluation in notebook 03 (main model and baselines in front; bootstrap within quarters). | taken (team: notebook 03 owner, E12, E13; AI small choices) | See D52. |
 | D50 | Test and robustness predictions: implementation details of steps 9 and 10. | taken (AI, small, under D45) | See D50. |
 
 ---
@@ -674,3 +676,34 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   0.16, revolver 0.09, sector 0.08, market features 0.04 to 0.05, lien 0.03, delayed draw 0.02. Steps 8 to 10
   rerun; no test error had been computed before the change, so the test quarters stay untouched.
 - **Reversible:** yes until notebook 03 evaluates the test predictions.
+
+### D52. Test evaluation in notebook 03 (team: notebook 03 owner, E12 and E13; AI small choices under D45; 22 Nov 2026)
+- **Why it came up.** D45 puts all test metrics in notebook 03 and fixes metrics and protocol (D12, D41). Two
+  choices were open: how to show 22 candidates on the test quarters without turning them into a second race, and
+  whether to quantify the uncertainty of the gap between the main model and the baselines. Both were put to the
+  notebook 03 owner before any test error was computed (team rule D45).
+- **E12, presentation.** Options: (A) main model, both baselines and the reference in a headline table; every
+  candidate in a second table marked "description only"; (B) one table and figure with all 22 candidates on equal
+  footing, main model marked. Pros of B: maximal transparency. Cons of B: invites picking the test winner, which
+  would make the test quarters validation data. Chosen: **A** (owner). The commitment "test MAE for all models and
+  baselines" is met by the second table (`test_all_candidates.csv`).
+- **E13, uncertainty.** Options: (A) paired bootstrap of loans within each test quarter (2,000 draws, seed 42), 95%
+  interval of the MAE gap, plus the gap per quarter; (B) per-quarter MAEs only. Pros of A: says whether the gap
+  could be chance; pairing removes the noise shared by both candidates; drawing within quarters keeps the quarter
+  mix. Cons of A: treats loans of one quarter as independent although they share a market, so the interval is too
+  narrow if anything; therefore the four per-quarter gaps are shown next to it. Chosen: **A** (owner). Only numpy.
+- **AI small choices.** Mean error = actual minus predicted (positive = predicted too low), the sign of D47 and D51
+  (verified: it reproduces +8.1 / +18.4 / +13.4 / +24.4 bps on the validation quarters). Family table: all
+  families, sorted by test loans, with `n` shown; families with fewer than 20 test loans read as indications only
+  (no pooling, so no family disappears). Figure: MAE and mean error per quarter as two panels (no dual axis), the
+  three committed candidates in the first three colours of a colour-blind-checked palette, the reference grey and
+  dashed. Secondary protocol (single fit to 2025Q1) in its own table; check that both protocols coincide in 2025Q3.
+- **Evidence (test quarters, 583 loans; `output/tables/test_*.csv`).** Main model 58.1 bps (validation 54.9),
+  55.4% within 50 bps, mean error -1.7 bps; baseline 1 86.3 bps, baseline 2 79.9, training mean 92.3. Gap to
+  baseline 1 -28.2 bps, 95% interval -33.3 to -23.1; negative in every test quarter (-27.7 / -20.4 / -35.7 /
+  -29.4). The validation bias of the main model (too low in every quarter) does not persist: mean error +5.6 /
+  -5.9 / -22.1 / +18.2 bps. Gap keeps its sign without likely syndicated loans (-24.4), on all BDCs (-27.8) and
+  with refinancings (-33.1).
+- **Reversible:** yes (presentation only; no data or model change). The main model is not changed after this
+  evaluation (D49, D51).
+

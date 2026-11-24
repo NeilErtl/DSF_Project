@@ -1,0 +1,11 @@
+variant,model,n,mae_bps,share_within_50bps,mean_error_bps
+"main sample, all test loans","Random forest (residual, revolver + delayed draw)",583,58.1,0.554,-1.7
+"main sample, all test loans",Baseline 1: market median t-2,583,86.3,0.503,-27.8
+"main sample, all test loans",Baseline 2: sector x size median,583,79.9,0.537,-24.0
+main sample without likely syndicated loans,"Random forest (residual, revolver + delayed draw)",336,55.2,0.592,2.8
+main sample without likely syndicated loans,Baseline 1: market median t-2,336,79.6,0.533,-5.6
+main sample without likely syndicated loans,Baseline 2: sector x size median,336,74.2,0.577,-3.7
+all BDCs (no sector),"Random forest (residual, revolver + delayed draw)",2261,73.1,0.497,-5.0
+all BDCs (no sector),Baseline 1: market median t-2,2261,100.9,0.442,-34.9
+"incl. refinancings, add-ons, tenor 3-4 years","Random forest (residual, revolver + delayed draw)",759,62.4,0.522,-6.5
+"incl. refinancings, add-ons, tenor 3-4 years",Baseline 1: market median t-2,759,95.5,0.451,-37.7

@@ -17,9 +17,10 @@ environment variable `SEC_USER_AGENT`.
 1. Python 3.12: `python -m pip install -r requirements.txt`
 2. Create `sec_user_agent.txt` (see above).
 3. Open `code/main.ipynb` and run *Restart, Run All*. It runs `01_preprocess.ipynb` (about 25 minutes, longer on the
-   first run because of the downloads) and `02_estimate.ipynb` (about 2 minutes); `03_evaluate.ipynb` will be added.
-   To rebuild only the models, run `code/02_estimate.ipynb` alone: it reads `data/processed/` (in Git) and needs no
-   download or `sec_user_agent.txt`. Two runs give byte-identical output files. From the command line
+   first run because of the downloads), `02_estimate.ipynb` (about 2 minutes) and `03_evaluate.ipynb` (seconds).
+   To rebuild only the models and the evaluation, run `code/02_estimate.ipynb` and then `code/03_evaluate.ipynb`:
+   they read `data/processed/` (in Git) and need no download or `sec_user_agent.txt`. Notebook 01 holds all SEC
+   filings in memory: on an 8 GB machine (Nuvolos default) its kernel is stopped for lack of memory. Two runs give byte-identical output files. From the command line
    (in `code/`): `jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 main.ipynb`
    (`-1` switches off the per-cell time limit: notebook 01 runs inside one `%run` cell and can take over an hour on a
    laptop with little free memory).
@@ -36,14 +37,21 @@ environment variable `SEC_USER_AGENT`.
 - Robustness files: `loans_all_bdc.csv` (6,979 loans, all BDCs), `loans_incl_refi.csv` (2,170 loans incl.
   refinancings and add-ons). Columns: `data_dictionary.csv`. How to use them: `docs/for_modelling.md`.
 
+## Result on the test quarters (numbers from `output/tables/test_headline.csv`, `docs/evaluation_report.md`)
+- Main model (random forest on the deviation from the market median, chosen on the validation quarters before any
+  test prediction): **MAE 58.1 bps** on 583 test loans (2025Q3 to 2026Q2), 55% within plus or minus 50 bps.
+- Baseline 1 (market median of new loans in quarter t-2): 86.3 bps; baseline 2 (sector x size median): 79.9 bps.
+- Gap to baseline 1: -28.2 bps (95% bootstrap interval -33.3 to -23.1); the model is better in every test quarter
+  and in the robustness variants (all BDCs, refinancings included, without likely syndicated loans).
+
 ## Folder map
 | Folder | Content |
 |---|---|
-| `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `02_estimate.ipynb` (baselines, models, horse race, choice of the main model, predictions for 03), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks) |
+| `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `02_estimate.ipynb` (baselines, models, horse race, choice of the main model, predictions for 03), `03_evaluate.ipynb` (test metrics, by quarter and family, bootstrap, robustness; fits no model), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks) |
 | `data/raw/`, `data/interim/` | Downloads and caches, rebuilt by the code, not in Git |
 | `data/processed/` | Working datasets, data dictionary, sector and family mappings; predictions of notebook 02 for notebook 03 (`predictions_validation.csv`, `predictions_test.csv`, `predictions_robustness.csv`) |
-| `output/tables/`, `output/figures/` | Funnel, precision, hand check, headline numbers, figures |
-| `docs/` | `for_modelling.md`, `data_report.md`, `model_report.md` (summary of notebook 02), `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
+| `output/tables/`, `output/figures/` | Funnel, precision, hand check, headline numbers; validation race (02); test metrics `test_*.csv` (03); figures |
+| `docs/` | `for_modelling.md`, `data_report.md`, `model_report.md` (summary of notebook 02), `evaluation_report.md` (summary of notebook 03), `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
 
 ## Sample definitions (status: recommended by the preprocessing team, to be confirmed)
 | Definition | Reason | Robustness file or flag |
