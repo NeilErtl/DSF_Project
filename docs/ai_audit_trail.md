@@ -264,3 +264,29 @@ consequential choices are put to the notebook 03 owner before they are taken).
   notebook 01 step 1 (time-out), but answers the default one; the raw FRED files were downloaded with the default
   user agent. Changing notebook 01 is left to the preprocessing owner.
 - A full run including notebook 01 was not possible in this workspace (memory).
+
+## Session 8, 24 Nov 2026: figures for the report and slides (notebook 03, steps 8b and 9), Claude Opus 5.5 in Claude Code
+
+**Task.** Four figures from the team's figure plan in notebook 03: spread over time with training and test period,
+validation against test per model, error distribution of the main model against baseline 1 with the 50 bps line,
+gap to baseline 1 with an interval per robustness variant. No model fitted, nothing changed in the model.
+
+**What the AI did**
+- Added step 8b (paired bootstrap of the gap to baseline 1 for each robustness variant, same method as step 4;
+  `test_robustness_bootstrap.csv`) and step 9 (four figures); renumbered the summary to step 10 and extended its
+  output check (8 tables, 5 figures). Logged the choices as D53; updated `evaluation_report.md` and the README.
+
+**What was checked (and changed because of it)**
+- Every table that existed before is byte-identical after the change (including `test_bootstrap.csv`, although
+  `boot_gap` got an optional argument); two full runs give byte-identical tables and figures.
+- Point gaps of step 8b equal the gaps of `test_sensitivity_robustness.csv`; shares within 50 bps in figure 3 equal
+  step 2; figure 1 uses all 1,705 loans and 13 quarters.
+- Looked at each figure: titles of figures 2 and 4 were cut off and the legend of figure 2 covered a row (fixed);
+  20 bps histogram bins left empty bins because baseline 1 errors lie on a 25 bps grid (bins re-centred on
+  multiples of 25).
+
+**What was rejected / left open**
+- Drawing the main-sample interval again in step 8b (would report the step-4 interval twice with other digits).
+- The palette validator of the chart guidelines could not run (no Node.js in the workspace); the colours of
+  `test_by_quarter.png` were kept, and identity never rests on colour alone (markers, line styles, labels).
+- `code/01_preprocess.ipynb` and `code/main.ipynb` had uncommitted changes before this session; not touched.

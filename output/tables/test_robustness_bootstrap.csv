@@ -1,0 +1,5 @@
+variant,n,gap_mae_bps,ci95_low_bps,ci95_high_bps
+"main sample, all test loans",583,-28.2,-33.3,-23.1
+main sample without likely syndicated loans,336,-24.4,-30.7,-18.5
+all BDCs (no sector),2261,-27.8,-30.4,-25.1
+"incl. refinancings, add-ons, tenor 3-4 years",759,-33.1,-37.9,-28.5

@@ -3,8 +3,9 @@
 Notebook: `code/03_evaluate.ipynb` (runs top to bottom, fits no model). Decision: `docs/decisions.md`, D52.
 Counterpart of `docs/data_report.md` (notebook 01) and `docs/model_report.md` (notebook 02). Every number below comes
 from the tables in `output/tables/`: `test_headline.csv`, `test_by_quarter.csv`, `test_bootstrap.csv`,
-`test_by_family.csv`, `test_all_candidates.csv`, `test_single_fit.csv`, `test_sensitivity_robustness.csv`; figure
-`output/figures/test_by_quarter.png`.
+`test_by_family.csv`, `test_all_candidates.csv`, `test_single_fit.csv`, `test_sensitivity_robustness.csv`,
+`test_robustness_bootstrap.csv`; figures in `output/figures/`: `test_by_quarter.png`, `spread_over_time.png`,
+`validation_vs_test.png`, `error_distribution.png`, `robustness_gap.png` (D53).
 
 **Status (22 Nov 2026):** notebook 03 complete; the test quarters have been evaluated once. The main model was fixed
 in notebook 02 before any test prediction (D49, D51) and is not changed after this evaluation.
@@ -82,7 +83,9 @@ Mean error = actual minus predicted spread; negative = predicted too high.
 - **Refitting each quarter does not pay off here**: one fit up to 2025Q1 gives 57.2 bps (identical in 2025Q3 by
   construction, slightly better in 2025Q4 and 2026Q1, worse in 2026Q2). The difference is small; the main protocol
   stays as committed.
-- **The gap to baseline 1 keeps its sign and size in every variant.** On all BDCs (no sector, tenor imputed for many
+- **The gap to baseline 1 keeps its sign and size in every variant**, and no 95% interval touches zero
+  (`test_robustness_bootstrap.csv`, figure `robustness_gap.png`): without likely syndicated loans -24.4 [-30.7,
+  -18.5], all BDCs -27.8 [-30.4, -25.1], incl. refinancings -33.1 [-37.9, -28.5]. On all BDCs (no sector, tenor imputed for many
   loans) both errors are larger, but the model still gains 28 bps. The result does not hinge on the
   industry-reporting universe or on the sample definitions D25 and D35.
 
@@ -101,7 +104,16 @@ Mean error = actual minus predicted spread; negative = predicted too high.
 - **Market direction.** The training data cover a falling market. The model passes the market level through
   one-for-one (residual target); its behaviour in a rising market is not tested.
 
-## 9. Checks
+## 9. Figures for the report and slides (step 9, D53)
+| Figure | Shows | Use |
+|---|---|---|
+| `spread_over_time.png` | Median spread of new loans fell from 6.75 to 4.75 pp; spread minus market level t-2 stays between -0.75 and +0.25 pp | Why the models predict the residual (D47) |
+| `validation_vs_test.png` | Validation and test MAE of all 21 candidates, sorted by validation MAE | Optimism of the validation numbers; no choice on test |
+| `error_distribution.png` | Errors of the main model and baseline 1; 55% against 50% within 50 bps | Where the gain comes from: fewer large errors |
+| `robustness_gap.png` | Gap to baseline 1 with 95% interval in four sample variants | The result does not hinge on the sample definition |
+| `test_by_quarter.png` | MAE and mean error per test quarter | Gain in every quarter |
+
+## 10. Checks
 Every candidate predicts every test loan exactly once; actual spreads equal `loans.csv`; stored absolute errors
 equal the recomputed ones; the validation MAE of the main model equals `model_choice.csv`; loan-weighted quarter
 MAEs equal the pooled MAE; the bootstrap point estimate equals the table gap; both protocols give identical

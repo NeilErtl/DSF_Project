@@ -707,3 +707,31 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 - **Reversible:** yes (presentation only; no data or model change). The main model is not changed after this
   evaluation (D49, D51).
 
+
+### D53. Figures for the report and slides in notebook 03, steps 8b and 9 (AI, small choices under D45; 24 Nov 2026)
+- **Why it came up.** Notebook 03 had one figure (`test_by_quarter.png`). The team's figure plan asked for four more:
+  spread over time with training and test period (the reason for the residual target), validation against test per
+  model, error distribution of the main model against baseline 1 with the 50 bps line, and the gap to baseline 1
+  with an interval per robustness variant. No model is fitted and the main model is not touched (D45, D49, D51).
+- **Interval per robustness variant.** `test_bootstrap.csv` had an interval for the main sample only. Options:
+  (A) the same paired bootstrap within quarters as step 4 (D52, E13) for each variant; (B) point gaps only.
+  Pros of A: the figure plan asks for an interval, and the method is the one the notebook 03 owner already chose.
+  Cons of A: one new table; same caveat as E13 (too narrow if anything). Chosen: **A**, written to
+  `test_robustness_bootstrap.csv`. The main-sample row is copied from step 4, not drawn again, so one number is not
+  reported twice with slightly different digits. `boot_gap` got an optional quarter vector; its default is
+  unchanged, and every table that existed before is byte-identical after the change (checked).
+- **Figure choices.** (1) Spread over time: median and middle 50% of new loans per quarter, market level t-2 as a
+  dashed line (it is baseline 1), and in a second panel spread minus market level (the training target of D47); two
+  panels with their own y-axis, no dual axis; training-only, validation and test quarters shaded. The test quarters
+  are shown as description: the residual target was chosen on the validation folds. (2) Validation against test:
+  all 21 candidates of step 6 as open (validation) and filled (test) dots, sorted by validation MAE as in notebook 02,
+  never by test MAE (E12); main model and both baselines coloured, the rest grey. (3) Error distribution: histogram
+  of actual minus predicted with the plus or minus 50 bps band, and the share of loans within a given absolute error
+  with the 50 bps line. Bins of 25 bps centred on multiples of 25: spreads are quoted in quarter points, so baseline 1
+  errors sit on a 25 bps grid and 20 bps bins produced empty bins (aliasing). (4) Robustness: point gap and 95%
+  interval per variant, loans per variant in the label, zero line. Colours as in `test_by_quarter.png`.
+- **Evidence.** Gap to baseline 1 with 95% interval: main sample -28.2 [-33.3, -23.1]; without likely syndicated
+  loans -24.4 [-30.7, -18.5]; all BDCs -27.8 [-30.4, -25.1]; incl. refinancings -33.1 [-37.9, -28.5]; no interval
+  touches zero. Median spread of new loans 6.75 pp (2023Q2) to 4.75 pp (2026Q2); the median residual stays
+  between -0.75 and +0.25 pp in every quarter. Shares within 50 bps in figure 3 equal step 2 (55.4% and 50.3%).
+- **Reversible:** yes (presentation only; no data, model or metric change).
