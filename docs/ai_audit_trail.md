@@ -290,3 +290,30 @@ gap to baseline 1 with an interval per robustness variant. No model fitted, noth
 - The palette validator of the chart guidelines could not run (no Node.js in the workspace); the colours of
   `test_by_quarter.png` were kept, and identity never rests on colour alone (markers, line styles, labels).
 - `code/01_preprocess.ipynb` and `code/main.ipynb` had uncommitted changes before this session; not touched.
+
+## Session 9, 24 Nov 2026: notebook 01 within 8 GB of memory (work order 6), Claude Opus 5.5 in Claude Code
+
+**Task.** Work order `course_ref/5_For_the_repo/PROMPT_MEMORY_FIX.md`: make notebook 01 run on an 8 GB machine
+(target peak under 4 GB) with byte-identical outputs, without changing notebooks 02 and 03. Report:
+`docs/history/memory_report.md`; decision D54.
+
+**What the AI did**
+- Saved the 41 output files of main as a reference outside the repository, then measured memory per cell with an
+  instrumented copy of the notebook: peak private memory 5.9 GB (RSS 4.8 GB), from the stacked table of all zips,
+  `cur`, `hold` and `ln` kept to the end, and the token sets of `HoldingsIndex` (step 8).
+- Changed the code only: zips read one at a time (current period and comparatives kept, 10 unused columns dropped,
+  cache removed), equal token sets and words shared in `HoldingsIndex`, objects freed after their last use. Peak
+  private memory 2.6 GB (RSS 2.2 GB).
+
+**What was checked**
+- Old and new step 2/3 tables equal exactly; three runs of notebook 01 with 41 of 41 files byte-identical to main;
+  notebooks 02 and 03 on this branch and on an untouched worktree of main give 41 of 41 identical files on this
+  machine; `main.ipynb` executed once with outputs. A fresh agent reviewed the code diff: no change that could alter
+  a result (deleted names, merges, dtypes, token-set order, the removed cache).
+
+**What was rejected / found**
+- Compact dtypes (`category`, smaller floats): could change group-by order or round values; not needed.
+- Found, not fixed (outside the work order): notebook 02's Linear regression and Ridge predictions differ from the
+  committed files in the third to sixth decimal when run on this machine, on main as well. The 7 affected files
+  were restored from main; reported to the notebook 02 owner in the pull request.
+- Not done: cutting `cur` before the name parsing of step 5 and freeing a few small objects (not needed below 4 GB).

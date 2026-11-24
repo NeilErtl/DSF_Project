@@ -97,6 +97,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D51 | Main model without `n_family_bdcs` (known to the lender only): random forest, residual target, revolver and delayed draw. Supersedes the feature set of D49. | taken (team: notebook 02 owner, E11), **consequential** (main model) | See D51. |
 | D52 | Presentation and uncertainty of the test evaluation in notebook 03 (main model and baselines in front; bootstrap within quarters). | taken (team: notebook 03 owner, E12, E13; AI small choices) | See D52. |
 | D50 | Test and robustness predictions: implementation details of steps 9 and 10. | taken (AI, small, under D45) | See D50. |
+| D54 | Notebook 01 runs within 8 GB (peak private memory 5.9 to 2.6 GB): zips read one at a time, shared token sets, objects freed after last use; every output byte-identical. | taken (AI, work order 6; code only, no definition changed) | See D54. |
 
 ---
 
@@ -735,3 +736,26 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   touches zero. Median spread of new loans 6.75 pp (2023Q2) to 4.75 pp (2026Q2); the median residual stays
   between -0.75 and +0.25 pp in every quarter. Shares within 50 bps in figure 3 equal step 2 (55.4% and 50.3%).
 - **Reversible:** yes (presentation only; no data, model or metric change).
+
+### D54. Notebook 01 within 8 GB of memory, outputs unchanged (AI, work order 6; 24 Nov 2026)
+- **Why it came up.** README said notebook 01 holds all SEC filings in memory and its kernel is stopped on an 8 GB
+  machine (Nuvolos default), where the graders may rerun the project. Measured on main (Windows, from the raw zips):
+  peak private memory 5.9 GB, peak RSS 4.8 GB, never released after step 8 (`docs/history/memory_report.md`).
+  Numbered D54 because D53 (figures of notebook 03) already existed when the work order was written.
+- **Options.** (A) Read the zips one at a time and keep only the rows and columns later steps use, share equal token
+  sets in `HoldingsIndex`, free objects after their last use (pandas and numpy only). (B) Compact dtypes
+  (`category`, smaller numbers) for text and numeric columns. (C) Leave the code and document that notebook 01 needs
+  a larger machine. Pros of A: the largest objects go away without touching a value; easy to verify. Cons of A:
+  `del` lines in the notebook. Pros of B: further savings. Cons of B: `category` changes group-by and sort
+  behaviour and smaller floats can round, so outputs could move; not needed. Pros of C: no risk. Cons of C: the
+  graders may not be able to rerun the project. Chosen: **A** only.
+- **Evidence.** Peak private memory 5.9 to 2.6 GB (RSS 4.8 to 2.2 GB); run time about 12 to about 10 minutes. The
+  new step 2/3 tables equal the old ones exactly (values, order, index, dtypes). Three runs of notebook 01 from a
+  clean kernel: all 41 output files byte-identical to main. Notebooks 02 and 03 run on main and on this branch give
+  41 of 41 identical files on the same machine; 7 files of notebook 02 (Linear regression and Ridge, at most 0.1
+  bps in a table) differ from the committed versions on main and on this branch alike, so they are left as
+  committed (a machine dependence of notebook 02, reported to its owner). A fresh code review found no change that
+  could alter a result.
+- **Side effect.** The removed cache `data/interim/soi_all.pkl` is no longer used; the gitignored `cand.pkl` lacks
+  the ten unused columns.
+- **Reversible:** yes (code only; no definition, rule, threshold, seed or output changed).

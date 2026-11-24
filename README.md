@@ -16,14 +16,15 @@ environment variable `SEC_USER_AGENT`.
 ## How to run
 1. Python 3.12: `python -m pip install -r requirements.txt`
 2. Create `sec_user_agent.txt` (see above).
-3. Open `code/main.ipynb` and run *Restart, Run All*. It runs `01_preprocess.ipynb` (about 25 minutes, longer on the
-   first run because of the downloads), `02_estimate.ipynb` (about 2 minutes) and `03_evaluate.ipynb` (seconds).
+3. Open `code/main.ipynb` and run *Restart, Run All*. It runs `01_preprocess.ipynb` (10 to 20 minutes run alone and
+   46 minutes inside `main.ipynb` on our laptop, longer on the first run because of the downloads; peak memory about
+   2.6 GB, so it runs on an 8 GB machine such as Nuvolos, `docs/history/memory_report.md`), `02_estimate.ipynb` (about 2 minutes) and `03_evaluate.ipynb` (seconds).
    To rebuild only the models and the evaluation, run `code/02_estimate.ipynb` and then `code/03_evaluate.ipynb`:
-   they read `data/processed/` (in Git) and need no download or `sec_user_agent.txt`. Notebook 01 holds all SEC
-   filings in memory: on an 8 GB machine (Nuvolos default) its kernel is stopped for lack of memory. Two runs give byte-identical output files. From the command line
+   they read `data/processed/` (in Git) and need no download or `sec_user_agent.txt`. Two runs of notebook 01 give
+   byte-identical output files. From the command line
    (in `code/`): `jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 main.ipynb`
-   (`-1` switches off the per-cell time limit: notebook 01 runs inside one `%run` cell and can take over an hour on a
-   laptop with little free memory).
+   (`-1` switches off the per-cell time limit: notebook 01 runs inside one `%run` cell, which takes longer than
+   the default limit).
 
 ## The working dataset (numbers from `output/tables/headline_numbers.csv`)
 - `data/processed/loans.csv`: **1,705 new loans**, 2023Q2 to 2026Q2, 31 manager families; the lead BDC of each loan
