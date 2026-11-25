@@ -591,7 +591,15 @@ class HoldingsIndex:
         self.q = holdings["q_int"].to_numpy()
         self.fam = holdings["family"].to_numpy()
         self.cik = holdings["cik"].to_numpy()
-        self.tok = [tokens(x) for x in holdings["identifier"].fillna("").map(clean_identifier)]
+        # Memory: an identifier repeats every quarter, so equal identifiers share one token set, and equal words share
+        # one string object. The sets and their contents are the same as tokens(x) of each row.
+        set_of, word_of, self.tok = {}, {}, []
+        for x in holdings["identifier"].fillna("").map(clean_identifier):
+            ts = set_of.get(x)
+            if ts is None:
+                ts = set_of[x] = frozenset(word_of.setdefault(t, t) for t in tokens(x))
+            self.tok.append(ts)
+        del set_of, word_of
         n = len(self.tok)
         df_ = Counter(t for ts in self.tok for t in ts)
         self.idf = {t: np.log(n / c) for t, c in df_.items()}
