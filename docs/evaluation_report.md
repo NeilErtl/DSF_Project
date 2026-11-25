@@ -98,8 +98,8 @@ Mean error = actual minus predicted spread; negative = predicted too high.
 ## 8. Limitations
 - **Four test quarters.** The bootstrap treats loans of one quarter as independent, although they share a market:
   the interval is too narrow if anything. The four per-quarter gaps (all negative) are the more robust evidence.
-- **Target interpretation.** About 88% of checked loans are true originations (`docs/data_report.md`); the rest
-  are purchases or transfers newly priced into a BDC portfolio.
+- **Target interpretation.** About 90% of checked loans are true originations (127 of 141 distinct loans over four
+  checks, `docs/data_report.md`); the rest are purchases or transfers newly priced into a BDC portfolio.
 - **Small families.** MAEs of families with few test loans are indications only.
 - **Market direction.** The training data cover a falling market. The model passes the market level through
   one-for-one (residual target); its behaviour in a rising market is not tested.
