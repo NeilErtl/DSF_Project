@@ -27,7 +27,8 @@ share (a) originated in the quarter: our hand check,0.889,0.747,0.956,36.0,32 cl
 share (a) originated in the quarter: Patrick's hand check,0.962,0.811,0.993,26.0,25 class (a)
 share (a) originated in the quarter: out-of-sample verification (30 loans),0.8,0.627,0.905,30.0,24 class (a)
 "share (a) originated in the quarter: out-of-sample verification, loans still in the sample",0.793,0.616,0.902,29.0,23 class (a)
-"share (a) originated in the quarter: all three checks, distinct loans in the sample",0.879,0.796,0.931,91.0,80 class (a)
+share (a) originated in the quarter: Patrick's hand check v2 (50 loans of the final dataset),0.94,0.838,0.979,50.0,47 class (a)
+"share (a) originated in the quarter: all four checks, distinct loans in the sample",0.901,0.84,0.94,141.0,127 class (a)
 loans_all_bdc.csv rows,6979,,,,
 loans_incl_refi.csv rows,2170,,,,
 loans_incl_refi.csv: refinancings / add-ons,424,,,,

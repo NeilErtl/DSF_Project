@@ -26,7 +26,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D14 | Loans from 2023Q2 | taken |
 | D17 | No secondary-buyer family excluded (rule excludes none) | taken |
 | D22 | Existing loans of unaffiliated lenders dropped | recommended, to be confirmed by team |
-| D23, D41 | Target: spread over SOFR of newly originated loans, with the three origination checks | taken, to be confirmed by team |
+| D23, D41 | Target: spread over SOFR of newly originated loans, with the three origination checks (four since D55) | taken, to be confirmed by team |
 | D25 | Syndicated loans kept, flag `n_other_families_same_q`, sensitivity check | recommended, to be confirmed by team |
 | D26, D40 | Joint-venture schedule lines excluded (PennantPark, WhiteHorse, Monroe) | taken |
 | D28, D42 | Borrower names: parser with second naming pass; display names cleaned; since D44 the matching key is built from the cleaned name | taken |
@@ -85,7 +85,7 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 | D38 | Time splits also require the filing date before the cutoff; per-test-quarter evaluation and the committed metrics added to `modelling_helpers.py`. | taken (AI, work order 3) | See D38. |
 | D39 | Headline numbers written by the notebook (`output/tables/headline_numbers.csv`); "BDCs" means lead BDCs (distinct `cik`). | taken (AI, work order 3) | See D39. |
 | D40 | Lines of WhiteHorse's and Monroe's joint-venture schedules excluded (no net-assets percentage tagged); verification findings documented. | taken (AI, work order 3, out-of-sample verification), **consequential** (sample) | See D40. |
-| D41 | Target wording with all three origination checks; main test protocol one model per test quarter; the five sample definitions kept. | taken (preprocessing owner, work order 5), to be confirmed by team, **consequential** | See D41. |
+| D41 | Target wording with all three origination checks (four since D55); main test protocol one model per test quarter; the five sample definitions kept. | taken (preprocessing owner, work order 5), to be confirmed by team, **consequential** | See D41. |
 | D42 | Release polish: rounding of processed files, cleaned display names, fixed role vocabulary in the data dictionary. | taken (AI, work order 5) | See D42. |
 | D43 | Release checker fixes: spelling variants count as held before; acquisition date and spread checked across the family; per-line spread unit; industry labels are not names; "InvestmentType" and "amp;" parsed. | taken (AI, work order 5), **consequential** (sample) | See D43. |
 | D44 | Second release check: matching key from the cleaned name; brand-prefixed names count as held before; implied base rate must be a SOFR level. | taken (AI, work order 5), **consequential** (sample) | See D44. |
@@ -787,4 +787,5 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
   filter now would tune it on this check and remove its value as a clean estimate.
 - **Open.** `code/01_preprocess.ipynb` (step 15e and 15g) reads the new file; `hand_check_shares.csv` and
   `headline_numbers.csv` are updated when notebook 01 is rerun (needs the SEC downloads).
+  Done in work order 7: notebook 01 rerun, tables updated.
 - **Reversible:** yes (documentation and validation only; no definition, filter, sample or model changed).

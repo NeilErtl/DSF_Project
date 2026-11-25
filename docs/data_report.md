@@ -80,8 +80,9 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
   quarter 32 = 89% (95% CI 75 to 96%), (b) bought later 3, (c) affiliate transfer 1. Optimistic: the existing-loan
   filter was designed on these loans.
 - **Patrick's independent hand check** (`docs/hand_check_patrick.csv`, 50 loans of 8 managers): 26 are in our final
-  sample, (a) 25, (b) 1; our filters remove 8 of his 9 (b) loans. All three checks combined, each loan once: (a) 80
-  of 91 = 88% (95% CI 80 to 93%). See D23, D41. His loans come from his earlier preprocessing version; hence v2 below.
+  sample, (a) 25, (b) 1; our filters remove 8 of his 9 (b) loans. The three earlier checks combined, each loan once: (a)
+  80 of 91 = 88% (95% CI 80 to 93%); all four checks with v2: 127 of 141 = 90% (95% CI 84 to 94%, D55).
+  See D23, D41. His loans come from his earlier preprocessing version; hence v2 below.
 - **Out-of-sample verification of 30 further loans** (`docs/verification_sample_30.csv`, seed 2026, stratified by
   family, excluding both hand checks, checked in EDGAR by a fresh agent): borrower, spread, maturity and principal
   correct 30/30, lien 27 (2 not printed, 1 wrong); (a) 24 of 30 = 80% (95% CI 63 to 90%), (b) 5, not new 1; drawn

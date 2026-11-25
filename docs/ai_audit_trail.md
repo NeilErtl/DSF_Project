@@ -341,3 +341,30 @@ EDGAR. Decision D55.
   Elevation NewCo, "Aprimo" for Primo); fixed with explicit borrower patterns in the script before the check.
 - Not done here: rerunning notebook 01 (the SEC downloads under the expected names and the October 2026 file were not
   available in this session); headline numbers follow on the next run.
+
+## Session 10, 25 Nov 2026: rerun of notebook 01 after hand check v2 (work order 7), Claude Opus 5.5 in Claude Code
+
+**Task.** Work order `course_ref/5_For_the_repo/PROMPT_RERUN_HANDCHECK_V2.md`: after the hand check v2 pull request
+(D55), regenerate the hand-check tables and the saved notebook outputs, prove that nothing else moved, fix stale
+"88%" sentences.
+
+**What the AI did**
+- Reviewed the hand check v2 pull request: all 50 loans in `loans.csv`, no overlap with the earlier checks, classes
+  47 (a) and 3 (b), Wilson intervals recomputed, no filter, rule, threshold or seed changed. The AI's approve and
+  merge were blocked by the permission settings; Mathis approved and merged it.
+- Executed `code/main.ipynb` and `code/01_preprocess.ipynb` in place and compared SHA-256 of all 42 files in
+  `data/processed/` and `output/` before and after.
+- Updated the current-state sentences (`evaluation_report.md`, `data_report.md`, the D23/D41 rows of the decisions
+  table) and added "Done in work order 7" under D55 "Open".
+
+**What was checked**
+- Changed as expected: `hand_check_shares.csv` and `headline_numbers.csv` (the "all three checks, 80 of 91" row
+  replaced by "all four checks, 127 of 141 = 0.901, 95% CI 0.840 to 0.940" and a new Patrick v2 row 47 of 50 = 0.94,
+  0.838 to 0.979); every other headline row identical. `loans.csv`, `loans_all_bdc.csv`, `loans_incl_refi.csv`,
+  `data_dictionary.csv` and all other files of notebook 01 byte-identical.
+- A fresh checker agent repeated the hash comparison, the numbers and the grep before the push.
+
+**What was restored**
+- Seven files of notebook 02 (Linear regression and Ridge predictions and the tables and figures built from them)
+  differed by cross-machine float noise, at most 0.1 bps (the known issue of work order 6). Restored from main, not
+  committed.
