@@ -759,3 +759,32 @@ Numbers refer to the final run of `code/01_preprocess.ipynb`, except where an en
 - **Side effect.** The removed cache `data/interim/soi_all.pkl` is no longer used; the gitignored `cand.pkl` lacks
   the ten unused columns.
 - **Reversible:** yes (code only; no definition, rule, threshold, seed or output changed).
+
+### D55. Hand check v2 on the final dataset (Patrick Eppler with the AI; 25 Nov 2026)
+- **Why it came up.** Patrick's first hand check (`docs/hand_check_patrick.csv`) was drawn from his own, earlier
+  preprocessing version; only 26 of his 50 loans are in the final sample. The commitment to the lecturers (about 50
+  loans, stratified by manager, checked against the filings) should hold for the dataset the models use.
+- **Options.** (A) Draw 50 new loans from the final `loans.csv`, excluding every loan of the earlier checks, and
+  check them by hand. (B) Re-check Patrick's first 50 against the final data. (C) Leave it at the existing checks.
+  Pros of A: every checked loan is a modelled loan; adds 50 distinct loans; no filter was designed on them. Cons of
+  A: one more afternoon of work. Pros of B: no new sample. Cons of B: 24 of the 50 are not in the sample. Pros of C:
+  no work. Cons of C: the largest check describes another version of the data. Chosen: **A**.
+- **Procedure.** `code/hand_check_v2.py --draw`: 50 loans, seed 2027, allocated to families by their share of the
+  pool (24 families), weight = family loans / drawn loans. The AI searched every schedule of investments of the SEC
+  BDC data sets for each borrower and proposed a class with one EDGAR report to open (previous report of the same
+  fund, an older holder's report, or the report with the acquisition date). Patrick opened every report and
+  confirmed or corrected the class (`patrick_check`, `class_abc`).
+- **Evidence.** (a) 47 of 50 = 94% (95% CI 84 to 98%; weighted by family 94%), (b) 3, (c) 0, undecided 0. Borrowers
+  never seen at another manager: 20 of 20 (a); seen before: 27 of 30 (a). The three (b):
+  BCPE HIPH (Goldman Sachs, 2025Q2; same maturity 10/07/2030 at OHA on 3/31/2025), PRGX (Bain Capital, 2025Q1; same
+  maturity 12/20/2030 at Monroe on 12/31/2024), Bending Spoons (Palmer Square, 2025Q2; same facility, S+5.25%, at
+  Silver Point and Blackstone on 3/31/2025, and found by Patrick in Palmer Square's own report of 3/31/2025). All
+  four checks combined, each loan once: 127 of 141 = 90% (95% CI 84 to 94%), up from 80 of 91 = 88%.
+  `output/tables/hand_check_v2_shares.csv`.
+- **Consequence.** The share stays above the 80% threshold: the target keeps the name "spread over SOFR of newly
+  originated loans" (D23, D41). A weakness of the existing-loan filter (D22) is documented, not fixed: it misses a
+  purchase when the earlier holder does not tag the maturity in XBRL or names the borrower differently. Changing the
+  filter now would tune it on this check and remove its value as a clean estimate.
+- **Open.** `code/01_preprocess.ipynb` (step 15e and 15g) reads the new file; `hand_check_shares.csv` and
+  `headline_numbers.csv` are updated when notebook 01 is rerun (needs the SEC downloads).
+- **Reversible:** yes (documentation and validation only; no definition, filter, sample or model changed).

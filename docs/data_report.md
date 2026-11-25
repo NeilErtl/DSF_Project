@@ -10,11 +10,13 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
 - **Unit.** One new loan = one borrower x one manager family x one quarter of first appearance. New = no BDC of the
   same family held the borrower before; loans with an acquisition date before that quarter are dropped; borrowers
   seen earlier at unaffiliated BDCs are flagged.
-- **Target.** Spread over SOFR of newly originated loans, in percentage points (errors in basis points). Three origination checks: our hand check 32 of 36 (89%), Patrick's
-  hand check 25 of 26 (96%), and an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%; the cleanest estimate, since
-  no filter was designed on it); over all 91 distinct checked loans in the sample 88% (95% CI 80 to 93%). About one
-  loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
-  priced into a BDC portfolio.
+- **Target.** Spread over SOFR of newly originated loans, in percentage points (errors in basis points). Four
+  origination checks: our hand check 32 of 36 (89%), Patrick's first hand check 25 of 26 (96%; loans of his earlier
+  preprocessing version), an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%), and Patrick's hand check v2 of 50
+  loans drawn from the final dataset 47 of 50 (94%, 95% CI 84 to 98%); no filter was designed on the last two, so they
+  are the cleanest estimates. Over all 141 distinct checked loans in the sample 90% (95% CI 84 to 94%). About one loan
+  in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly priced
+  into a BDC portfolio.
 - **Cutoff.** Start of the quarter of first appearance. Market-level spread from quarter t-2 filings (checked with
   the filing date); external market data: last value before the cutoff. Never features: interest rate, fair value,
   cost, PIK, floor.
@@ -79,13 +81,21 @@ below is in `output/tables/headline_numbers.csv` or the tables named next to it.
   filter was designed on these loans.
 - **Patrick's independent hand check** (`docs/hand_check_patrick.csv`, 50 loans of 8 managers): 26 are in our final
   sample, (a) 25, (b) 1; our filters remove 8 of his 9 (b) loans. All three checks combined, each loan once: (a) 80
-  of 91 = 88% (95% CI 80 to 93%). See D23, D41.
+  of 91 = 88% (95% CI 80 to 93%). See D23, D41. His loans come from his earlier preprocessing version; hence v2 below.
 - **Out-of-sample verification of 30 further loans** (`docs/verification_sample_30.csv`, seed 2026, stratified by
   family, excluding both hand checks, checked in EDGAR by a fresh agent): borrower, spread, maturity and principal
   correct 30/30, lien 27 (2 not printed, 1 wrong); (a) 24 of 30 = 80% (95% CI 63 to 90%), (b) 5, not new 1; drawn
   before D37/D40, 29 still in the sample, of which 23 (a) = 79%. Errors
   found: WhiteHorse joint-venture lines counted as BDC holdings (fixed, 18 loans removed, D40); a rename after a
   restructuring (Crescent "Affordable Care", limitation); Stellus, TCW and Onex lien not written in the line.
+- **Patrick's hand check v2** (`docs/hand_check_patrick_v2.csv`, D55): 50 loans drawn from the final `loans.csv`
+  (seed 2027, stratified by family, excluding all earlier checks), each prepared with one EDGAR report by
+  `code/hand_check_v2.py` and decided by Patrick in the filing: (a) 47 of 50 = 94% (95% CI 84 to 98%; weighted by
+  family 94%), (b) 3. All 20 loans of borrowers never seen at another manager are (a); the 3 (b) are among the 30
+  borrowers seen before (90% (a)). The (b) loans passed the existing-loan filter (D22) because the earlier holder's
+  line had no maturity in XBRL (BCPE HIPH at OHA, PRGX at Monroe) or a different borrower name and a maturity two
+  weeks off (Bending Spoons US Inc. vs Operations SpA). All four checks combined, each loan once: (a) 127 of 141 =
+  90% (95% CI 84 to 94%); `output/tables/hand_check_v2_shares.csv`.
 - **Release checker (work order 5, fresh agent)**: row rules, cutoff, numbers, fresh-clone reproducibility, teammate
   test and hygiene passed; the newness audit found loans that were not new (spelling variants of borrowers the family
   held, an acquisition date at a sister BDC), spreads lost to a unit error, family-level spread differences and

@@ -29,11 +29,12 @@ environment variable `SEC_USER_AGENT`.
 ## The working dataset (numbers from `output/tables/headline_numbers.csv`)
 - `data/processed/loans.csv`: **1,705 new loans**, 2023Q2 to 2026Q2, 31 manager families; the lead BDC of each loan
   is one of 45 BDCs (distinct `cik`). Train 1,122 loans (to 2025Q2), test 583 (2025Q3 to 2026Q2).
-- Target: spread over SOFR of newly originated loans (median 5.00 pp). Three origination checks: our hand check 32 of 36 (89%), Patrick's
-  hand check 25 of 26 (96%), and an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%; the cleanest estimate, since
-  no filter was designed on it); over all 91 distinct checked loans in the sample 88% (95% CI 80 to 93%). About one
-  loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
-  priced into a BDC portfolio.
+- Target: spread over SOFR of newly originated loans (median 5.00 pp). Four origination checks: our hand check 32 of
+  36 (89%), Patrick's first hand check 25 of 26 (96%; loans of his earlier preprocessing version), an out-of-sample
+  check 24 of 30 (80%, 95% CI 63 to 90%), and Patrick's hand check v2 of 50 loans drawn from the final dataset 47 of
+  50 (94%, 95% CI 84 to 98%); no filter was designed on the last two, so they are the cleanest estimates. Over all 141
+  distinct checked loans in the sample 90% (95% CI 84 to 94%). About one loan in five to one in ten may be a purchase
+  or transfer rather than a fresh origination; it is still a loan newly priced into a BDC portfolio.
 - Largest families: Apollo 19%, Goldman Sachs 11%, BlackRock 7%, Antares 7%, First Eagle 5%.
 - Robustness files: `loans_all_bdc.csv` (6,979 loans, all BDCs), `loans_incl_refi.csv` (2,170 loans incl.
   refinancings and add-ons). Columns: `data_dictionary.csv`. How to use them: `docs/for_modelling.md`.
@@ -48,11 +49,11 @@ environment variable `SEC_USER_AGENT`.
 ## Folder map
 | Folder | Content |
 |---|---|
-| `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `02_estimate.ipynb` (baselines, models, horse race, choice of the main model, predictions for 03), `03_evaluate.ipynb` (test metrics, by quarter and family, bootstrap, robustness; fits no model), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks) |
+| `code/` | `main.ipynb` (runs everything), `01_preprocess.ipynb`, `utils_preprocess.py` (functions of notebook 01), `02_estimate.ipynb` (baselines, models, horse race, choice of the main model, predictions for 03), `03_evaluate.ipynb` (test metrics, by quarter and family, bootstrap, robustness; fits no model), `modelling_helpers.py` (loading, pipeline, time splits, metrics for 02 and 03), `hand_check_fetch.py` (EDGAR look-up for the hand checks), `hand_check_v2.py` (sample and proposals of hand check v2) |
 | `data/raw/`, `data/interim/` | Downloads and caches, rebuilt by the code, not in Git |
 | `data/processed/` | Working datasets, data dictionary, sector and family mappings; predictions of notebook 02 for notebook 03 (`predictions_validation.csv`, `predictions_test.csv`, `predictions_robustness.csv`) |
 | `output/tables/`, `output/figures/` | Funnel, precision, hand check, headline numbers; validation race (02); test metrics `test_*.csv` (03); figures, including the report and slide figures of notebook 03 (step 9) |
-| `docs/` | `for_modelling.md`, `data_report.md`, `model_report.md` (summary of notebook 02), `evaluation_report.md` (summary of notebook 03), `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
+| `docs/` | `for_modelling.md`, `data_report.md`, `model_report.md` (summary of notebook 02), `evaluation_report.md` (summary of notebook 03), `decisions.md`, hand checks (`hand_check.csv`, `hand_check_patrick.csv`, `hand_check_patrick_v2.csv`, `verification_sample_30.csv`), `lecturer_feedback_and_commitments.md`, `ai_audit_trail.md`, `history/` (work reports) |
 
 ## Sample definitions (status: recommended by the preprocessing team, to be confirmed)
 | Definition | Reason | Robustness file or flag |
@@ -67,7 +68,8 @@ Main test protocol (D41): one model per test quarter, trained on all loans up to
 
 ## Who did what
 - Mathis Aeby: preprocessing (notebook 01), documentation. *(to be completed)*
-- Patrick Eppler: independent preprocessing version, comparison, hand check of 50 loans, modelling helpers design.
+- Patrick Eppler: independent preprocessing version, comparison, hand check of 50 loans, hand check v2 of 50 loans of
+  the final dataset (`docs/hand_check_patrick_v2.csv`), modelling helpers design.
   *(to be completed)*
 - Neil Ertl: estimation (notebook 02, `docs/model_report.md`). *(to be completed)*
 - Nathan Steiner: evaluation on the test quarters (notebook 03). *(to be completed)*
@@ -76,5 +78,6 @@ Main test protocol (D41): one model per test quarter, trained on all loans up to
 The preprocessing code and documentation were written with an AI assistant (Claude Code) under the rules in
 `CLAUDE.md`: every decision it took is logged with evidence in `docs/decisions.md`, every work session in
 `docs/ai_audit_trail.md`. The results were checked against the original filings by hand (`docs/hand_check.csv`,
-prepared with the AI and re-checked by Mathis; Patrick's `docs/hand_check_patrick.csv`), by a fresh AI agent
-(`docs/verification_sample_30.csv`), and against Patrick's independent version.
+prepared with the AI and re-checked by Mathis; Patrick's `docs/hand_check_patrick.csv` and
+`docs/hand_check_patrick_v2.csv`, the latter prepared with the AI by `code/hand_check_v2.py` and decided by Patrick in
+the filings), by a fresh AI agent (`docs/verification_sample_30.csv`), and against Patrick's independent version.
