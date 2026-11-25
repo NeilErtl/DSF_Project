@@ -4,7 +4,7 @@ quarter_str,Quarter of first appearance (origination quarter proxy),YYYYQn,yes,t
 quarter_start_date,Start of that quarter = cutoff,date,yes,time,
 q_index,"Quarter number, 0 = 2023Q2",integer,yes,time,
 split,train (to 2025Q2) or test (2025Q3 to 2026Q2),,,split,
-spread_pp,"TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). True originations: our hand check 32/36, Patrick's 25/26, out-of-sample check 24/30, all distinct checked loans 88% (95% CI 80 to 93%); the rest are purchases or transfers newly priced into a BDC portfolio",pp,no,target,
+spread_pp,"TARGET: spread over SOFR of newly originated loans (largest funded term line of the lead BDC). True originations: our hand check 32/36, Patrick's first check 25/26, out-of-sample check 24/30, Patrick's check v2 47/50, all distinct checked loans 90% (95% CI 84 to 94%); the rest are purchases or transfers newly priced into a BDC portfolio",pp,no,target,
 borrower,"Borrower name for display (parsed from the identifier, cleaned; matching uses borrower_key)",,yes,id,
 borrower_key,Normalized borrower name,,yes,id,
 family,Manager family of the lender,,yes,feature,

@@ -1,0 +1,15 @@
+sample,class,n,n_checked,share,ci_low,ci_high
+"hand check v2, all checked (50)",a,47,50,0.94,0.8378265662912299,0.9793854036353695
+"hand check v2, all checked (50)",b,3,50,0.06,0.020614596364630478,0.16217343370877002
+"hand check v2, all checked (50)",c,0,50,0.0,0.0,0.07135003417431873
+"hand check v2, all checked (50)",u,0,50,0.0,0.0,0.07135003417431873
+"hand check v2, strictly new borrowers (20)",a,20,20,1.0,0.8388698745050667,1.0
+"hand check v2, strictly new borrowers (20)",b,0,20,0.0,0.0,0.16113012549493322
+"hand check v2, strictly new borrowers (20)",c,0,20,0.0,0.0,0.16113012549493322
+"hand check v2, strictly new borrowers (20)",u,0,20,0.0,0.0,0.16113012549493322
+"hand check v2, borrower seen at another manager before (30)",a,27,30,0.9,0.7437855868473339,0.9654007400402839
+"hand check v2, borrower seen at another manager before (30)",b,3,30,0.1,0.03459925995971615,0.25621441315266624
+"hand check v2, borrower seen at another manager before (30)",c,0,30,0.0,0.0,0.113517091390478
+"hand check v2, borrower seen at another manager before (30)",u,0,30,0.0,0.0,0.113517091390478
+"hand check v2, weighted by family (strata)",a,47,50,0.937156802928615,,
+"all four checks combined, distinct loans in final sample (141)",a,127,141,0.900709219858156,0.8402321307958763,0.939930474422514

@@ -317,3 +317,27 @@ gap to baseline 1 with an interval per robustness variant. No model fitted, noth
   committed files in the third to sixth decimal when run on this machine, on main as well. The 7 affected files
   were restored from main; reported to the notebook 02 owner in the pull request.
 - Not done: cutting `cur` before the name parsing of step 5 and freeing a few small objects (not needed below 4 GB).
+
+## Session: hand check v2 (25 Nov 2026, with Patrick Eppler)
+Task: redo Patrick's hand check of 50 loans on the final dataset, prepared so that each loan takes about a minute in
+EDGAR. Decision D55.
+
+**What the AI did**
+- Drew 50 loans from `data/processed/loans.csv` (seed 2027, stratified by family, excluding all earlier checks) and
+  searched every SEC BDC schedule of investments (Patrick's local copy of the data sets, 2022Q4 to Sep 2026) for
+  earlier holders of each borrower. Proposed a class, one report link, a search word and what must be seen, in the
+  layout of Patrick's first check. Code: `code/hand_check_v2.py` (reproduces the delivered sample and proposals).
+- After the check: wrote `docs/hand_check_patrick_v2.csv`, `output/tables/hand_check_v2_shares.csv`, D55, the
+  data report, README, `for_modelling.md`, the data dictionary, and steps 15e/15g of notebook 01.
+
+**What was checked**
+- Patrick opened all 50 reports: 47 proposals confirmed, 3 corrected from (a) to (b) (BCPE HIPH, PRGX, Bending
+  Spoons). The AI looked up the three in the SEC data and confirmed earlier holdings of the same loan.
+- The script was rerun from scratch and gave the same 50 loans, links and proposals as the file Patrick checked.
+
+**What was rejected / found**
+- Not done: changing the existing-loan filter after the check (it would be tuned on this sample).
+- Found: name matching on single generic words gave false earlier holders (for example "Accelevation" for
+  Elevation NewCo, "Aprimo" for Primo); fixed with explicit borrower patterns in the script before the check.
+- Not done here: rerunning notebook 01 (the SEC downloads under the expected names and the October 2026 file were not
+  available in this session); headline numbers follow on the next run.

@@ -5,11 +5,13 @@
 
 **Unit and target.** Cross-section with a date (each loan once). One row = one new loan: one borrower x one manager family x the quarter in which the family
 first holds it (1,705 loans, 2023Q2 to 2026Q2, 31 families, lead BDC = 45 distinct `cik`). Target `spread_pp` = spread
-over SOFR of newly originated loans, in percentage points; report errors in basis points (x 100). Three origination checks: our hand check 32 of 36 (89%), Patrick's
-hand check 25 of 26 (96%), and an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%; the cleanest estimate, since
-no filter was designed on it); over all 91 distinct checked loans in the sample 88% (95% CI 80 to 93%). About one
-loan in five to one in ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly
-priced into a BDC portfolio. Use this name for the target in report and slides (D41).
+over SOFR of newly originated loans, in percentage points; report errors in basis points (x 100). Four origination
+checks: our hand check 32 of 36 (89%), Patrick's first hand check 25 of 26 (96%; loans of his earlier preprocessing
+version), an out-of-sample check 24 of 30 (80%, 95% CI 63 to 90%), and Patrick's hand check v2 of 50 loans drawn from
+the final dataset 47 of 50 (94%, 95% CI 84 to 98%); no filter was designed on the last two, so they are the cleanest
+estimates. Over all 141 distinct checked loans in the sample 90% (95% CI 84 to 94%). About one loan in five to one in
+ten may be a purchase or transfer rather than a fresh origination; it is still a loan newly priced into a BDC
+portfolio. Use this name for the target in report and slides (D41).
 
 **Features (allowed).** `mh.NUM` = `log_principal` (log of the family's held principal at the reporting date: an
 approximation of the hold size, not the facility size), `tenor_years` (maturity minus quarter start),
